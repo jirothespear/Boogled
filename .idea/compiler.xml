@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="2023-2_9341-finteam5" target="1.5" />
+      <module name="2023-2_9341-finteam5" target="18" />
     </bytecodeTargetLevel>
   </component>
 </project>

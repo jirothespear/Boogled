@@ -1,4 +1,4 @@
-package src.server;
+package server.controller;
 
 /**
  * User object

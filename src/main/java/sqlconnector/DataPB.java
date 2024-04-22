@@ -1,4 +1,6 @@
-package src.server;
+package sqlconnector;
+
+import server.controller.User;
 
 import java.sql.*;
 
