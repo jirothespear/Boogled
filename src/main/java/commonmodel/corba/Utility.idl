@@ -7,6 +7,7 @@ interface serverUtility{
     wstring showWinner()
     long showScore(wstring user)
     wstring getLetterChoice()
+    void joinGame(wstring user)
 
 }
 

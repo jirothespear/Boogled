@@ -12,4 +12,6 @@ public interface serverUtility {
     int showScore(String user);// show score of a user
     String getLetterChoice();
 
+    void joinGame(String user);
+
 }

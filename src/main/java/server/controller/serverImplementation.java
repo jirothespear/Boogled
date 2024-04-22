@@ -1,10 +1,14 @@
 package server.controller;
 
 import server.controller.*;
+import server.model.Game;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class serverImplementation implements serverUtility {
+    private List<Game> activeGames = new ArrayList<>();
     @Override
     public boolean checkUser(String userNPasswd) {
         return false;
@@ -59,6 +63,31 @@ public class serverImplementation implements serverUtility {
         result.append(consonantsBuilder).append("\n.").append(vowelsBuilder);
 
         return result.toString();
+    }
+
+    @Override
+    public void joinGame(String user) {
+        Game existingGame = findAvailableGame();
+        User user1 = new User();
+
+        if(existingGame == null && existingGame.getOpen()){
+            // create a new game
+            Game newGame = new Game(user);
+
+            newGame.addPlayer(user1);
+        } else {
+
+            existingGame.addPlayer(user1);
+        }
+    }
+
+    private Game findAvailableGame() {
+        for (Game game : activeGames) {
+            if (game.getOpen()) {
+                return game;
+            }
+        }
+        return null;
     }
 
     // Method to shuffle a StringBuilder
