@@ -1,12 +1,12 @@
-Module Utility{
+module Utility{
 
-Interface serverUtility{
-
-boolean login( string credentials)
-Boolean start(String username)
-boolean checkWord( String answer)
-void addWinnerOfRound(String user)
-
+interface serverUtility{
+    boolean checkUser(wstring userNPasswd)
+    boolean checkWord(wstring answer)
+    void start(wstring user)
+    wstring showWinner()
+    long showScore(wstring user)
+    wstring getLetterChoice()
 
 }
 
