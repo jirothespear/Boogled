@@ -1,0 +1,14 @@
+Module Utility{
+
+Interface serverUtility{
+
+boolean login( string credentials)
+Boolean start(String username)
+boolean checkWord( String answer)
+void addWinnerOfRound(String user)
+
+
+}
+
+
+}
