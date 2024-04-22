@@ -3,6 +3,7 @@ package server.controller;
 import server.model.Game;
 import sqlconnector.DataPB;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class serverImplementation implements serverUtility {
@@ -29,8 +30,11 @@ public class serverImplementation implements serverUtility {
 
     @Override
     public void start(String user) {
+        ArrayList<User> players = new ArrayList<>();
         // get users from queueing system
-        // start new game
+        // for loop in converting string from queueinng system to users,
+        // use Game.findUser(String username); to convert username to user object
+        Game.startGame(players);
     }
 
     @Override

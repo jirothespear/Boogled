@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed directories.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/serverImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/serverUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
-    </list>
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713763644875</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java">
+      <option name="closed" value="true" />
+      <created>1713793441624</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713793441624</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +130,7 @@
     <MESSAGE value="project set up, added a few classes to be populated soon" />
     <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed directories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed directories." />
+    <MESSAGE value="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
   </component>
 </project>
