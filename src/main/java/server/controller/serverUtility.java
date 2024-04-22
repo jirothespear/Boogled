@@ -10,8 +10,7 @@ public interface serverUtility {
     void start(String user); // user joins or creates a game
     String showWinner();// use to return user who won a round || game
     int showScore(String user);// show score of a user
-    String getLetterChoice();
-
-    void joinGame(String user);
+    String getLetterChoice();// get random 20 letters
+    void joinGame(String user); // user joins a game
 
 }

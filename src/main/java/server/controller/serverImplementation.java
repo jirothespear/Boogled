@@ -78,6 +78,7 @@ public class serverImplementation implements serverUtility {
         } else {
 
             existingGame.addPlayer(user1);
+            // check if the game is full
         }
     }
 
