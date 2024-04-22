@@ -24,7 +24,7 @@ public class DataPB {
     }
 
     public static boolean checkUser(String usrnameWithPasswd){
-        String user[]= usrnameWithPasswd.split("/");
+        String user[]= usrnameWithPasswd.split("/");// format "username/password"
         String query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
@@ -66,6 +66,21 @@ public class DataPB {
             throw new RuntimeException(e);
         }
     }
+    public static int getScoreOfUser(String username){
+        int score=0;
+        String query = "SELECT u.username AS username u FROM user WHERE u.usermame = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1,username);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                score = rs.getInt("username");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return score;
+    }
     public static  boolean checkWord(String answer){
         String query = "SELECT * FROM words WHERE word = ?;";
         try {
@@ -79,5 +94,21 @@ public class DataPB {
             throw new RuntimeException(e);
         }
         return false;
+    }
+    public static String getLeaderBoard(){
+        StringBuilder strings = new StringBuilder();
+        String query = "SELECT u.username AS username, u.overallScore AS score FROM user u ORDER BY 2 DESC LIMIT 5;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                String username = rs.getString("username");
+                int score = rs.getInt("score");
+                strings.append(username+"-"+score+",");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return strings.toString();
     }
 }
