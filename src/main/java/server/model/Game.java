@@ -18,7 +18,7 @@ public class Game {
     /*
     following variables changes every round
      */
-    private static ArrayList<String>allAnswers;// List of all entered answers per round
+    private static HashMap<String, Integer> allAnswers = new HashMap<>();
     private static HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
     private static HashMap<User,ArrayList<String>> answersOfPlayers = new HashMap<>();
     /*
@@ -54,7 +54,7 @@ public class Game {
         System.out.println("Game is starting");
         players = plrs;
         isOpen= false;
-        allAnswers = new ArrayList<>();
+        allAnswers = new HashMap<>();
         for (int i =0; i < players.size(); i++){
             overallPoints.put(players.get(i),0);
             pointsPerRound.put(players.get(i),0);
@@ -66,7 +66,7 @@ public class Game {
         roundCount++;
         System.out.println("Round "+roundCount +"!");
         //Reset list containing all answers
-        allAnswers = new ArrayList<>();
+        allAnswers = new HashMap<>();
         // Reset points to 0 for each user
         pointsPerRound.forEach((user, points) -> pointsPerRound.put(user, 0));
         // Clear answers for each user
@@ -115,14 +115,15 @@ public class Game {
     filter answers of players
      */
     public static void filterAnswers(){
-        for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {
+        for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
             ArrayList<String> userAnswers = entry.getValue();
-            for (int i = 0; i < userAnswers.size(); i++) {
-                for (String answer : allAnswers) {
-                    if (userAnswers.get(i).equalsIgnoreCase(answer)) {
-                        userAnswers.remove(i);
-                        i--;
-                        break;
+            for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
+                for (Map.Entry<String, Integer> ety : allAnswers.entrySet()){// loop for all answers
+                    if(ety.getKey().equalsIgnoreCase(userAnswers.get(i))){
+                        if(ety.getValue()>1){
+                            // remove
+                            userAnswers.remove(i);
+                        }
                     }
                 }
             }
@@ -191,11 +192,17 @@ public class Game {
     this method also makes sure that no answer is duplicated
      */
     private static void addToAllAnswersList(String answer){
-        for (int j = 0; j < allAnswers.size(); j++){
-            if(answer.equalsIgnoreCase(allAnswers.get(j))){
-                return;
+        if(!(allAnswers.isEmpty())){
+            for (Map.Entry<String, Integer> entry : allAnswers.entrySet()){
+                if(entry.getKey().equalsIgnoreCase(answer)){
+                    entry.setValue(entry.getValue()+1);
+                    return;
+                }
             }
+        }else {
+            allAnswers.put(answer, 1);
         }
-        allAnswers.add(answer);// adds answer to list
+
+
     }
 }

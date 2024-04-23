@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added some comments for guidlines in start() in serverImplementation.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,9 +27,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2fRoyOvcYdxrQe9meY197ce0bQU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -112,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713793441624</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added some comments for guidlines in start() in serverImplementation.java">
+      <option name="closed" value="true" />
+      <created>1713793768306</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713793768307</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +142,7 @@
     <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed directories." />
     <MESSAGE value="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
+    <MESSAGE value="added some comments for guidlines in start() in serverImplementation.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some comments for guidlines in start() in serverImplementation.java" />
   </component>
 </project>
