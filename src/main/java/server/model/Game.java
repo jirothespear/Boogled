@@ -199,9 +199,9 @@ public class Game {
                     return;
                 }
             }
-        }else {
-            allAnswers.put(answer, 1);
         }
+        allAnswers.put(answer, 1);
+
 
 
     }
