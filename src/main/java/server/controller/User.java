@@ -8,6 +8,7 @@ public class User {
     private String password;
 
     public User() {
+        username = "null";
     }
 
     public User(String username){// used in queueing system

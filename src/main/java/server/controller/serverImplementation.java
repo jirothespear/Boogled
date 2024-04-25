@@ -1,12 +1,14 @@
 package server.controller;
 
 import server.model.Game;
+import server.model.Round;
 import sqlconnector.DataPB;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class serverImplementation implements serverUtility {
+    private Game game = new Game();
     private serverImplementation(){
         DataPB.setCon();
     }
@@ -19,10 +21,10 @@ public class serverImplementation implements serverUtility {
     @Override
     public String checkWord(String  userNAnswer) {// Format "username/answer"
         String input[] = userNAnswer.split("/");
-        User user = Game.findUser(input[0]);
+        User user = game.findUser(input[0]);
         String answer = input[1];
         if(answer.length()>=4 && DataPB.checkWord(answer)){
-            Game.addAnswerToPlayer(user,answer);
+            Round.addAnswerToPlayer(user,answer);
             return userNAnswer;// return parameter, answer is valid
         }
         return "*";
@@ -32,18 +34,19 @@ public class serverImplementation implements serverUtility {
     public void start(String user) {
         ArrayList<User> players = new ArrayList<>();
         // get users from queueing system
-        // for loop in converting string from queueinng system to users,
-        // use Game.findUser(String username); to convert username to user object
-        Game.startGame(players);
+        // for loop in converting string from queueinng system to users, from list of string username to list of user objects
+        // use game.findUser(String username); to convert username to user object
+        game = new Game();
+        game.startGame(players);
     }
 
     @Override
     public String showWinnerOfRound() {
-        return null;
+        return game.getWinnerOfRound();
     }
 
     @Override
-    public int showScore(String user) {
+    public int showScore(String user) {// shows the score of user in the game
         return 0;
     }
 
@@ -80,15 +83,15 @@ public class serverImplementation implements serverUtility {
 
     @Override
     public void startRound() {
-        Game.newRound();
+        game.newRound();
     }
     public boolean checkIfChampionExist(){
-        return Game.checkWinner();
+        return !(game.getChampion().getUsername().equalsIgnoreCase("null"));
     }
 
     @Override
     public String showChampion() {
-        return  Game.getChampion().getUsername();
+        return  game.getChampion().getUsername();
     }
 
     @Override

@@ -13,7 +13,7 @@ public interface serverUtility {
     String getLetterChoice();// used to get choices for game
     void startRound();
     boolean checkIfChampionExist();// check if game already has a champion
-    String showChampion();// get champion of game
+    String showChampion();// get champion of game4
 
     String getLeaderBoard();
 }

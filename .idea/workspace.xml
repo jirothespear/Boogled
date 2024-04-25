@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added some comments for guidlines in start() in serverImplementation.java">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="fixed final bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/serverImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/serverUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713793768307</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed logic in filtering list">
+      <option name="closed" value="true" />
+      <created>1713860791899</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713860791899</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed final bug">
+      <option name="closed" value="true" />
+      <created>1713861025663</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713861025663</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +163,8 @@
     <MESSAGE value="Fixed directories." />
     <MESSAGE value="added some functionalities for Game.java object and implementation for some methods in serverUtility.java located in serverImplementation.java, added a few more methods in serverUtility.java, added new methods for querying in DataPB.java" />
     <MESSAGE value="added some comments for guidlines in start() in serverImplementation.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some comments for guidlines in start() in serverImplementation.java" />
+    <MESSAGE value="fixed logic in filtering list" />
+    <MESSAGE value="fixed final bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed final bug" />
   </component>
 </project>
