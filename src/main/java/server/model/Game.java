@@ -3,143 +3,170 @@ package server.model;
 import server.controller.User;
 import sqlconnector.DataPB;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Game {
-    private ArrayList<User>  players = new ArrayList<>();// list of players
-    private HashMap<User, Integer> overallPoints = new HashMap<>();// stores points
-    private HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
-    private HashMap<User, Integer> playerPlacing = new HashMap<>(); // stores the number of wins per player
-    private Boolean isOpen;// status for game if waiting or not
-
-    private HashMap<User, Integer> roundWins = new HashMap<>();// stores the number of wins per player
-    private List<Round> rounds = new ArrayList<>();
-    private  int maxWaitingTime = 10;// max waiting time for players to join
-    private int maxRoundTime = 60;// max time for a round
-
-    /**
-     * Method for checking status for game
-     * @return true if still waiting
+    /*
+    following variable does not changer every round
      */
-    public Boolean getOpen() {
-        return isOpen;
+    private  ArrayList<User>  players = new ArrayList<>();// list of players
+    private  HashMap<User, Integer> overallPoints = new HashMap<>();// stores points
+    private  HashMap<User, Integer> playerPlacing = new HashMap<>(); // stores the number of wins per player
+    private  User champion = new User();
+    private int gameID=0;// use to identify each game from another
+
+    /*
+    Following variabls are used in rounds
+     */
+    private int scoreOfRoundWinner;
+    private String winnerOfRound;
+    private int roundCount=0;
+    private Round round;
+
+
+    public int getGameID() {
+        return gameID;
     }
 
-    public Game(String hostPlayer, int maxWaitingTime, int maxRoundTime){
+    public void setGameID(int gameID) {
+        this.gameID = gameID;
+    }
+    public ArrayList<User> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<User> players) {
+        this.players = players;
+    }
+
+    public HashMap<User, Integer> getOverallPoints() {
+        return overallPoints;
+    }
+
+    public void setOverallPoints(HashMap<User, Integer> overallPoints) {
+        this.overallPoints = overallPoints;
+    }
+
+    public HashMap<User, Integer> getPlayerPlacing() {
+        return playerPlacing;
+    }
+
+    public void setPlayerPlacing(HashMap<User, Integer> playerPlacing) {
+        this.playerPlacing = playerPlacing;
+    }
+
+    public User getChampion() {
+        return champion;
+    }
+
+    public void setChampion(User champion) {
+        this.champion = champion;
+    }
+
+    public int getScoreOfRoundWinner() {
+        return scoreOfRoundWinner;
+    }
+
+    public void setScoreOfRoundWinner(int scoreOfRoundWinner) {
+        this.scoreOfRoundWinner = scoreOfRoundWinner;
+    }
+
+    public String getWinnerOfRound() {
+        return winnerOfRound;
+    }
+
+    public void setWinnerOfRound(String winnerOfRound) {
+        this.winnerOfRound = winnerOfRound;
+    }
+
+    public Game(){
         DataPB.setCon();
-        User hostUser = DataPB.getUser(hostPlayer);
-        players.add(hostUser);
-        isOpen = true;
-        this.maxWaitingTime = maxWaitingTime;
-        this.maxRoundTime = maxRoundTime;
-
     }
-
-    public Game(String hostPlayer){
-        DataPB.setCon();
-        User hostUser = DataPB.getUser(hostPlayer);
-        players.add(hostUser);
-        isOpen = true;
-
-    }
-    public void enterGame(String anotherPlayer){
-        User hostUser = DataPB.getUser(anotherPlayer);
-        players.add(hostUser);
-    }
-    public void startGame(){
-        isOpen= false;
+    public  void startGame(ArrayList<User> plrs){// sets up variables for game
+        System.out.println("Game is starting");
+        roundCount = 0;
+        players = plrs;
         for (int i =0; i < players.size(); i++){
             overallPoints.put(players.get(i),0);
-            pointsPerRound.put(players.get(i),0);
             playerPlacing.put(players.get(i),0);
-            roundWins.put(players.get(i),0);
         }
+        round = new Round(players);
     }
+
+
     public void newRound(){
-        for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
-            entry.setValue(0);
-        }
+        //execute round and timer
+        while (true){
+            roundCount++;
+            scoreOfRoundWinner =0;
+            winnerOfRound =" ";
 
-        int roundNumber = rounds.size() + 1;
-        ArrayList<Character> letters = generateRandomLetters();
-        Round round = new Round(roundNumber, letters);
-//        round.setStartTime(System.currentTimeMillis()); optional for now
-        rounds.add(round);
-    }
-    public static ArrayList<Character> generateRandomLetters() {// place each letter in a button to prevent human error
-        ArrayList<Character> result = new ArrayList<>();
-        Random random = new Random();//??
-        String consonants = "bcdfghjklmnpqrstvwxyz"; // Consonants
-        String vowels = "aeiou"; // Vowels
+            round.newRound(roundCount);
+            String winnerOfCurrentRound[] = round.getWinnerOfRound().split("/");//Format username/highscore
+            String winnerUsername= winnerOfCurrentRound[0];
+            String winnerScore= winnerOfCurrentRound[1];
+            updateMaps(findUser(winnerUsername),Integer.parseInt(winnerScore));
 
-        // Generate 13 consonants
-        for (int i = 0; i < 13; i++) {
-            int index = random.nextInt(consonants.length());
-            result.add(consonants.charAt(index));
-        }
+            scoreOfRoundWinner = Integer.parseInt(winnerScore);
+            winnerOfRound =winnerUsername;
 
-        // Generate 7 vowels
-        for (int i = 0; i < 7; i++) {
-            int index = random.nextInt(vowels.length());
-            result.add(vowels.charAt(index));
-        }
+            if(champion.getUsername().equalsIgnoreCase("null")){// ends the loop when there is a winner
+                updateUserDB();// updates user table in DB
+                break; //ends game
+            }
 
-        // Shuffle the letters in the list
-        shuffleList(result, random);
-
-        return result;
-
-    }
-
-    // Method to shuffle a StringBuilder
-    private static void shuffleList(ArrayList<Character> list, Random random) {
-        for (int i = list.size() - 1; i > 0; i--) {
-            int j = random.nextInt(i + 1);
-            char temp = list.get(i);
-            list.set(i, list.get(j));
-            list.set(j, temp);
         }
     }
+    /*
+    finds a user using the username
+    return null if username does not exist in list
+     */
+    public  User findUser(String username){
+        for (int i =0; i < players.size(); i++){
+            if(players.get(i).getUsername().equalsIgnoreCase(username)){
+                return players.get(i);
+            }
+        }
+        System.out.println("User not found in game");
+        return null;
+    }
 
-    private void checkRoundWinner(){
-        int maxPoints = 0;
-        User winner = null;
+    public  void updateMaps( User winnerOfRound, int scoreOfWinner){
+        User winner = winnerOfRound;
+        int highestScore = scoreOfWinner;
 
-        for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
-            int points = entry.getValue();
-            if (points > maxPoints) {
-                maxPoints = points;
-                winner = entry.getKey();
+        //Add score of winner to overallPoint for corresponding
+        for (Map.Entry<User, Integer> entry : overallPoints.entrySet()){
+            if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
+                entry.setValue(entry.getValue() + highestScore);
+            }
+        }
+        for (Map.Entry<User, Integer> entry : playerPlacing.entrySet()){
+            if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
+                entry.setValue(entry.getValue()+1);
+                if(entry.getValue() == 3){
+                    System.out.println(winner.getUsername() + " is the winner fo the game");
+                    champion = winner;
+                }
             }
         }
 
-        if (winner != null) {
-            int wins = roundWins.getOrDefault(winner, 0);
-            roundWins.put(winner, wins + 1);
-        }
-
-        if (checkGameWinner()) {
-            isOpen = false;
-        } else {
-            newRound();
-        }
     }
 
-    public void endGame(){
-        isOpen = false;
-        checkRoundWinner();
-    }
-
-    public void addPlayer(User user){
-        players.add(user);
-    }
-
-    public boolean checkGameWinner(){
-        for (Map.Entry<User, Integer> entry : roundWins.entrySet()) {
-            if (entry.getValue() >= 3) {
-                return true; // A player has won 3 rounds
+    public void updateUserDB(){// changes user's score if current high score is higher or lower that new high score
+        String championUsername= champion.getUsername();
+        int currentScore = DataPB.getScoreOfUser(championUsername);
+        for (Map.Entry<User, Integer> entry : overallPoints.entrySet()){
+            if(entry.getKey().getUsername().equalsIgnoreCase(championUsername)){
+                if(entry.getValue() > currentScore){
+                    DataPB.setScore(championUsername,entry.getValue());
+                }
             }
         }
-        return false;
+
     }
+
+
 }

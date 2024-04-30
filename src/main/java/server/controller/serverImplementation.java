@@ -1,32 +1,71 @@
 package server.controller;
 
-import server.controller.*;
 import server.model.Game;
+import server.model.Queue;
+import server.model.Round;
+import sqlconnector.DataPB;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 public class serverImplementation implements serverUtility {
-    private List<Game> activeGames = new ArrayList<>();
+    private Game currentGame = new Game();
+    private HashMap<Game, Integer> activeGames = new HashMap<>();
+    private Queue queueSystem = new Queue();
+    private int gameCount = 0;
+
     @Override
     public boolean checkUser(String userNPasswd) {
-        return false;
+        return DataPB.checkUser(userNPasswd);
     }
 
     @Override
-    public boolean checkWord(String answer) {
-        return false;
+    public String checkWord(String  userNAnswer) {// Format "username/answer"
+        String input[] = userNAnswer.split("/");
+        User user = currentGame.findUser(input[0]);
+        String answer = input[1];
+        if(answer.length()>=4 && DataPB.checkWord(answer)){
+            Round.addAnswerToPlayer(user,answer);
+            return userNAnswer;// return parameter, answer is valid
+        }
+        return "*";
     }
 
     @Override
-    public void start(String user) {
-        // check if there is an existing game && game is still accepting players
+    public void startGame(String user) {
+        ArrayList<String>userNames = new ArrayList<>();
+        ArrayList<User> players = new ArrayList<>();
+        if(queueSystem.isQueueActive()){// queue is active
+            //TO DO
+        }else {// start new queue
+            //TO DO
+        }
+        // get users from queueSystem
+        userNames = (ArrayList<String>) queueSystem.getJoinedUsers();
+        for (int i = 0; i< userNames.size(); i++){
+            players.add( new User(userNames.get(i)));
+        }
+
+        if(players.size() == 1){// does not create
+            //TO DO
+            // callback that there player count is insufficient
+        }else {
+            Game game = new Game();
+            game.startGame(players);
+            gameCount++;
+            game.setGameID(gameCount);
+            activeGames.put( game,gameCount);
+            // callback for game is a go
+        }
+
     }
 
     @Override
-    public String showWinner() {
-        return null;
+    public String showWinnerOfRound() {
+        //Select the current game and set it to currentGame
+        return currentGame.getWinnerOfRound();
     }
 
     @Override
@@ -64,33 +103,6 @@ public class serverImplementation implements serverUtility {
 
         return result.toString();
     }
-
-    @Override
-    public void joinGame(String user) {
-        Game existingGame = findAvailableGame();
-        User user1 = new User();
-
-        if(existingGame == null && existingGame.getOpen()){
-            // create a new game
-            Game newGame = new Game(user);
-
-            newGame.addPlayer(user1);
-        } else {
-
-            existingGame.addPlayer(user1);
-            // check if the game is full
-        }
-    }
-
-    private Game findAvailableGame() {
-        for (Game game : activeGames) {
-            if (game.getOpen()) {
-                return game;
-            }
-        }
-        return null;
-    }
-
     // Method to shuffle a StringBuilder
     private static void shuffleStringBuilder(StringBuilder sb, Random random) {
         for (int i = sb.length() - 1; i > 0; i--) {
@@ -100,4 +112,25 @@ public class serverImplementation implements serverUtility {
             sb.setCharAt(j, temp);
         }
     }
+
+    @Override
+    public void startRound() {
+        currentGame.newRound();
+    }
+
+    @Override
+    public boolean checkIfChampionExist() {
+        return !(currentGame.getChampion().getUsername().equalsIgnoreCase("null"));
+    }
+
+    @Override
+    public String showChampion() {
+        return  currentGame.getChampion().getUsername();
+    }
+
+    @Override
+    public String getLeaderBoard() {
+        return null;
+    }
+
 }

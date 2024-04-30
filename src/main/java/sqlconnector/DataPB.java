@@ -66,6 +66,21 @@ public class DataPB {
             throw new RuntimeException(e);
         }
     }
+    public static int getScoreOfUser(String username){
+        int score=0;
+        String query = "SELECT u.username AS username u FROM user WHERE u.usermame = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1,username);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                score = rs.getInt("username");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return score;
+    }
     public static  boolean checkWord(String answer){
         String query = "SELECT * FROM words WHERE word = ?;";
         try {

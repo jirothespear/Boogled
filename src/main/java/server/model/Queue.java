@@ -11,6 +11,13 @@ public class Queue {
     private boolean queueActive = false;
     private Timer timer;
 
+    public List<String> getJoinedUsers() {
+        return joinedUsers;
+    }
+    public boolean isQueueActive() {
+        return queueActive;
+    }
+
     public void joinQueue(int queueTime, String userName) {
         if (!queueActive) {
             queueActive = true;
