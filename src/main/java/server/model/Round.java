@@ -8,12 +8,12 @@ public class Round {
     /*
     following variables changes every newRound
      */
-    private static HashMap<String, Integer> allAnswers = new HashMap<>();
-    private static HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
-    private static HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
+    private HashMap<String, Integer> allAnswers = new HashMap<>();
+    private HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
+    private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
-    private static  int timerCount;
-    private static Timer timer;
+    private int timerCount;
+    private Timer timer;
     /**
      * Constructor
      * @param players list of players to be used for Maps
@@ -26,12 +26,12 @@ public class Round {
         }
     }
 
-    public static int getTimerCount() {
+    public int getTimerCount() {
         return timerCount;
     }
 
-    public static void setTimerCount(int timerCount) {
-        Round.timerCount = timerCount;
+    public void setTimerCount(int timerCount) {
+        this.timerCount = timerCount;
     }
 
     /**
@@ -39,7 +39,7 @@ public class Round {
      * @param roundCount round count to monitor what round is executing
      */
 
-    public static void newRound (int roundCount){
+    public void newRound (int roundCount){
         System.out.println("Round "+roundCount +"!");
         //Reset list containing all answers
         allAnswers = new HashMap<>();
@@ -84,7 +84,7 @@ public class Round {
      * @param user source of answer
      * @param answer input answer
      */
-    public static void addAnswerToPlayer(User user,String answer){
+    public void addAnswerToPlayer(User user,String answer){
         addToAllAnswersList(answer);
         for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {
             if (entry.getKey().getUsername().equalsIgnoreCase(user.getUsername())){
@@ -99,7 +99,7 @@ public class Round {
      *  allAnswers.map will help aid in filtering list of answers per player
      * @param answer inputed answer
      */
-    private static void addToAllAnswersList(String answer){
+    private void addToAllAnswersList(String answer){
         if(!(allAnswers.isEmpty())){
             for (Map.Entry<String, Integer> entry : allAnswers.entrySet()){
                 if(entry.getKey().equalsIgnoreCase(answer)){
@@ -118,7 +118,7 @@ public class Round {
      * filter answers of players
      * removes all the repeated answers from all list of players
      */
-    public static void filterAnswers(){
+    public void filterAnswers(){
         for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
             ArrayList<String> userAnswers = entry.getValue();
             for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
@@ -139,7 +139,7 @@ public class Round {
     /**
      *
      */
-    public static void countScoresPlayers(){
+    public void countScoresPlayers(){
         for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {
             int score = entry.getValue().stream()
                     .mapToInt(String::length)
@@ -154,7 +154,7 @@ public class Round {
      *
      * @return
      */
-    public static String getWinnerOfRound() {
+    public String getWinnerOfRound() {
         User winner = null;
         int highestScore = 0;
 

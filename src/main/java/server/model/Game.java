@@ -25,6 +25,13 @@ public class Game {
     private int roundCount=0;
     private Round round;
 
+    public Round getRound() {
+        return round;
+    }
+
+    public void setRound(Round round) {
+        this.round = round;
+    }
 
     public int getGameID() {
         return gameID;

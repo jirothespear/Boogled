@@ -27,7 +27,7 @@ public class serverImplementation implements serverUtility {
         User user = currentGame.findUser(input[0]);
         String answer = input[1];
         if(answer.length()>=4 && DataPB.checkWord(answer)){
-            Round.addAnswerToPlayer(user,answer);
+            currentGame.getRound().addAnswerToPlayer(user,answer);
             return userNAnswer;// return parameter, answer is valid
         }
         return "*";
