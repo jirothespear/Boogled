@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="leaderboardPane" prefHeight="478.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.comproggui.LeaderboardController">
+   <children>
+      <ImageView fitHeight="503.0" fitWidth="928.0" layoutY="1.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/D:/comprogGUI/comprogGUI/src/main/java/res/lightbluebg.jpg" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <Rectangle fx:id="firstPlaceStand" arcHeight="5.0" arcWidth="5.0" height="295.0" layoutX="373.0" layoutY="141.0" stroke="BLACK" strokeType="INSIDE" width="178.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.9262345433235168" blue="0.11481481790542603" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="thirdPlaceStand" arcHeight="5.0" arcWidth="5.0" height="225.0" layoutX="551.0" layoutY="211.0" stroke="BLACK" strokeType="INSIDE" width="178.0">
+         <fill>
+            <LinearGradient endX="0.977272725466526" endY="0.9924242451335444" startX="1.0" startY="0.03030307365186287">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.0470588244497776" green="0.6549019813537598" blue="0.8745098114013672" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.0470588244497776" green="0.6549019813537598" blue="0.8745098114013672" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="fourthPlaceStand" arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="729.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="178.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.22745098173618317" green="0.6196078658103943" blue="0.4627451002597809" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.22745098173618317" green="0.6196078658103943" blue="0.4627451002597809" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9684210419654846" green="0.9684210419654846" blue="0.9684210419654846" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="secondPlaceStand" arcHeight="5.0" arcWidth="5.0" height="253.0" layoutX="196.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="178.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6627451181411743" green="0.6627451181411743" blue="0.6627451181411743" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.6627451181411743" green="0.6627451181411743" blue="0.6627451181411743" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9684210419654846" green="0.9684210419654846" blue="0.9684210419654846" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="fifthPlaceStand" arcHeight="5.0" arcWidth="5.0" height="187.0" layoutX="21.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" width="178.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.9924242451335444" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.28421053290367126" green="0.25578948855400085" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.621052622795105" green="0.5980506539344788" blue="0.5658479332923889" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Circle fx:id="firstPlaceMedal" fill="#ffec1d" layoutX="464.0" layoutY="65.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="thirdPlaceMedal" fill="#0ca7df" layoutX="640.0" layoutY="141.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="fourthPlaceMedal" fill="#3a9e76" layoutX="818.0" layoutY="167.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="secondPlaceMedal" fill="DARKGRAY" layoutX="285.0" layoutY="109.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="fifthPlaceMedal" fill="#484100" layoutX="110.0" layoutY="183.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="firstPlaceLabel" layoutX="438.0" layoutY="39.0" text="1st" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlaceLabel" layoutX="254.0" layoutY="83.0" text="2nd" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdPlaceLabel" layoutX="610.0" layoutY="115.0" text="3rd" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="fifthPlaceLabel" layoutX="80.0" layoutY="157.0" text="5th" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthPlaceLabel" layoutX="788.0" layoutY="140.0" text="4th" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstPlaceName" layoutX="438.0" layoutY="157.0" text="NAME">
+         <font>
+            <Font name="Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlaceName" layoutX="259.0" layoutY="201.0" text="NAME">
+         <font>
+            <Font name="Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fifthPlaceName" layoutX="84.0" layoutY="269.0" text="NAME">
+         <font>
+            <Font name="Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdPlaceName" layoutX="614.0" layoutY="226.0" text="NAME">
+         <font>
+            <Font name="Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthPlaceName" layoutX="792.0" layoutY="250.0" text="NAME">
+         <font>
+            <Font name="Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstPlacePoints" layoutX="415.0" layoutY="204.0" text="POINTS">
+         <font>
+            <Font name="Dotum" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlacePoints" layoutX="238.0" layoutY="255.0" text="POINTS">
+         <font>
+            <Font name="Dotum" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="fifthPlacePoints" layoutX="63.0" layoutY="309.0" text="POINTS">
+         <font>
+            <Font name="Dotum" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdPlacePoints" layoutX="593.0" layoutY="274.0" text="POINTS">
+         <font>
+            <Font name="Dotum" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthPlacePoints" layoutX="771.0" layoutY="296.0" text="POINTS">
+         <font>
+            <Font name="Dotum" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="346.0" layoutY="447.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="42.0" prefWidth="230.0" text="BACK" />
+   </children>
+</AnchorPane>

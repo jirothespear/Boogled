@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lobbyPane1" prefHeight="650.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comproggui.LobbyController">
+   <children>
+      <ImageView fx:id="lobbyBgImage1" fitHeight="657.0" fitWidth="1028.0" pickOnBounds="true">
+         <image>
+            <Image url="@/resources/loginPaneBgImage.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </ImageView>
+      <AnchorPane fx:id="lobbyPane2" layoutX="31.0" layoutY="27.0" prefHeight="602.0" prefWidth="966.0">
+         <children>
+            <ImageView fx:id="lobbyBgImage2" fitHeight="602.0" fitWidth="966.0" pickOnBounds="true">
+               <image>
+                  <Image url="@/resources/whitebg.jpg" />
+               </image>
+               <effect>
+                  <Glow level="1.0">
+                     <input>
+                        <Lighting surfaceScale="7.83">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant elevation="120.96" />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </Glow>
+               </effect>
+            </ImageView>
+            <AnchorPane fx:id="tutorialPane" layoutX="32.0" layoutY="32.0" prefHeight="478.0" prefWidth="898.0">
+               <children>
+                  <ImageView fx:id="tutorialImage" fitHeight="478.0" fitWidth="898.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@/resources/lightbluebg.jpg" />
+                     </image>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="gameNameLabel" layoutX="296.0" layoutY="27.0" text="WELCOME TO N-WORD (NEW WORD)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rule1Label" layoutX="45.0" layoutY="119.0" stylesheets="@../../../../../../../../src/main/java/comproggui/style.css" text="1          YOU WILL PRESS START!!!!! AND YOU WILL BE WAITING FOR 30 SECONDS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rule2Label" layoutX="45.0" layoutY="183.0" text="2          AFTER ENTERING THE GAME YOU WILL BE MATCHED WITH OTHER PLAYERS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rule3Label" layoutX="45.0" layoutY="254.0" text="3          YOU WILL BE GIVEN 20 LETTERS WITH ROUNDS IT IS BEST OF 3 ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="rule4Label" layoutX="45.0" layoutY="331.0" text="4          FIRST TO 3 WINSSSS DO YOUR BEST GAMBAREEE ONICHANN">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="startGameButton" layoutX="165.0" layoutY="528.0" mnemonicParsing="false" onAction="#onStartGameButtonClick" prefHeight="57.0" prefWidth="268.0" text="START GAME" textFill="#032245">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="120.96">
+                           <color>
+                              <Color red="0.7450980544090271" green="1.0" blue="0.9098039269447327" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="leaderboardButton" layoutX="571.0" layoutY="528.0" mnemonicParsing="false" onAction="#onLeaderboardButtonClick" prefHeight="57.0" prefWidth="268.0" text="LEADERBOARDS" textFill="#032245">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="120.96">
+                           <color>
+                              <Color red="0.7450980544090271" green="1.0" blue="0.9098039269447327" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -4,10 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed directories.">
-      <change beforePath="$PROJECT_DIR$/.idea/2023-2_9341-finteam5.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed Project JDK 1.8 Configurations.">
+      <change afterPath="$PROJECT_DIR$/resources/resources/lightbluebg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/resources/loginBgImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/resources/loginPaneBgImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/resources/whitebg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LeaderboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LobbyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/leaderboard-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LeaderboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LobbyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/lightbluebg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/loginBgImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/loginPaneBgImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/whitebg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/leaderboard-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/lobby-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/login-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +54,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/lobby-view.fxml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,12 +87,27 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\server\controller" />
-      <recent name="C:\Users\CODE CLASSES\JAVA\Java from intelliJ\2nd year\2nd sem\FINALS\finalProjectCORBA\res" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources\resources" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\resources" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\src\main\java\resources" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.test (1)">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comproggui.Main" />
+      <module name="2023-2_9341-finteam5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comproggui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -90,11 +138,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.test (1)" />
       <item itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.test" />
       </list>
@@ -124,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713763644875</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed Project JDK 1.8 Configurations.">
+      <created>1714451313345</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714451313345</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +199,7 @@
     <MESSAGE value="project set up, added a few classes to be populated soon" />
     <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed directories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed directories." />
+    <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Project JDK 1.8 Configurations." />
   </component>
 </project>
