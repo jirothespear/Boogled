@@ -4,40 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed Project JDK 1.8 Configurations.">
-      <change afterPath="$PROJECT_DIR$/resources/resources/lightbluebg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/resources/loginBgImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/resources/loginPaneBgImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/resources/whitebg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LeaderboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LobbyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/comproggui/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/leaderboard-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed JavaFX Configurations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LeaderboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LobbyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/org/example/comproggui/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/lightbluebg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/loginBgImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/loginPaneBgImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/java/res/whitebg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/leaderboard-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/lobby-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprogGUI/comprogGUI/src/main/resources/org/example/comproggui/login-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/comproggui/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/comproggui/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LeaderboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/comproggui/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/comproggui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714451313345</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed JavaFX Configurations.">
+      <created>1714462680604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714462680604</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed JavaFX Configurations.">
+      <created>1714463056218</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714463056218</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +190,7 @@
     <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed directories." />
     <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Project JDK 1.8 Configurations." />
+    <MESSAGE value="Fixed JavaFX Configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed JavaFX Configurations." />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package comproggui;
+package client.comproggui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

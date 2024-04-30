@@ -1,4 +1,4 @@
-package comproggui;
+package client.comproggui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
