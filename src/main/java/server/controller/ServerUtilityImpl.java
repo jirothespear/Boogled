@@ -1,20 +1,36 @@
 package server.controller;
 
+import Utility.ClientCallback;
+import org.omg.CORBA.ORB;
 import server.model.Game;
 import server.model.Queue;
-import server.model.Round;
 import sqlconnector.DataPB;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
 
-public class serverImplementation implements serverUtility {
+public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Game currentGame = new Game();
     private HashMap<Game, Integer> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
     private int gameCount = 0;
+    private ORB orb;
+
+    @Override
+    public boolean login(String credentials) {
+        return false;
+    }
+
+    @Override
+    public void loginCallback(ClientCallback clientCallback) {
+
+    }
+
+    @Override
+    public void logout(String id) {
+
+    }
 
     @Override
     public boolean checkUser(String userNPasswd) {
@@ -22,15 +38,15 @@ public class serverImplementation implements serverUtility {
     }
 
     @Override
-    public String checkWord(String  userNAnswer) {// Format "username/answer"
+    public boolean checkWord(String  userNAnswer) {// Format "username/answer"
         String input[] = userNAnswer.split("/");
         User user = currentGame.findUser(input[0]);
         String answer = input[1];
         if(answer.length()>=4 && DataPB.checkWord(answer)){
             currentGame.getRound().addAnswerToPlayer(user,answer);
-            return userNAnswer;// return parameter, answer is valid
+            return true;// return parameter, answer is valid
         }
-        return "*";
+        return false;
     }
 
     @Override
@@ -103,6 +119,12 @@ public class serverImplementation implements serverUtility {
 
         return result.toString();
     }
+
+    @Override
+    public void joinGame(String user) {
+
+    }
+
     // Method to shuffle a StringBuilder
     private static void shuffleStringBuilder(StringBuilder sb, Random random) {
         for (int i = sb.length() - 1; i > 0; i--) {
@@ -113,22 +135,31 @@ public class serverImplementation implements serverUtility {
         }
     }
 
-    @Override
+    public ORB getOrb() {
+        return orb;
+    }
+
+    public void setOrb(ORB orb) {
+        this.orb = orb;
+    }
+
+
+
     public void startRound() {
         currentGame.newRound();
     }
 
-    @Override
+
     public boolean checkIfChampionExist() {
         return !(currentGame.getChampion().getUsername().equalsIgnoreCase("null"));
     }
 
-    @Override
+
     public String showChampion() {
         return  currentGame.getChampion().getUsername();
     }
 
-    @Override
+
     public String getLeaderBoard() {
         return null;
     }

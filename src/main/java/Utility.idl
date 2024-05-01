@@ -1,0 +1,25 @@
+module Utility{
+
+interface ClientCallback{
+    void startRound();
+    void roundEnd();
+    void gameFinish();
+};
+
+
+interface ServerUtility{
+
+    boolean login (in wstring credentials);
+    void loginCallback (in ClientCallback clientCallback);
+    void logout (in wstring id);
+    boolean checkUser( in wstring userNPasswd);
+    boolean checkWord( in wstring answer);
+    void startGame( in wstring user);
+    wstring showWinnerOfRound();
+    long showScore( in wstring user);
+    wstring getLetterChoice();
+    void joinGame( in wstring user);
+};
+
+
+};
