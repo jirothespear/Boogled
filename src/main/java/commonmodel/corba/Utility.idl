@@ -3,13 +3,19 @@ module Utility{
 interface serverUtility{
     boolean checkUser(wstring userNPasswd)
     boolean checkWord(wstring answer)
-    void start(wstring user)
-    wstring showWinner()
+    void startGame(wstring user)
+    wstring showWinnerOfRound()
     long showScore(wstring user)
     wstring getLetterChoice()
     void joinGame(wstring user)
-
 }
+
+interface ClientCallback{
+    void startRound()
+    void roundEnd()
+    void gameFinish()
+}
+
 
 
 }
