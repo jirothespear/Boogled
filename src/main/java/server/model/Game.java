@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Game {
+public class Game extends Thread {
     /*
     following variable does not changer every round
      */
@@ -126,6 +126,7 @@ public class Game {
 
         }
     }
+
     /*
     finds a user using the username
     return null if username does not exist in list

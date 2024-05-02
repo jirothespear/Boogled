@@ -12,6 +12,7 @@ public class Round {
     private HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
     private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
+    private StringBuilder letters;
     private int timerCount;
     private Timer timer;
     /**
@@ -166,5 +167,53 @@ public class Round {
             }
         }
         return winner.getUsername()+"/"+highestScore;
+    }
+
+    private static void shuffleStringBuilder(StringBuilder sb, Random random) {
+        for (int i = sb.length() - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            char temp = sb.charAt(i);
+            sb.setCharAt(i, sb.charAt(j));
+            sb.setCharAt(j, temp);
+        }
+    }
+
+    public String getLetterChoice() {// return the random 20 letters
+        StringBuilder result = new StringBuilder();
+        StringBuilder consonantsBuilder = new StringBuilder();
+        StringBuilder vowelsBuilder = new StringBuilder();
+        Random random = new Random();
+        String consonants = "bcdfghjklmnpqrstvwxyz"; // Consonants
+        String vowels = "aeiou"; // Vowels
+
+        // Generate 13 consonants
+        for (int i = 0; i < 13; i++) {
+            int index = random.nextInt(consonants.length());
+            consonantsBuilder.append(consonants.charAt(index));
+        }
+
+        // Generate 7 vowels
+        for (int i = 0; i < 7; i++) {
+            int index = random.nextInt(vowels.length());
+            vowelsBuilder.append(vowels.charAt(index));
+        }
+
+        // Shuffle the consonants and vowels separately
+        shuffleStringBuilder(consonantsBuilder, random);
+        shuffleStringBuilder(vowelsBuilder, random);
+
+        // Append consonants and vowels to the result
+        result.append(consonantsBuilder).append("\n.").append(vowelsBuilder);
+
+        letters = result;
+        return result.toString();
+    }
+
+    public StringBuilder getLetters() {
+        return letters;
+    }
+
+    public void setLetters(StringBuilder letters) {
+        this.letters = letters;
     }
 }

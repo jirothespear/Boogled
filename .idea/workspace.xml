@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added Callbacks to idl.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added CORBA ORB files, and configurations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commonmodel/corba/Utility.idl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Documents/NetBeansProjects/2023-2_9341-finteam5",
+    "last_opened_file_path": "D:/Documents/NetBeansProjects/callback test",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -67,7 +66,7 @@
       <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\src\main\java\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.client.comproggui.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comproggui.Main" />
       <module name="2023-2_9341-finteam5" />
@@ -85,6 +84,19 @@
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 1099 -ORBInitialHost localhost" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client.comproggui.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.comproggui.Main" />
+      <module name="2023-2_9341-finteam5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.comproggui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,12 +123,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.client.comproggui.Main" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.test (1)" />
       <item itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.test" />
@@ -182,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714570997645</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added CORBA ORB files, and configurations.">
+      <created>1714576323625</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714576323625</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +224,7 @@
     <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
     <MESSAGE value="Fixed JavaFX Configurations." />
     <MESSAGE value="Added Callbacks to idl." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Callbacks to idl." />
+    <MESSAGE value="Added CORBA ORB files, and configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CORBA ORB files, and configurations." />
   </component>
 </project>

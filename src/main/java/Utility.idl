@@ -1,7 +1,7 @@
 module Utility{
 
 interface ClientCallback{
-    void startRound();
+    wstring startRound();
     void roundEnd();
     void gameFinish();
 };
@@ -11,14 +11,14 @@ interface ServerUtility{
 
     boolean login (in wstring credentials);
     void loginCallback (in ClientCallback clientCallback);
-    void logout (in wstring id);
-    boolean checkUser( in wstring userNPasswd);
-    boolean checkWord( in wstring answer);
+    void logout (in ClientCallback clientCallback);
+    boolean checkUser( in wstring userNPasswd, in wstring gameID);
+    boolean checkWord( in wstring answer , in wstring gameID);
     void startGame( in wstring user);
     wstring showWinnerOfRound();
-    long showScore( in wstring user);
-    wstring getLetterChoice();
-    void joinGame( in wstring user);
+    long showScore( in wstring user , in wstring gameID);
+    wstring getLetterChoice(in wstring gameID);
+    //void joinGame( in wstring user);
 };
 
 

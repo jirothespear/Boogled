@@ -12,10 +12,12 @@ import java.util.Random;
 
 public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Game currentGame = new Game();
-    private HashMap<Game, Integer> activeGames = new HashMap<>();
+    private HashMap<Integer, Game> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
     private int gameCount = 0;
     private ORB orb;
+
+    private HashMap<ClientCallback, String> userCallbacks;
 
     @Override
     public boolean login(String credentials) {
@@ -25,27 +27,44 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     @Override
     public void loginCallback(ClientCallback clientCallback) {
 
+        if (!userCallbacks.containsKey(clientCallback)){
+            userCallbacks.put(clientCallback, "user");
+        }
+
     }
 
     @Override
-    public void logout(String id) {
+    public void logout(ClientCallback clientCallback) {
+
+        if(userCallbacks.containsKey(clientCallback)){
+
+            userCallbacks.remove(clientCallback);
+        }
 
     }
 
     @Override
-    public boolean checkUser(String userNPasswd) {
+    public boolean checkUser(String userNPasswd, String gameID) {
         return DataPB.checkUser(userNPasswd);
     }
 
     @Override
-    public boolean checkWord(String  userNAnswer) {// Format "username/answer"
-        String input[] = userNAnswer.split("/");
-        User user = currentGame.findUser(input[0]);
-        String answer = input[1];
-        if(answer.length()>=4 && DataPB.checkWord(answer)){
-            currentGame.getRound().addAnswerToPlayer(user,answer);
-            return true;// return parameter, answer is valid
+    public boolean checkWord(String  userNAnswer, String gameID) {// Format "username/answer"
+
+        if (activeGames.containsKey(Integer.parseInt(gameID))) {
+
+            Game currentGame = activeGames.get(Integer.parseInt(gameID));
+            String [] input= userNAnswer.split("/");
+            User user = currentGame.findUser(input[0]);
+            String answer = input[1];
+            if (answer.length() >= 4 && DataPB.checkWord(answer)) {
+                currentGame.getRound().addAnswerToPlayer(user, answer);
+                return true;// return parameter, answer is valid
+            }
+            return false;
+
         }
+
         return false;
     }
 
@@ -54,7 +73,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         ArrayList<String>userNames = new ArrayList<>();
         ArrayList<User> players = new ArrayList<>();
         if(queueSystem.isQueueActive()){// queue is active
-            //TO DO
+
         }else {// start new queue
             //TO DO
         }
@@ -72,7 +91,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
             game.startGame(players);
             gameCount++;
             game.setGameID(gameCount);
-            activeGames.put( game,gameCount);
+            activeGames.put( gameCount, game);
             // callback for game is a go
         }
 
@@ -85,10 +104,11 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public int showScore(String user) {
+    public int showScore(String user, String gameID) {
         return 0;
     }
 
+    /*
     @Override
     public String getLetterChoice() {// return the random 20 letters
         StringBuilder result = new StringBuilder();
@@ -120,8 +140,17 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         return result.toString();
     }
 
+     */
+
     @Override
-    public void joinGame(String user) {
+    public String getLetterChoice(String gameID) {// return the random 20 letters
+        return activeGames.get(gameID).getRound().getLetters().toString();
+    }
+
+
+
+
+    public void joinGame(String user, String gameID) {
 
     }
 
