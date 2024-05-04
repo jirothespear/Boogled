@@ -20,8 +20,14 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private HashMap<ClientCallback, String> userCallbacks;
 
     @Override
-    public boolean login(String credentials) {
-        return false;
+    public void login(String username, String password) {
+        String userNPasswd = username + "/" + password;
+        if (DataPB.checkUser(userNPasswd)) {
+            ClientCallback clientCallback = null;
+            userCallbacks.put(clientCallback, userNPasswd);
+        }
+
+
     }
 
     @Override
