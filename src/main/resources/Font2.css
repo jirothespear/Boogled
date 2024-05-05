@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'Silkscreen';
+    src: url('slkscr.ttf');
+}
+
+.label{
+    -fx-font-family: 'Silkscreen';
+}
+
+.button .text {
+    -fx-font-family: 'Silkscreen';
+    -fx-font-size: 20;
+}
+
+.text-field{
+    -fx-font-family: 'Silkscreen';
+}
