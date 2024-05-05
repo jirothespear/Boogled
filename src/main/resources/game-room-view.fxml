@@ -1,392 +1,418 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.comproggui.GameRoomController">
+<AnchorPane prefHeight="754.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.comproggui.GameRoomController">
    <children>
-      <BorderPane prefHeight="620.0" prefWidth="520.0">
-         <center>
-            <AnchorPane prefHeight="418.0" prefWidth="520.0">
-               <children>
-                  <VBox fx:id="VBoxGameBoard" layoutY="59.0" prefHeight="341.0" prefWidth="520.0">
-                     <children>
-                        <HBox fx:id="gameRow_0" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
-                           <children>
-                              <StackPane fx:id="stackPane_0_0" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_0" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_0_0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_0_1" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_0_1" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_0_2" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_2" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_0_2" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_0_3" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_3" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_0_3" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_0_4" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_4" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_0_4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </HBox>
-                        <HBox fx:id="gameRow_1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
-                           <children>
-                              <StackPane fx:id="stackPane_1_0" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_0_01" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_1_0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_1_1" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_1_1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_1_1" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_1_2" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_1_2" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_1_2" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_1_3" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_1_3" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_1_3" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_1_4" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_1_4" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_1_4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </HBox>
-                        <HBox fx:id="gameRow_2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
-                           <children>
-                              <StackPane fx:id="stackPane_2_0" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_2_0" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_2_0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_2_1" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_2_1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_2_1" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_2_2" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_2_2" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_2_2" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_2_3" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_2_3" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_2_3" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_2_4" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_2_4" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_2_4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </HBox>
-                        <HBox fx:id="gameRow_3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
-                           <children>
-                              <StackPane fx:id="stackPane_3_0" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_3_0" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_3_0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_3_1" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_3_1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_3_1" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_3_2" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_3_2" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_3_2" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_3_3" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_3_3" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_3_3" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="stackPane_3_4" prefHeight="62.0" prefWidth="62.0">
-                                 <children>
-                                    <ImageView fx:id="gameTile_3_4" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="resources/TileBackground.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Text fx:id="gameTileText_3_4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="62.0" StackPane.alignment="CENTER">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="421.0" prefHeight="25.0" prefWidth="521.0">
-                     <children>
-                        <Text fx:id="inputPrompt" strokeType="OUTSIDE" strokeWidth="0.0" text="Your word is invalid!" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="93.0" layoutY="28.0" prefHeight="36.0" prefWidth="333.0">
-                     <children>
-                        <Pane prefHeight="36.0" prefWidth="333.0">
-                           <children>
-                              <Label fx:id="timerLabel" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="269.0" prefHeight="36.0" prefWidth="64.0" text="00:30">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="timerIcon" fitHeight="25.0" fitWidth="25.0" layoutX="244.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="resources/HourglassTimer.gif" />
-                                 </image>
-                              </ImageView>
-                              <Text fx:id="roundCounter" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Round: 1" wrappingWidth="139.48895263671875">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-         </center>
-         <top>
-            <AnchorPane prefHeight="50.0" prefWidth="520.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Text fx:id="program_name" layoutX="135.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;Program Name&gt;&gt;" textAlignment="CENTER" wrappingWidth="250.0">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="gameRoom_instructions" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Form words (4 or more letters) with the following characters:" textAlignment="CENTER" wrappingWidth="520.0">
-                     <font>
-                        <Font name="System Italic" size="11.0" />
-                     </font>
-                  </Text>
-               </children></AnchorPane>
-         </top>
-         <bottom>
-            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Pane fx:id="bottomPane" prefHeight="100.0" prefWidth="527.0">
-                     <children>
-                        <TextField fx:id="gameRoomTextField" layoutX="97.0" layoutY="12.0" onKeyPressed="#initialize" prefHeight="25.0" prefWidth="230.0" promptText="Type your word here">
-                           <cursor>
-                              <Cursor fx:constant="TEXT" />
-                           </cursor>
-                        </TextField>
-                        <Button fx:id="submitButton" layoutX="345.0" layoutY="12.0" mnemonicParsing="false" onAction="#onSubmitButtonClicked" prefHeight="25.0" prefWidth="80.0" text="Submit">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </Pane>
-               </children>
-            </HBox>
-         </bottom>
-      </BorderPane>
+      <ImageView fitHeight="754.0" fitWidth="1364.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/gameroomBg.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="boggledLabel" layoutX="545.0" layoutY="61.0" stylesheets="@Font.css" text="BOGGLED">
+         <font>
+            <Font size="65.0" />
+         </font>
+      </Label>
+      <Label fx:id="roundLabel" layoutX="86.0" layoutY="607.0" stylesheets="@Font.css" text="ROUND 1">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="1105.0" layoutY="572.0" stylesheets="@Font.css" text="TIMER">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="timerLabel" layoutX="1112.0" layoutY="627.0" stylesheets="@Font.css" text="00:30">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+      <TextField fx:id="answerTextField" layoutX="361.0" layoutY="595.0" prefHeight="46.0" prefWidth="474.0" style="-fx-background-color: SILVER;">
+         <stylesheets>
+            <URL value="@Textfield.css" />
+            <URL value="@Font2.css" />
+         </stylesheets></TextField>
+      <Button fx:id="submitBUtton" layoutX="870.0" layoutY="595.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" stylesheets="@Font2.css" text="SUBMIT">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+         <effect>
+            <Lighting surfaceScale="4.25">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant elevation="120.96">
+                     <color>
+                        <Color red="0.08627451211214066" green="0.658823549747467" blue="0.32549020648002625" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Line endX="371.60003662109375" layoutX="462.0" layoutY="641.0" startX="-98.0" strokeWidth="4.0" />
+      <Label fx:id="wordValidityPromptLabel" layoutX="545.0" layoutY="652.0" stylesheets="@Font.css" text="VALID!">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="103.0" layoutY="185.0" prefHeight="306.0" prefWidth="1166.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="firstButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="a" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="secondButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="thirdButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="fourthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="fifthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="sixthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="seventhButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="eighthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="ninthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="8" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="tenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="9" GridPane.halignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="eleventhButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="twelfthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="thirteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="fourteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="fifteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="sixteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="seventeenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="eighteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="nineteenthButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="twentiethButton" mnemonicParsing="false" prefHeight="84.0" prefWidth="92.0" stylesheets="@Font.css" text="A" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="127.57">
+                           <color>
+                              <Color red="0.4627451002597809" green="1.0" blue="0.6941176652908325" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

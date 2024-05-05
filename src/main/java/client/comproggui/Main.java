@@ -12,8 +12,10 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/login-view.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
+            stage.setResizable(false);
         }catch (Exception e) {
             e.printStackTrace();
         }

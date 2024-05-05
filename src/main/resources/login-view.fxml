@@ -18,9 +18,9 @@
 
 <AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.comproggui.LoginController">
    <children>
-      <ImageView fx:id="loginBgImage" fitHeight="574.0" fitWidth="869.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="loginBgImage" fitHeight="560.0" fitWidth="877.0" layoutX="-1.0" layoutY="-5.0" pickOnBounds="true">
          <image>
-            <Image url="resources/loginPaneBgImage.png" />
+            <Image url="file:/D:/comprogGUI/comprogGUI/src/main/java/res/loginPaneBgImage.png" />
          </image>
          <effect>
             <InnerShadow height="39.72" radius="19.36" width="39.72">
@@ -30,9 +30,9 @@
             </InnerShadow>
          </effect>
       </ImageView>
-      <ImageView fx:id="loginImagePane" fitHeight="485.0" fitWidth="438.0" layoutX="213.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="loginImagePane" fitHeight="485.0" fitWidth="438.0" layoutX="213.0" layoutY="27.0" pickOnBounds="true">
          <image>
-            <Image url="@/resources/loginBgImage.png" />
+            <Image url="file:/D:/comprogGUI/comprogGUI/src/main/java/res/loginBgImage.png" />
          </image>
          <effect>
             <InnerShadow height="2.28" radius="1.81" width="6.96" />
@@ -43,20 +43,26 @@
             <Font name="Segoe UI Bold" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="usernameTextLabel" layoutX="280.0" layoutY="167.0" text="Username" textFill="#3ec4c4">
+      <Label fx:id="usernameTextLabel" layoutX="306.0" layoutY="167.0" text="Username" textFill="#3ec4c4">
          <font>
-            <Font size="20.0" />
+            <Font name="Segoe UI" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameTextField" layoutX="279.0" layoutY="197.0" prefHeight="26.0" prefWidth="314.0" promptText="Type your username..." />
-      <Line fx:id="usernameLine" endX="213.4000244140625" layoutX="379.0" layoutY="233.0" startX="-100.0" stroke="#137979" />
-      <Label fx:id="passwordTextLabel" layoutX="279.0" layoutY="281.0" text="Password" textFill="#3ec4c4">
+      <TextField fx:id="usernameTextField" layoutX="329.0" layoutY="196.0" prefHeight="26.0" prefWidth="237.0" promptText="Type your username..." style="-fx-background-color: white;" stylesheets="@Textfield.css">
          <font>
-            <Font size="20.0" />
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="passwordTextLabel" layoutX="305.0" layoutY="279.0" text="Password" textFill="#3ec4c4">
+         <font>
+            <Font name="Segoe UI" size="20.0" />
          </font>
       </Label>
-      <Line fx:id="passwordLine" endX="213.4000244140625" layoutX="378.0" layoutY="347.0" startX="-100.0" stroke="#137979" />
-      <PasswordField fx:id="passwordTextField" layoutX="278.0" layoutY="311.0" prefHeight="26.0" prefWidth="314.0" promptText="Type your password..." />
+      <PasswordField fx:id="passwordTextField" layoutX="329.0" layoutY="309.0" prefHeight="26.0" prefWidth="237.0" promptText="Type your password..." style="-fx-background-color: white;" stylesheets="@Textfield.css">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </PasswordField>
       <Button fx:id="loginButton" layoutX="315.0" layoutY="406.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="48.0" prefWidth="241.0" text="LOGIN" textFill="#005759">
          <font>
             <Font name="Segoe UI Black" size="12.0" />
@@ -76,5 +82,17 @@
             </Lighting>
          </effect>
       </Button>
+      <Line endX="153.45001220703125" layoutX="409.0" layoutY="223.0" startX="-100.0" stroke="#056666" />
+      <Line endX="153.25" layoutX="409.0" layoutY="335.0" startX="-100.0" stroke="#056666" />
+      <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="312.0" layoutY="199.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/usernameLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="312.0" layoutY="311.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/passwordLogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
