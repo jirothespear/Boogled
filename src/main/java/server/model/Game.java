@@ -1,5 +1,6 @@
 package server.model;
 
+import Utility.ClientCallback;
 import server.controller.User;
 import sqlconnector.DataPB;
 
@@ -16,6 +17,8 @@ public class Game extends Thread {
     private  HashMap<User, Integer> playerPlacing = new HashMap<>(); // stores the number of wins per player
     private  User champion = new User();
     private int gameID=0;// use to identify each game from another
+
+    private HashMap<ClientCallback, String> userCallbacks;
 
     /*
     Following variabls are used in rounds
@@ -86,6 +89,14 @@ public class Game extends Thread {
 
     public void setWinnerOfRound(String winnerOfRound) {
         this.winnerOfRound = winnerOfRound;
+    }
+
+    public HashMap<ClientCallback, String> getUserCallbacks() {
+        return userCallbacks;
+    }
+
+    public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
+        this.userCallbacks = userCallbacks;
     }
 
     public Game(){

@@ -1,6 +1,9 @@
 package server.controller;
 
 import Utility.ClientCallback;
+import Utility.GameStartException;
+import Utility.LoginException;
+import Utility.LogoutException;
 import org.omg.CORBA.ORB;
 import server.model.Game;
 import server.model.Queue;
@@ -15,18 +18,19 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Game currentGame = new Game();
     private HashMap<Integer, Game> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
+
     private int gameCount = 0;
     private ORB orb;
 
     static private HashMap<ClientCallback, String> userCallbacks;
 
     @Override
-    public void login(String username, String password) {
+    public void login(String username, String password) throws LoginException {
         String userNPasswd = username + "/" + password;
         if (DataPB.checkUser(userNPasswd)) {
             ClientCallback clientCallback = null;
             userCallbacks.put(clientCallback, userNPasswd);
-        }
+        } else throw new LoginException();
 
 
     }
@@ -41,12 +45,12 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public void logout(ClientCallback clientCallback) {
+    public void logout(ClientCallback clientCallback) throws LogoutException {
 
         if(userCallbacks.containsKey(clientCallback)){
 
             userCallbacks.remove(clientCallback);
-        }
+        } else throw new LogoutException();
 
     }
 
@@ -76,38 +80,54 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public void startGame(String user) {
-        ArrayList<String>userNames = new ArrayList<>();
+    public String startGame(String user) throws GameStartException {
+        HashMap<ClientCallback, String> users = new HashMap<>();
+
         ArrayList<User> players = new ArrayList<>();
-        if(queueSystem.isQueueActive()){// queue is active
-            for(Entry<ClientCallback, String> entry: userCallbacks.entrySet()) {
-                if(Objects.equals(entry.getValue(), user)) {
+        if (queueSystem.isQueueActive()) {// queue is active
+            for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+                if (Objects.equals(entry.getValue(), user)) {
                     queueSystem.addToCallbackMaps(entry.getKey(), user);
-                   break;
+                    queueSystem.joinQueue(10, user, entry.getKey());
+                    break;
                 }
             }
 
-            queueSystem.joinQueue(10, user);
-        }else {// start new queue
-            queueSystem.joinQueue(10, user);
-        }
-        // get users from queueSystem
-        userNames = (ArrayList<String>) queueSystem.getJoinedUsers();
-        for (int i = 0; i< userNames.size(); i++){
-            players.add( new User(userNames.get(i)));
+
+        } else {// start new queue
+            if (queueSystem.isQueueActive()) {// queue is active
+                for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+                    if (Objects.equals(entry.getValue(), user)) {
+                        queueSystem.addToCallbackMaps(entry.getKey(), user);
+                        queueSystem.joinQueue(10, user, entry.getKey());
+                        break;
+                    }
+                }
+            }
+            // get users from queueSystem
+            users = queueSystem.getUserCallbacks();
+
+            for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
+                players.add(new User(entry.getValue(), entry.getKey()));
+
+            }
+
+            if (players.size() == 1) {// does not create
+                throw new GameStartException();
+
+            } else {
+                Game game = new Game();
+                game.startGame(players);
+                gameCount++;
+                game.setGameID(gameCount);
+                activeGames.put(gameCount, game);
+                return String.valueOf(game.getGameID());
+                // callback for game is a go
+            }
+
         }
 
-        if(players.size() == 1){// does not create
-            //TO DO
-            // callback that there player count is insufficient
-        }else {
-            Game game = new Game();
-            game.startGame(players);
-            gameCount++;
-            game.setGameID(gameCount);
-            activeGames.put( gameCount, game);
-            // callback for game is a go
-        }
+        return null;
 
     }
 

@@ -1,6 +1,7 @@
 package server.model;
 
 import Utility.ClientCallback;
+import com.mysql.cj.callback.UsernameCallback;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -12,8 +13,12 @@ public class Queue {
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
     private boolean queueActive = false;
 
-    private HashMap<ClientCallback, Integer> userCallbacks;
+    private HashMap<ClientCallback, String> userCallbacks;
     private Timer timer;
+
+    private static final int queueTime = 0;
+
+    private static QueueTask queue;
 
     public List<String> getJoinedUsers() {
         return joinedUsers;
@@ -22,25 +27,21 @@ public class Queue {
         return queueActive;
     }
 
-    public void joinQueue(int queueTime, String userName) {
+
+    public void joinQueue(int queueTime, String userName, ClientCallback usernameCallback) {
         if (!queueActive) {
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");
             timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    queueActive = false;
-                    System.out.println("Queue stopped. Processing joined users...");
+            queue = new QueueTask();
+            queue.addToCallbackMaps(usernameCallback, userName);
+            timer.schedule(queue, queueTime * 1000);
 
-                    processJoinedUsers();
-                    timer.cancel();
-                }
-            }, queueTime * 1000);
         }
 
-        joinedUsers.add(userName);
+
         semaphore.release();
+        queue.addToCallbackMaps(usernameCallback, userName);
         System.out.println(userName + " joined the queue.");
     }
 
@@ -53,13 +54,13 @@ public class Queue {
 
     public void addToCallbackMaps(ClientCallback clientCallback, String id){
 
-        userCallbacks.put(clientCallback, Integer.parseInt(id));
+        userCallbacks.put(clientCallback, id);
     }
-    public HashMap<ClientCallback, Integer> getUserCallbacks() {
+    public HashMap<ClientCallback, String> getUserCallbacks() {
         return userCallbacks;
     }
 
-    public void setUserCallbacks(HashMap<ClientCallback, Integer> userCallbacks) {
+    public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
         this.userCallbacks = userCallbacks;
     }
 
