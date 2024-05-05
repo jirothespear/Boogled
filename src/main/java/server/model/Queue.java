@@ -13,7 +13,7 @@ public class Queue {
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
     private boolean queueActive = false;
 
-    private HashMap<ClientCallback, String> userCallbacks;
+    private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
     private Timer timer;
 
     private static final int queueTime = 0;
@@ -35,7 +35,7 @@ public class Queue {
             timer = new Timer();
             queue = new QueueTask();
             queue.addToCallbackMaps(usernameCallback, userName);
-            timer.schedule(queue, queueTime * 1000);
+            timer.schedule(queue, 0, queueTime * 1000);
 
         }
 

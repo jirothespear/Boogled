@@ -10,12 +10,13 @@ public class QueueTask extends TimerTask {
 
     static int time = 0;
 
-    private HashMap<ClientCallback, String> userCallbacks;
+    private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
 
     @Override
     public void run() {
         time++;
         for (Map.Entry<ClientCallback, String> entry: userCallbacks.entrySet()){
+            System.out.println("counting -> " + time);
             entry.getKey().getQueueTime(time);
         }
 

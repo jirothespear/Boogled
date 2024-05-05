@@ -22,7 +22,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private int gameCount = 0;
     private ORB orb;
 
-    static private HashMap<ClientCallback, String> userCallbacks;
+    static private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
 
     @Override
     public void login(String username, String password) throws LoginException {
@@ -38,19 +38,25 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     @Override
     public void loginCallback(ClientCallback clientCallback) {
 
-        if (!userCallbacks.containsKey(clientCallback)){
-            userCallbacks.put(clientCallback, "user");
+
+        try {
+            if (!userCallbacks.containsKey(clientCallback)) {
+                userCallbacks.put(clientCallback, "user");
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
     }
 
     @Override
-    public void logout(ClientCallback clientCallback) throws LogoutException {
+    public void logout(ClientCallback clientCallback)  {
 
         if(userCallbacks.containsKey(clientCallback)){
 
             userCallbacks.remove(clientCallback);
-        } else throw new LogoutException();
+        } //else throw new LogoutException();
 
     }
 
@@ -80,7 +86,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public String startGame(String user) throws GameStartException {
+    public void startGame(String user) {
         HashMap<ClientCallback, String> users = new HashMap<>();
 
         ArrayList<User> players = new ArrayList<>();
@@ -95,7 +101,6 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
 
         } else {// start new queue
-            if (queueSystem.isQueueActive()) {// queue is active
                 for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                     if (Objects.equals(entry.getValue(), user)) {
                         queueSystem.addToCallbackMaps(entry.getKey(), user);
@@ -103,6 +108,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
                         break;
                     }
                 }
+
             }
             // get users from queueSystem
             users = queueSystem.getUserCallbacks();
@@ -113,7 +119,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
             }
 
             if (players.size() == 1) {// does not create
-                throw new GameStartException();
+                //throw new GameStartException();
 
             } else {
                 Game game = new Game();
@@ -121,13 +127,13 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
                 gameCount++;
                 game.setGameID(gameCount);
                 activeGames.put(gameCount, game);
-                return String.valueOf(game.getGameID());
+                //return String.valueOf(game.getGameID());
                 // callback for game is a go
             }
 
-        }
 
-        return null;
+
+        //return null;
 
     }
 
