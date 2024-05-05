@@ -6,9 +6,10 @@ import server.model.Game;
 import server.model.Queue;
 import sqlconnector.DataPB;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Map.Entry;
+
 import java.util.HashMap;
-import java.util.Random;
 
 public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Game currentGame = new Game();
@@ -17,7 +18,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private int gameCount = 0;
     private ORB orb;
 
-    private HashMap<ClientCallback, String> userCallbacks;
+    static private HashMap<ClientCallback, String> userCallbacks;
 
     @Override
     public void login(String username, String password) {
@@ -79,9 +80,16 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         ArrayList<String>userNames = new ArrayList<>();
         ArrayList<User> players = new ArrayList<>();
         if(queueSystem.isQueueActive()){// queue is active
+            for(Entry<ClientCallback, String> entry: userCallbacks.entrySet()) {
+                if(Objects.equals(entry.getValue(), user)) {
+                    queueSystem.addToCallbackMaps(entry.getKey(), user);
+                   break;
+                }
+            }
 
+            queueSystem.joinQueue(10, user);
         }else {// start new queue
-            //TO DO
+            queueSystem.joinQueue(10, user);
         }
         // get users from queueSystem
         userNames = (ArrayList<String>) queueSystem.getJoinedUsers();

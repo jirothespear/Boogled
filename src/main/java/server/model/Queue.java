@@ -1,5 +1,7 @@
 package server.model;
 
+import Utility.ClientCallback;
+
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -9,6 +11,8 @@ public class Queue {
     private final Semaphore semaphore = new Semaphore(0); // Initially no permits
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
     private boolean queueActive = false;
+
+    private HashMap<ClientCallback, Integer> userCallbacks;
     private Timer timer;
 
     public List<String> getJoinedUsers() {
@@ -47,8 +51,19 @@ public class Queue {
         joinedUsers.clear();
     }
 
+    public void addToCallbackMaps(ClientCallback clientCallback, String id){
 
-//    public static void main(String[] args) {
+        userCallbacks.put(clientCallback, Integer.parseInt(id));
+    }
+    public HashMap<ClientCallback, Integer> getUserCallbacks() {
+        return userCallbacks;
+    }
+
+    public void setUserCallbacks(HashMap<ClientCallback, Integer> userCallbacks) {
+        this.userCallbacks = userCallbacks;
+    }
+
+    //    public static void main(String[] args) {
 //        System.out.println("Program is running!!!");
 //        Queue queueSystem = new Queue();
 //

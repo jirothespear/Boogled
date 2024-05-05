@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added CORBA ORB files, and configurations.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="JavaFX configurations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +48,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Documents/NetBeansProjects/callback test",
+    "last_opened_file_path": "D:/Documents/NetBeansProjects/2023-2_9341-finteam5",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -203,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714576323625</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed CORBA ORB architecture.">
+      <created>1714624618104</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714624618104</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +230,8 @@
     <MESSAGE value="Fixed JavaFX Configurations." />
     <MESSAGE value="Added Callbacks to idl." />
     <MESSAGE value="Added CORBA ORB files, and configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CORBA ORB files, and configurations." />
+    <MESSAGE value="Fixed CORBA ORB architecture." />
+    <MESSAGE value="JavaFX configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaFX configurations." />
   </component>
 </project>
