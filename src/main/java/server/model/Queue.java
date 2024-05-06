@@ -11,7 +11,7 @@ import java.util.concurrent.Semaphore;
 public class Queue {
     private final Semaphore semaphore = new Semaphore(0); // Initially no permits
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
-    private boolean queueActive = false;
+    public static boolean queueActive = false;
 
     private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
     private Timer timer;
@@ -35,7 +35,7 @@ public class Queue {
             timer = new Timer();
             queue = new QueueTask();
             queue.addToCallbackMaps(usernameCallback, userName);
-            timer.schedule(queue, 0, queueTime * 1000);
+            timer.scheduleAtFixedRate(queue, 0, 1000);
 
         }
 
@@ -58,6 +58,10 @@ public class Queue {
     }
     public HashMap<ClientCallback, String> getUserCallbacks() {
         return userCallbacks;
+    }
+
+    public static void setQueueActive(boolean queueActive) {
+        Queue.queueActive = queueActive;
     }
 
     public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {

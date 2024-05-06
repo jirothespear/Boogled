@@ -4,38 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed Queue System, added Exceptions to start. Revamped IDL.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testers/server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added ORB daemon bat script.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/NetBeansProjects/callback test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/NetBeansProjects/2023-2_9341-finteam5&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -114,7 +111,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testers.client" />
       <module name="2023-2_9341-finteam5" />
       <extension name="coverage">
@@ -265,7 +262,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714904430124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Queue system and callbacks now working. Added Tester classes.">
+      <created>1714913005405</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714913005405</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added ORB daemon bat script.">
+      <created>1714913035417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714913035417</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,6 +302,19 @@
     <MESSAGE value="JavaFX configurations." />
     <MESSAGE value="Added CORBA ORB files." />
     <MESSAGE value="Fixed Queue System, added Exceptions to start. Revamped IDL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Queue System, added Exceptions to start. Revamped IDL." />
+    <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
+    <MESSAGE value="Added ORB daemon bat script." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ORB daemon bat script." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/server/model/Queue.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

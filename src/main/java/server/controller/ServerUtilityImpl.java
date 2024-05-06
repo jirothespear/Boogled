@@ -16,10 +16,10 @@ import java.util.HashMap;
 
 public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Game currentGame = new Game();
-    private HashMap<Integer, Game> activeGames = new HashMap<>();
+    private static HashMap<Integer, Game> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
 
-    private int gameCount = 0;
+    private static int gameCount = 0;
     private ORB orb;
 
     static private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
@@ -66,7 +66,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public boolean checkWord(String  userNAnswer, String gameID) {// Format "username/answer"
+    public boolean checkWord(String  userNAnswer, String userID, String gameID) {// Format "username/answer"
 
         if (activeGames.containsKey(Integer.parseInt(gameID))) {
 
@@ -118,22 +118,36 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
             }
 
-            if (players.size() == 1) {// does not create
+
+        if (!queueSystem.isQueueActive()) {
+
+          //  if (players.size() == 1) {// does not create
                 //throw new GameStartException();
 
-            } else {
-                Game game = new Game();
-                game.startGame(players);
-                gameCount++;
-                game.setGameID(gameCount);
-                activeGames.put(gameCount, game);
-                //return String.valueOf(game.getGameID());
-                // callback for game is a go
-            }
+           // } else {
 
+            System.out.println("skibidi");
+            Game game = new Game();
+            game.startGame(players);
+            gameCount++;
+            game.setGameID(gameCount);
+            activeGames.put(gameCount, game);
+            //return String.valueOf(game.getGameID());
+            // callback for game is a go
+            //    }
 
+            //return null;
 
-        //return null;
+        }
+
+    }
+
+    public static void addGame(ArrayList<User> players){
+        gameCount++;
+        Game game = new Game();
+        game.startGame(players);
+        game.setGameID(gameCount);
+        activeGames.put(gameCount, game);
 
     }
 

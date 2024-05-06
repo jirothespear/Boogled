@@ -27,7 +27,7 @@ module Utility {
     void loginCallback(in ClientCallback clientCallback);
     void logout(in ClientCallback clientCallback) raises (LogoutException);
     boolean checkUser(in wstring userNPasswd, in wstring gameID);
-    boolean checkWord(in wstring answer, in wstring gameID);
+    boolean checkWord(in wstring answer, in wstring playerID, in wstring gameID);
     void startGame(in wstring user) raises (GameStartException);
     wstring showWinnerOfRound();
     long showScore(in wstring user, in wstring gameID);
