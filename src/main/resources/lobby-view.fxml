@@ -18,7 +18,7 @@
    <children>
       <ImageView fx:id="lobbyBgImage1" fitHeight="657.0" fitWidth="1028.0" pickOnBounds="true">
          <image>
-            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/lightbluebg.jpg" />
+            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/generalBgImage.png" />
          </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
