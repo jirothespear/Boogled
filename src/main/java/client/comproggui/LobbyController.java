@@ -1,9 +1,6 @@
 package client.comproggui;
 
-import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -78,8 +76,10 @@ public class LobbyController {
     }
 
     @FXML
-    public void onStartGameButtonClick(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("/game-room-view.fxml"));
+    public void onStartGameButtonClick(ActionEvent event) throws IOException {
+
+        // Load waiting room
+        root = FXMLLoader.load(getClass().getResource("/waiting-room-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -87,8 +87,29 @@ public class LobbyController {
         stage.centerOnScreen();
         stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
+
+        // Set waiting duration
+        Duration waitingRoomDuration = Duration.seconds(5);
+        PauseTransition waitingTransition = new PauseTransition(waitingRoomDuration);
+        waitingTransition.setOnFinished(e -> {
+            try {
+                // Load game view after waiting duration
+                loadGameView(stage);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        waitingTransition.play();
+    }
+
+    private void loadGameView(Stage stage) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/game-room-view.fxml"));
+        Scene gameScene = new Scene(root);
+        stage.setScene(gameScene);
+        stage.show();
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
     }
 
 }
