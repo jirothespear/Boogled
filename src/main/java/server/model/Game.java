@@ -121,6 +121,7 @@ public class Game extends Thread {
             scoreOfRoundWinner =0;
             winnerOfRound =" ";
             round.newRound(roundCount);
+            round.setRoundCount(roundCount);
             Timer timer = new Timer();
             timer.scheduleAtFixedRate(round, 0, 1000);
 
@@ -136,16 +137,20 @@ public class Game extends Thread {
     public void checkWinner (String [] winnerOfCurrentRound){
 
 
-        String winnerUsername= winnerOfCurrentRound[0];
-        String winnerScore= winnerOfCurrentRound[1];
-        updateMaps(findUser(winnerUsername),Integer.parseInt(winnerScore));
+        if(!winnerOfCurrentRound[0].equals("null")) {
 
-        scoreOfRoundWinner = Integer.parseInt(winnerScore);
-        winnerOfRound =winnerUsername;
+            String winnerUsername = winnerOfCurrentRound[0];
+            String winnerScore = winnerOfCurrentRound[1];
+            updateMaps(findUser(winnerUsername), Integer.parseInt(winnerScore));
 
-        if(champion.getUsername().equalsIgnoreCase("null")){// ends the loop when there is a winner
-            updateUserDB();// updates user table in DB
-            roundWin = true;
+            scoreOfRoundWinner = Integer.parseInt(winnerScore);
+            winnerOfRound = winnerUsername;
+
+            if (champion.getUsername().equalsIgnoreCase("null")) {// ends the loop when there is a winner
+                updateUserDB();// updates user table in DB
+                roundWin = true;
+            }
+
         }
 
 

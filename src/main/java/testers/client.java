@@ -51,6 +51,7 @@ public class client {
 
             serverUtility.loginCallback(cref);
             serverUtility.startGame("user");
+            serverUtility.checkWord("skbidi", "user", "1");
             Thread.currentThread().join();
 
         } catch (Exception e) {

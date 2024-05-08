@@ -148,7 +148,7 @@ public class Round extends TimerTask{
      * @return
      */
     public String getWinnerOfRound() {
-        User winner = null;
+        User winner = new User();
         int highestScore = 0;
 
         for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
@@ -157,6 +157,11 @@ public class Round extends TimerTask{
                 winner = entry.getKey();
 
             }
+        }
+
+        if (winner.getUsername() == null){
+
+            return "null/0";
         }
         return winner.getUsername()+"/"+highestScore;
     }
@@ -223,7 +228,7 @@ public class Round extends TimerTask{
 
         String[] winnerOfCurrentRound = getWinnerOfRound().split("/");//Format username/highscore
         game.checkWinner(winnerOfCurrentRound);
-        System.out.println("Winner for round "+ roundCount+" is"+ winnerOfCurrentRound[0]
+        System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
                 +" with a score of "+ winnerOfCurrentRound[1]);
 
         game.startGame(players);
@@ -245,5 +250,13 @@ public class Round extends TimerTask{
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public int getRoundCount() {
+        return roundCount;
+    }
+
+    public void setRoundCount(int roundCount) {
+        this.roundCount = roundCount;
     }
 }

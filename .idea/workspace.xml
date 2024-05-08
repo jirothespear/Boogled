@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed exception stack of letterChoice in CORBA null parameter.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added time counting on client.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -307,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715172556137</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added time counting on client.">
+      <created>1715175636017</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715175636017</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,7 +348,8 @@
     <MESSAGE value="added waiting room" />
     <MESSAGE value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
     <MESSAGE value="Fixed exception stack of letterChoice in CORBA null parameter." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed exception stack of letterChoice in CORBA null parameter." />
+    <MESSAGE value="Added time counting on client." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added time counting on client." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
