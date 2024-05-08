@@ -3,6 +3,12 @@ package testers;
 import Utility.ClientCallback;
 import Utility.ClientCallbackHelper;
 import Utility.ServerUtility;
+import client.comproggui.LoginController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.ORBPackage.InvalidName;
 import org.omg.CosNaming.NamingContextExt;
@@ -17,14 +23,15 @@ import org.omg.PortableServer.POAPackage.WrongPolicy;
 
 import java.util.Properties;
 
-public class client {
+public class client extends Application {
 
-    ClientCallbackImpl clientCallback;
+    public static ClientCallbackImpl ciaoCallbackImpl;
 
-    static ServerUtility serverUtility;
+    public  static  ClientCallback cref;
+
+    public  static ServerUtility serverUtility;
+
     public static void main(String[] args) throws InvalidName, AdapterInactive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, WrongPolicy, ServantNotActive {
-
-
         try {
             Properties props = new Properties();
             props.put("org.omg.CORBA.ORBInitialHost","192.168.56.1");
@@ -32,34 +39,48 @@ public class client {
 
             ORB orb = ORB.init(args, props);
 
-
             POA rootpoa = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
             rootpoa.the_POAManager().activate();
 
-            org.omg.CORBA.Object objRef =
-                    orb.resolve_initial_references("NameService");
+            org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 
             String name = "Ciao";
             serverUtility = Utility.ServerUtilityHelper.narrow(ncRef.resolve_str(name));
 
-            ClientCallbackImpl ciaoCallbackImpl = new ClientCallbackImpl();
+            ciaoCallbackImpl = new ClientCallbackImpl();
             ciaoCallbackImpl.setORB(orb);
 
             org.omg.CORBA.Object ref = rootpoa.servant_to_reference(ciaoCallbackImpl);
-            ClientCallback cref = ClientCallbackHelper.narrow(ref);
+            cref = ClientCallbackHelper.narrow(ref);
 
-            serverUtility.loginCallback(cref);
-            serverUtility.startGame("user");
-            serverUtility.checkWord("skbidi", "user", "1");
+            launch();
+
             Thread.currentThread().join();
 
         } catch (Exception e) {
             System.out.println("ERROR : " + e);
             e.printStackTrace(System.out);
         }
-
     }
 
+    public void start(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/login-view.fxml"));
+            Parent root = loader.load();
+            LoginController loginController = loader.getController();
 
+            loginController.setServerUtility(serverUtility);
+            loginController.setClientCallbackImpl(ciaoCallbackImpl);
+            loginController.setClientCallback(cref);
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+            stage.setResizable(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
