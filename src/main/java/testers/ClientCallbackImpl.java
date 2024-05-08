@@ -1,10 +1,14 @@
 package testers;
 
 import Utility.ClientCallback;
+import client.comproggui.WaitingRoomController;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.StringHolder;
 
 public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
+
+
+    private WaitingRoomController waitingRoomController;
 
     ORB orb;
     @Override
@@ -29,14 +33,18 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
 
     @Override
     public int getRoundTime(int time) {
-
-        System.out.println("Game -> " + time);
-        return time;
+        return 0;
     }
 
     @Override
     public int getQueueTime(int time) {
-        System.out.println(time);
+        System.out.println(time+" ++");
+
+
+        if (waitingRoomController != null) {
+            System.out.println("Setting queue time");
+            waitingRoomController.setQueueTime(time);
+        }
         return time;
     }
 
@@ -55,4 +63,13 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     public void setORB (ORB orb){
         this.orb = orb;
     }
+
+    public WaitingRoomController getWaitingRoomController() {
+        return waitingRoomController;
+    }
+
+    public void setWaitingRoomController(WaitingRoomController waitingRoomController) {
+        this.waitingRoomController = waitingRoomController;
+    }
+
 }
