@@ -1,3 +1,4 @@
+
 package server.controller;
 
 import Utility.ClientCallback;
@@ -20,6 +21,11 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     private Queue queueSystem = new Queue();
 
     private static int gameCount = 0;
+
+
+    private String userName;
+
+    private int queueTime = 20;
     private ORB orb;
 
     static private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
@@ -29,6 +35,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         String userNPasswd = username + "/" + password;
         if (DataPB.checkUser(userNPasswd)) {
             ClientCallback clientCallback = null;
+            this.setUserName(username);
             userCallbacks.put(clientCallback, userNPasswd);
         } else throw new LoginException();
 
@@ -41,7 +48,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
         try {
             if (!userCallbacks.containsKey(clientCallback)) {
-                userCallbacks.put(clientCallback, "user");
+                userCallbacks.put(clientCallback, userName);
             }
 
         } catch (Exception e){
@@ -86,44 +93,44 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
     @Override
     public void startGame(String user) {
-        HashMap<ClientCallback, String> users = new HashMap<>();
+        HashMap<ClientCallback, String> users;
 
         ArrayList<User> players = new ArrayList<>();
         if (queueSystem.isQueueActive()) {// queue is active
             for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                 if (Objects.equals(entry.getValue(), user)) {
                     queueSystem.addToCallbackMaps(entry.getKey(), user);
-                    queueSystem.joinQueue(10, user, entry.getKey());
+                    queueSystem.joinQueue(queueTime, user, entry.getKey());
                     break;
                 }
             }
 
 
         } else {// start new queue
-                for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
-                    if (Objects.equals(entry.getValue(), user)) {
-                        queueSystem.addToCallbackMaps(entry.getKey(), user);
-                        queueSystem.joinQueue(10, user, entry.getKey());
-                        break;
-                    }
+            for (Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+                if (Objects.equals(entry.getValue(), user)) {
+                    queueSystem.addToCallbackMaps(entry.getKey(), user);
+                    queueSystem.joinQueue(queueTime, user, entry.getKey());
+                    break;
                 }
-
             }
-            // get users from queueSystem
-            users = queueSystem.getUserCallbacks();
 
-            for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
-                players.add(new User(entry.getValue(), entry.getKey()));
+        }
+        // get users from queueSystem
+        users = queueSystem.getUserCallbacks();
 
-            }
+        for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
+            players.add(new User(entry.getValue(), entry.getKey()));
+
+        }
 
 
         if (!queueSystem.isQueueActive()) {
 
-          //  if (players.size() == 1) {// does not create
-                //throw new GameStartException();
+            //  if (players.size() == 1) {// does not create
+            //throw new GameStartException();
 
-           // } else {
+            // } else {
 
             System.out.println("skibidi");
             Game game = new Game();
@@ -242,4 +249,64 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         return null;
     }
 
+    public Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public void setCurrentGame(Game currentGame) {
+        this.currentGame = currentGame;
+    }
+
+    public static HashMap<Integer, Game> getActiveGames() {
+        return activeGames;
+    }
+
+    public static void setActiveGames(HashMap<Integer, Game> activeGames) {
+        ServerUtilityImpl.activeGames = activeGames;
+    }
+
+    public Queue getQueueSystem() {
+        return queueSystem;
+    }
+
+    public void setQueueSystem(Queue queueSystem) {
+        this.queueSystem = queueSystem;
+    }
+
+    public static int getGameCount() {
+        return gameCount;
+    }
+
+    public static void setGameCount(int gameCount) {
+        ServerUtilityImpl.gameCount = gameCount;
+    }
+
+    public int getQueueTime() {
+        return queueTime;
+    }
+
+    public void setQueueTime(int queueTime) {
+        this.queueTime = queueTime;
+    }
+
+    public static HashMap<ClientCallback, String> getUserCallbacks() {
+        return userCallbacks;
+    }
+
+    public static void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
+        ServerUtilityImpl.userCallbacks = userCallbacks;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
 }
+
+
+

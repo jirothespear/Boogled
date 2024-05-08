@@ -12,17 +12,20 @@ import java.util.TimerTask;
 
 public class QueueTask extends TimerTask {
 
-    static int time = 0;
+    static int time = 11;
 
     private static HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
 
     public ArrayList<User> players = new ArrayList<>();
 
+
+
+
+
     @Override
     public void run() {
-        time++;
-
-        if (time == 10){
+        time--;
+        if (time != 0  ) {
             for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
                 entry.getKey().getQueueTime(time);
@@ -30,16 +33,17 @@ public class QueueTask extends TimerTask {
             Queue.queueActive = false;
 
             for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+                System.out.println("Player in callback: " + entry.getValue());
                 players.add(new User(entry.getValue(), entry.getKey()));
             }
-             //   if (players.size() == 1) {// does not create
-                //throw new GameStartException();
-             //   } else {
-                System.out.println("skibidi");
-                ServerUtilityImpl.addGame(players);
-         //   }
+            //   if (players.size() == 1) {// does not create
+            //throw new GameStartException();
+            //   } else {
+            System.out.println("skibidi");
+            ServerUtilityImpl.addGame(players);;
+            //   }
 
-                cancel();
+            cancel();
         } else {
             for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
@@ -50,9 +54,9 @@ public class QueueTask extends TimerTask {
 
     }
 
-    public void addToCallbackMaps(ClientCallback clientCallback, String id){
+    public void addToCallbackMaps(ClientCallback clientCallback, String userName){
 
-        userCallbacks.put(clientCallback, id);
+        userCallbacks.put(clientCallback, userName);
     }
 
     public HashMap<ClientCallback, String> getUserCallbacks() {
@@ -62,4 +66,6 @@ public class QueueTask extends TimerTask {
     public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
         this.userCallbacks = userCallbacks;
     }
+
 }
+
