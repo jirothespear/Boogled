@@ -1,5 +1,7 @@
 package client.comproggui;
 
+import Utility.ClientCallback;
+import Utility.ServerUtility;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -7,6 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
+import testers.ClientCallbackImpl;
+
+import java.util.ArrayList;
 
 public class GameRoomController {
 
@@ -96,8 +101,55 @@ public class GameRoomController {
     @FXML
     private Button submitButton;
 
+
+
+    public ServerUtility serverUtility;
+
+    public ClientCallback clientCallback;
+
+    public ClientCallbackImpl clientCallbackImpl;
+
     @FXML
     public void initialize() {
+        String toSetButtonLabel = "lettasdfaersfaebwpvs";
+        ArrayList<Button> buttons = new ArrayList<>();
+
+
+        buttons.add(firstButton);
+        buttons.add(secondButton);
+        buttons.add(thirdButton);
+        buttons.add(fourthButton);
+        buttons.add(fifthButton);
+        buttons.add(sixthButton);
+        buttons.add(seventhButton);
+        buttons.add(eighthButton);
+        buttons.add(ninthButton);
+        buttons.add(tenthButton);
+        buttons.add(eleventhButton);
+        buttons.add(twelfthButton);
+        buttons.add(thirteenthButton);
+        buttons.add(fourteenthButton);
+        buttons.add(fifteenthButton);
+        buttons.add(sixteenthButton);
+        buttons.add(seventeenthButton);
+        buttons.add(eighteenthButton);
+        buttons.add(nineteenthButton);
+        buttons.add(twentiethButton);
+
+
+
+        String letters = toSetButtonLabel.toLowerCase().replaceAll("[^a-z]", "");
+
+
+        for (int i = 0; i < letters.length(); i++) {
+            if (i < buttons.size()) {
+                buttons.get(i).setText(String.valueOf(letters.charAt(i)));
+            } else {
+
+                break;
+            }
+        }
+
         // Add event handler for Enter key press
         answerTextField.setOnKeyPressed(event -> { // changed this to the fxid given in openscenbuilder - yves
             if (event.getCode() == KeyCode.ENTER) {
@@ -105,6 +157,8 @@ public class GameRoomController {
             }
         });
     }
+
+
 
     @FXML
     public void onSubmitButtonClicked(){
@@ -118,5 +172,29 @@ public class GameRoomController {
         inputPrompt.setText(userInput);
         // Clear the text field after submission
         gameRoomTextField.clear();
+    }
+
+    public ServerUtility getServerUtility() {
+        return serverUtility;
+    }
+
+    public void setServerUtility(ServerUtility serverUtility) {
+        this.serverUtility = serverUtility;
+    }
+
+    public ClientCallback getClientCallback() {
+        return clientCallback;
+    }
+
+    public void setClientCallback(ClientCallback clientCallback) {
+        this.clientCallback = clientCallback;
+    }
+
+    public ClientCallbackImpl getClientCallbackImpl() {
+        return clientCallbackImpl;
+    }
+
+    public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
+        this.clientCallbackImpl = clientCallbackImpl;
     }
 }
