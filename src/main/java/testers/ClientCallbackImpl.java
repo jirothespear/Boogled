@@ -47,7 +47,7 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     public String getLetterChoice(String letters) {
 
         System.out.println(letters.toString());
-        return null;
+        return letters;
     }
 
     public void setORB (ORB orb){

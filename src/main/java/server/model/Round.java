@@ -61,6 +61,7 @@ public class Round extends TimerTask{
         getLetterChoice();
 
         System.out.println("Player size: " + players.size());
+
         for (User temp: players){
 
             System.out.println(letters);
@@ -230,6 +231,8 @@ public class Round extends TimerTask{
         cancel();
 
         } else {
+
+            System.out.println(timerCount);
             for (User temp: players){
                 temp.getUserCallback().getRoundTime(timerCount);
             }

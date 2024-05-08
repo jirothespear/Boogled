@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added waiting room">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
@@ -28,17 +27,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/waiting-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/waiting-room-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715003197181</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL.">
+      <created>1715170799413</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715170799413</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,7 +345,8 @@
     <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
     <MESSAGE value="Added ORB daemon bat script." />
     <MESSAGE value="added waiting room" />
-    <option name="LAST_COMMIT_MESSAGE" value="added waiting room" />
+    <MESSAGE value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -359,7 +358,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/server/model/Round.java</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
