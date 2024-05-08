@@ -1,10 +1,11 @@
 package server.model;
 
+import org.omg.CORBA.StringHolder;
 import server.controller.User;
 
 import java.util.*;
 
-public class Round {
+public class Round extends TimerTask{
     /*
     following variables changes every newRound
      */
@@ -12,9 +13,14 @@ public class Round {
     private HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
     private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
-    private StringBuilder letters;
+    private String letters;
     private int timerCount;
-    private Timer timer;
+
+    private int roundCount;
+
+    private ArrayList<User> players = new ArrayList<>();
+
+    private Game game;
     /**
      * Constructor
      * @param players list of players to be used for Maps
@@ -25,6 +31,8 @@ public class Round {
             pointsPerRound.put(players.get(i),0);
             answersOfPlayers.put(players.get(i), new ArrayList<>());
         }
+
+        this.players = players;
     }
 
     public int getTimerCount() {
@@ -48,47 +56,30 @@ public class Round {
         pointsPerRound.forEach((user, points) -> pointsPerRound.put(user, 0));
         // Clear answers for each user
         answersOfPlayers.forEach((user, list) -> list.clear());
-        /**
-         * NOT YET SURE IF THIS WORKS
-         */
-        timer = new Timer();
-        final int[] delay = {0}; // Initial delay
-        int period = 1000; // Repeat every 1 second
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (delay[0] >= timerCount * 1000) {
-                    timer.cancel(); // Cancel the timer after 10 seconds
-                    //callback for round ending
-                    return;
-                }
-                // execute gathering of answers from players
-                //TO DO:
-                System.out.println("Hello " );
-                delay[0] += period;
-            }
-        }, delay[0], period);
 
+        this.roundCount = roundCount;
+        getLetterChoice();
+
+        System.out.println("Player size: " + players.size());
+        for (User temp: players){
+
+            System.out.println(letters);
+            temp.getUserCallback().getLetterChoice(letters);
+
+        }
         //the following methods are executed after the timer of round is finished
-        filterAnswers();
-        countScoresPlayers();
 
-        String winnerOfCurrentRound[] = getWinnerOfRound().split("/");//Format username/highscore
-        String winnerUsername= winnerOfCurrentRound[0];
-        String winnerScore= winnerOfCurrentRound[1];
-        System.out.println("Winner for round "+ roundCount+" is"+ winnerUsername
-                +" with a score of "+ winnerScore);
     }
 
     /**
      * method adds the valid answer to the list of the corresponding user
-     * @param user source of answer
+     * @param username source of answer
      * @param answer input answer
      */
-    public void addAnswerToPlayer(User user,String answer){
+    public void addAnswerToPlayer(String username,String answer){
         addToAllAnswersList(answer);
         for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {
-            if (entry.getKey().getUsername().equalsIgnoreCase(user.getUsername())){
+            if (entry.getKey().getUsername().equalsIgnoreCase(username)){
                 entry.getValue().add(answer);
             }
         }
@@ -178,7 +169,7 @@ public class Round {
         }
     }
 
-    public String getLetterChoice() {// return the random 20 letters
+    public void getLetterChoice() {// return the random 20 letters
         StringBuilder result = new StringBuilder();
         StringBuilder consonantsBuilder = new StringBuilder();
         StringBuilder vowelsBuilder = new StringBuilder();
@@ -203,17 +194,53 @@ public class Round {
         shuffleStringBuilder(vowelsBuilder, random);
 
         // Append consonants and vowels to the result
-        result.append(consonantsBuilder).append("\n.").append(vowelsBuilder);
+        // result.append(consonantsBuilder).append("\n.").append(vowelsBuilder);
 
-        letters = result;
-        return result.toString();
+        result.append(consonantsBuilder).append(vowelsBuilder);
+
+        letters = result.toString();
+
+
     }
 
-    public StringBuilder getLetters() {
+    public String getLetters() {
         return letters;
     }
 
-    public void setLetters(StringBuilder letters) {
+    public void setLetters(String letters) {
         this.letters = letters;
+    }
+
+    @Override
+    public void run() {
+        timerCount++;
+
+        if (timerCount == 30){
+
+        filterAnswers();
+        countScoresPlayers();
+
+        String[] winnerOfCurrentRound = getWinnerOfRound().split("/");//Format username/highscore
+        game.checkWinner(winnerOfCurrentRound);
+        System.out.println("Winner for round "+ roundCount+" is"+ winnerOfCurrentRound[0]
+                +" with a score of "+ winnerOfCurrentRound[1]);
+
+        game.startGame(players);
+
+        cancel();
+
+        } else {
+            for (User temp: players){
+                temp.getUserCallback().getRoundTime(timerCount);
+            }
+        }
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

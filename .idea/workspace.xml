@@ -5,7 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added waiting room">
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/game-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/waiting-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/waiting-room-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,22 +57,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "YvesReneBautista",
-      "fullname": "Yves Rene  Bautista"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;YvesReneBautista&quot;,
+      &quot;fullname&quot;: &quot;Yves Rene  Bautista&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab.com/2230174/2023-2_9341-finteam5.git",
-    "second": "15bd04c2-b7ce-4402-a7b1-a84bbf878d29"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/2230174/2023-2_9341-finteam5.git&quot;,
+    &quot;second&quot;: &quot;15bd04c2-b7ce-4402-a7b1-a84bbf878d29&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/resources/lobby-view.fxml" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -68,7 +101,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/2023-2_9341-finteam5/resources/resources",
+    "last_opened_file_path": "D:/Documents/NetBeansProjects/2023-2_9341-finteam5/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -77,6 +110,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources" />
       <recent name="D:\2023-2_9341-finteam5\resources\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +121,7 @@
       <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\src\main\java\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client.comproggui.Main">
+  <component name="RunManager" selected="Application.client">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comproggui.Main" />
       <module name="2023-2_9341-finteam5" />
@@ -126,7 +160,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="client.comproggui.Main" />
-      <module name="finalProjectCORBA" />
+      <module name="2023-2_9341-finteam5" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="client.comproggui.*" />
@@ -167,9 +201,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.client" />
         <item itemvalue="Application.server" />
+        <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.test (1)" />
       </list>
@@ -322,6 +356,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/server/model/Queue.java</url>
           <line>48</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/server/model/Round.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

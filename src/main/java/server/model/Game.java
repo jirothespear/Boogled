@@ -7,6 +7,7 @@ import sqlconnector.DataPB;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
 
 public class Game extends Thread {
     /*
@@ -28,6 +29,7 @@ public class Game extends Thread {
     private int roundCount=0;
     private Round round;
 
+    private Boolean roundWin = false;
     public Round getRound() {
         return round;
     }
@@ -110,32 +112,43 @@ public class Game extends Thread {
             overallPoints.put(players.get(i),0);
             playerPlacing.put(players.get(i),0);
         }
-        round = new Round(players);
-    }
 
 
-    public void newRound(){
-        //execute round and timer
-        while (true){
+        if (!roundWin) {
+            round = new Round(players);
+            round.setGame(this);
             roundCount++;
             scoreOfRoundWinner =0;
             winnerOfRound =" ";
-
             round.newRound(roundCount);
-            String winnerOfCurrentRound[] = round.getWinnerOfRound().split("/");//Format username/highscore
-            String winnerUsername= winnerOfCurrentRound[0];
-            String winnerScore= winnerOfCurrentRound[1];
-            updateMaps(findUser(winnerUsername),Integer.parseInt(winnerScore));
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(round, 0, 1000);
 
-            scoreOfRoundWinner = Integer.parseInt(winnerScore);
-            winnerOfRound =winnerUsername;
-
-            if(champion.getUsername().equalsIgnoreCase("null")){// ends the loop when there is a winner
-                updateUserDB();// updates user table in DB
-                break; //ends game
+        } else {
+            for (User temp: players){
+                temp.getUserCallback().gameFinish();
             }
 
         }
+
+    }
+
+    public void checkWinner (String [] winnerOfCurrentRound){
+
+
+        String winnerUsername= winnerOfCurrentRound[0];
+        String winnerScore= winnerOfCurrentRound[1];
+        updateMaps(findUser(winnerUsername),Integer.parseInt(winnerScore));
+
+        scoreOfRoundWinner = Integer.parseInt(winnerScore);
+        winnerOfRound =winnerUsername;
+
+        if(champion.getUsername().equalsIgnoreCase("null")){// ends the loop when there is a winner
+            updateUserDB();// updates user table in DB
+            roundWin = true;
+        }
+
+
     }
 
     /*

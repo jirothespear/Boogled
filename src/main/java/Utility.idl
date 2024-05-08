@@ -7,6 +7,7 @@ module Utility {
     unsigned long getRoundTime(in long time);
     unsigned long getQueueTime(in long time);
     unsigned long getGameTime(in long time);
+    wstring getLetterChoice (in wstring letters);
   };
 
   exception LoginException {

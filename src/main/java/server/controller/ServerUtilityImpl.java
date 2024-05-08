@@ -66,16 +66,15 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public boolean checkWord(String  userNAnswer, String userID, String gameID) {// Format "username/answer"
+    public boolean checkWord(String  playerAnswer, String userID, String gameID) {// Format "username/answer"
 
         if (activeGames.containsKey(Integer.parseInt(gameID))) {
 
             Game currentGame = activeGames.get(Integer.parseInt(gameID));
-            String [] input= userNAnswer.split("/");
-            User user = currentGame.findUser(input[0]);
-            String answer = input[1];
+
+            String answer = playerAnswer;
             if (answer.length() >= 4 && DataPB.checkWord(answer)) {
-                currentGame.getRound().addAnswerToPlayer(user, answer);
+                currentGame.getRound().addAnswerToPlayer(userID, answer);
                 return true;// return parameter, answer is valid
             }
             return false;
@@ -128,6 +127,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
             System.out.println("skibidi");
             Game game = new Game();
+            game.start();
             game.startGame(players);
             gameCount++;
             game.setGameID(gameCount);
@@ -226,11 +226,6 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
         this.orb = orb;
     }
 
-
-
-    public void startRound() {
-        currentGame.newRound();
-    }
 
 
     public boolean checkIfChampionExist() {

@@ -32,12 +32,12 @@ public class QueueTask extends TimerTask {
             for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                 players.add(new User(entry.getValue(), entry.getKey()));
             }
-                if (players.size() == 1) {// does not create
+             //   if (players.size() == 1) {// does not create
                 //throw new GameStartException();
-                } else {
+             //   } else {
                 System.out.println("skibidi");
                 ServerUtilityImpl.addGame(players);
-            }
+         //   }
 
                 cancel();
         } else {

@@ -2,6 +2,7 @@ package testers;
 
 import Utility.ClientCallback;
 import org.omg.CORBA.ORB;
+import org.omg.CORBA.StringHolder;
 
 public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
 
@@ -40,6 +41,13 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     @Override
     public int getGameTime(int time) {
         return 0;
+    }
+
+    @Override
+    public String getLetterChoice(String letters) {
+
+        System.out.println(letters.toString());
+        return null;
     }
 
     public void setORB (ORB orb){
