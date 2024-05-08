@@ -9,7 +9,7 @@ import java.sql.*;
  */
 public class DataPB {
     private static Connection connection;
-    private static String url = "jdbc:mysql://localhost:3308/samtech?user=root&password";
+    private static String url = "jdbc:mysql://localhost:3306/samtech?user=root&password";
 
     private DataPB() {
     }
@@ -29,7 +29,7 @@ public class DataPB {
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1,user[0]);
-            ps.setString(1,user[1]);
+            ps.setString(2,user[1]); //
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 return  true;
