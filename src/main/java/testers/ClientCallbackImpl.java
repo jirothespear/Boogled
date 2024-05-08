@@ -29,7 +29,9 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
 
     @Override
     public int getRoundTime(int time) {
-        return 0;
+
+        System.out.println("Game -> " + time);
+        return time;
     }
 
     @Override

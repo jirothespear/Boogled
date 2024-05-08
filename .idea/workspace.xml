@@ -4,31 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed exception stack of letterChoice in CORBA null parameter.">
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715170799413</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed exception stack of letterChoice in CORBA null parameter.">
+      <created>1715172540088</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715172540088</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fixed exception stack of letterChoice in CORBA null parameter.">
+      <created>1715172556137</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715172556137</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,7 +337,8 @@
     <MESSAGE value="Added ORB daemon bat script." />
     <MESSAGE value="added waiting room" />
     <MESSAGE value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
+    <MESSAGE value="Fixed exception stack of letterChoice in CORBA null parameter." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed exception stack of letterChoice in CORBA null parameter." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
