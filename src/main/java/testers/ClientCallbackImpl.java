@@ -17,12 +17,12 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     }
 
     @Override
-    public void roundEnd() {
+    public void roundEnd(String winner, int points) {
 
     }
 
     @Override
-    public void gameFinish() {
+    public void gameFinish(String winner, String points) {
 
     }
 
@@ -48,16 +48,11 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
         //return time;
     }
 
-    @Override
-    public void getGameTime(int time) {
-
-    }
 
     @Override
-    public String getLetterChoice(String letters) {
+    public void getLetterChoice(String letters) {
 
         System.out.println(letters.toString());
-        return letters;
     }
 
     public void setORB (ORB orb){

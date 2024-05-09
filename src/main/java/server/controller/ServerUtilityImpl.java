@@ -15,7 +15,7 @@ import java.util.Map.Entry;
 
 import java.util.HashMap;
 
-public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
+public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     private Game currentGame = new Game();
     private static HashMap<Integer, Game> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
@@ -43,7 +43,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public void loginCallback(ClientCallback clientCallback) {
+    public void userCallback(ClientCallback clientCallback, String username) {
 
 
         try {
@@ -58,7 +58,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
     @Override
-    public void logout(ClientCallback clientCallback)  {
+    public void logout(ClientCallback clientCallback, String username)  {
 
         if(userCallbacks.containsKey(clientCallback)){
 
@@ -67,13 +67,9 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
     }
 
-    @Override
-    public boolean checkUser(String userNPasswd, String gameID) {
-        return DataPB.checkUser(userNPasswd);
-    }
 
     @Override
-    public boolean checkWord(String  playerAnswer, String userID, String gameID) {// Format "username/answer"
+    public void checkWord(String  playerAnswer, String userID, String gameID) {// Format "username/answer"
 
         if (activeGames.containsKey(Integer.parseInt(gameID))) {
 
@@ -82,17 +78,17 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
             String answer = playerAnswer;
             if (answer.length() >= 4 && DataPB.checkWord(answer)) {
                 currentGame.getRound().addAnswerToPlayer(userID, answer);
-                return true;// return parameter, answer is valid
+
             }
-            return false;
+
 
         }
 
-        return false;
+
     }
 
     @Override
-    public void startGame(String user) {
+    public String startGame(String user) {
         HashMap<ClientCallback, String> users;
 
         ArrayList<User> players = new ArrayList<>();
@@ -145,8 +141,13 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
             //return null;
 
+            return String.valueOf(gameCount);
+
+
         }
 
+
+        return "null";
     }
 
     public static void addGame(ArrayList<User> players){
@@ -158,11 +159,7 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
 
     }
 
-    @Override
-    public String showWinnerOfRound() {
-        //Select the current game and set it to currentGame
-        return currentGame.getWinnerOfRound();
-    }
+
 
     @Override
     public int showScore(String user, String gameID) {
@@ -202,13 +199,6 @@ public class ServerUtilityImpl extends Utility.ServerUtilityPOA {
     }
 
      */
-
-    @Override
-    public String getLetterChoice(String gameID) {// return the random 20 letters
-        return activeGames.get(gameID).getRound().getLetters().toString();
-    }
-
-
 
 
     public void joinGame(String user, String gameID) {

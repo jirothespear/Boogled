@@ -1,7 +1,8 @@
 package client.comproggui;
 
 import Utility.ClientCallback;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
+import Utility.PlayerUtility;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,11 +11,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import testers.ClientCallbackImpl;
 
@@ -64,7 +63,7 @@ public class LobbyController {
 
     private ClientCallback clientCallback;
 
-    private ServerUtility serverUtility;
+    private PlayerUtility serverUtility;
 
     private WaitingRoomController waitingRoomController;
 
@@ -167,11 +166,11 @@ public class LobbyController {
         this.clientCallback = clientCallback;
     }
 
-    public ServerUtility getServerUtility() {
+    public PlayerUtility getServerUtility() {
         return serverUtility;
     }
 
-    public void setServerUtility(ServerUtility serverUtility) {
+    public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
 

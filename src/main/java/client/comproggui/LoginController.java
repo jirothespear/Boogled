@@ -2,7 +2,7 @@ package client.comproggui;
 
 import Utility.ClientCallback;
 import Utility.LoginException;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,14 +68,14 @@ public class LoginController {
 //        stage.setResizable(false);
 //    }
 
-    private ServerUtility serverUtility;
+    private PlayerUtility serverUtility;
 
     private ClientCallbackImpl clientCallbackImpl;
 
     private ClientCallback clientCallback;
 
     @FXML
-    public void setServerUtility(ServerUtility serverUtility) {
+    public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
 
@@ -94,7 +94,7 @@ public class LoginController {
 
             showSuccessDialog("Login successful");
 
-            serverUtility.loginCallback(clientCallback);
+            serverUtility.userCallback(clientCallback, username);
 
 
             navigateToLobbyView(event);

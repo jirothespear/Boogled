@@ -127,7 +127,7 @@ public class Game extends Thread {
 
         } else {
             for (User temp: players){
-                temp.getUserCallback().gameFinish();
+                temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(scoreOfRoundWinner));
             }
 
         }

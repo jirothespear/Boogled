@@ -1,7 +1,8 @@
 package client.comproggui;
 
 import Utility.ClientCallback;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
+import Utility.PlayerUtility;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -103,7 +104,7 @@ public class GameRoomController {
 
 
 
-    public ServerUtility serverUtility;
+    public PlayerUtility serverUtility;
 
     public ClientCallback clientCallback;
 
@@ -174,11 +175,11 @@ public class GameRoomController {
         gameRoomTextField.clear();
     }
 
-    public ServerUtility getServerUtility() {
+    public PlayerUtility getServerUtility() {
         return serverUtility;
     }
 
-    public void setServerUtility(ServerUtility serverUtility) {
+    public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
 

@@ -1,13 +1,12 @@
 module Utility {
   interface ClientCallback {
     wstring startRound();
-    void roundEnd();
-    void gameFinish(in wstring winner, in wstring points);
+    void roundEnd( in wstring roundWinner , in long points);
+    void gameFinish(in wstring gameWinner, in wstring points);
     unsigned long getScore(in long time);
     void getRoundTime(in long time);
     void getQueueTime(in long time);
-    void getGameTime(in long time);
-    wstring getLetterChoice (in wstring letters);
+    void getLetterChoice (in wstring letters);
   };
 
   exception LoginException {
@@ -22,16 +21,20 @@ module Utility {
       string reason;
     };
 
+  exception InvalidWordException {
+        string reason;
+      };
 
-  interface ServerUtility {
+  interface PlayerUtility {
     void login(in wstring username, in wstring passwd) raises (LoginException);
-    void loginCallback(in ClientCallback clientCallback);
-    void logout(in ClientCallback clientCallback) raises (LogoutException);
+    void userCallback(in ClientCallback clientCallback, in wstring username);
+    void logout(in ClientCallback clientCallback, in wstring username) raises (LogoutException);
    // boolean checkUser(in wstring userNPasswd, in wstring gameID);
-    boolean checkWord(in wstring answer, in wstring playerID, in wstring gameID);
+    void checkWord(in wstring answer, in wstring playerID, in wstring gameID) raises (InvalidWordException);
     wstring startGame(in wstring user) raises (GameStartException);
-    wstring showWinnerOfRound();
+   // wstring showWinnerOfRound();
     long showScore(in wstring user, in wstring gameID);
    // wstring getLetterChoice(in wstring gameID);
   };
+
 };

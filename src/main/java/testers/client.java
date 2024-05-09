@@ -2,7 +2,8 @@ package testers;
 
 import Utility.ClientCallback;
 import Utility.ClientCallbackHelper;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
+import Utility.PlayerUtility;
 import client.comproggui.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +30,7 @@ public class client extends Application {
 
     public  static  ClientCallback cref;
 
-    public  static ServerUtility serverUtility;
+    public  static PlayerUtility serverUtility;
 
     public static void main(String[] args) throws InvalidName, AdapterInactive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, WrongPolicy, ServantNotActive {
         try {
@@ -46,7 +47,7 @@ public class client extends Application {
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 
             String name = "Ciao";
-            serverUtility = Utility.ServerUtilityHelper.narrow(ncRef.resolve_str(name));
+            serverUtility = Utility.PlayerUtilityHelper.narrow(ncRef.resolve_str(name));
 
             ciaoCallbackImpl = new ClientCallbackImpl();
             ciaoCallbackImpl.setORB(orb);

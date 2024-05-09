@@ -2,7 +2,8 @@
 package client.comproggui;
 
 import Utility.ClientCallback;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
+import Utility.PlayerUtility;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -25,7 +26,7 @@ public class WaitingRoomController {
     private int queueTime;
     private Timeline timeline;
 
-    public ServerUtility serverUtility;
+    public PlayerUtility serverUtility;
 
     public ClientCallback clientCallback;
 
@@ -93,11 +94,11 @@ public class WaitingRoomController {
     }
 
 
-    public ServerUtility getServerUtility() {
+    public PlayerUtility getServerUtility() {
         return serverUtility;
     }
 
-    public void setServerUtility(ServerUtility serverUtility) {
+    public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
 
