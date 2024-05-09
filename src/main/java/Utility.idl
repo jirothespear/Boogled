@@ -2,7 +2,7 @@ module Utility {
   interface ClientCallback {
     wstring startRound();
     void roundEnd();
-    void gameFinish();
+    void gameFinish(in wstring winner, in wstring points);
     unsigned long getScore(in long time);
     void getRoundTime(in long time);
     void getQueueTime(in long time);

@@ -32,12 +32,12 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     }
 
     @Override
-    public int getRoundTime(int time) {
-        return 0;
+    public void getRoundTime(int time) {
+
     }
 
     @Override
-    public int getQueueTime(int time) {
+    public void getQueueTime(int time) {
         System.out.println(time+" ++");
 
 
@@ -45,12 +45,12 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
             System.out.println("Setting queue time");
             waitingRoomController.setQueueTime(time);
         }
-        return time;
+        //return time;
     }
 
     @Override
-    public int getGameTime(int time) {
-        return 0;
+    public void getGameTime(int time) {
+
     }
 
     @Override

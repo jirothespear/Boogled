@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added indefinite game continuation.">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Changed callback IDL return values.">
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ServerUtilityPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ServerUtilityStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715178908656</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Changed callback IDL return values.">
+      <created>1715228466461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715228466461</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +382,8 @@
     <MESSAGE value="Fixed exception stack of letterChoice in CORBA null parameter." />
     <MESSAGE value="Added time counting on client." />
     <MESSAGE value="Added indefinite game continuation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added indefinite game continuation." />
+    <MESSAGE value="Changed callback IDL return values." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed callback IDL return values." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
