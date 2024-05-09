@@ -4,9 +4,9 @@ module Utility {
     void roundEnd();
     void gameFinish();
     unsigned long getScore(in long time);
-    unsigned long getRoundTime(in long time);
-    unsigned long getQueueTime(in long time);
-    unsigned long getGameTime(in long time);
+    void getRoundTime(in long time);
+    void getQueueTime(in long time);
+    void getGameTime(in long time);
     wstring getLetterChoice (in wstring letters);
   };
 

@@ -48,6 +48,7 @@ public class QueueTask extends TimerTask {
             for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
                 entry.getKey().getQueueTime(time);
+
             }
         }
 

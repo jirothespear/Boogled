@@ -39,8 +39,6 @@ public class Queue {
 
         }
 
-
-        semaphore.release();
         queue.addToCallbackMaps(usernameCallback, userName);
         System.out.println(userName + " joined the queue.");
     }
