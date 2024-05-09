@@ -32,6 +32,6 @@ module Utility {
     wstring startGame(in wstring user) raises (GameStartException);
     wstring showWinnerOfRound();
     long showScore(in wstring user, in wstring gameID);
-    wstring getLetterChoice(in wstring gameID);
+   // wstring getLetterChoice(in wstring gameID);
   };
 };
