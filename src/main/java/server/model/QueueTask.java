@@ -21,7 +21,7 @@ public class QueueTask extends TimerTask {
     @Override
     public void run() {
         time--;
-        if (time != 0  ) {
+        if (time == 0  ) {
             for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
                 entry.getValue().getQueueTime(time);

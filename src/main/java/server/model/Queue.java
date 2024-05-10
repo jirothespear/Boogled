@@ -31,9 +31,10 @@ public class Queue {
 
     public void joinQueue(int queueTime, String userName, ClientCallback usernameCallback) {
         queue = new QueueTask();
-        queue.addToCallbackMaps(usernameCallback, userName);
 
-        if (!queueActive && queue.getUserCallbacks() != null) {
+
+        if (!queueActive) {
+            queue.addToCallbackMaps(usernameCallback, userName);
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");
             timer = new Timer();
