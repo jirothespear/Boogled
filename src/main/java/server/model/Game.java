@@ -21,6 +21,8 @@ public class Game extends Thread {
 
     private HashMap<ClientCallback, String> userCallbacks;
 
+
+
     /*
     Following variabls are used in rounds
      */
@@ -101,18 +103,17 @@ public class Game extends Thread {
         this.userCallbacks = userCallbacks;
     }
 
+
     public Game(){
         DataPB.setCon();
     }
-    public  void startGame(ArrayList<User> plrs){// sets up variables for game
+    public  void startGame(){// sets up variables for game
         System.out.println("Game is starting");
         roundCount = 0;
-        players = plrs;
         for (int i =0; i < players.size(); i++){
             overallPoints.put(players.get(i),0);
             playerPlacing.put(players.get(i),0);
         }
-
 
         if (!roundWin) {
             round = new Round(players);
@@ -203,6 +204,11 @@ public class Game extends Thread {
             }
         }
 
+    }
+
+    public void addToActivePlayers (User player){
+
+        players.add(player);
     }
 
 

@@ -116,6 +116,7 @@ public class LobbyController {
         System.out.println("Current username: " + currentUsername);
         try {
             serverUtility.startGame(currentUsername);
+            serverUtility.getQueueTime(currentUsername);
         } catch (Exception e) {
             e.printStackTrace();
         }

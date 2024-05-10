@@ -1,7 +1,7 @@
 package server.model;
 
 import Utility.ClientCallback;
-import Utility.ServerUtility;
+import Utility.PlayerUtility;
 import server.controller.ServerUtilityImpl;
 import server.controller.User;
 
@@ -14,27 +14,23 @@ public class QueueTask extends TimerTask {
 
     static int time = 11;
 
-    private static HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
+    private static HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
 
     public ArrayList<User> players = new ArrayList<>();
-
-
-
-
 
     @Override
     public void run() {
         time--;
         if (time != 0  ) {
-            for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
-                entry.getKey().getQueueTime(time);
+                entry.getValue().getQueueTime(time);
             }
             Queue.queueActive = false;
 
-            for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
                 System.out.println("Player in callback: " + entry.getValue());
-                players.add(new User(entry.getValue(), entry.getKey()));
+                players.add(new User(entry.getKey(), entry.getValue()));
             }
             //   if (players.size() == 1) {// does not create
             //throw new GameStartException();
@@ -45,9 +41,9 @@ public class QueueTask extends TimerTask {
 
             cancel();
         } else {
-            for (Map.Entry<ClientCallback, String> entry : userCallbacks.entrySet()) {
+            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
                 System.out.println("counting -> " + time);
-                entry.getKey().getQueueTime(time);
+                entry.getValue().getQueueTime(time);
 
             }
         }
@@ -57,14 +53,14 @@ public class QueueTask extends TimerTask {
 
     public void addToCallbackMaps(ClientCallback clientCallback, String userName){
 
-        userCallbacks.put(clientCallback, userName);
+        userCallbacks.put(userName, clientCallback);
     }
 
-    public HashMap<ClientCallback, String> getUserCallbacks() {
+    public HashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
     }
 
-    public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
+    public void setUserCallbacks(HashMap<String, ClientCallback> userCallbacks) {
         this.userCallbacks = userCallbacks;
     }
 

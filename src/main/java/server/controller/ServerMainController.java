@@ -26,7 +26,7 @@ public class ServerMainController {
         servantImpl.setOrb(orb);
 
         org.omg.CORBA.Object ref = rootpoa.servant_to_reference(servantImpl);
-        Utility.ServerUtility cref = Utility.ServerUtilityHelper.narrow(ref);
+        Utility.PlayerUtility cref = Utility.PlayerUtilityHelper.narrow(ref);
 
         org.omg.CORBA.Object objRef =
                 orb.resolve_initial_references("NameService");

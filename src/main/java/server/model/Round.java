@@ -231,7 +231,7 @@ public class Round extends TimerTask{
         System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
                 +" with a score of "+ winnerOfCurrentRound[1]);
 
-        game.startGame(players);
+        game.startGame();
 
         cancel();
 

@@ -20,6 +20,7 @@ public class Queue {
 
     private static QueueTask queue;
 
+    public HashMap<String, ClientCallback> activePlayers = new HashMap<>();
     public List<String> getJoinedUsers() {
         return joinedUsers;
     }
@@ -29,12 +30,14 @@ public class Queue {
 
 
     public void joinQueue(int queueTime, String userName, ClientCallback usernameCallback) {
-        if (!queueActive) {
+        queue = new QueueTask();
+        queue.addToCallbackMaps(usernameCallback, userName);
+
+        if (!queueActive && queue.getUserCallbacks() != null) {
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");
             timer = new Timer();
             queue = new QueueTask();
-            queue.addToCallbackMaps(usernameCallback, userName);
             timer.scheduleAtFixedRate(queue, 0, 1000);
 
         }
@@ -54,6 +57,12 @@ public class Queue {
 
         userCallbacks.put(clientCallback, id);
     }
+
+    public void addToActiveCallbackMaps(ClientCallback clientCallback, String id){
+
+        activePlayers.put(id, clientCallback);
+    }
+
     public HashMap<ClientCallback, String> getUserCallbacks() {
         return userCallbacks;
     }
