@@ -92,17 +92,14 @@ public class LoginController {
         try {
             serverUtility.login(username, password);
 
-            showSuccessDialog("Login successful");
-
             serverUtility.userCallback(clientCallback, username);
 
 
             navigateToLobbyView(event);
 
         } catch (LoginException e) {
-            showErrorDialog("Login failed: " + e.reason);
+
         } catch (Exception e) {
-            showErrorDialog("Login failed: " + e.getMessage());
         }
     }
 
@@ -127,25 +124,12 @@ public class LoginController {
             stage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
-            showErrorDialog("Failed to navigate to lobby view: " + e.getMessage());
         }
     }
 
-    private void showSuccessDialog(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 
-    private void showErrorDialog(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+
+
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;

@@ -2,10 +2,15 @@ package testers;
 
 import Utility.ClientCallback;
 import client.comproggui.WaitingRoomController;
+import javafx.application.Platform;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.StringHolder;
 
 public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
+
+//    public ClientCallbackImpl(WaitingRoomController waitingRoomController) {
+//        this.waitingRoomController = waitingRoomController;
+//    }
 
 
     private WaitingRoomController waitingRoomController;
@@ -38,14 +43,11 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
 
     @Override
     public void getQueueTime(int time) {
-        System.out.println(time+" ++");
-
-
-        if (waitingRoomController != null) {
             System.out.println("Setting queue time");
-            waitingRoomController.setQueueTime(time);
-        }
-        //return time;
+            if (waitingRoomController != null){
+                    waitingRoomController.setQueueTime(time);
+            }
+
     }
 
 

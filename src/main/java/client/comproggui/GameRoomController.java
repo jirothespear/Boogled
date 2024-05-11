@@ -112,6 +112,8 @@ public class GameRoomController {
 
     @FXML
     public void initialize() {
+//        clientCallback.getLetterChoice();
+
         String toSetButtonLabel = "lettasdfaersfaebwpvs";
         ArrayList<Button> buttons = new ArrayList<>();
 

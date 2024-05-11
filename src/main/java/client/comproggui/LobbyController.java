@@ -108,14 +108,14 @@ public class LobbyController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/waiting-room-view.fxml"));
         Parent root = loader.load();
         waitingRoomController = loader.getController();
-        System.out.println("Waiting room controller: " + waitingRoomController.getClass());
+        System.out.println("Waiting room controller: " + waitingRoomController.toString());
 
         clientCallbackImpl.setWaitingRoomController(waitingRoomController);
 
         System.out.println("Start game button clicked");
         System.out.println("Current username: " + currentUsername);
         try {
-            serverUtility.startGame(currentUsername);
+//            serverUtility.startGame(currentUsername);
             serverUtility.getQueueTime(currentUsername);
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,6 +124,7 @@ public class LobbyController {
         waitingRoomController.setServerUtility(serverUtility);
         waitingRoomController.setClientCallbackImpl(clientCallbackImpl);
         waitingRoomController.setClientCallback(clientCallback);
+//        waitingRoomController.setClientCallbackImpl(new ClientCallbackImpl(waitingRoomController));
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
