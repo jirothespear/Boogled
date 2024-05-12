@@ -121,11 +121,6 @@ public class GameRoomController {
     public void initialize() {
         Platform.runLater(() -> {
 
-
-
-
-
-
             gameLetterChoice = serverUtility.getLetterChoice(gameID);
 
             ArrayList<Button> buttons = new ArrayList<>();

@@ -35,8 +35,10 @@ public class client extends Application {
     public static void main(String[] args) throws InvalidName, AdapterInactive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, WrongPolicy, ServantNotActive {
         try {
             Properties props = new Properties();
-            props.put("org.omg.CORBA.ORBInitialHost","192.168.56.1");
-            props.put("org.omg.CORBA.ORBInitialPort","1099");
+
+
+            props.put("org.omg.CORBA.ORBInitialHost", "172.25.13.81");
+            props.put("org.omg.CORBA.ORBInitialPort", "900");
 
             ORB orb = ORB.init(args, props);
 
@@ -55,9 +57,6 @@ public class client extends Application {
             org.omg.CORBA.Object ref = rootpoa.servant_to_reference(ciaoCallbackImpl);
             cref = ClientCallbackHelper.narrow(ref);
 
-            //serverUtility.login("hans", "hans");
-           //serverUtility.userCallback(cref, "hans");
-            // serverUtility.getQueueTime("hans");
             launch();
 
            Thread.currentThread().join();
@@ -73,7 +72,6 @@ public class client extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/login-view.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
-
             loginController.setServerUtility(serverUtility);
             loginController.setClientCallbackImpl(ciaoCallbackImpl);
             loginController.setClientCallback(cref);

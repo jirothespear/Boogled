@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import testers.ClientCallbackImpl;
 
 import java.io.IOException;
+import java.util.Properties;
 
 public class LoginController {
 
@@ -81,6 +82,11 @@ public class LoginController {
 
     @FXML
     public void onLoginButtonClick(ActionEvent event) {
+        Properties props = new Properties();
+
+        System.setProperty("org.omg.CORBA.ORBInitialHost","172.25.13.81");
+        System.setProperty("org.omg.CORBA.ORBInitialPort","2055");
+
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
 

@@ -34,7 +34,7 @@ public class client2 extends Application {
     public static void main(String[] args) throws InvalidName, AdapterInactive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, WrongPolicy, ServantNotActive {
         try {
             Properties props = new Properties();
-            props.put("org.omg.CORBA.ORBInitialHost","192.168.56.1");
+            props.put("org.omg.CORBA.ORBInitialHost","172.25.13.81");
             props.put("org.omg.CORBA.ORBInitialPort","1099");
 
             ORB orb = ORB.init(args, props);
