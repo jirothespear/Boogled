@@ -3,7 +3,6 @@ package testers;
 import Utility.ClientCallback;
 import Utility.ClientCallbackHelper;
 import Utility.PlayerUtility;
-import Utility.PlayerUtility;
 import client.comproggui.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,7 @@ import org.omg.PortableServer.POAPackage.WrongPolicy;
 
 import java.util.Properties;
 
-public class client extends Application {
+public class client2 extends Application {
 
     public static ClientCallbackImpl ciaoCallbackImpl;
 
@@ -55,9 +54,9 @@ public class client extends Application {
             org.omg.CORBA.Object ref = rootpoa.servant_to_reference(ciaoCallbackImpl);
             cref = ClientCallbackHelper.narrow(ref);
 
-            //serverUtility.login("hans", "hans");
-           //serverUtility.userCallback(cref, "hans");
-            // serverUtility.getQueueTime("hans");
+           // serverUtility.login("renuel", "renuel");
+          //  serverUtility.userCallback(cref, "renuel");
+         //   serverUtility.getQueueTime("renuel");
             launch();
 
            Thread.currentThread().join();

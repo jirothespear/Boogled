@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TimerTask;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class QueueTask extends TimerTask {
 
@@ -29,7 +33,7 @@ public class QueueTask extends TimerTask {
             Queue.queueActive = false;
 
             for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
-                System.out.println("Player in callback: " + entry.getValue());
+                System.out.println("Player in callback: " + entry.getKey());
                 players.add(new User(entry.getKey(), entry.getValue()));
             }
             //   if (players.size() == 1) {// does not create
@@ -41,11 +45,23 @@ public class QueueTask extends TimerTask {
 
             cancel();
         } else {
-            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
-                System.out.println("counting -> " + time);
-                entry.getValue().getQueueTime(time);
+            ExecutorService executorService = Executors.newFixedThreadPool(5);
+                executorService.execute(new Runnable() {
+                    @Override
+                    public void run() {
 
-            }
+                        for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
+                            System.out.println("counting -> " + time);
+
+
+                            entry.getValue().getQueueTime(time);
+
+                        }
+                    }
+                });
+
+
+
         }
 
 

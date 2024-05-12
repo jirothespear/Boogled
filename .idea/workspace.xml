@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Changes in IDL, refactor of interfaces.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Changes in QUEUE.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +92,11 @@
       <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5" />
       <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\src\main\java\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testers" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.client2">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comproggui.Main" />
       <module name="2023-2_9341-finteam5" />
@@ -114,6 +120,19 @@
     </configuration>
     <configuration name="client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testers.client" />
+      <module name="finalProjectCORBA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testers.client2" />
       <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
@@ -153,28 +172,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="2023-2_9341-finteam5" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.client2" />
       <item itemvalue="Application.client" />
       <item itemvalue="Application.server" />
       <item itemvalue="Application.client.comproggui.Main" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.test (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.client2" />
         <item itemvalue="Application.client" />
         <item itemvalue="Application.server" />
         <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -357,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715231343989</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Changes in QUEUE.">
+      <created>1715382699557</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715382699557</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,7 +412,8 @@
     <MESSAGE value="Changed callback IDL return values." />
     <MESSAGE value="gameFinish IDL parameter." />
     <MESSAGE value="Changes in IDL, refactor of interfaces." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in IDL, refactor of interfaces." />
+    <MESSAGE value="Changes in QUEUE." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in QUEUE." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

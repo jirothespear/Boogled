@@ -40,9 +40,17 @@ public class WaitingRoomController {
             System.out.println("timerLabel is null");
         } else {
             this.queueTime = queueTime;
-            timerLabel.setText(String.valueOf(queueTime));
+
+            Platform.runLater(new Runnable(){
+
+                @Override
+                public void run() {
+                    timerLabel.setText(String.valueOf(queueTime));
+                }
+            });
+
             System.out.println("Queue time: " + queueTime);
-            startCountdown();
+            //startCountdown();
         }
     }
 

@@ -16,7 +16,7 @@ public class Round extends TimerTask{
     private String letters;
     private int timerCount;
 
-    private int roundCount;
+    private int roundCount = 30;
 
     private ArrayList<User> players = new ArrayList<>();
 
@@ -219,9 +219,9 @@ public class Round extends TimerTask{
 
     @Override
     public void run() {
-        timerCount++;
+        timerCount--;
 
-        if (timerCount == 30){
+        if (timerCount == 0){
 
         filterAnswers();
         countScoresPlayers();
