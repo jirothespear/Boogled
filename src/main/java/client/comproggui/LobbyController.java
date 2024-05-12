@@ -71,6 +71,8 @@ public class LobbyController {
 
     private String currentUsername;
 
+    private String gameID;
+
 
 
     @FXML
@@ -93,38 +95,25 @@ public class LobbyController {
 
     @FXML
     public void onStartGameButtonClick(ActionEvent event) throws IOException {
-
-
-
-        // Send request to server to join game
-
-
-
-
-
-
-        // Load waiting room
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/waiting-room-view.fxml"));
         Parent root = loader.load();
         waitingRoomController = loader.getController();
-        System.out.println("Waiting room controller: " + waitingRoomController.toString());
 
         clientCallbackImpl.setWaitingRoomController(waitingRoomController);
 
         System.out.println("Start game button clicked");
         System.out.println("Current username: " + currentUsername);
-        try {
-//            serverUtility.startGame(currentUsername);
-            serverUtility.getQueueTime(currentUsername);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        serverUtility.getQueueTime(currentUsername);
 
         waitingRoomController.setServerUtility(serverUtility);
         waitingRoomController.setClientCallbackImpl(clientCallbackImpl);
         waitingRoomController.setClientCallback(clientCallback);
-//        waitingRoomController.setClientCallbackImpl(new ClientCallbackImpl(waitingRoomController));
+        waitingRoomController.setCurrentUser(currentUsername);
+
+//        gameID = serverUtility.getGameID(currentUsername);
+
+//        System.out.println("Game ID Lobby: " + gameID);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -142,15 +131,6 @@ public class LobbyController {
         waitingTransition.play();
     }
 
-//    private void loadGameView(Stage stage) throws IOException {
-//        root = FXMLLoader.load(getClass().getResource("/game-room-view.fxml"));
-//        Scene gameScene = new Scene(root);
-//        stage.setScene(gameScene);
-//        stage.show();
-//        stage.centerOnScreen();
-//        stage.setResizable(false);
-//        gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
-//    }
 
     public ClientCallbackImpl getClientCallbackImpl() {
         return clientCallbackImpl;

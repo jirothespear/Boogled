@@ -32,6 +32,11 @@ public class WaitingRoomController {
 
     public ClientCallbackImpl clientCallbackImpl;
 
+    public String gameID;
+
+
+
+    public String currentUser;
 
 
     public void setQueueTime(int queueTime) {
@@ -39,37 +44,28 @@ public class WaitingRoomController {
         if (timerLabel == null) {
             System.out.println("timerLabel is null");
         } else {
-            this.queueTime = queueTime;
-
-            Platform.runLater(new Runnable(){
-
-                @Override
-                public void run() {
-                    timerLabel.setText(String.valueOf(queueTime));
-                }
-            });
-
-            System.out.println("Queue time: " + queueTime);
-            //startCountdown();
-        }
-    }
-
-    private void startCountdown() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-            queueTime--;
-            updateTimerLabel();
             if (queueTime <= 0) {
-                timeline.stop();
-
                 onCountdownFinished();
+                System.out.println("Countdown finished");
+            } else {
+                this.queueTime = queueTime;
+                System.out.println("Queue time: " + queueTime);
+                updateTimerLabel();
             }
-        }));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+        }
+
+
     }
+
 
     private void updateTimerLabel() {
-        timerLabel.setText(String.valueOf(queueTime));
+        Platform.runLater(() -> {
+            if (queueTime <= 0) {
+                timerLabel.setText("0");
+            } else {
+                timerLabel.setText(String.valueOf(queueTime));
+            }
+        });
     }
 
 
@@ -82,9 +78,28 @@ public class WaitingRoomController {
                 Parent root = loader.load();
                 GameRoomController gameRoomController = loader.getController();
 
+
+
+
+                System.out.println("Game letter choice: " + serverUtility.getLetterChoice(serverUtility.getGameID(currentUser)));
+
+                if (gameRoomController.gameLetterChoice == null) {
+                    gameRoomController.setGameLetterChoice(serverUtility.getLetterChoice(serverUtility.getGameID(currentUser)));
+                } else {
+                    System.out.println("gameLetterChoice is not null");
+                }
+
+                gameRoomController.setGameID(serverUtility.getGameID(currentUser));
                 gameRoomController.setServerUtility(serverUtility);
                 gameRoomController.setClientCallback(clientCallback);
+                clientCallbackImpl.setGameRoomController(gameRoomController);
                 gameRoomController.setClientCallbackImpl(clientCallbackImpl);
+
+
+                clientCallback.getLetterChoice(serverUtility.getGameID(currentUser));
+
+
+
 
                 Scene gameScene = new Scene(root);
                 Stage stage = (Stage) timerLabel.getScene().getWindow();
@@ -94,7 +109,6 @@ public class WaitingRoomController {
                 stage.setResizable(false);
                 gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
 
-                // Other UI modifications as needed
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -124,5 +138,17 @@ public class WaitingRoomController {
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;
+    }
+
+    public void setGameID(String gameID) {
+        this.gameID = gameID;
+    }
+
+    public String getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(String currentUser) {
+        this.currentUser = currentUser;
     }
 }

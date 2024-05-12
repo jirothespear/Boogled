@@ -3,6 +3,7 @@ package client.comproggui;
 import Utility.ClientCallback;
 import Utility.PlayerUtility;
 import Utility.PlayerUtility;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -110,54 +111,68 @@ public class GameRoomController {
 
     public ClientCallbackImpl clientCallbackImpl;
 
+
+
+    public String gameID;
+    public String gameLetterChoice;
+
+    public int roundTime;
     @FXML
     public void initialize() {
-//        clientCallback.getLetterChoice();
-
-        String toSetButtonLabel = "lettasdfaersfaebwpvs";
-        ArrayList<Button> buttons = new ArrayList<>();
-
-
-        buttons.add(firstButton);
-        buttons.add(secondButton);
-        buttons.add(thirdButton);
-        buttons.add(fourthButton);
-        buttons.add(fifthButton);
-        buttons.add(sixthButton);
-        buttons.add(seventhButton);
-        buttons.add(eighthButton);
-        buttons.add(ninthButton);
-        buttons.add(tenthButton);
-        buttons.add(eleventhButton);
-        buttons.add(twelfthButton);
-        buttons.add(thirteenthButton);
-        buttons.add(fourteenthButton);
-        buttons.add(fifteenthButton);
-        buttons.add(sixteenthButton);
-        buttons.add(seventeenthButton);
-        buttons.add(eighteenthButton);
-        buttons.add(nineteenthButton);
-        buttons.add(twentiethButton);
+        Platform.runLater(() -> {
 
 
 
-        String letters = toSetButtonLabel.toLowerCase().replaceAll("[^a-z]", "");
 
 
-        for (int i = 0; i < letters.length(); i++) {
-            if (i < buttons.size()) {
-                buttons.get(i).setText(String.valueOf(letters.charAt(i)));
-            } else {
 
-                break;
+            gameLetterChoice = serverUtility.getLetterChoice(gameID);
+
+            ArrayList<Button> buttons = new ArrayList<>();
+
+
+            buttons.add(firstButton);
+            buttons.add(secondButton);
+            buttons.add(thirdButton);
+            buttons.add(fourthButton);
+            buttons.add(fifthButton);
+            buttons.add(sixthButton);
+            buttons.add(seventhButton);
+            buttons.add(eighthButton);
+            buttons.add(ninthButton);
+            buttons.add(tenthButton);
+            buttons.add(eleventhButton);
+            buttons.add(twelfthButton);
+            buttons.add(thirteenthButton);
+            buttons.add(fourteenthButton);
+            buttons.add(fifteenthButton);
+            buttons.add(sixteenthButton);
+            buttons.add(seventeenthButton);
+            buttons.add(eighteenthButton);
+            buttons.add(nineteenthButton);
+            buttons.add(twentiethButton);
+
+
+
+            String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
+//        String letters = toSetButtonLabel.toLowerCase().replaceAll("[^a-z]", "");
+
+            for (int i = 0; i < letters.length(); i++) {
+                if (i < buttons.size()) {
+                    buttons.get(i).setText(String.valueOf(letters.charAt(i)));
+                } else {
+
+                    break;
+                }
             }
-        }
 
-        // Add event handler for Enter key press
-        answerTextField.setOnKeyPressed(event -> { // changed this to the fxid given in openscenbuilder - yves
-            if (event.getCode() == KeyCode.ENTER) {
-                handleSubmit();
-            }
+            // Add event handler for Enter key press
+            answerTextField.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    handleSubmit();
+                }
+            });
+
         });
     }
 
@@ -169,13 +184,21 @@ public class GameRoomController {
     }
 
     private void handleSubmit() {
-        // Get user input from the text field
         String userInput = gameRoomTextField.getText();
-        // Print the user input in the inputPrompt
         inputPrompt.setText(userInput);
-        // Clear the text field after submission
         gameRoomTextField.clear();
     }
+
+    private void updateTimerLabel() {
+        Platform.runLater(() -> {
+            if (roundTime <= 0) {
+                timerLabel.setText("0");
+            } else {
+                timerLabel.setText(String.valueOf(roundTime));
+            }
+        });
+    }
+
 
     public PlayerUtility getServerUtility() {
         return serverUtility;
@@ -193,11 +216,42 @@ public class GameRoomController {
         this.clientCallback = clientCallback;
     }
 
+    public String getGameLetterChoice() {
+        return gameLetterChoice;
+    }
+
+    public void setGameLetterChoice(String gameLetterChoice) {
+        this.gameLetterChoice = gameLetterChoice;
+    }
+
+    public int getRoundTime() {
+        return roundTime;
+    }
+
+    public void setRoundTime(int roundTime) {
+        if (timerLabel == null) {
+            System.out.println("timerLabel is null");
+        } else {
+            if (roundTime <= 0) {
+                System.out.println("Round finished");
+            } else {
+                this.roundTime = roundTime;
+                System.out.println("Round time: " + roundTime);
+                updateTimerLabel();
+            }
+        }
+//        this.roundTime = roundTime;
+    }
+
     public ClientCallbackImpl getClientCallbackImpl() {
         return clientCallbackImpl;
     }
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;
+    }
+
+    public void setGameID(String gameID) {
+        this.gameID = gameID;
     }
 }

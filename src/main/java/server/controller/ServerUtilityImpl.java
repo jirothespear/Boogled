@@ -65,7 +65,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         if(userCallbacks.containsKey(clientCallback)){
 
             userCallbacks.remove(clientCallback);
-        } //else throw new LogoutException();
+        }
 
     }
 
@@ -94,7 +94,6 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         HashMap<ClientCallback, String> users;
         ArrayList<User> players = new ArrayList<>();
 
-        // get users from queueSystem
         users = queueSystem.getUserCallbacks();
 
         for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
@@ -105,10 +104,6 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
         if (!queueSystem.isQueueActive()) {
 
-            //  if (players.size() == 1) {// does not create
-            //throw new GameStartException();
-
-            // } else {
 
             System.out.println("skibidi");
             Game game = new Game();
@@ -132,10 +127,10 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         Game game = new Game();
         game.startGame();
         game.setGameID(gameCount);
+        game.setPlayers(players);
         activeGames.put(gameCount, game);
 
     }
-
 
 
     @Override
@@ -145,24 +140,29 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
     @Override
     public void getQueueTime(String username) {
-        queueSystem.addToCallbackMaps(userCallbacks.get(username), username);
         queueSystem.joinQueue(queueTime, userName, userCallbacks.get(username));
+        queueSystem.addToCallbackMaps(userCallbacks.get(username), username);
+        System.out.println("Queue time for " + username+  "   " +userCallbacks.get(username));
+        queueSystem.addToCallbackMaps(userCallbacks.get(username), username);
+
 
     }
 
     @Override
     public void getRoundTime(String username, String gameID) {
+        System.out.println("Round time for " + username + " in game " + gameID);
         activeGames.get(Integer.valueOf(gameID))
                 .addToActivePlayers(new User(username, userCallbacks.get(username)));
     }
 
     @Override
     public String getLetterChoice(String gameID) {
-        return null;
+        return activeGames.get(Integer.valueOf(gameID)).getRound().getLetters();
     }
 
     @Override
     public String getGameID(String username) {
+        System.out.println("Active Games: "+ activeGames.size());
         for (Map.Entry<Integer, Game> temp : activeGames.entrySet()){
             ArrayList<User> userArrayList = temp.getValue().getPlayers();
             for (User tempUser: userArrayList){
