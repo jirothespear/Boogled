@@ -14,9 +14,9 @@ public class Round extends TimerTask{
     private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
     private String letters;
-    private int timerCount;
+    private int timerCount = 30;
 
-    private int roundCount = 30;
+    private int roundCount;
 
     private ArrayList<User> players = new ArrayList<>();
 
@@ -195,12 +195,8 @@ public class Round extends TimerTask{
             vowelsBuilder.append(vowels.charAt(index));
         }
 
-        // Shuffle the consonants and vowels separately
         shuffleStringBuilder(consonantsBuilder, random);
         shuffleStringBuilder(vowelsBuilder, random);
-
-        // Append consonants and vowels to the result
-        // result.append(consonantsBuilder).append("\n.").append(vowelsBuilder);
 
         result.append(consonantsBuilder).append(vowelsBuilder);
 
