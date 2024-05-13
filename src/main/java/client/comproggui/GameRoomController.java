@@ -104,7 +104,7 @@ public class GameRoomController {
     @FXML
     private Button submitButton;
 
-
+    private ArrayList<Button> buttons = new ArrayList<>();
 
     public PlayerUtility serverUtility;
 
@@ -112,16 +112,14 @@ public class GameRoomController {
 
     public ClientCallbackImpl clientCallbackImpl;
 
-
-
     public String currentGameUser;
-
-
 
     public String gameID;
     public String gameLetterChoice;
 
     public int roundTime;
+
+    private boolean buttonsEnabled = true;
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
@@ -130,7 +128,7 @@ public class GameRoomController {
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
-            ArrayList<Button> buttons = new ArrayList<>();
+
 
 
             buttons.add(firstButton);
@@ -162,7 +160,6 @@ public class GameRoomController {
                 if (i < buttons.size()) {
                     buttons.get(i).setText(String.valueOf(letters.charAt(i)));
                 } else {
-
                     break;
                 }
             }
@@ -170,6 +167,8 @@ public class GameRoomController {
             for (Button button : buttons) {
                 button.setOnAction(event -> {
                     answerTextField.appendText(button.getText());
+                    button.setDisable(true);
+
                 });
             }
 
@@ -189,6 +188,7 @@ public class GameRoomController {
     @FXML
     public void onSubmitButtonClicked(){
         try {
+            System.out.println("Checking word");
             serverUtility.checkWord(answerTextField.getText(),currentGameUser ,gameID);
         } catch (InvalidWordException e) {
             throw new RuntimeException(e);
@@ -197,6 +197,7 @@ public class GameRoomController {
     }
 
     private void handleSubmit() {
+        reactivateButtons();
         String userInput = gameRoomTextField.getText();
         inputPrompt.setText(userInput);
         gameRoomTextField.clear();
@@ -212,10 +213,14 @@ public class GameRoomController {
         });
     }
 
-
-    public PlayerUtility getServerUtility() {
-        return serverUtility;
+    private void reactivateButtons() {
+        for (Button button : buttons) {
+            System.out.println("Button reactivated");
+            button.setDisable(false); // reactivates buttons
+        }
     }
+
+
 
     public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
@@ -229,9 +234,6 @@ public class GameRoomController {
         this.clientCallback = clientCallback;
     }
 
-    public String getGameLetterChoice() {
-        return gameLetterChoice;
-    }
 
     public void setGameLetterChoice(String gameLetterChoice) {
         this.gameLetterChoice = gameLetterChoice;
@@ -253,11 +255,6 @@ public class GameRoomController {
                 updateTimerLabel();
             }
         }
-//        this.roundTime = roundTime;
-    }
-
-    public ClientCallbackImpl getClientCallbackImpl() {
-        return clientCallbackImpl;
     }
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
@@ -267,11 +264,6 @@ public class GameRoomController {
     public void setGameID(String gameID) {
         this.gameID = gameID;
     }
-
-    public String getCurrentGameUser() {
-        return currentGameUser;
-    }
-
     public void setCurrentGameUser(String currentGameUser) {
         this.currentGameUser = currentGameUser;
     }
