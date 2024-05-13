@@ -1,6 +1,7 @@
 package client.comproggui;
 
 import Utility.ClientCallback;
+import Utility.InvalidWordException;
 import Utility.PlayerUtility;
 import Utility.PlayerUtility;
 import javafx.application.Platform;
@@ -113,6 +114,10 @@ public class GameRoomController {
 
 
 
+    public String currentGameUser;
+
+
+
     public String gameID;
     public String gameLetterChoice;
 
@@ -122,6 +127,8 @@ public class GameRoomController {
         Platform.runLater(() -> {
 
             gameLetterChoice = serverUtility.getLetterChoice(gameID);
+            answerTextField.setEditable(false);
+            answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
             ArrayList<Button> buttons = new ArrayList<>();
 
@@ -150,7 +157,6 @@ public class GameRoomController {
 
 
             String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
-//        String letters = toSetButtonLabel.toLowerCase().replaceAll("[^a-z]", "");
 
             for (int i = 0; i < letters.length(); i++) {
                 if (i < buttons.size()) {
@@ -161,12 +167,19 @@ public class GameRoomController {
                 }
             }
 
-            // Add event handler for Enter key press
+            for (Button button : buttons) {
+                button.setOnAction(event -> {
+                    answerTextField.appendText(button.getText());
+                });
+            }
+
+
             answerTextField.setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.ENTER) {
-                    handleSubmit();
+                    onSubmitButtonClicked();
                 }
             });
+
 
         });
     }
@@ -175,6 +188,11 @@ public class GameRoomController {
 
     @FXML
     public void onSubmitButtonClicked(){
+        try {
+            serverUtility.checkWord(answerTextField.getText(),currentGameUser ,gameID);
+        } catch (InvalidWordException e) {
+            throw new RuntimeException(e);
+        }
         handleSubmit();
     }
 
@@ -248,5 +266,13 @@ public class GameRoomController {
 
     public void setGameID(String gameID) {
         this.gameID = gameID;
+    }
+
+    public String getCurrentGameUser() {
+        return currentGameUser;
+    }
+
+    public void setCurrentGameUser(String currentGameUser) {
+        this.currentGameUser = currentGameUser;
     }
 }
