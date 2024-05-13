@@ -78,28 +78,16 @@ public class WaitingRoomController {
                 Parent root = loader.load();
                 GameRoomController gameRoomController = loader.getController();
 
+                String gameLetterChoice = serverUtility.getLetterChoice(serverUtility.getGameID(currentUser));
 
-
-
-                System.out.println("Game letter choice: " + serverUtility.getLetterChoice(serverUtility.getGameID(currentUser)));
-
-                if (gameRoomController.gameLetterChoice == null) {
-                    gameRoomController.setGameLetterChoice(serverUtility.getLetterChoice(serverUtility.getGameID(currentUser)));
-                } else {
-                    System.out.println("gameLetterChoice is not null");
-                }
+                System.out.println("Game letter choice: " + gameLetterChoice);
 
                 gameRoomController.setGameID(serverUtility.getGameID(currentUser));
                 gameRoomController.setServerUtility(serverUtility);
+                clientCallback.getLetterChoice(gameLetterChoice);
                 gameRoomController.setClientCallback(clientCallback);
                 clientCallbackImpl.setGameRoomController(gameRoomController);
                 gameRoomController.setClientCallbackImpl(clientCallbackImpl);
-
-
-                clientCallback.getLetterChoice(serverUtility.getGameID(currentUser));
-
-
-
 
                 Scene gameScene = new Scene(root);
                 Stage stage = (Stage) timerLabel.getScene().getWindow();

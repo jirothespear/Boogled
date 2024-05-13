@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import testers.ClientCallbackImpl;
 
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class GameRoomController {
@@ -128,8 +129,7 @@ public class GameRoomController {
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
-
-
+            submitButton = new Button();
 
             buttons.add(firstButton);
             buttons.add(secondButton);
@@ -151,7 +151,6 @@ public class GameRoomController {
             buttons.add(eighteenthButton);
             buttons.add(nineteenthButton);
             buttons.add(twentiethButton);
-
 
 
             String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
@@ -176,20 +175,27 @@ public class GameRoomController {
             answerTextField.setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.ENTER) {
                     onSubmitButtonClicked();
+
                 }
             });
 
 
+            submitButton.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    onSubmitButtonClicked();
+                }
+            });
         });
     }
 
 
 
     @FXML
-    public void onSubmitButtonClicked(){
+    public void onSubmitButtonClicked() {
         try {
-            System.out.println("Checking word");
+            System.out.println("Checking word - Submit button triggered");
             serverUtility.checkWord(answerTextField.getText(),currentGameUser ,gameID);
+
         } catch (InvalidWordException e) {
             throw new RuntimeException(e);
         }
@@ -197,16 +203,22 @@ public class GameRoomController {
     }
 
     private void handleSubmit() {
-        reactivateButtons();
+
         String userInput = gameRoomTextField.getText();
+        System.out.println("User input: " + userInput);
         inputPrompt.setText(userInput);
         gameRoomTextField.clear();
+        answerTextField.clear();
+        reactivateButtons();
     }
 
     private void updateTimerLabel() {
+
         Platform.runLater(() -> {
-            if (roundTime <= 0) {
-                timerLabel.setText("0");
+            if (roundTime == 1) {
+                System.out.println("Updating timer label: " + roundTime);
+//                resetGame();
+                initialize();
             } else {
                 timerLabel.setText(String.valueOf(roundTime));
             }
@@ -219,6 +231,38 @@ public class GameRoomController {
             button.setDisable(false); // reactivates buttons
         }
     }
+
+
+
+
+
+
+    @FXML
+    public void resetGame() {
+        answerTextField.clear();
+        inputPrompt.setText("");
+        gameRoomTextField.clear();
+        reactivateButtons();
+
+        gameLetterChoice = serverUtility.getLetterChoice(gameID);
+
+        String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
+        System.out.println("Letters: " + letters);
+
+        for (int i = 0; i < letters.length(); i++) {
+            if (i < buttons.size()) {
+                buttons.get(i).setText(String.valueOf(letters.charAt(i)));
+            } else {
+                break;
+            }
+        }
+    }
+
+
+
+
+
+
 
 
 
