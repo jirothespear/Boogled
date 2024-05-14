@@ -81,7 +81,7 @@ public class GameRoomController {
     private Button sixthButton;
 
     @FXML
-    private Button submitBUtton;
+    private Button submitButton;
 
     @FXML
     private Button tenthButton;
@@ -109,8 +109,7 @@ public class GameRoomController {
     private Text inputPrompt; // can be replaced for counter of words inputted so user can keep track in a way
     @FXML
     private TextField gameRoomTextField;
-    @FXML
-    private Button submitButton;
+
 
     private ArrayList<Button> buttons = new ArrayList<>();
 
@@ -129,7 +128,6 @@ public class GameRoomController {
 
     private Timer timer;
 
-    private boolean buttonsEnabled = true;
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
@@ -139,7 +137,7 @@ public class GameRoomController {
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
-            submitButton = new Button();
+
 
             buttons.add(firstButton);
             buttons.add(secondButton);
@@ -182,22 +180,18 @@ public class GameRoomController {
             }
 
 
-            answerTextField.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.ENTER) {
-                    onSubmitButtonClicked();
-
-                }
+//            answerTextField.setOnKeyPressed(event -> {
+//                if (event.getCode() == KeyCode.ENTER) {
+//                    System.out.println("Enter key pressed");
+//                    onSubmitButtonClicked();
+//
+//                }
+//            });
+            submitButton.setOnAction(event -> {
+                System.out.println("Submit button clicked");
+                onSubmitButtonClicked();
             });
 
-
-
-
-            submitButton.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.ENTER) {
-
-                    onSubmitButtonClicked();
-                }
-            });
         });
     }
 
@@ -207,7 +201,9 @@ public class GameRoomController {
     public void onSubmitButtonClicked() {
         try {
             System.out.println("Checking word - Submit button triggered");
-            serverUtility.checkWord(answerTextField.getText(),currentGameUser ,gameID);
+            System.out.println("Answer: " + answerTextField.getText() + " Game ID: " + gameID + " User: " + currentGameUser);
+            String answer = answerTextField.getText();
+            serverUtility.checkWord(answer,currentGameUser ,gameID);
 
         } catch (InvalidWordException e) {
             throw new RuntimeException(e);
@@ -217,10 +213,8 @@ public class GameRoomController {
 
     private void handleSubmit() {
 
-        String userInput = gameRoomTextField.getText();
+        String userInput = answerTextField.getText();
         System.out.println("User input: " + userInput);
-        inputPrompt.setText(userInput);
-        gameRoomTextField.clear();
         answerTextField.clear();
         reactivateButtons();
     }
@@ -233,8 +227,8 @@ public class GameRoomController {
 
     private void reactivateButtons() {
         for (Button button : buttons) {
-            System.out.println("Button reactivated");
-            button.setDisable(false); // reactivates buttons
+//            System.out.println("Button reactivated");
+            button.setDisable(false);
         }
     }
 
