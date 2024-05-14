@@ -77,9 +77,15 @@ public class LobbyController {
 
     @FXML
     public void onLeaderboardButtonClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/leaderboard-view.fxml"));
-        Scene scene = leaderboardButton.getScene();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/leaderboard-view.fxml"));
 
+        Parent root = loader.load();
+        Scene scene = leaderboardButton.getScene();
+        LeaderboardController leaderboardController = loader.getController();
+
+        leaderboardController.setServerUtility(serverUtility);
+        leaderboardController.setClientCallbackImpl(clientCallbackImpl);
+        leaderboardController.setClientCallback(clientCallback);
         root.translateXProperty().set(scene.getWidth());
         welcomePane.getChildren().add(root);
 
