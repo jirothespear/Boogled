@@ -6,15 +6,20 @@ import Utility.PlayerUtility;
 import Utility.PlayerUtility;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import testers.ClientCallbackImpl;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameRoomController {
@@ -255,6 +260,74 @@ public class GameRoomController {
             } else {
                 break;
             }
+        }
+    }
+
+    @FXML
+    public void onRoundFinished(){
+        try {
+            // Load the main application view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/round-stack-pane-view.fxml"));
+            System.out.println("Loading FXML: " + getClass().getResource("/round-stack-pane.fxml-view"));
+            Parent root = loader.load();
+            System.out.println("FXML Loaded: " + (root != null));
+
+            // Create a new scene with the main app view
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
+
+            // Set the scene on the stage
+            stage.setScene(scene);
+            stage.show();
+            stage.centerOnScreen();
+            stage.setResizable(false);
+
+            // Retrieve the controller and initialize the main app stage
+            RoundStackPaneController controller = loader.getController();
+            System.out.println("Controller: " + controller);
+            if (controller != null) {
+                controller.endOfRound();
+            } else {
+                System.out.println("Controller is null");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Failed to load FXML file: " + e.getMessage());
+        }
+    }
+
+    @FXML
+    public void onGameFinished(){
+        try {
+            // Load the main application view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-stack-pane-view.fxml"));
+            System.out.println("Loading FXML: " + getClass().getResource("/game-stack-pane.fxml-view"));
+            Parent root = loader.load();
+            System.out.println("FXML Loaded: " + (root != null));
+
+            // Create a new scene with the main app view
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
+
+            // Set the scene on the stage
+            stage.setScene(scene);
+            stage.show();
+            stage.centerOnScreen();
+            stage.setResizable(false);
+
+            // Retrieve the controller and initialize the main app stage
+            GameStackPaneController controller = loader.getController();
+            System.out.println("Controller: " + controller);
+            if (controller != null) {
+                controller.endOfGame();
+            } else {
+                System.out.println("Controller is null");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Failed to load FXML file: " + e.getMessage());
         }
     }
 
