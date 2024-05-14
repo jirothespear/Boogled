@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="757.0" fitWidth="1354.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true">
          <image>
-            <Image url="file:/D:/2023-2_9341-finteam5/resources/gameroomGeneralResultsBg.png" />
+            <Image url="/gameroomGeneralResultsBg.png" />
          </image>
       </ImageView>
       <Label fx:id="totalPointsLabel" layoutX="275.0" layoutY="489.0" stylesheets="@Font2.css" text="1" textFill="#9fffc7">

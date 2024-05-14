@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="478.0" fitWidth="898.0" pickOnBounds="true">
          <image>
-            <Image url="file:/D:/2023-2_9341-finteam5/resources/resources/leaderboardsBgImage.png" />
+            <Image url="/leaderboardsBgImage.png" />
          </image>
          <effect>
             <InnerShadow choke="0.67">
