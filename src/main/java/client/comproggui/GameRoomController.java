@@ -21,6 +21,8 @@ import testers.ClientCallbackImpl;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class GameRoomController {
 
@@ -125,12 +127,15 @@ public class GameRoomController {
 
     public int roundTime;
 
+    private Timer timer;
+
     private boolean buttonsEnabled = true;
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
 
             gameLetterChoice = serverUtility.getLetterChoice(gameID);
+            System.out.println("Game letter choice: " + gameLetterChoice);
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
@@ -185,8 +190,11 @@ public class GameRoomController {
             });
 
 
+
+
             submitButton.setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.ENTER) {
+
                     onSubmitButtonClicked();
                 }
             });
@@ -218,15 +226,8 @@ public class GameRoomController {
     }
 
     private void updateTimerLabel() {
-
         Platform.runLater(() -> {
-            if (roundTime == 1) {
-                System.out.println("Updating timer label: " + roundTime);
-//                resetGame();
-                initialize();
-            } else {
                 timerLabel.setText(String.valueOf(roundTime));
-            }
         });
     }
 
@@ -237,30 +238,46 @@ public class GameRoomController {
         }
     }
 
+    public void setRoundTime(int roundTime) {
+          Platform.runLater(() -> {
+                if (timerLabel == null) {
+                    System.out.println("timerLabel is null");
+                } else {
+                    if (roundTime == 0) {
+//                        new Thread(() -> {
+//                            try {
+//                                while (true) {
+//                                    Thread.sleep(3000);
+//                                    Platform.runLater(this::initialize);
+//                                }
+//                            } catch (InterruptedException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }).start();
 
+                        if (timer != null) {
+                            timer.cancel();
+                        }
 
+                        timer = new Timer(); // Create a new Timer
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                Platform.runLater(() -> {
+                                    initialize(); // Initialize after the delay
+                                    timer.cancel(); // Ensure the timer is canceled after initialization
+                                });
+                            }
+                        }, 3000); // 3-second delay
 
-
-
-    @FXML
-    public void resetGame() {
-        answerTextField.clear();
-        inputPrompt.setText("");
-        gameRoomTextField.clear();
-        reactivateButtons();
-
-        gameLetterChoice = serverUtility.getLetterChoice(gameID);
-
-        String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
-        System.out.println("Letters: " + letters);
-
-        for (int i = 0; i < letters.length(); i++) {
-            if (i < buttons.size()) {
-                buttons.get(i).setText(String.valueOf(letters.charAt(i)));
-            } else {
-                break;
-            }
-        }
+                        System.out.println("Round finished");
+                    } else {
+                        this.roundTime = roundTime;
+                        System.out.println("Round time: " + roundTime);
+                        updateTimerLabel();
+                    }
+                }
+            });
     }
 
     @FXML
@@ -333,12 +350,6 @@ public class GameRoomController {
 
 
 
-
-
-
-
-
-
     public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
@@ -358,20 +369,6 @@ public class GameRoomController {
 
     public int getRoundTime() {
         return roundTime;
-    }
-
-    public void setRoundTime(int roundTime) {
-        if (timerLabel == null) {
-            System.out.println("timerLabel is null");
-        } else {
-            if (roundTime <= 0) {
-                System.out.println("Round finished");
-            } else {
-                this.roundTime = roundTime;
-                System.out.println("Round time: " + roundTime);
-                updateTimerLabel();
-            }
-        }
     }
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
