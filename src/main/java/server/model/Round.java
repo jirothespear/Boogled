@@ -1,6 +1,5 @@
 package server.model;
 
-import org.omg.CORBA.StringHolder;
 import server.controller.User;
 
 import java.util.*;
@@ -14,9 +13,9 @@ public class Round extends TimerTask{
     private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
     private String letters;
-    private int timerCount;
+    private int timerCount = 30;
 
-    private int roundCount = 30;
+    private int roundCount = 33;
 
     private ArrayList<User> players = new ArrayList<>();
 
@@ -31,7 +30,6 @@ public class Round extends TimerTask{
             pointsPerRound.put(players.get(i),0);
             answersOfPlayers.put(players.get(i), new ArrayList<>());
         }
-
         this.players = players;
     }
 
@@ -49,6 +47,12 @@ public class Round extends TimerTask{
      */
 
     public void newRound (int roundCount){
+        this.roundCount = roundCount;
+        setChoiceLetters();
+        for (User temp: players){
+            System.out.println(letters);
+            temp.getUserCallback().getLetterChoice(letters);
+        }
         System.out.println("Round "+roundCount +"!");
         //Reset list containing all answers
         allAnswers = new HashMap<>();
@@ -56,20 +60,7 @@ public class Round extends TimerTask{
         pointsPerRound.forEach((user, points) -> pointsPerRound.put(user, 0));
         // Clear answers for each user
         answersOfPlayers.forEach((user, list) -> list.clear());
-
-        this.roundCount = roundCount;
-        getLetterChoice();
-
         System.out.println("Player size: " + players.size());
-
-        for (User temp: players){
-
-            System.out.println(letters);
-            temp.getUserCallback().getLetterChoice(letters);
-
-        }
-        //the following methods are executed after the timer of round is finished
-
     }
 
     /**
@@ -175,7 +166,7 @@ public class Round extends TimerTask{
         }
     }
 
-    public void getLetterChoice() {// return the random 20 letters
+    public String setChoiceLetters() {// return the random 20 letters
         StringBuilder result = new StringBuilder();
         StringBuilder consonantsBuilder = new StringBuilder();
         StringBuilder vowelsBuilder = new StringBuilder();
@@ -207,6 +198,7 @@ public class Round extends TimerTask{
         letters = result.toString();
 
 
+        return letters;
     }
 
     public String getLetters() {
@@ -219,29 +211,34 @@ public class Round extends TimerTask{
 
     @Override
     public void run() {
-        timerCount--;
 
-        if (timerCount == 0){
 
+        if (timerCount == -3){
         filterAnswers();
         countScoresPlayers();
-
         String[] winnerOfCurrentRound = getWinnerOfRound().split("/");//Format username/highscore
         game.checkWinner(winnerOfCurrentRound);
         System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
                 +" with a score of "+ winnerOfCurrentRound[1]);
-
+        if (!winnerOfCurrentRound[0].equals("null")){
+            for(User temp: players){
+                temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
+            }
+        }
         game.startGame();
-
         cancel();
 
-        } else {
+        } else if (timerCount == -1 || timerCount == -2) {
+
+            System.out.println("buffer time");
+        }else {
 
             System.out.println("Round Counting -> " + timerCount);
             for (User temp: players){
                 temp.getUserCallback().getRoundTime(timerCount);
             }
         }
+        timerCount--;
     }
 
     public Game getGame() {

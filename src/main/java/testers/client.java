@@ -12,12 +12,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.ORBPackage.InvalidName;
+import org.omg.CORBA.Policy;
 import org.omg.CosNaming.NamingContextExt;
 import org.omg.CosNaming.NamingContextExtHelper;
 import org.omg.CosNaming.NamingContextPackage.CannotProceed;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.POAHelper;
+import org.omg.PortableServer.*;
 import org.omg.PortableServer.POAManagerPackage.AdapterInactive;
 import org.omg.PortableServer.POAPackage.ServantNotActive;
 import org.omg.PortableServer.POAPackage.WrongPolicy;
@@ -37,13 +37,16 @@ public class client extends Application {
             Properties props = new Properties();
 
 
-            props.put("org.omg.CORBA.ORBInitialHost", "172.25.13.81");
-            props.put("org.omg.CORBA.ORBInitialPort", "900");
+            props.put("org.omg.CORBA.ORBInitialHost", "localhost");
+            props.put("org.omg.CORBA.ORBInitialPort", "2055");
 
             ORB orb = ORB.init(args, props);
 
+
+
             POA rootpoa = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
             rootpoa.the_POAManager().activate();
+
 
             org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
@@ -54,9 +57,12 @@ public class client extends Application {
             ciaoCallbackImpl = new ClientCallbackImpl();
             ciaoCallbackImpl.setORB(orb);
 
+
             org.omg.CORBA.Object ref = rootpoa.servant_to_reference(ciaoCallbackImpl);
             cref = ClientCallbackHelper.narrow(ref);
 
+
+            System.out.println("Obtained a address -> " + serverUtility);
             launch();
 
            Thread.currentThread().join();

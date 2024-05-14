@@ -7,12 +7,7 @@ import server.controller.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.TimerTask;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class QueueTask extends TimerTask {
 
@@ -25,52 +20,37 @@ public class QueueTask extends TimerTask {
     @Override
     public void run() {
         time--;
-        if (time == 0  ) {
-            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
+        if (time == 0) {
+            for (User temp: players){
                 System.out.println("counting -> " + time);
-                entry.getValue().getQueueTime(time);
+                temp.getUserCallback().getQueueTime(time);
             }
             Queue.queueActive = false;
 
-            for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
-                System.out.println("Player in callback: " + entry.getKey());
-                players.add(new User(entry.getKey(), entry.getValue()));
-            }
             //   if (players.size() == 1) {// does not create
             //throw new GameStartException();
             //   } else {
             System.out.println("skibidi");
-            ServerUtilityImpl.addGame(players);;
+            ServerUtilityImpl.addGame(players);
+
             //   }
 
             cancel();
         } else {
-            ExecutorService executorService = Executors.newFixedThreadPool(5);
-                executorService.execute(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
-                            System.out.println("counting -> " + time);
 
 
-                            entry.getValue().getQueueTime(time);
-
-                        }
-                    }
-                });
-
-
-
+            System.out.println("active player size " + players.size());
+            for (User temp: players){
+                System.out.println("counting -> " + time);
+                temp.getUserCallback().getQueueTime(time);
+            }
         }
-
-
     }
 
-    public void addToCallbackMaps(ClientCallback clientCallback, String userName){
 
-        userCallbacks.put(userName, clientCallback);
-    }
+    public void addToActiveUser(User player){players.add(player);}
+
+    public void addToCallbackMaps(ClientCallback clientCallback, String userName){ userCallbacks.put(userName, clientCallback); }
 
     public HashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
@@ -78,7 +58,5 @@ public class QueueTask extends TimerTask {
 
     public void setUserCallbacks(HashMap<String, ClientCallback> userCallbacks) {
         this.userCallbacks = userCallbacks;
-    }
-
-}
+    }}
 

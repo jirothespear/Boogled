@@ -32,79 +32,63 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
     static private HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
 
+    private ArrayList<User> playerCallbacks = new ArrayList<>();
+
     @Override
     public void login(String username, String password) throws LoginException {
         String userNPasswd = username + "/" + password;
         if (DataPB.checkUser(userNPasswd)) {
-            ClientCallback clientCallback = null;
-            this.setUserName(username);
-            userCallbacks.put(userNPasswd, clientCallback);
+            //ClientCallback clientCallback = null;
+            //this.setUserName(username);
+            //userCallbacks.put(userNPasswd, clientCallback);
         } else throw new LoginException();
-
-
     }
 
     @Override
-    public void userCallback(ClientCallback clientCallback, String username) {
-
+    public void userCallback(ClientCallback clientCallback, String userName) {
 
         try {
-            if (!userCallbacks.containsKey(clientCallback)) {
+            if (!userCallbacks.containsKey(userName)) {
                 userCallbacks.put(userName, clientCallback);
             }
-
         } catch (Exception e){
             e.printStackTrace();
         }
-
+        System.out.println("size!!");
+        System.out.println(userCallbacks.size());
     }
 
     @Override
     public void logout(ClientCallback clientCallback, String username)  {
-
         if(userCallbacks.containsKey(clientCallback)){
-
             userCallbacks.remove(clientCallback);
         }
-
     }
 
 
     @Override
     public void checkWord(String  playerAnswer, String userID, String gameID) {// Format "username/answer"
-
+        System.out.println("game: " + gameID  + " user: " + userID + " answer: " + playerAnswer );
         if (activeGames.containsKey(Integer.parseInt(gameID))) {
-
             Game currentGame = activeGames.get(Integer.parseInt(gameID));
-
             String answer = playerAnswer;
             if (answer.length() >= 4 && DataPB.checkWord(answer)) {
                 currentGame.getRound().addAnswerToPlayer(userID, answer);
-
             }
-
-
         }
-
-
     }
 
     @Override
     public String startGame(String user) {
         HashMap<ClientCallback, String> users;
         ArrayList<User> players = new ArrayList<>();
-
         users = queueSystem.getUserCallbacks();
 
         for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
             players.add(new User(entry.getValue(), entry.getKey()));
-
         }
 
-
         if (!queueSystem.isQueueActive()) {
-
-
             System.out.println("skibidi");
             Game game = new Game();
             game.start();
@@ -114,22 +98,18 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
             activeGames.put(gameCount, game);
 
             return String.valueOf(gameCount);
-
-
         }
-
-
         return "null";
     }
 
     public static void addGame(ArrayList<User> players){
         gameCount++;
         Game game = new Game();
+        game.start();
+        game.setPlayers(players);
         game.startGame();
         game.setGameID(gameCount);
-        game.setPlayers(players);
         activeGames.put(gameCount, game);
-
     }
 
 
@@ -139,13 +119,10 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     }
 
     @Override
-    public void getQueueTime(String username) {
-        queueSystem.joinQueue(queueTime, userName, userCallbacks.get(username));
-        queueSystem.addToCallbackMaps(userCallbacks.get(username), username);
-        System.out.println("Queue time for " + username+  "   " +userCallbacks.get(username));
-        queueSystem.addToCallbackMaps(userCallbacks.get(username), username);
-
-
+    public void getQueueTime(String userName) {
+        System.out.println();
+        queueSystem.joinQueue(queueTime, userName, userCallbacks.get(userName));
+        System.out.println("Queue time for " + userName+  "   " +userCallbacks.get(userName));
     }
 
     @Override
@@ -239,17 +216,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         return userCallbacks;
     }
 
-    public static void setUserCallbacks(HashMap<String, ClientCallback> userCallbacks) {
-        ServerUtilityImpl.userCallbacks = userCallbacks;
-    }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
 
 }

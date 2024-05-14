@@ -99,8 +99,6 @@ public class WaitingRoomController {
                 clientCallback.getLetterChoice(serverUtility.getGameID(currentUser));
 
 
-
-
                 Scene gameScene = new Scene(root);
                 Stage stage = (Stage) timerLabel.getScene().getWindow();
                 stage.setScene(gameScene);
