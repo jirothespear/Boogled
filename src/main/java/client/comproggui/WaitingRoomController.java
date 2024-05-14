@@ -40,19 +40,22 @@ public class WaitingRoomController {
 
 
     public void setQueueTime(int queueTime) {
-
-        if (timerLabel == null) {
-            System.out.println("timerLabel is null");
-        } else {
-            if (queueTime <= 0) {
-                onCountdownFinished();
-                System.out.println("Countdown finished");
+        Platform.runLater(() -> {
+            if (timerLabel == null) {
+                System.out.println("timerLabel is null");
             } else {
-                this.queueTime = queueTime;
-                System.out.println("Queue time: " + queueTime);
-                updateTimerLabel();
+                if (queueTime <= 0) {
+                    onCountdownFinished();
+                    System.out.println("Countdown finished");
+                } else {
+                    this.queueTime = queueTime;
+                    System.out.println("Queue time: " + queueTime);
+                    updateTimerLabel();
+                }
             }
-        }
+        });
+
+
 
 
     }
@@ -78,13 +81,10 @@ public class WaitingRoomController {
                 Parent root = loader.load();
                 GameRoomController gameRoomController = loader.getController();
 
-                String gameLetterChoice = serverUtility.getLetterChoice(serverUtility.getGameID(currentUser));
-
-                System.out.println("Game letter choice: " + gameLetterChoice);
-
-                gameRoomController.setGameID(serverUtility.getGameID(currentUser));
+                gameID = serverUtility.getGameID(currentUser);
+                gameRoomController.setGameID(gameID);
+                gameRoomController.setCurrentGameUser(currentUser);
                 gameRoomController.setServerUtility(serverUtility);
-                clientCallback.getLetterChoice(gameLetterChoice);
                 gameRoomController.setClientCallback(clientCallback);
                 clientCallbackImpl.setGameRoomController(gameRoomController);
                 gameRoomController.setClientCallbackImpl(clientCallbackImpl);

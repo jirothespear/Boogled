@@ -9,7 +9,7 @@ import java.sql.*;
  */
 public class DataPB {
     private static Connection connection;
-    private static String url = "jdbc:mysql://localhost:3308/samtech?user=root&password";
+    private static String url = "jdbc:mysql://localhost:3306/samtech?user=root&password";
 
     private DataPB() {
     }
@@ -68,18 +68,24 @@ public class DataPB {
     }
     public static int getScoreOfUser(String username){
         int score=0;
-        String query = "SELECT u.username AS username u FROM user WHERE u.usermame = ?;";
+        String query = "SELECT overallScore FROM user WHERE username = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1,username);
+            ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
-                score = rs.getInt("username");
+            if (rs.next()) {
+                score = rs.getInt("overallScore");
+                rs.close();
+                ps.close();
+                return score;
+            } else {
+                rs.close();
+                ps.close();
+                return 0;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return score;
     }
     public static  boolean checkWord(String answer){
         String query = "SELECT * FROM words WHERE word = ?;";
