@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed repeating callbacks.">
-      <change afterPath="$PROJECT_DIR$/orb.db/NC0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orb.db/counter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orb.db/servers.db" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Changes in QUEUE.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lobby-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,25 +63,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/NetBeansProjects/2023-2_9341-finteam5_ALPHA/src/main/java/testers/ORBdaemon.bat&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.client.comproggui.Main.executor": "Run",
+    "Application.client.executor": "Run",
+    "Application.server.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/2023-2_9341-finteam5/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources" />
+      <recent name="D:\2023-2_9341-finteam5\resources" />
       <recent name="D:\2023-2_9341-finteam5\resources\resources" />
+      <recent name="D:\2023-2_9341-finteam5\src\main\resources" />
+      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java" />
@@ -105,7 +98,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.server">
+  <component name="RunManager" selected="Application.client.comproggui.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comproggui.Main" />
       <module name="2023-2_9341-finteam5" />
@@ -121,7 +114,7 @@
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
-      <module name="finalProjectCORBA" />
+      <module name="2023-2_9341-finteam5" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 1099 -ORBInitialHost localhost" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,7 +150,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="client.comproggui.Main" />
-      <module name="2023-2_9341-finteam5" />
+      <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="client.comproggui.*" />
@@ -169,9 +162,10 @@
       </method>
     </configuration>
     <configuration name="server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (3)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="testers.server" />
       <module name="finalProjectCORBA" />
-      <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 2055 -ORBInitialHost 169.254.79.127" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testers.*" />
@@ -182,21 +176,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="daemon" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.client2" />
@@ -204,17 +183,24 @@
       <item itemvalue="Application.server" />
       <item itemvalue="Application.client.comproggui.Main" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Shell Script.daemon" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.server" />
         <item itemvalue="Application.client" />
         <item itemvalue="Application.client2" />
-        <item itemvalue="Application.client.comproggui.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-18.0.2-azul-18.0.2.1-4caba194b151-760f583b" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -402,14 +388,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715382699557</updated>
     </task>
-    <task id="LOCAL-00026" summary="Changes in QUEUE.">
-      <created>1715477951130</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1715477951130</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,16 +425,20 @@
     <MESSAGE value="gameFinish IDL parameter." />
     <MESSAGE value="Changes in IDL, refactor of interfaces." />
     <MESSAGE value="Changes in QUEUE." />
-    <MESSAGE value="Fixed repeating callbacks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed repeating callbacks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in QUEUE." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/server/model/Queue.java</url>
-          <line>47</line>
+          <line>50</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/server/model/Round.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
