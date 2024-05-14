@@ -259,16 +259,16 @@ public class GameRoomController {
                             timer.cancel();
                         }
 
-                        timer = new Timer(); // Create a new Timer
+                        timer = new Timer();
                         timer.schedule(new TimerTask() {
                             @Override
                             public void run() {
                                 Platform.runLater(() -> {
-                                    initialize(); // Initialize after the delay
-                                    timer.cancel(); // Ensure the timer is canceled after initialization
+                                    initialize();
+                                    timer.cancel();
                                 });
                             }
-                        }, 3000); // 3-second delay
+                        }, 3000);
 
                         System.out.println("Round finished");
                     } else {
