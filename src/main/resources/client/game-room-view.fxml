@@ -49,7 +49,7 @@
             <URL value="@Textfield.css" />
             <URL value="@Font2.css" />
          </stylesheets></TextField>
-      <Button fx:id="submitButton" layoutX="870.0" layoutY="595.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" stylesheets="@Font2.css" text="SUBMIT">
+      <Button fx:id="submitBUtton" layoutX="870.0" layoutY="595.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" stylesheets="@Font2.css" text="SUBMIT">
          <font>
             <Font name="Segoe UI Bold" size="19.0" />
          </font>

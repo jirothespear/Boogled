@@ -6,6 +6,8 @@ import Utility.GameStartException;
 import Utility.LoginException;
 import Utility.LogoutException;
 import com.mysql.cj.xdevapi.Client;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import org.omg.CORBA.ORB;
 import server.model.Game;
 import server.model.Queue;
@@ -215,9 +217,6 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     public static HashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
     }
-
-
-
 
 }
 

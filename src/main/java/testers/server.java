@@ -1,5 +1,11 @@
 package testers;
 
+import client.comproggui.LoginController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.omg.CORBA.ORB;
 import org.omg.CORBA.ORBPackage.InvalidName;
 import org.omg.CORBA.Policy;
@@ -13,14 +19,13 @@ import org.omg.PortableServer.*;
 import org.omg.PortableServer.POAManagerPackage.AdapterInactive;
 import org.omg.PortableServer.POAPackage.*;
 import server.controller.ServerUtilityImpl;
+import server.gui.ServerController;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
-public class
-
-server {
+public class server extends Application {
 
     public static void main(String[] args) throws InvalidName, AdapterInactive, WrongPolicy, ServantNotActive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, AlreadyBound, InterruptedException, InvalidPolicy, AdapterAlreadyExists, ObjectAlreadyActive, ServantAlreadyActive, ObjectNotActive {
 
@@ -91,5 +96,9 @@ server {
     }
 
 
-    }
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+
+        }
+}
 
