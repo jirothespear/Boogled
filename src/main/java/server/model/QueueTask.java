@@ -33,6 +33,8 @@ public class QueueTask extends TimerTask {
             System.out.println("skibidi");
             ServerUtilityImpl.addGame(players);
 
+            players = new ArrayList<>();
+            time = 11;
             //   }
             cancel();
         } else {

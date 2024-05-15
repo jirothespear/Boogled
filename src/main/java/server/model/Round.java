@@ -183,12 +183,16 @@ public class Round extends TimerTask{
             scoresToBeSorted.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
 
         }
+        System.out.println("size scores to be filtered " + scoresToBeSorted.size());
         Collections.sort(scoresToBeSorted);
-        if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
+
+        if (scoresToBeSorted.size() == 1){
+            winner = "null";
+        }
+        else if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
                 == scoresToBeSorted.get(scoresToBeSorted.size()-2).getScore()){
 
             winner = "null";
-            highestScore = Integer.parseInt("null");
         } else {
             winner = scoresToBeSorted.get(scoresToBeSorted.size()-1).getUsername();
             highestScore = scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore();

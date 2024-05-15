@@ -95,7 +95,7 @@ public class WaitingRoomController {
                 stage.show();
                 stage.centerOnScreen();
                 stage.setResizable(false);
-                gameScene.getStylesheets().add(getClass().getResource("/server/Font.css").toExternalForm());
+                gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
 
             } catch (IOException e) {
                 e.printStackTrace();

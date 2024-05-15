@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed round winner.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed directories.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameStackPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStackPaneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,14 +133,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="client.comproggui.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="client.comproggui.Main" />
+    <configuration name="client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testers.client2" />
       <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="client.comproggui.*" />
+          <option name="PATTERN" value="testers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -188,19 +178,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.client2" />
       <item itemvalue="Application.testers.ServerMain" />
       <item itemvalue="Application.ServerMain" />
       <item itemvalue="Application.client" />
       <item itemvalue="Application.server" />
-      <item itemvalue="Application.client.comproggui.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.client" />
         <item itemvalue="Application.server" />
+        <item itemvalue="Application.client2" />
         <item itemvalue="Application.testers.ServerMain" />
         <item itemvalue="Application.ServerMain" />
-        <item itemvalue="Application.client.comproggui.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -419,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715745960073</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed directories.">
+      <created>1715751927171</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1715751927171</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -435,7 +432,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed packages and directories." />
-    <MESSAGE value="Fixed directories." />
     <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
     <MESSAGE value="Fixed JavaFX Configurations." />
     <MESSAGE value="Added Callbacks to idl." />
@@ -459,7 +455,8 @@
     <MESSAGE value="Fixed fxml directories." />
     <MESSAGE value="Added roundCount, and leaderboard IDL." />
     <MESSAGE value="Fixed round winner." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed round winner." />
+    <MESSAGE value="Fixed directories." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed directories." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

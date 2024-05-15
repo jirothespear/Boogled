@@ -69,7 +69,7 @@ public class client2 extends Application {
 
     public void start(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/server/login-view.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
 
@@ -78,7 +78,7 @@ public class client2 extends Application {
             loginController.setClientCallback(cref);
 
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/server/Textfield.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
             stage.setResizable(false);
