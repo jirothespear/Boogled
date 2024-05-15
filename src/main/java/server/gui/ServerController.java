@@ -23,7 +23,7 @@ public class ServerController {
 
     @FXML
     private void onGameSettingsClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("game-settings.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/server/game-settings.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -33,7 +33,7 @@ public class ServerController {
 
     @FXML
     protected void onUserSettingsClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("user-settings.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/server/user-settings.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

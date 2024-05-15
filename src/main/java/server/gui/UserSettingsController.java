@@ -21,7 +21,7 @@ public class UserSettingsController {
 
     @FXML
     public void onBackButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("server-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/server/server-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -183,4 +183,47 @@ public class DataPB {
         }
         return false;
     }
+
+    public static String[] getLeaderboardUsernames (){
+        String query = "SELECT username FROM user ORDER BY overallScore DESC LIMIT 5;";
+        String [] usernames = new String[5];
+        int index = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+
+                usernames[index] = rs.getString("username");
+                index++;
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return usernames;
+
+    }
+
+    public static int[] getLeaderboardPoints (){
+        String query = "SELECT overallScore FROM user ORDER BY overallScore DESC LIMIT 5;";
+         int[] points = new int[5];
+        int index = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+
+                points[index] = rs.getInt("overallScore");
+                index++;
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return points;
+
+    }
+
 }

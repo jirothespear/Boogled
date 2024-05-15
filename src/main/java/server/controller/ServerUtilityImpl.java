@@ -1,10 +1,7 @@
 
 package server.controller;
 
-import Utility.ClientCallback;
-import Utility.GameStartException;
-import Utility.LoginException;
-import Utility.LogoutException;
+import Utility.*;
 import com.mysql.cj.xdevapi.Client;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -69,14 +66,15 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
 
     @Override
-    public void checkWord(String  playerAnswer, String userID, String gameID) {// Format "username/answer"
+    public void checkWord(String  playerAnswer, String userID, String gameID) throws InvalidWordException {// Format "username/answer"
         System.out.println("game: " + gameID  + " user: " + userID + " answer: " + playerAnswer );
         if (activeGames.containsKey(Integer.parseInt(gameID))) {
             Game currentGame = activeGames.get(Integer.parseInt(gameID));
             String answer = playerAnswer;
             if (answer.length() >= 4 && DataPB.checkWord(answer)) {
                 currentGame.getRound().addAnswerToPlayer(userID, answer);
-            }
+            } else
+                throw new InvalidWordException();
         }
     }
 
@@ -151,6 +149,22 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         }
         return "null";
     }
+
+    @Override
+    public String getRoundCount(String gameID) {
+        return String.valueOf(activeGames.get(Integer.valueOf(gameID)).getRound().getRoundCount());
+    }
+
+    @Override
+    public String[] getLeaderboardUsernames() {
+        return DataPB.getLeaderboardUsernames();
+    }
+
+    @Override
+    public int[] getLeaderboardPoints() {
+        return DataPB.getLeaderboardPoints();
+    }
+
 
     public ORB getOrb() {
         return orb;

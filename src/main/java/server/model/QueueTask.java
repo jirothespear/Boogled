@@ -18,7 +18,7 @@ public class QueueTask extends TimerTask {
     public ArrayList<User> players = new ArrayList<>();
 
     @Override
-    public void run() {
+    public void run()  {
         time--;
         if (time == 0) {
             for (User temp: players){
@@ -27,7 +27,7 @@ public class QueueTask extends TimerTask {
             }
             Queue.queueActive = false;
 
-            //   if (players.size() == 1) {// does not create
+              // if (players.size() == 1) {// does not create
             //throw new GameStartException();
             //   } else {
             System.out.println("skibidi");

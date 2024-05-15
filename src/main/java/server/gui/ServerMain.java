@@ -11,8 +11,8 @@ import java.io.IOException;
 public class ServerMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ServerMain.class.getResource("server-view.fxml"));
-        Parent root = fxmlLoader.load();
+      //  FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("server-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/server/server-view.fxml"));
         Scene scene = new Scene(root, 700, 500);
         stage.setTitle("Boggled Server");
         stage.setScene(scene);

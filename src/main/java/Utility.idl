@@ -25,6 +25,9 @@ module Utility {
         string reason;
   };
 
+  typedef sequence<wstring> playerLeaderboard;
+   typedef sequence<long> playerLeaderboardPoints;
+
   interface PlayerUtility {
     void login(in wstring username, in wstring passwd) raises (LoginException);
     void userCallback(in ClientCallback clientCallback, in wstring username);
@@ -36,6 +39,10 @@ module Utility {
     void getRoundTime(in wstring username, in wstring gameID);
     wstring getLetterChoice(in wstring gameID);
     wstring getGameID(in wstring username);
+    wstring getRoundCount(in wstring gameID);
+    playerLeaderboard getLeaderboardUsernames ();
+    playerLeaderboardPoints getLeaderboardPoints ();
+
   };
 
 };
