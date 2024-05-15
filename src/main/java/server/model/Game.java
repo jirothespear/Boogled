@@ -110,9 +110,12 @@ public class Game extends Thread {
     public  void startGame(){// sets up variables for game
         System.out.println("Game is starting");
         roundCount = 0;
-        for (int i =0; i < players.size(); i++){
-            overallPoints.put(players.get(i),0);
-            playerPlacing.put(players.get(i),0);
+
+        if (overallPoints == null || playerPlacing == null) {
+            for (int i = 0; i < players.size(); i++) {
+                overallPoints.put(players.get(i), 0);
+                playerPlacing.put(players.get(i), 0);
+            }
         }
 
         if (!gameWin) {
