@@ -76,6 +76,7 @@ public class Round extends TimerTask{
             System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
                     +" with a score of "+ winnerOfCurrentRound[1]);
             if (!winnerOfCurrentRound[0].equals("null")){
+                System.out.println("There is a winner");
                 for(User temp: players){
                     temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
                 }
@@ -173,32 +174,48 @@ public class Round extends TimerTask{
      */
     public String getWinnerOfRound() {
 
-        String winner = "";
+//        String winner = "";
+//        int highestScore = 0;
+//
+//
+//        ArrayList<UserScore> scoresToBeSorted = new ArrayList<>();
+//        for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
+//
+//            scoresToBeSorted.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
+//
+//        }
+//        System.out.println("size scores to be filtered " + scoresToBeSorted.size());
+//        Collections.sort(scoresToBeSorted);
+//
+//        if (scoresToBeSorted.size() == 1){
+//            winner = "null";
+//        }
+//        else if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
+//                == scoresToBeSorted.get(scoresToBeSorted.size()-2).getScore()){
+//
+//            winner = "null";
+//        } else {
+//            winner = scoresToBeSorted.get(scoresToBeSorted.size()-1).getUsername();
+//            highestScore = scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore();
+//        }
+//
+//        return winner+"/"+highestScore;
+
+        User winner = new User();
         int highestScore = 0;
-
-
-        ArrayList<UserScore> scoresToBeSorted = new ArrayList<>();
         for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
+            if (entry.getValue() > highestScore) {
+                highestScore = entry.getValue();
+                winner = entry.getKey();
 
-            scoresToBeSorted.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
-
-        }
-        System.out.println("size scores to be filtered " + scoresToBeSorted.size());
-        Collections.sort(scoresToBeSorted);
-
-        if (scoresToBeSorted.size() == 1){
-            winner = "null";
-        }
-        else if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
-                == scoresToBeSorted.get(scoresToBeSorted.size()-2).getScore()){
-
-            winner = "null";
-        } else {
-            winner = scoresToBeSorted.get(scoresToBeSorted.size()-1).getUsername();
-            highestScore = scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore();
+            }
         }
 
-        return winner+"/"+highestScore;
+        if (winner.getUsername() == null){
+
+            return "null/0";
+        }
+        return winner.getUsername()+"/"+highestScore;
     }
 
     private static void shuffleStringBuilder(StringBuilder sb, Random random) {

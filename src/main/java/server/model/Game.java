@@ -109,10 +109,12 @@ public class Game extends Thread {
     }
     public  void startGame(){// sets up variables for game
         System.out.println("Game is starting");
-        roundCount = 0;
-        for (int i =0; i < players.size(); i++){
-            overallPoints.put(players.get(i),0);
-            playerPlacing.put(players.get(i),0);
+
+        for (int i = 0; i < players.size(); i++) {
+            if (!(overallPoints.containsKey(players.get(i)) || playerPlacing.containsKey(players.get(i)))) {
+                overallPoints.put(players.get(i), 0);
+                playerPlacing.put(players.get(i), 0);
+            }
         }
 
         if (!gameWin) {
@@ -127,7 +129,8 @@ public class Game extends Thread {
             timer.scheduleAtFixedRate(round, 0, 1000);
 
         } else {
-            System.out.println("active player size " + players.size());
+            System.out.println("GameFinished");
+            System.out.println("active player size in Game:  " + players.size());
             for (User temp: players){
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(scoreOfRoundWinner));
             }
@@ -147,6 +150,8 @@ public class Game extends Thread {
 
             scoreOfRoundWinner = Integer.parseInt(winnerScore);
             winnerOfRound = winnerUsername;
+
+            System.out.println("Champion of the round" + champion.getUsername() + "Winner Score: "+ winnerScore);
 
             if (!champion.getUsername().equalsIgnoreCase("null")) {// ends the loop when there is a winner
                 updateUserDB();// updates user table in DB
@@ -173,25 +178,27 @@ public class Game extends Thread {
     }
 
     public  void updateMaps( User winnerOfRound, int scoreOfWinner){
-        User winner = winnerOfRound;
-        int highestScore = scoreOfWinner;
+        System.out.println("Updating Maps");
 
         //Add score of winner to overallPoint for corresponding
         for (Map.Entry<User, Integer> entry : overallPoints.entrySet()){
-            if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
-                entry.setValue(entry.getValue() + highestScore);
+            if(entry.getKey().getUsername().equalsIgnoreCase(winnerOfRound.getUsername())){
+                entry.setValue(entry.getValue() + scoreOfWinner);
             }
         }
         for (Map.Entry<User, Integer> entry : playerPlacing.entrySet()){
-            if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
-                entry.setValue(entry.getValue()+1);
+            if(entry.getKey().getUsername().equalsIgnoreCase(winnerOfRound.getUsername())){
+
+                int winRounds = playerPlacing.get(entry.getKey()) + 1;
+                playerPlacing.replace(entry.getKey(),winRounds);
+                System.out.println("Username in Game Update map: " + entry.getKey().getUsername() + "Round Wins: "+ entry.getValue() );
                 if(entry.getValue() == 3){
-                    System.out.println(winner.getUsername() + " is the winner fo the game");
-                    champion = winner;
+                    System.out.println(winnerOfRound.getUsername() + " is the winner fo the game");
+                    champion = winnerOfRound;
                 }
             }
         }
-
+        System.out.println(playerPlacing.get(winnerOfRound));
     }
 
     public void updateUserDB(){// changes user's score if current high score is higher or lower that new high score
