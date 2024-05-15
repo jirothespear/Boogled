@@ -16,6 +16,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import server.controller.User;
 import testers.ClientCallbackImpl;
 
 import java.awt.event.ActionEvent;
@@ -101,10 +102,6 @@ public class GameRoomController {
     @FXML
     private Button twentiethButton;
 
-    // No variables for tiles and the text inside it yet
-    // The tiles are wrapped inside a HBox; within a StackPane wrapping an ImageView(image of tile background) and a Text(characters/letters)
-    // TileUsed is to change tile to gray to let user know that the letter has been used
-
     @FXML
     private Text inputPrompt; // can be replaced for counter of words inputted so user can keep track in a way
     @FXML
@@ -119,6 +116,8 @@ public class GameRoomController {
 
     public ClientCallbackImpl clientCallbackImpl;
 
+
+
     public String currentGameUser;
 
     public String gameID;
@@ -128,6 +127,10 @@ public class GameRoomController {
 
     private Timer timer;
 
+
+    boolean isWinner = false;
+
+    private  int roundScore;
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
@@ -214,6 +217,12 @@ public class GameRoomController {
         });
     }
 
+    private void updateRoundLabel() {
+
+            roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID));
+
+    }
+
     private void reactivateButtons() {
         for (Button button : buttons) {
             button.setDisable(false);
@@ -240,13 +249,18 @@ public class GameRoomController {
                     timer.schedule(new TimerTask() {
                         @Override
                         public void run() {
+
+                            System.out.println(roundScore);
+                            displayEndRoundResult();
+//                            onRoundFinished();
                             Platform.runLater(() -> {
                                 initialize();
                                 timer.cancel();
+
                             });
                         }
                     }, 3000);
-
+                    updateRoundLabel();
                     System.out.println("Round finished");
                 } else {
                     this.roundTime = roundTime;
@@ -257,76 +271,82 @@ public class GameRoomController {
         });
     }
 
+
+
+    private void displayEndRoundResult() {
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/end-round-result-view.fxml"));
+                Parent root = loader.load();
+
+                EndRoundResultController controller = loader.getController();
+
+                controller.setResult(isWinner,roundScore); // Example values, you should set actual result data
+
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+                Timer closeTimer = new Timer();
+                closeTimer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        Platform.runLater(stage::close);
+                    }
+                }, 3000);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
     @FXML
     public void onRoundFinished(){
         try {
-            // Load the main application view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/round-stack-pane-view.fxml"));
-            System.out.println("Loading FXML: " + getClass().getResource("/client/round-stack-pane.fxml-view"));
             Parent root = loader.load();
-            System.out.println("FXML Loaded: " + (root != null));
-
-            // Create a new scene with the main app view
+            RoundStackPaneController controller = loader.getController();
+            clientCallbackImpl.setRoundStackPaneController(controller);
+            if (controller != null) {
+                controller.endOfRound();
+            }
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/client/Font2.css").toExternalForm());
-
-            // Set the scene on the stage
+            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
             stage.setResizable(false);
-
-            // Retrieve the controller and initialize the main app stage
-            RoundStackPaneController controller = loader.getController();
-            System.out.println("Controller: " + controller);
-            if (controller != null) {
-                controller.endOfRound();
-            } else {
-                System.out.println("Controller is null");
-            }
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Failed to load FXML file: " + e.getMessage());
         }
     }
 
     @FXML
     public void onGameFinished(){
         try {
-            // Load the main application view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/game-stack-pane-view.fxml"));
-            System.out.println("Loading FXML: " + getClass().getResource("/client/game-stack-pane.fxml-view"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-stack-pane-view.fxml"));
             Parent root = loader.load();
-            System.out.println("FXML Loaded: " + (root != null));
-
-            // Create a new scene with the main app view
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/client/Font2.css").toExternalForm());
-
-            // Set the scene on the stage
+            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
             stage.setResizable(false);
-
-            // Retrieve the controller and initialize the main app stage
             GameStackPaneController controller = loader.getController();
-            System.out.println("Controller: " + controller);
             if (controller != null) {
                 controller.endOfGame();
-            } else {
-                System.out.println("Controller is null");
             }
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Failed to load FXML file: " + e.getMessage());
         }
     }
 
 
-
+    public String getCurrentGameUser() {
+        return currentGameUser;
+    }
     public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }

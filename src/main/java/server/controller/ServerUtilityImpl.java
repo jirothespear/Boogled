@@ -110,10 +110,18 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         activeGames.put(gameCount, game);
     }
 
+    public User getUser(String username){
+        for (Map.Entry<String, ClientCallback> entry : userCallbacks.entrySet()) {
+            if (entry.getKey().equals(username)){
+                return new User(entry.getKey(), entry.getValue());
+            }
+        }
+        return null;
+    }
 
     @Override
     public int showScore(String user, String gameID) {
-        return 0;
+        return activeGames.get(Integer.valueOf(gameID)).getOverallPoints().get(getUser(user));
     }
 
     @Override
