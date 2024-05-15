@@ -138,7 +138,6 @@ public class GameRoomController {
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
 
-
             buttons.add(firstButton);
             buttons.add(secondButton);
             buttons.add(thirdButton);
@@ -178,15 +177,6 @@ public class GameRoomController {
 
                 });
             }
-
-
-//            answerTextField.setOnKeyPressed(event -> {
-//                if (event.getCode() == KeyCode.ENTER) {
-//                    System.out.println("Enter key pressed");
-//                    onSubmitButtonClicked();
-//
-//                }
-//            });
             submitButton.setOnAction(event -> {
                 System.out.println("Submit button clicked");
                 onSubmitButtonClicked();
@@ -194,7 +184,6 @@ public class GameRoomController {
 
         });
     }
-
 
 
     @FXML
@@ -221,57 +210,51 @@ public class GameRoomController {
 
     private void updateTimerLabel() {
         Platform.runLater(() -> {
-                timerLabel.setText(String.valueOf(roundTime));
+            timerLabel.setText(String.valueOf(roundTime));
         });
     }
 
     private void reactivateButtons() {
         for (Button button : buttons) {
-//            System.out.println("Button reactivated");
             button.setDisable(false);
         }
     }
 
     public void setRoundTime(int roundTime) {
-          Platform.runLater(() -> {
-                if (timerLabel == null) {
-                    System.out.println("timerLabel is null");
-                } else {
-                    if (roundTime == 0) {
-//                        new Thread(() -> {
-//                            try {
-//                                while (true) {
-//                                    Thread.sleep(3000);
-//                                    Platform.runLater(this::initialize);
-//                                }
-//                            } catch (InterruptedException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }).start();
+        Platform.runLater(() -> {
+            if (timerLabel == null) {
+                System.out.println("timerLabel is null");
+            } else {
+                if (roundTime == 0) {
 
-                        if (timer != null) {
-                            timer.cancel();
-                        }
-
-                        timer = new Timer();
-                        timer.schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-                                Platform.runLater(() -> {
-                                    initialize();
-                                    timer.cancel();
-                                });
-                            }
-                        }, 3000);
-
-                        System.out.println("Round finished");
-                    } else {
-                        this.roundTime = roundTime;
-                        System.out.println("Round time: " + roundTime);
-                        updateTimerLabel();
+                    if (answerTextField.getText().isEmpty() == false || buttons.stream().anyMatch(Button::isDisabled)) {
+                        answerTextField.clear();
+                        reactivateButtons();
                     }
+
+                    if (timer != null) {
+                        timer.cancel();
+                    }
+
+                    timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            Platform.runLater(() -> {
+                                initialize();
+                                timer.cancel();
+                            });
+                        }
+                    }, 3000);
+
+                    System.out.println("Round finished");
+                } else {
+                    this.roundTime = roundTime;
+                    System.out.println("Round time: " + roundTime);
+                    updateTimerLabel();
                 }
-            });
+            }
+        });
     }
 
     @FXML
