@@ -4,6 +4,7 @@ import server.controller.User;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * DataPB class is a class that is use in creating queries
@@ -185,22 +186,25 @@ public class DataPB {
     }
 
     public static String[] getLeaderboardUsernames (){
-        String query = "SELECT username FROM user ORDER BY overallScore DESC LIMIT 5;";
+        String query = "SELECT username FROM user ORDER BY overallScore DESC LIMIT 5";
         String [] usernames = new String[5];
         int index = 0;
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            ResultSet rs = ps.executeQuery(query);
+            while(rs.next()){
 
-                usernames[index] = rs.getString("username");
+                usernames[index] = rs.getString(1);
+
+                System.out.println(rs.getString(1));
+
                 index++;
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
+        System.out.println(Arrays.toString(usernames));
         return usernames;
 
     }
@@ -212,7 +216,7 @@ public class DataPB {
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            while(rs.next()){
 
                 points[index] = rs.getInt("overallScore");
                 index++;

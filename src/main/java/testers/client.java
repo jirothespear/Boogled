@@ -22,6 +22,8 @@ import org.omg.PortableServer.POAManagerPackage.AdapterInactive;
 import org.omg.PortableServer.POAPackage.ServantNotActive;
 import org.omg.PortableServer.POAPackage.WrongPolicy;
 
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class client extends Application {
@@ -62,8 +64,10 @@ public class client extends Application {
             cref = ClientCallbackHelper.narrow(ref);
 
 
+            System.out.println(Arrays.toString(serverUtility.getLeaderboardUsernames()));
             System.out.println("Obtained a address -> " + serverUtility);
             launch();
+
 
            Thread.currentThread().join();
 

@@ -4,12 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed directories.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed point system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_PlayerUtilityStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,23 +88,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.client.comproggui.Main.executor": "Run",
-    "Application.client.executor": "Run",
-    "Application.server.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Renuel Balogo/AppData/Local/SceneBuilder/SceneBuilder.exe",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Renuel Balogo/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2023-2_9341-finteam5\resources" />
@@ -416,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715751927171</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fixed point system">
+      <created>1715754971190</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1715754971190</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +464,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
     <MESSAGE value="Fixed JavaFX Configurations." />
     <MESSAGE value="Added Callbacks to idl." />
@@ -456,7 +488,8 @@
     <MESSAGE value="Added roundCount, and leaderboard IDL." />
     <MESSAGE value="Fixed round winner." />
     <MESSAGE value="Fixed directories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed directories." />
+    <MESSAGE value="Fixed point system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed point system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
