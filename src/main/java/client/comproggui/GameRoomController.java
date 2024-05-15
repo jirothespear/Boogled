@@ -261,15 +261,15 @@ public class GameRoomController {
     public void onRoundFinished(){
         try {
             // Load the main application view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/round-stack-pane-view.fxml"));
-            System.out.println("Loading FXML: " + getClass().getResource("/round-stack-pane.fxml-view"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/round-stack-pane-view.fxml"));
+            System.out.println("Loading FXML: " + getClass().getResource("/client/round-stack-pane.fxml-view"));
             Parent root = loader.load();
             System.out.println("FXML Loaded: " + (root != null));
 
             // Create a new scene with the main app view
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/client/Font2.css").toExternalForm());
 
             // Set the scene on the stage
             stage.setScene(scene);
@@ -295,15 +295,15 @@ public class GameRoomController {
     public void onGameFinished(){
         try {
             // Load the main application view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-stack-pane-view.fxml"));
-            System.out.println("Loading FXML: " + getClass().getResource("/game-stack-pane.fxml-view"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/game-stack-pane-view.fxml"));
+            System.out.println("Loading FXML: " + getClass().getResource("/client/game-stack-pane.fxml-view"));
             Parent root = loader.load();
             System.out.println("FXML Loaded: " + (root != null));
 
             // Create a new scene with the main app view
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/client/Font2.css").toExternalForm());
 
             // Set the scene on the stage
             stage.setScene(scene);

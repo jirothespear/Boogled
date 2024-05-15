@@ -1,4 +1,4 @@
-package server.gui;
+package testers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

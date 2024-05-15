@@ -25,7 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
-public class server extends Application {
+public class server  {
 
     public static void main(String[] args) throws InvalidName, AdapterInactive, WrongPolicy, ServantNotActive, org.omg.CosNaming.NamingContextPackage.InvalidName, CannotProceed, NotFound, AlreadyBound, InterruptedException, InvalidPolicy, AdapterAlreadyExists, ObjectAlreadyActive, ServantAlreadyActive, ObjectNotActive {
 
@@ -96,9 +96,6 @@ public class server extends Application {
     }
 
 
-        @Override
-        public void start(Stage primaryStage) throws Exception {
 
-        }
 }
 

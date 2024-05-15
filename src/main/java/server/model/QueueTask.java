@@ -34,7 +34,6 @@ public class QueueTask extends TimerTask {
             ServerUtilityImpl.addGame(players);
 
             //   }
-
             cancel();
         } else {
 

@@ -16,8 +16,8 @@ public class GameStackPaneController {
 
     public void endOfGame() throws IOException {
         // Load all views
-        Parent roundFinished = FXMLLoader.load(getClass().getResource("/game-finished-view.fxml"));
-        Parent results = FXMLLoader.load(getClass().getResource("/end-game-result-view.fxml"));
+        Parent roundFinished = FXMLLoader.load(getClass().getResource("/client/game-finished-view.fxml"));
+        Parent results = FXMLLoader.load(getClass().getResource("/client/end-game-result-view.fxml"));
 
         // Add all views to the stack pane
         stackPane.getChildren().addAll(roundFinished, results);

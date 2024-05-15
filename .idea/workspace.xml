@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added roundCount, and leaderboard IDL.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed round winner.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameStackPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStackPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +81,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Renuel Balogo/AppData/Local/SceneBuilder/SceneBuilder.exe",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
@@ -96,7 +105,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.client">
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -108,6 +117,7 @@
     <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.gui.ServerMain" />
       <module name="finalProjectCORBA" />
+      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="server.gui.*" />
@@ -120,19 +130,6 @@
     </configuration>
     <configuration name="client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testers.client" />
-      <module name="finalProjectCORBA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="testers.client2" />
       <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
@@ -164,6 +161,21 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="testers.server" />
       <module name="finalProjectCORBA" />
+      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testers.ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testers.ServerMain" />
+      <module name="finalProjectCORBA" />
+      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testers.*" />
@@ -176,19 +188,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.testers.ServerMain" />
       <item itemvalue="Application.ServerMain" />
-      <item itemvalue="Application.client2" />
       <item itemvalue="Application.client" />
       <item itemvalue="Application.server" />
       <item itemvalue="Application.client.comproggui.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.client" />
+        <item itemvalue="Application.server" />
+        <item itemvalue="Application.testers.ServerMain" />
         <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.client.comproggui.Main" />
-        <item itemvalue="Application.server" />
-        <item itemvalue="Application.client" />
-        <item itemvalue="Application.client2" />
       </list>
     </recent_temporary>
   </component>
@@ -400,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715738370219</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fixed round winner.">
+      <created>1715745960073</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1715745960073</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +434,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="project set up, added a few classes to be populated soon" />
     <MESSAGE value="Fixed packages and directories." />
     <MESSAGE value="Fixed directories." />
     <MESSAGE value="Fixed Project JDK 1.8 Configurations." />
@@ -440,7 +458,8 @@
     <MESSAGE value="Integrated some of the server gui's" />
     <MESSAGE value="Fixed fxml directories." />
     <MESSAGE value="Added roundCount, and leaderboard IDL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added roundCount, and leaderboard IDL." />
+    <MESSAGE value="Fixed round winner." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed round winner." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -77,15 +77,15 @@ public class LobbyController {
 
     @FXML
     public void onLeaderboardButtonClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/leaderboard-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/leaderboard-view.fxml"));
 
         Parent root = loader.load();
         Scene scene = leaderboardButton.getScene();
         LeaderboardController leaderboardController = loader.getController();
 
-        leaderboardController.setServerUtility(serverUtility);
-        leaderboardController.setClientCallbackImpl(clientCallbackImpl);
-        leaderboardController.setClientCallback(clientCallback);
+        //leaderboardController.setServerUtility(serverUtility);
+        //leaderboardController.setClientCallbackImpl(clientCallbackImpl);
+        //leaderboardController.setClientCallback(clientCallback);
         root.translateXProperty().set(scene.getWidth());
         welcomePane.getChildren().add(root);
 
@@ -101,7 +101,7 @@ public class LobbyController {
 
     @FXML
     public void onStartGameButtonClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/waiting-room-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/waiting-room-view.fxml"));
         Parent root = loader.load();
         waitingRoomController = loader.getController();
 
@@ -127,7 +127,7 @@ public class LobbyController {
         stage.show();
         stage.centerOnScreen();
         stage.setResizable(false);
-        scene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/client/Font.css").toExternalForm());
 
 
 

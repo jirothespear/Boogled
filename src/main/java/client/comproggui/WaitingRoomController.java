@@ -77,7 +77,7 @@ public class WaitingRoomController {
         Platform.runLater(() -> {
             try {
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-room-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/game-room-view.fxml"));
                 Parent root = loader.load();
                 GameRoomController gameRoomController = loader.getController();
 
@@ -95,7 +95,7 @@ public class WaitingRoomController {
                 stage.show();
                 stage.centerOnScreen();
                 stage.setResizable(false);
-                gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
+                gameScene.getStylesheets().add(getClass().getResource("/server/Font.css").toExternalForm());
 
             } catch (IOException e) {
                 e.printStackTrace();

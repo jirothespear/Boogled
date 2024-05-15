@@ -16,9 +16,9 @@ public class RoundStackPaneController {
 
     public void endOfRound() throws IOException {
         // Load all views
-        Parent roundFinished = FXMLLoader.load(getClass().getResource("/round-finished-view.fxml"));
-        Parent results = FXMLLoader.load(getClass().getResource("/end-round-result-view.fxml"));
-        Parent countdown = FXMLLoader.load(getClass().getResource("/countdown.fxml"));
+        Parent roundFinished = FXMLLoader.load(getClass().getResource("/client/round-finished-view.fxml"));
+        Parent results = FXMLLoader.load(getClass().getResource("/client/end-round-result-view.fxml"));
+        Parent countdown = FXMLLoader.load(getClass().getResource("/client/countdown.fxml"));
 
         // Add all views to the stack pane
         stackPane.getChildren().addAll(countdown, results, roundFinished);

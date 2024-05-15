@@ -37,7 +37,7 @@ public class client extends Application {
             Properties props = new Properties();
 
 
-            props.put("org.omg.CORBA.ORBInitialHost", "localhost");
+            props.put("org.omg.CORBA.ORBInitialHost", "192.168.56.1");
             props.put("org.omg.CORBA.ORBInitialPort", "2055");
 
             ORB orb = ORB.init(args, props);
@@ -75,7 +75,7 @@ public class client extends Application {
 
     public void start(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/login-view.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
             loginController.setServerUtility(serverUtility);
@@ -83,7 +83,7 @@ public class client extends Application {
             loginController.setClientCallback(cref);
 
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/client/Textfield.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
             stage.setResizable(false);

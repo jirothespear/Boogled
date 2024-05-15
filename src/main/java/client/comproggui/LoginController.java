@@ -109,7 +109,7 @@ public class LoginController {
 
     private void navigateToLobbyView(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lobby-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/lobby-view.fxml"));
 
             Parent root = fxmlLoader.load();
 
