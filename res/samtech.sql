@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 20, 2024 at 02:10 PM
--- Server version: 8.2.0
+-- Generation Time: May 15, 2024 at 12:50 PM
+-- Server version: 8.0.36
 -- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,25 +24,56 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `settings`
+--
+
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE IF NOT EXISTS `settings` (
+  `round_time` int NOT NULL,
+  `queue_time` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`round_time`, `queue_time`) VALUES
+(30, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
+  `Id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) DEFAULT NULL,
   `overallScore` int DEFAULT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `overallScore`) VALUES
-('hans', 'hans', NULL),
-('liam', 'liam', NULL),
-('renuel', 'renuel', NULL);
+INSERT INTO `user` (`Id`, `username`, `password`, `overallScore`) VALUES
+(1, 'alice', 'alice', 8),
+(2, 'bob', 'bob', 1),
+(3, 'charlie', 'charlie', 7),
+(4, 'dave', 'dave', 2),
+(5, 'eve', 'eve', 19),
+(6, 'frank', 'frank', 28),
+(7, 'grace', 'grace', 22),
+(8, 'hans', 'hans', 5),
+(9, 'harry', 'harry', 25),
+(10, 'irene', 'irene', 30),
+(11, 'james', 'james', 8),
+(12, 'joe', 'joe', 14),
+(13, 'liam', 'liam', 10),
+(14, 'renuel', 'renuel', 19);
 
 -- --------------------------------------------------------
 
