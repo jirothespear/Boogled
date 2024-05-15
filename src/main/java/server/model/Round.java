@@ -1,6 +1,7 @@
 package server.model;
 
 import server.controller.User;
+import server.controller.UserScore;
 
 import java.util.*;
 
@@ -61,6 +62,38 @@ public class Round extends TimerTask{
         // Clear answers for each user
         answersOfPlayers.forEach((user, list) -> list.clear());
         System.out.println("Player size: " + players.size());
+    }
+
+    @Override
+    public void run() {
+
+
+        if (timerCount == -3){
+            filterAnswers();
+            countScoresPlayers();
+            String[] winnerOfCurrentRound = getWinnerOfRound().split("/");//Format username/highscore
+            game.checkWinner(winnerOfCurrentRound);
+            System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
+                    +" with a score of "+ winnerOfCurrentRound[1]);
+            if (!winnerOfCurrentRound[0].equals("null")){
+                for(User temp: players){
+                    temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
+                }
+            }
+            game.startGame();
+            cancel();
+
+        } else if (timerCount == -1 || timerCount == -2) {
+
+            System.out.println("buffer time");
+        }else {
+
+            System.out.println("Round Counting -> " + timerCount);
+            for (User temp: players){
+                temp.getUserCallback().getRoundTime(timerCount);
+            }
+        }
+        timerCount--;
     }
 
     /**
@@ -139,22 +172,29 @@ public class Round extends TimerTask{
      * @return
      */
     public String getWinnerOfRound() {
-        User winner = new User();
+
+        String winner = "";
         int highestScore = 0;
 
+
+        ArrayList<UserScore> scoresToBeSorted = new ArrayList<>();
         for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
-            if (entry.getValue() > highestScore) {
-                highestScore = entry.getValue();
-                winner = entry.getKey();
 
-            }
+            scoresToBeSorted.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
+
+        }
+        Collections.sort(scoresToBeSorted);
+        if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
+                == scoresToBeSorted.get(scoresToBeSorted.size()-2).getScore()){
+
+            winner = "null";
+            highestScore = Integer.parseInt("null");
+        } else {
+            winner = scoresToBeSorted.get(scoresToBeSorted.size()-1).getUsername();
+            highestScore = scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore();
         }
 
-        if (winner.getUsername() == null){
-
-            return "null/0";
-        }
-        return winner.getUsername()+"/"+highestScore;
+        return winner+"/"+highestScore;
     }
 
     private static void shuffleStringBuilder(StringBuilder sb, Random random) {
@@ -209,37 +249,7 @@ public class Round extends TimerTask{
         this.letters = letters;
     }
 
-    @Override
-    public void run() {
 
-
-        if (timerCount == -3){
-        filterAnswers();
-        countScoresPlayers();
-        String[] winnerOfCurrentRound = getWinnerOfRound().split("/");//Format username/highscore
-        game.checkWinner(winnerOfCurrentRound);
-        System.out.println("Winner for round "+ roundCount +" is"+ winnerOfCurrentRound[0]
-                +" with a score of "+ winnerOfCurrentRound[1]);
-        if (!winnerOfCurrentRound[0].equals("null")){
-            for(User temp: players){
-                temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
-            }
-        }
-        game.startGame();
-        cancel();
-
-        } else if (timerCount == -1 || timerCount == -2) {
-
-            System.out.println("buffer time");
-        }else {
-
-            System.out.println("Round Counting -> " + timerCount);
-            for (User temp: players){
-                temp.getUserCallback().getRoundTime(timerCount);
-            }
-        }
-        timerCount--;
-    }
 
     public Game getGame() {
         return game;

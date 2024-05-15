@@ -31,7 +31,7 @@ public class Game extends Thread {
     private int roundCount=0;
     private Round round;
 
-    private Boolean roundWin = false;
+    private Boolean gameWin = false;
     public Round getRound() {
         return round;
     }
@@ -115,7 +115,7 @@ public class Game extends Thread {
             playerPlacing.put(players.get(i),0);
         }
 
-        if (!roundWin) {
+        if (!gameWin) {
             roundCount++;
             winnerOfRound =" ";
             round = new Round(players);
@@ -148,9 +148,9 @@ public class Game extends Thread {
             scoreOfRoundWinner = Integer.parseInt(winnerScore);
             winnerOfRound = winnerUsername;
 
-            if (champion.getUsername().equalsIgnoreCase("null")) {// ends the loop when there is a winner
+            if (!champion.getUsername().equalsIgnoreCase("null")) {// ends the loop when there is a winner
                 updateUserDB();// updates user table in DB
-                roundWin = true;
+                gameWin = true;
             }
 
         }

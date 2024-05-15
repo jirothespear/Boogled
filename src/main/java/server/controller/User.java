@@ -5,7 +5,7 @@ import Utility.ClientCallback;
 /**
  * User object
  */
-public class User {
+public class User implements Comparable<User> {
     private String username;
     private String password;
 
@@ -43,5 +43,10 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 0;
     }
 }

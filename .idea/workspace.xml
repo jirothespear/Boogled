@@ -4,41 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed fxml directories.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added roundCount, and leaderboard IDL.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_PlayerUtilityStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Round.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715708410443</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added roundCount, and leaderboard IDL.">
+      <created>1715738370219</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715738370219</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +439,8 @@
     <MESSAGE value="Changes in QUEUE." />
     <MESSAGE value="Integrated some of the server gui's" />
     <MESSAGE value="Fixed fxml directories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed fxml directories." />
+    <MESSAGE value="Added roundCount, and leaderboard IDL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added roundCount, and leaderboard IDL." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -470,11 +449,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/server/model/Queue.java</url>
           <line>50</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/server/model/Round.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
