@@ -59,9 +59,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
     @Override
     public void logout(ClientCallback clientCallback, String username)  {
-        if(userCallbacks.containsKey(clientCallback)){
-            userCallbacks.remove(clientCallback);
-        }
+        userCallbacks.remove(username);
     }
 
 
