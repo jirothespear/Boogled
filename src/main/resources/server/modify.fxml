@@ -14,17 +14,17 @@
          <children>
             <TextField fx:id="searchUsernameTextField" layoutX="100.0" layoutY="35.0" prefHeight="25.0" prefWidth="400.0" promptText="Enter Username" />
             <Text layoutX="250.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search for a User" textAlignment="CENTER" wrappingWidth="100.0" />
-            <Button layoutX="514.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Search" />
+            <Button layoutX="514.0" layoutY="35.0" mnemonicParsing="false" onAction="#onSearchClick" prefHeight="25.0" prefWidth="78.0" text="Search" />
          </children>
       </Pane>
       <Button layoutX="609.0" layoutY="432.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
       <Button layoutX="50.0" layoutY="432.0" mnemonicParsing="false" onAction="#onCreateUserButtonClick" text="Create User" />
       <ScrollPane layoutX="57.0" layoutY="129.0" prefHeight="295.0" prefWidth="600.0" AnchorPane.topAnchor="129.0">
          <content>
-            <ListView prefHeight="293.0" prefWidth="601.0" />
+            <ListView fx:id="listUsers" prefHeight="293.0" prefWidth="601.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="137.0" layoutY="432.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Update" />
-      <Button layoutX="226.0" layoutY="432.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Delete" />
+      <Button layoutX="137.0" layoutY="432.0" mnemonicParsing="false" onAction="#onUpdateClick" prefHeight="25.0" prefWidth="78.0" text="Update" />
+      <Button layoutX="226.0" layoutY="432.0" mnemonicParsing="false" onAction="#onDeleteClick" prefHeight="25.0" prefWidth="78.0" text="Delete" />
    </children>
 </AnchorPane>

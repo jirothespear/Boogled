@@ -60,7 +60,7 @@ public class CreateUserController {
     }
     @FXML
     public void onBackButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("user-settings.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/server/user-settings.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

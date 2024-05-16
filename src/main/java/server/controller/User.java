@@ -11,6 +11,9 @@ public class User implements Comparable<User> {
 
     private ClientCallback userCallback;
 
+    private int userID;
+
+
     public User() {
         username = "null";
     }
@@ -19,6 +22,12 @@ public class User implements Comparable<User> {
 
         this.username= username;
         this.userCallback = callback;
+    }
+
+    public User(String username, String password, int userID) {
+        this.username = username;
+        this.password = password;
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -48,5 +57,13 @@ public class User implements Comparable<User> {
     @Override
     public int compareTo(User o) {
         return 0;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }

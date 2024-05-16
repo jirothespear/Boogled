@@ -34,10 +34,12 @@ public class UpdateUserController {
         updateButton.disableProperty().bind(Bindings.isEmpty(username.textProperty())
                 .or(Bindings.isEmpty(password.textProperty()))
         );
+
+
     }
     @FXML
     public void onBackButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("user-settings.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/server/user-settings.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -96,18 +96,23 @@ public class DataPB {
     public static ArrayList<User> getUsers(){
         String query = "SELECT username, password FROM user";
         ArrayList<User> listOfUsers = new ArrayList<>();
-        User user = new User();
+        //User user = new User();
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                user.setUsername(rs.getString("username"));
-                user.setPassword(rs.getString("password"));
+
+                listOfUsers.add(new User(rs.getString("username")
+                        , rs.getString("password")
+                        , rs.getInt("id")));
+             //   user.setUsername(rs.getString("username"));
+                //user.setPassword(rs.getString("password"));
+               // user.set
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        listOfUsers.add(user);
+        //listOfUsers.add(user);
         return listOfUsers;
     }
 
