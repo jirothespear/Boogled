@@ -173,7 +173,6 @@ public class Game extends Thread {
         User winner = winnerOfRound;
         int highestScore = scoreOfWinner;
 
-        //Add score of winner to overallPoint for corresponding
         for (Map.Entry<User, Integer> entry : overallPoints.entrySet()){
             if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
                 entry.setValue(entry.getValue() + highestScore);

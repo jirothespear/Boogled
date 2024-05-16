@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import testers.ClientCallbackImpl;
 
 public class EndGameResultController {
-
+//
     @FXML
     private Label totalPointsLabel;
 

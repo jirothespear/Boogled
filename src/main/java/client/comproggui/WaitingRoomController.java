@@ -135,7 +135,6 @@ public class WaitingRoomController {
     public String getCurrentUser() {
         return currentUser;
     }
-
     public void setCurrentUser(String currentUser) {
         this.currentUser = currentUser;
     }

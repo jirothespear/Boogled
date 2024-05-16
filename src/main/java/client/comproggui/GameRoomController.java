@@ -443,5 +443,5 @@ public class GameRoomController {
         this.gameChampion = gameChampion;
         this.gameChampionScore = gameChampionScore;
         onGameFinished();
-    }
-}
+    }//
+}//

@@ -93,7 +93,7 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
             gameRoomController.setGameLetterChoice(letters);
         }
     }
-
+//
     @Override
     public void getChampion(String username, String points) {
         if (gameRoomController != null){

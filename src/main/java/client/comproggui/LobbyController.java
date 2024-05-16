@@ -122,7 +122,7 @@ public class LobbyController {
         stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("/client/Font.css").toExternalForm());
 
-
+//
 
         // Set waiting duration
         Duration waitingRoomDuration = Duration.seconds(1);
