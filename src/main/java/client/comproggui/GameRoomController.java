@@ -127,6 +127,7 @@ public class GameRoomController {
 
     private Timer timer;
 
+    private int playerWinCount = 0;
 
     boolean isWinner = false;
 
@@ -293,10 +294,12 @@ public class GameRoomController {
 
                 EndRoundResultController controller = loader.getController();
                 roundScore = serverUtility.showScore(currentGameUser,gameID);
-
+                if(isWinner){
+                    playerWinCount = playerWinCount+1;
+                }
                 controller.setPoints(roundScore);
                 controller.setResult(isWinner,roundScore); // Example values, you should set actual result data
-
+                controller.setNumberOfWins(playerWinCount);
                 clientCallbackImpl.setEndRoundResultController(controller);
                 System.out.println("Triggered on display EndRoundResult method" + isWinner);
                 Stage stage = new Stage();
@@ -320,7 +323,7 @@ public class GameRoomController {
     @FXML
     public void onGameFinished(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-stack-pane-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("client/end-game-result-view.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             Scene scene = new Scene(root);
@@ -329,9 +332,10 @@ public class GameRoomController {
             stage.show();
             stage.centerOnScreen();
             stage.setResizable(false);
-            GameStackPaneController controller = loader.getController();
+            EndGameResultController controller = loader.getController();
+//            serverUtility.showScore()
             if (controller != null) {
-                controller.endOfGame();
+//                controller.setTotalPoints();
             }
         } catch (IOException e) {
             e.printStackTrace();

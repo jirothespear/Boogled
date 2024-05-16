@@ -42,7 +42,7 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
             System.out.println(isWinner);
             endRoundResultController.setPoints(points);
             endRoundResultController.setResult(isWinner, points);
-            Platform.runLater(() -> gameRoomController.displayEndRoundResult());
+//            Platform.runLater(() -> gameRoomController.displayEndRoundResult());
         }
 
     }

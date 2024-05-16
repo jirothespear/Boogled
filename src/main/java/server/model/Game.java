@@ -2,6 +2,7 @@ package server.model;
 
 import Utility.ClientCallback;
 import server.controller.User;
+import server.controller.UserScore;
 import sqlconnector.DataPB;
 
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class Game extends Thread {
     private int gameID=0;// use to identify each game from another
 
     private HashMap<ClientCallback, String> userCallbacks;
+
+    private ArrayList<UserScore> pointsPrevious = new ArrayList<UserScore>();
 
 
 
@@ -109,10 +112,17 @@ public class Game extends Thread {
     }
     public  void startGame(){// sets up variables for game
         System.out.println("Game is starting");
-        roundCount = 0;
 
-        if (overallPoints == null || playerPlacing == null) {
-            for (int i = 0; i < players.size(); i++) {
+
+//        if (overallPoints == null || playerPlacing == null) {
+//            for (int i = 0; i < players.size(); i++) {
+//                overallPoints.put(players.get(i), 0);
+//                playerPlacing.put(players.get(i), 0);
+//            }
+//        }
+
+        for (int i = 0; i < players.size(); i++) {
+            if (!(overallPoints.containsKey(players.get(i)) || playerPlacing.containsKey(players.get(i)))) {
                 overallPoints.put(players.get(i), 0);
                 playerPlacing.put(players.get(i), 0);
             }
@@ -215,5 +225,11 @@ public class Game extends Thread {
         players.add(player);
     }
 
+    public ArrayList<UserScore> getPointsPrevious() {
+        return pointsPrevious;
+    }
 
+    public void setPointsPrevious(ArrayList<UserScore> pointsPrevious) {
+        this.pointsPrevious = pointsPrevious;
+    }
 }
