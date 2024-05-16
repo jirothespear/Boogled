@@ -258,4 +258,55 @@ public class DataPB {
 
     }
 
+    public  static  void setQueueTime (int newTime){
+        String query = "UPDATE settings SET queue_time = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1,newTime);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public static  int getQueueTime(){
+        String query = "SELECT s.queue_time AS time FROM settings s;";
+        int currentQT = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                currentQT = rs.getInt("time");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return currentQT;
+    }
+    public  static  void setRoundTime (int newTime){
+        String query = "UPDATE settings SET round_time = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1,newTime);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public static  int getRoundTime(){
+        String query = "SELECT s.round_time AS time FROM settings s;";
+        int currentQT = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                currentQT = rs.getInt("time");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return currentQT;
+    }
+
 }
