@@ -30,6 +30,7 @@ public class Queue {
 
         if (!queueActive) {
             queue = new QueueTask();
+            queue.setTime(queueTime);
             queue.addToActiveUser(new User(userName, usernameCallback));
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");

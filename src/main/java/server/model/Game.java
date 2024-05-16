@@ -25,6 +25,7 @@ public class Game extends Thread {
     private ArrayList<UserScore> pointsPrevious = new ArrayList<UserScore>();
 
 
+    public static int roundTime = 30;
 
     /*
     Following variabls are used in rounds
@@ -132,6 +133,7 @@ public class Game extends Thread {
             roundCount++;
             winnerOfRound =" ";
             round = new Round(players);
+            round.setTimerCount(roundTime);
             round.newRound(roundCount);
             round.setGame(this);
             scoreOfRoundWinner =0;

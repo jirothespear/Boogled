@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import server.controller.ServerUtilityImpl;
+import server.model.Game;
 
 import java.io.IOException;
 
@@ -51,10 +53,18 @@ public class GameSettingsController {
 
     @FXML
     public void onBackButtonClick(ActionEvent event) throws IOException {
+        Integer queueTime = waitingTimeValue.getValue();
+        Integer roundTime = roundTimeValue.getValue();
+
+        ServerUtilityImpl.queueTime = queueTime;
+        Game.roundTime = roundTime;
+
         root = FXMLLoader.load(getClass().getResource("/server/server-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
     }
 }

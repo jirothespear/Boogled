@@ -11,11 +11,17 @@ import java.util.TimerTask;
 
 public class QueueTask extends TimerTask {
 
-    static int time = 11;
+     int time = 11;
+
+     int tempTimer = time;
 
     private static HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
 
     public ArrayList<User> players = new ArrayList<>();
+
+    public QueueTask() {
+        tempTimer = time;
+    }
 
     @Override
     public void run()  {
@@ -34,7 +40,7 @@ public class QueueTask extends TimerTask {
             ServerUtilityImpl.addGame(players);
 
             players = new ArrayList<>();
-            time = 11;
+            time = tempTimer;
             //   }
             cancel();
         } else {
@@ -59,5 +65,17 @@ public class QueueTask extends TimerTask {
 
     public void setUserCallbacks(HashMap<String, ClientCallback> userCallbacks) {
         this.userCallbacks = userCallbacks;
-    }}
+    }
+
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+}
+
+
 

@@ -14,7 +14,7 @@ public class Round extends TimerTask{
     private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
 
     private String letters;
-    private int timerCount = 13;
+    public int timerCount = 13;
 
     private int roundCount = 0;
 
@@ -297,4 +297,7 @@ public class Round extends TimerTask{
     public ArrayList<UserScore> getRoundPoint() {
         return roundPoint;
     }
+
+
+
 }
