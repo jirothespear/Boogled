@@ -25,7 +25,7 @@ public class Game extends Thread {
     private ArrayList<UserScore> pointsPrevious = new ArrayList<UserScore>();
 
 
-    public static int roundTime = DataPB.getRoundTime();
+    public static int roundTime = 10;
 
     /*
     Following variabls are used in rounds

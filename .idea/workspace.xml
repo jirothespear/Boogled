@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Rollback on setScore;">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Final Implementation of Game Settings.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
@@ -466,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715858589173</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Final Implementation of Game Settings.">
+      <created>1715859203545</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715859203545</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added CORBA ORB files." />
     <MESSAGE value="Fixed Queue System, added Exceptions to start. Revamped IDL." />
     <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
     <MESSAGE value="Added ORB daemon bat script." />
@@ -509,7 +515,8 @@
     <MESSAGE value="Complete SERVER CRUD+S." />
     <MESSAGE value="Set Score changes." />
     <MESSAGE value="Rollback on setScore;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rollback on setScore;" />
+    <MESSAGE value="Final Implementation of Game Settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Implementation of Game Settings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -519,6 +526,10 @@
           <line>51</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

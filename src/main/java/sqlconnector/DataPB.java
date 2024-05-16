@@ -260,7 +260,7 @@ public class DataPB {
     }
 
     public  static  void setQueueTime (int newTime){
-        String query = "UPDATE settings SET queue_time = ?;";
+        String query = "UPDATE settings SET queue_time = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1,newTime);
@@ -271,7 +271,7 @@ public class DataPB {
 
     }
     public static  int getQueueTime(){
-        String query = "SELECT s.queue_time AS time FROM settings s;";
+        String query = "SELECT s.queue_time AS time FROM settings s";
         int currentQT = 0;
         try {
             PreparedStatement ps = connection.prepareStatement(query);

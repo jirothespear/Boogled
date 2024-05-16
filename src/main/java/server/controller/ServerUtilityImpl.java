@@ -17,6 +17,8 @@ import java.util.Map.Entry;
 import java.util.HashMap;
 
 public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
+
+
     private Game currentGame = new Game();
     private static HashMap<Integer, Game> activeGames = new HashMap<>();
     private Queue queueSystem = new Queue();
@@ -24,7 +26,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     private static int gameCount = 0;
 
 
-    public static int queueTime = DataPB.getQueueTime();
+
     private ORB orb;
 
     static private HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
@@ -133,6 +135,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
     @Override
     public void getQueueTime(String userName) {
+        queueTime = DataPB.getQueueTime();
         System.out.println();
         queueSystem.joinQueue(queueTime, userName, userCallbacks.get(userName));
         System.out.println("Queue time for " + userName+  "   " +userCallbacks.get(userName));
@@ -240,6 +243,8 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     public void setQueueTime(int queueTime) {
         this.queueTime = queueTime;
     }
+
+    public static int queueTime = 0;
 
     public static HashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
