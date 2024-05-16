@@ -1,8 +1,6 @@
 package client.comproggui;
 
 import Utility.ClientCallback;
-import Utility.InvalidWordException;
-import Utility.PlayerUtility;
 import Utility.PlayerUtility;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -11,15 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import server.controller.User;
 import testers.ClientCallbackImpl;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -119,6 +113,11 @@ public class GameRoomController {
     @FXML
     private Label wordValidityPromptLabel;
     public String currentGameUser;
+    public String gameChampion = "null";
+
+    public String gameChampionScore = "null";
+
+
 
     public String gameID;
     public String gameLetterChoice;
@@ -230,7 +229,7 @@ public class GameRoomController {
 
     private void updateRoundLabel() {
         System.out.println("Updating the round count: "+ serverUtility.getRoundCount(gameID) );
-            roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID) );
+        roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID) );
     }
 
     private void reactivateButtons() {
@@ -258,12 +257,12 @@ public class GameRoomController {
                     }
 
                     timer = new Timer();
+
+
                     timer.schedule(new TimerTask() {
                         @Override
                         public void run() {
 
-                            roundScore = serverUtility.showScore(currentGameUser,gameID);
-                            System.out.println("MY SCORE BEBE: "+ roundScore);
                             displayEndRoundResult();
 
                             Platform.runLater(() -> {
@@ -275,6 +274,11 @@ public class GameRoomController {
                     }, 3000);
 
                     System.out.println("Round finished");
+
+
+
+
+                    System.out.println("Game Champ: " + gameChampion);
                 } else {
                     this.roundTime = roundTime;
                     System.out.println("Round time: " + roundTime);
@@ -282,6 +286,12 @@ public class GameRoomController {
                 }
             }
         });
+
+//        System.out.println("Game Champ: " + gameChampion);
+//        if (!(gameChampion.equals("null"))){
+//            System.out.println("Someone won: " + gameChampion);
+//
+//        }
     }
 
 
@@ -294,11 +304,12 @@ public class GameRoomController {
 
                 EndRoundResultController controller = loader.getController();
                 roundScore = serverUtility.showScore(currentGameUser,gameID);
+
                 if(isWinner){
                     playerWinCount = playerWinCount+1;
                 }
                 controller.setPoints(roundScore);
-                controller.setResult(isWinner,roundScore); // Example values, you should set actual result data
+                controller.setResult(isWinner,roundScore);
                 controller.setNumberOfWins(playerWinCount);
                 clientCallbackImpl.setEndRoundResultController(controller);
                 System.out.println("Triggered on display EndRoundResult method" + isWinner);
@@ -322,24 +333,74 @@ public class GameRoomController {
 
     @FXML
     public void onGameFinished(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("client/end-game-result-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-            stage.centerOnScreen();
-            stage.setResizable(false);
-            EndGameResultController controller = loader.getController();
-//            serverUtility.showScore()
-            if (controller != null) {
-//                controller.setTotalPoints();
+        Platform.runLater(() ->{
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/end-game-result-view.fxml"));
+                Parent root = loader.load();
+
+                EndGameResultController controller = loader.getController();
+
+                if (gameChampion.equals(currentGameUser)){
+                    controller.setCongratsOrNextTimeLabel("Congratulations");
+                    controller.setWinnerOrLoserLabel("OverAllWinner");
+                    controller.setTotalPoints(Integer.parseInt(gameChampionScore));
+
+                }else{
+                    controller.setCongratsOrNextTimeLabel("That was close");
+                    controller.setWinnerOrLoserLabel("Game Over");
+                }
+                clientCallbackImpl.setGameResultController(controller);
+                controller.setClientCallbackImpl(clientCallbackImpl);
+
+
+                System.out.println("Initializing the End game and calling onGameFinished");
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                stage.centerOnScreen();
+                stage.setResizable(false);
+
+                Timer closeTimer = new Timer();
+                closeTimer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        Platform.runLater(stage::close);
+                        navigateToLobbyController();
+                    }
+                }, 8000);
+
+                Stage gameRoomStage = (Stage) roundLabel.getScene().getWindow();
+                gameRoomStage.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        });
+    }
+
+    private  void navigateToLobbyController(){
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/lobby-view.fxml"));
+
+                Parent root = fxmlLoader.load();
+
+                LobbyController lobbyController = fxmlLoader.getController();
+                lobbyController.setCurrentUsername(currentGameUser);
+                lobbyController.setClientCallbackImpl(clientCallbackImpl);
+                lobbyController.setClientCallback(clientCallback);
+                lobbyController.setServerUtility(serverUtility);
+
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                stage.centerOnScreen();
+                stage.setResizable(false);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 
@@ -377,4 +438,10 @@ public class GameRoomController {
     public void setCurrentGameUser(String currentGameUser) {
         this.currentGameUser = currentGameUser;
     }
-}
+
+    public void setGameChampion(String gameChampion, String gameChampionScore) {
+        this.gameChampion = gameChampion;
+        this.gameChampionScore = gameChampionScore;
+        onGameFinished();
+    }//
+}//

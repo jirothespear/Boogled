@@ -83,9 +83,6 @@ public class LobbyController {
         Scene scene = leaderboardButton.getScene();
         LeaderboardController leaderboardController = loader.getController();
 
-        //leaderboardController.setServerUtility(serverUtility);
-        //leaderboardController.setClientCallbackImpl(clientCallbackImpl);
-        //leaderboardController.setClientCallback(clientCallback);
         root.translateXProperty().set(scene.getWidth());
         welcomePane.getChildren().add(root);
 
@@ -117,10 +114,6 @@ public class LobbyController {
         waitingRoomController.setClientCallback(clientCallback);
         waitingRoomController.setCurrentUser(currentUsername);
 
-//        gameID = serverUtility.getGameID(currentUsername);
-
-//        System.out.println("Game ID Lobby: " + gameID);
-
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -129,19 +122,13 @@ public class LobbyController {
         stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("/client/Font.css").toExternalForm());
 
-
+//
 
         // Set waiting duration
         Duration waitingRoomDuration = Duration.seconds(1);
         PauseTransition waitingTransition = new PauseTransition(waitingRoomDuration);
         waitingTransition.play();
     }
-
-
-    public ClientCallbackImpl getClientCallbackImpl() {
-        return clientCallbackImpl;
-    }
-
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;
     }
@@ -154,25 +141,10 @@ public class LobbyController {
         this.clientCallback = clientCallback;
     }
 
-    public PlayerUtility getServerUtility() {
-        return serverUtility;
-    }
-
     public void setServerUtility(PlayerUtility serverUtility) {
         this.serverUtility = serverUtility;
     }
 
-    public WaitingRoomController getWaitingRoomController() {
-        return waitingRoomController;
-    }
-
-    public void setWaitingRoomController(WaitingRoomController waitingRoomController) {
-        this.waitingRoomController = waitingRoomController;
-    }
-
-    public String getCurrentUsername() {
-        return currentUsername;
-    }
 
     public void setCurrentUsername(String currentUsername) {
         this.currentUsername = currentUsername;

@@ -35,9 +35,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     public void login(String username, String password) throws LoginException {
         String userNPasswd = username + "/" + password;
         if (DataPB.checkUser(userNPasswd)) {
-            //ClientCallback clientCallback = null;
-            //this.setUserName(username);
-            //userCallbacks.put(userNPasswd, clientCallback);
+
         } else throw new LoginException();
     }
 
@@ -164,7 +162,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
         }
         return "null";
     }
-
+//
     @Override
     public String getRoundCount(String gameID) {
         return String.valueOf(activeGames.get(Integer.valueOf(gameID)).getRound().getRoundCount());
