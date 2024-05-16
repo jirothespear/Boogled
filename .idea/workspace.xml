@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed logout.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/server/controller/User.java&#10;#&#9;src/main/java/sqlconnector/DataPB.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/user-settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/server/user-settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +99,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -183,11 +188,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.client" />
         <item itemvalue="Application.server" />
         <item itemvalue="Application.client2" />
         <item itemvalue="Application.testers.ServerMain" />
-        <item itemvalue="Application.ServerMain" />
       </list>
     </recent_temporary>
   </component>

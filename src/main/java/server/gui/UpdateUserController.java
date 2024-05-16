@@ -45,6 +45,7 @@ public class UpdateUserController {
         stage.setScene(scene);
         stage.show();
         root.requestFocus();
+
     }
 
     public void onUpdateButtonClick(ActionEvent event) {

@@ -1,5 +1,7 @@
 package sqlconnector;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import server.controller.User;
 
 import java.sql.*;
@@ -94,24 +96,23 @@ public class DataPB {
      * @return
      */
     public static ArrayList<User> getUsers(){
-        String query = "SELECT username, password FROM user";
+        String query = "SELECT Id,username, password FROM user";
         ArrayList<User> listOfUsers = new ArrayList<>();
         //User user = new User();
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            while(rs.next()){
 
-                listOfUsers.add(new User(rs.getString("username")
-                        , rs.getString("password")
-                        , rs.getInt("id")));
-             //   user.setUsername(rs.getString("username"));
-                //user.setPassword(rs.getString("password"));
-               // user.set
+                listOfUsers.add(new User(rs.getInt("Id"),
+                        rs.getString(2)
+                        , rs.getString(3)));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        System.out.println(listOfUsers.size());
         //listOfUsers.add(user);
         return listOfUsers;
     }
@@ -132,7 +133,7 @@ public class DataPB {
     }
 
     public static boolean deleteUser(int userId) {
-        String query = "UPDATE user SET username = ?, password = ? WHERE user_id = ?";
+        String query = "DELETE FROM user WHERE Id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, userId);
@@ -145,21 +146,24 @@ public class DataPB {
     }
 
     public static ArrayList<User> getSearchedUsers(String search){
-        String query = "SELECT username, password FROM user WHERE username LIKE ?";
+        String query = "SELECT Id,username, password FROM user WHERE username LIKE ?";
         User user = new User();
         ArrayList<User> listOfUsers = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, search + "%");
+            ps.setString(1, "%" + search + "%");
             ResultSet rs = ps.executeQuery();
             if (rs.next()){
-                user.setUserId(rs.getInt("Id"));
-                user.setUsername(rs.getString("username"));
-                user.setPassword(rs.getString("password"));
+
+                listOfUsers.add(new User(rs.getInt("Id")
+                        ,rs.getString("username")
+                        , rs.getString("password") ));
             }
         } catch (SQLException e){
             e.printStackTrace();
         }
+
+        System.out.println(listOfUsers.size());
         return listOfUsers;
     }
 

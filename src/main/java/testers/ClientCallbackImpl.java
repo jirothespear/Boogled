@@ -99,6 +99,11 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
         }
     }
 
+    @Override
+    public void getChampion(String username, String points) {
+
+    }
+
     public void setORB (ORB orb){
         this.orb = orb;
     }

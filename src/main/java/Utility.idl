@@ -7,6 +7,7 @@ module Utility {
     void getRoundTime(in long time);
     void getQueueTime(in long time);
     void getLetterChoice (in wstring letters);
+    void getChampion (in wstring username, in wstring points);
   };
 
   exception LoginException {

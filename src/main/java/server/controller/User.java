@@ -1,6 +1,7 @@
 package server.controller;
 
 import Utility.ClientCallback;
+import javafx.beans.property.SimpleStringProperty;
 
 /**
  * User object
@@ -16,16 +17,17 @@ public class User implements Comparable<User> {
         username = "null";
     }
 
-    public User(int userId, String username, String password){
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
-    }
 
     public User(String username, ClientCallback callback){// used in queueing system
 
         this.username= username;
         this.userCallback = callback;
+    }
+
+    public User(int userId, String username, String password) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
     }
 
     public void setUserId(int userId){
