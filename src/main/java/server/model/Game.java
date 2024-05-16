@@ -144,7 +144,8 @@ public class Game extends Thread {
         } else {
             System.out.println("active player size " + players.size());
             for (User temp: players){
-                temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(scoreOfRoundWinner));
+                temp.getUserCallback().getChampion(champion.getUsername(), String.valueOf(overallPoints.get(champion)));
+                temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
         }

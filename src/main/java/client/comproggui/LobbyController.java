@@ -83,6 +83,12 @@ public class LobbyController {
         Scene scene = leaderboardButton.getScene();
         LeaderboardController leaderboardController = loader.getController();
 
+
+        String[] usernames = serverUtility.getLeaderboardUsernames();
+        int[] points = serverUtility.getLeaderboardPoints();
+
+        leaderboardController.updateLeaderboard(usernames, points);
+
         root.translateXProperty().set(scene.getWidth());
         welcomePane.getChildren().add(root);
 
