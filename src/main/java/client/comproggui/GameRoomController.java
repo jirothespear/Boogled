@@ -163,6 +163,7 @@ public class GameRoomController {
             buttons.add(twentiethButton);
 
 
+
             String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
 
             for (int i = 0; i < letters.length(); i++) {
@@ -219,7 +220,8 @@ public class GameRoomController {
 
     private void updateRoundLabel() {
 
-            roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID));
+
+            roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID) );
 
     }
 
@@ -234,6 +236,7 @@ public class GameRoomController {
             if (timerLabel == null) {
                 System.out.println("timerLabel is null");
             } else {
+                updateRoundLabel();
                 if (roundTime == 0) {
 
                     if (answerTextField.getText().isEmpty() == false || buttons.stream().anyMatch(Button::isDisabled)) {
@@ -250,9 +253,10 @@ public class GameRoomController {
                         @Override
                         public void run() {
 
+                            roundScore = serverUtility.showScore(gameID, currentGameUser);
                             System.out.println(roundScore);
                             displayEndRoundResult();
-//                            onRoundFinished();
+
                             Platform.runLater(() -> {
                                 initialize();
                                 timer.cancel();
@@ -260,7 +264,7 @@ public class GameRoomController {
                             });
                         }
                     }, 3000);
-                    updateRoundLabel();
+
                     System.out.println("Round finished");
                 } else {
                     this.roundTime = roundTime;
