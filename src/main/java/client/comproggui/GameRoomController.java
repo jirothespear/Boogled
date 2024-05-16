@@ -116,8 +116,8 @@ public class GameRoomController {
 
     public ClientCallbackImpl clientCallbackImpl;
 
-
-
+    @FXML
+    private Label wordValidityPromptLabel;
     public String currentGameUser;
 
     public String gameID;
@@ -130,11 +130,16 @@ public class GameRoomController {
 
     boolean isWinner = false;
 
+    public void setWinner(boolean winner) {
+        isWinner = winner;
+    }
+
     private  int roundScore;
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
 
+            wordValidityPromptLabel.setText("");
             gameLetterChoice = serverUtility.getLetterChoice(gameID);
             System.out.println("Game letter choice: " + gameLetterChoice);
             answerTextField.setEditable(false);
@@ -174,6 +179,7 @@ public class GameRoomController {
                 }
             }
 
+
             for (Button button : buttons) {
                 button.setOnAction(event -> {
                     answerTextField.appendText(button.getText());
@@ -192,25 +198,28 @@ public class GameRoomController {
 
     @FXML
     public void onSubmitButtonClicked() {
-        try {
-            System.out.println("Checking word - Submit button triggered");
-            System.out.println("Answer: " + answerTextField.getText() + " Game ID: " + gameID + " User: " + currentGameUser);
-            String answer = answerTextField.getText();
-            serverUtility.checkWord(answer,currentGameUser ,gameID);
+        Platform.runLater(() -> {
+            try {
+                System.out.println("Checking word - Submit button triggered");
+                System.out.println("Answer: " + answerTextField.getText() + " Game ID: " + gameID + " User: " + currentGameUser);
+                String answer = answerTextField.getText();
+                serverUtility.checkWord(answer,currentGameUser ,gameID);
+                wordValidityPromptLabel.setText("Valid!");
+                answerTextField.clear();
+                reactivateButtons();
+            } catch (Exception  e) {
+                answerTextField.clear();
+                reactivateButtons();
+                wordValidityPromptLabel.setText("Invalid!");
+            }
 
-        } catch (InvalidWordException e) {
-            throw new RuntimeException(e);
-        }
-        handleSubmit();
+            answerTextField.clear();
+            reactivateButtons();
+
+        });
+
     }
 
-    private void handleSubmit() {
-
-        String userInput = answerTextField.getText();
-        System.out.println("User input: " + userInput);
-        answerTextField.clear();
-        reactivateButtons();
-    }
 
     private void updateTimerLabel() {
         Platform.runLater(() -> {
@@ -219,10 +228,8 @@ public class GameRoomController {
     }
 
     private void updateRoundLabel() {
-
-
+        System.out.println("Updating the round count: "+ serverUtility.getRoundCount(gameID) );
             roundLabel.setText("Round: " + serverUtility.getRoundCount(gameID) );
-
     }
 
     private void reactivateButtons() {
@@ -238,7 +245,8 @@ public class GameRoomController {
             } else {
                 updateRoundLabel();
                 if (roundTime == 0) {
-
+                    isWinner = false;
+                    System.out.println("Round Count: "+ roundLabel.getText());
                     if (answerTextField.getText().isEmpty() == false || buttons.stream().anyMatch(Button::isDisabled)) {
                         answerTextField.clear();
                         reactivateButtons();
@@ -253,8 +261,8 @@ public class GameRoomController {
                         @Override
                         public void run() {
 
-                            roundScore = serverUtility.showScore(gameID, currentGameUser);
-                            System.out.println(roundScore);
+                            roundScore = serverUtility.showScore(currentGameUser,gameID);
+                            System.out.println("MY SCORE BEBE: "+ roundScore);
                             displayEndRoundResult();
 
                             Platform.runLater(() -> {
@@ -277,16 +285,20 @@ public class GameRoomController {
 
 
 
-    private void displayEndRoundResult() {
+    public void displayEndRoundResult() {
         Platform.runLater(() -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/end-round-result-view.fxml"));
                 Parent root = loader.load();
 
                 EndRoundResultController controller = loader.getController();
+                roundScore = serverUtility.showScore(currentGameUser,gameID);
 
+                controller.setPoints(roundScore);
                 controller.setResult(isWinner,roundScore); // Example values, you should set actual result data
 
+                clientCallbackImpl.setEndRoundResultController(controller);
+                System.out.println("Triggered on display EndRoundResult method" + isWinner);
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
@@ -303,27 +315,6 @@ public class GameRoomController {
                 e.printStackTrace();
             }
         });
-    }
-    @FXML
-    public void onRoundFinished(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/round-stack-pane-view.fxml"));
-            Parent root = loader.load();
-            RoundStackPaneController controller = loader.getController();
-            clientCallbackImpl.setRoundStackPaneController(controller);
-            if (controller != null) {
-                controller.endOfRound();
-            }
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/Font2.css").toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-            stage.centerOnScreen();
-            stage.setResizable(false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML

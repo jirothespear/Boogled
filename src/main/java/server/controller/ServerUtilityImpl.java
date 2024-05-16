@@ -121,7 +121,18 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
 
     @Override
     public int showScore(String user, String gameID) {
-        return activeGames.get(Integer.valueOf(gameID)).getOverallPoints().get(getUser(user));
+        System.out.println("GameID: " + gameID + " User: " + user);
+        int gameIDInt = Integer.parseInt(gameID);
+       // System.out.println("Score: " + activeGames.get(gameIDInt).getRound().getRoundPoint());
+        ArrayList<UserScore> roundPoint = activeGames.get(gameIDInt).getPointsPrevious();
+
+        System.out.println("points skibidi -> " + roundPoint.size());
+        for(UserScore temp: roundPoint){
+            if (temp.getUsername().equals(user)){
+                return temp.getScore();
+            }
+        }
+        return 0;
     }
 
     @Override

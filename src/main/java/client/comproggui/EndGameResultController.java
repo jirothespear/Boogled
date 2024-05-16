@@ -21,7 +21,6 @@ public class EndGameResultController {
 
 
     public void setCongratsOrNextTimeText(String text) {
-
         congratsOrNextTimeLabel.setText(text);
     }
 

@@ -21,6 +21,8 @@ public class Round extends TimerTask{
     private ArrayList<User> players = new ArrayList<>();
 
     private Game game;
+
+    public ArrayList<UserScore> roundPoint = new ArrayList<>();
     /**
      * Constructor
      * @param players list of players to be used for Maps
@@ -81,6 +83,7 @@ public class Round extends TimerTask{
                     temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
                 }
             }
+            game.setPointsPrevious(roundPoint);
             game.startGame();
             cancel();
 
@@ -178,28 +181,29 @@ public class Round extends TimerTask{
 //        int highestScore = 0;
 //
 //
-//        ArrayList<UserScore> scoresToBeSorted = new ArrayList<>();
-//        for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
 //
-//            scoresToBeSorted.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
+        for (Map.Entry<User, Integer> entry : pointsPerRound.entrySet()) {
 //
-//        }
-//        System.out.println("size scores to be filtered " + scoresToBeSorted.size());
-//        Collections.sort(scoresToBeSorted);
+           roundPoint.add(new UserScore(entry.getKey().getUsername(), entry.getKey().getPassword(), entry.getValue()));
 //
-//        if (scoresToBeSorted.size() == 1){
+       }
+        System.out.println("size scores to be filtered " + roundPoint.size());
+        Collections.sort(roundPoint);
+//
+//        if (roundPoint.size() == 1){
 //            winner = "null";
 //        }
-//        else if (scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore()
-//                == scoresToBeSorted.get(scoresToBeSorted.size()-2).getScore()){
+//        else if (roundPoint.get(roundPoint.size()-1).getScore()
+//                == roundPoint.get(roundPoint.size()-2).getScore()){
 //
 //            winner = "null";
 //        } else {
-//            winner = scoresToBeSorted.get(scoresToBeSorted.size()-1).getUsername();
-//            highestScore = scoresToBeSorted.get(scoresToBeSorted.size()-1).getScore();
+//            winner = roundPoint.get(roundPoint.size()-1).getUsername();
+//            highestScore = roundPoint.get(roundPoint.size()-1).getScore();
 //        }
 //
 //        return winner+"/"+highestScore;
+
 
         User winner = new User();
         int highestScore = 0;
@@ -216,6 +220,8 @@ public class Round extends TimerTask{
             return "null/0";
         }
         return winner.getUsername()+"/"+highestScore;
+
+
     }
 
     private static void shuffleStringBuilder(StringBuilder sb, Random random) {
@@ -286,5 +292,9 @@ public class Round extends TimerTask{
 
     public void setRoundCount(int roundCount) {
         this.roundCount = roundCount;
+    }
+
+    public ArrayList<UserScore> getRoundPoint() {
+        return roundPoint;
     }
 }

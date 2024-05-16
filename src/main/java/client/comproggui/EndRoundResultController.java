@@ -1,5 +1,6 @@
 package client.comproggui;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -15,12 +16,16 @@ public class EndRoundResultController {
     private Label numberOfWinsLabel;
 
     public void setResult(boolean isWinner, int points) {
-        if (isWinner) {
-            winnerOrLoserLabel.setText("WINNER!");
-        } else {
-            winnerOrLoserLabel.setText("TRY AGAIN!");
-        }
-        pointsRoundLabel.setText(String.valueOf(points));
+        System.out.println("EndRound Result Set Triggered");
+        Platform.runLater(() -> {
+            if (isWinner) {
+                winnerOrLoserLabel.setText("WINNER!");
+            } else {
+                winnerOrLoserLabel.setText("TRY AGAIN!");
+            }
+            pointsRoundLabel.setText(String.valueOf(points));
+        });
+
     }
 
 

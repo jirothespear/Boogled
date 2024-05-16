@@ -64,8 +64,8 @@ public class client extends Application {
             cref = ClientCallbackHelper.narrow(ref);
 
 
-            System.out.println(Arrays.toString(serverUtility.getLeaderboardUsernames()));
-            System.out.println("Obtained a address -> " + serverUtility);
+//            System.out.println(Arrays.toString(serverUtility.getLeaderboardUsernames()));
+//            System.out.println("Obtained a address -> " + serverUtility);
             launch();
 
 

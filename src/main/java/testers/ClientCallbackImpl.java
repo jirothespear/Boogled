@@ -32,10 +32,17 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
     @Override
     public void roundEnd(String winner, int points) {
         System.out.println("ROUND END SETTING");
+
+        System.out.println("CLIENT CB CURRENT: " +gameRoomController.getCurrentGameUser()  + "USER WIN: "+ winner + "Points: " + points);
         if (endRoundResultController != null) {
+            System.out.println("End Round Result Not Null");
             boolean isWinner = winner.equals(gameRoomController.getCurrentGameUser());
+            gameRoomController.setWinner(isWinner);
+
+            System.out.println(isWinner);
+            endRoundResultController.setPoints(points);
             endRoundResultController.setResult(isWinner, points);
-            Platform.runLater(() -> gameRoomController.onRoundFinished());
+            Platform.runLater(() -> gameRoomController.displayEndRoundResult());
         }
 
     }
@@ -60,6 +67,7 @@ public class ClientCallbackImpl extends Utility.ClientCallbackPOA {
 
     @Override
     public int getScore(int time) {
+
         return 0;
     }
 
