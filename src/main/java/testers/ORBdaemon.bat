@@ -1,1 +1,0 @@
-orbd -ORBInitialHost 192.168.56.1 -ORBInitialPort 2055

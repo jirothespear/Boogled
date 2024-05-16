@@ -11079,7 +11079,7 @@ INSERT INTO `words` (`word`) VALUES
 ('controllable'),
 ('controlled'),
 ('controller'),
-('controllers'),
+('Client_Java.controllers'),
 ('controlling'),
 ('controls'),
 ('controversial'),

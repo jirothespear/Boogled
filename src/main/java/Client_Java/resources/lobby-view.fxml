@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lobbyPane1" prefHeight="650.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_Java.controllers.LobbyController">
+   <children>
+      <ImageView fx:id="lobbyBgImage1" fitHeight="657.0" fitWidth="1028.0" pickOnBounds="true">
+         <image>
+            <Image url="/generalBgImage.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </ImageView>
+      <AnchorPane fx:id="lobbyPane2" layoutX="31.0" layoutY="27.0" prefHeight="602.0" prefWidth="966.0">
+         <children>
+            <ImageView fx:id="lobbyBgImage2" fitHeight="602.0" fitWidth="966.0" pickOnBounds="true">
+               <image>
+                  <Image url="/whiteBg.jpg" />
+               </image>
+               <effect>
+                  <Glow level="1.0">
+                     <input>
+                        <Lighting surfaceScale="7.83">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant elevation="120.96" />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </Glow>
+               </effect>
+            </ImageView>
+            <AnchorPane fx:id="mainLobbyPane" layoutX="32.0" layoutY="32.0" prefHeight="478.0" prefWidth="898.0">
+               <children>
+                  <AnchorPane fx:id="welcomePane" prefHeight="478.0" prefWidth="898.0">
+                     <children>
+                        <AnchorPane fx:id="switchingPane" prefHeight="478.0" prefWidth="898.0">
+                           <children>
+                              <ImageView fx:id="tutorialImage" fitHeight="478.0" fitWidth="898.0" pickOnBounds="true">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <image>
+                                    <Image url="/welcomeBgImage.gif" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Button fx:id="startGameButton" layoutX="169.0" layoutY="526.0" mnemonicParsing="false" onAction="#onStartGameButtonClick" prefHeight="57.0" prefWidth="268.0" text="START GAME" textFill="#032245">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="120.96">
+                           <color>
+                              <Color red="0.7450980544090271" green="1.0" blue="0.9098039269447327" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="leaderboardButton" layoutX="542.0" layoutY="524.0" mnemonicParsing="false" onAction="#onLeaderboardButtonClick" prefHeight="57.0" prefWidth="268.0" text="LEADERBOARDS" textFill="#032245">
+               <font>
+                  <Font name="Segoe UI Black" size="12.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="120.96">
+                           <color>
+                              <Color red="0.7450980544090271" green="1.0" blue="0.9098039269447327" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

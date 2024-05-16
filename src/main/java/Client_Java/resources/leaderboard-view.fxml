@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="478.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_Java.controllers.LeaderboardController">
+   <children>
+      <ImageView fitHeight="478.0" fitWidth="898.0" pickOnBounds="true">
+         <image>
+            <Image url="/leaderboardsBgImage.png" />
+         </image>
+         <effect>
+            <InnerShadow choke="0.67">
+               <color>
+                  <Color red="0.5894736647605896" green="0.5894736647605896" blue="0.5894736647605896" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </ImageView>
+      <Label fx:id="firstPlaceUserLabel" layoutX="159.0" layoutY="142.0" text="User">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlaceUserLabel" layoutX="159.0" layoutY="202.0" text="User">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdPlaceUserLabel" layoutX="159.0" layoutY="265.0" text="User">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthPlaceUserLabel" layoutX="159.0" layoutY="327.0" text="User">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="fifthPlaceUserLabel" layoutX="159.0" layoutY="387.0" text="User">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstPlacePointsLabel" layoutX="390.0" layoutY="142.0" text="POINTS">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlacePointsLabel" layoutX="390.0" layoutY="202.0" text="POINTS">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdPlacePointsLabel" layoutX="390.0" layoutY="265.0" text="POINTS">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthPlacePointsLabel" layoutX="390.0" layoutY="327.0" text="POINTS">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="fifthPlacePointsLabel" layoutX="390.0" layoutY="387.0" text="POINTS">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

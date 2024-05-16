@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="754.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_Java.controllers.EndRoundResultController">
+   <children>
+      <ImageView fitHeight="755.0" fitWidth="1355.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="/gameroomGeneralResultsBg.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="pointsRoundLabel" layoutX="312.0" layoutY="145.0" stylesheets="@Font2.css" text="100" textFill="#9fffc7">
+         <font>
+            <Font size="90.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label layoutX="688.0" layoutY="145.0" stylesheets="@Font2.css" text="points" textFill="#9fffc7">
+         <font>
+            <Font size="90.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label layoutX="595.0" layoutY="525.0" stylesheets="@Font2.css" text="wins" textFill="#9fffc7">
+         <font>
+            <Font size="90.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label fx:id="winnerOrLoserLabel" layoutX="291.0" layoutY="274.0" stylesheets="@Font2.css" text="WINNER!" textFill="#006b2b">
+         <font>
+            <Font size="170.0" />
+         </font>
+         <effect>
+            <DropShadow height="7.0" offsetX="-5.0" radius="3.005" spread="0.74" width="7.02">
+               <input>
+                  <Bloom />
+               </input>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label fx:id="numberOfWinsLabel" layoutX="495.0" layoutY="525.0" stylesheets="@Font2.css" text="1" textFill="#9fffc7">
+         <font>
+            <Font size="90.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

@@ -4,11 +4,105 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed connection error.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Number Of Wins Fixed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/ORBdaemon.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/samtech.sql" beforeDir="false" afterPath="$PROJECT_DIR$/res/samtech.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/ClientCallbackPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/GameStartExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/InvalidWordExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LogoutExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/PlayerUtilityPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_ClientCallbackStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/_PlayerUtilityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/EndGameResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndGameResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/EndRoundResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndRoundResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameFinishedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameFinishedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameStackPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LeaderboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundFinishedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/RoundFinishedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStackPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/RoundStackPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/RoundStartingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/RoundStartingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/WaitingRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/orb.db/counter" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/counter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/orb.db/servers.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/servers.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/UserScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/serverUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/GameSettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/runnable/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/UpdateUserStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/controller/UserSettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/sqlconnector/DataPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/model/ClientCallbackImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ORBdaemon.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/runnable/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/client2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/counter" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/counter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/servers.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/servers.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/bin/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/Font.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/Font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/Font2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/Font2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/Textfield.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/Textfield.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/end-game-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/end-round-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/game-finished-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/game-finished-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/game-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/game-stack-pane-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/game-stack-pane-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/leaderboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/leaderboard-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/lobby-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/round-finished-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/round-finished-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/round-stack-pane-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/round-stack-pane-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/round-starting-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/round-starting-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/slkscr.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/slkscr.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/waiting-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/waiting-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/create-user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/create-user.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/game-settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/game-settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/modify.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/server-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/server-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/update-user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/update-user.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/user-settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/resources/user-settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,50 +154,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.client.executor&quot;: &quot;Run&quot;,
-    &quot;Application.server.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/INSTRUCT-D522lab/.jdeploy/apps/scenebuilder/Scene Builder.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.client.comproggui.Main.executor": "Run",
+    "Application.client.executor": "Run",
+    "Application.server.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "N:/ghad/src/main/java/Server_Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="N:\ghad\src\main\java\Server_Java" />
+      <recent name="N:\ghad\src\Client_Java" />
       <recent name="D:\2023-2_9341-finteam5\resources" />
       <recent name="D:\2023-2_9341-finteam5\resources\resources" />
       <recent name="D:\2023-2_9341-finteam5\src\main\resources" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\resources\resources" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\resources" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5" />
-      <recent name="D:\Documents\NetBeansProjects\2023-2_9341-finteam5\src\main\java\src\main\java\resources" />
+      <recent name="N:\ghad\src\main\java\Server_Java\resources" />
+      <recent name="N:\ghad\src\main\java\Client_Java\resources" />
+      <recent name="N:\ghad\bin" />
+      <recent name="N:\ghad\src\main\java\Server_Java\ORB" />
+      <recent name="N:\ghad\src\main\java\Server_Java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.client">
     <configuration name="Server" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
+      <option name="MAIN_CLASS_NAME" value="Server_Java.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 1099 -ORBInitialHost localhost" />
       <method v="2">
@@ -111,12 +210,12 @@
       </method>
     </configuration>
     <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server.gui.ServerMain" />
+      <option name="MAIN_CLASS_NAME" value="Server_Java.runnable.ServerMain" />
       <module name="finalProjectCORBA" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="server.gui.*" />
+          <option name="PATTERN" value="Server_Java.runnable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +226,11 @@
     <configuration name="client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="testers.client" />
+      <option name="MAIN_CLASS_NAME" value="Client_Java.runnable.client" />
       <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testers.*" />
+          <option name="PATTERN" value="Client_Java.runnable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,7 +243,7 @@
       <module name="finalProjectCORBA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testers.*" />
+          <option name="PATTERN" value="Client_Java.runnable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,7 +259,7 @@
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testers.*" />
+          <option name="PATTERN" value="Client_Java.runnable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,12 +268,14 @@
       </method>
     </configuration>
     <configuration name="testers.ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="testers.ServerMain" />
       <module name="finalProjectCORBA" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testers.*" />
+          <option name="PATTERN" value="Client_Java.runnable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -192,11 +293,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.client" />
+        <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.testers.ServerMain" />
         <item itemvalue="Application.server" />
         <item itemvalue="Application.client2" />
-        <item itemvalue="Application.testers.ServerMain" />
       </list>
     </recent_temporary>
   </component>
@@ -479,7 +580,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715862391628</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Completed Integration in LeaderboardController">
+      <option name="closed" value="true" />
+      <created>1715863411137</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1715863411137</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Number Of Wins Fixed">
+      <option name="closed" value="true" />
+      <created>1715865172785</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1715865172785</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
-    <MESSAGE value="Added ORB daemon bat script." />
     <MESSAGE value="added waiting room" />
     <MESSAGE value="Revamped Game and Round objects. Added threads to games and timer to the round. &#10;Revamped the IDL." />
     <MESSAGE value="Fixed exception stack of letterChoice in CORBA null parameter." />
@@ -522,14 +637,16 @@
     <MESSAGE value="Rollback on setScore;" />
     <MESSAGE value="Final Implementation of Game Settings." />
     <MESSAGE value="Fixed connection error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed connection error." />
+    <MESSAGE value="Completed Integration in LeaderboardController" />
+    <MESSAGE value="Number Of Wins Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Number Of Wins Fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/server/model/Queue.java</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java</url>
+          <line>48</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
