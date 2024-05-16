@@ -1,14 +1,15 @@
 package Server_Java.model;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Round extends TimerTask{
     /*
     following variables changes every newRound
      */
-    private HashMap<String, Integer> allAnswers = new HashMap<>();
-    private HashMap<User, Integer> pointsPerRound = new HashMap<>();// resets value every round
-    private HashMap<User, ArrayList<String>> answersOfPlayers = new HashMap<>();
+    private ConcurrentHashMap<String, Integer> allAnswers = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<User, Integer> pointsPerRound = new ConcurrentHashMap<>();// resets value every round
+    private ConcurrentHashMap<User, ArrayList<String>> answersOfPlayers = new ConcurrentHashMap<>();
 
     private String letters;
     public int timerCount = 13;
@@ -25,7 +26,7 @@ public class Round extends TimerTask{
      * @param players list of players to be used for Maps
      */
     public Round (ArrayList<User>  players){
-        allAnswers = new HashMap<>();
+        allAnswers = new ConcurrentHashMap<>();
         for (int i =0; i < players.size(); i++){
             pointsPerRound.put(players.get(i),0);
             answersOfPlayers.put(players.get(i), new ArrayList<>());
@@ -55,7 +56,7 @@ public class Round extends TimerTask{
         }
         System.out.println("Round "+roundCount +"!");
         //Reset list containing all answers
-        allAnswers = new HashMap<>();
+        allAnswers = new ConcurrentHashMap<>();
         // Reset points to 0 for each user
         pointsPerRound.forEach((user, points) -> pointsPerRound.put(user, 0));
         // Clear answers for each user
