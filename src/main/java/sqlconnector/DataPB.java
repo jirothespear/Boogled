@@ -169,10 +169,28 @@ public class DataPB {
 
     public static void setScore(String username, int newScore){
         String query = "UPDATE user SET overallScore = ?  WHERE username = ?;";
+        String queryComparator = "SELECT overallScore FROM user WHERE username = ?";
+
+        int score = 0;
+
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1,newScore );
-            ps.setString(2,username);
+            PreparedStatement comparator = connection.prepareStatement(queryComparator);
+
+            comparator.setString(1, username);
+            ResultSet comparison = comparator.executeQuery();
+
+
+            if (comparison.next()){
+                score = comparison.getInt(1);
+            }
+
+            if (score > newScore) {
+                ps.setInt(1, newScore);
+                ps.setString(2, username);
+            }
+
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
