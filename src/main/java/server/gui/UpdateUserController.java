@@ -20,6 +20,13 @@ public class UpdateUserController {
     private TextField username;
     @FXML
     private TextField password;
+
+    private String initialUsername;
+
+    private String initialPassword;
+
+    private int userId;
+
     @FXML
     private Button updateButton;
     @FXML
@@ -31,6 +38,11 @@ public class UpdateUserController {
 
     @FXML
     public void initialize(){
+        userId = UpdateUserStorage.getUserId();
+        username.setText(UpdateUserStorage.getUsername());
+        initialUsername = UpdateUserStorage.getUsername();
+        password.setText(UpdateUserStorage.getPassword());
+        initialPassword = UpdateUserStorage.getPassword();
         updateButton.disableProperty().bind(Bindings.isEmpty(username.textProperty())
                 .or(Bindings.isEmpty(password.textProperty()))
         );
@@ -49,21 +61,35 @@ public class UpdateUserController {
     }
 
     public void onUpdateButtonClick(ActionEvent event) {
-        int userId= 0;
+
         String updatedUsername = username.getText();
         String updatedPassword = password.getText();
 
-        if (DataPB.checkDuplicate(updatedUsername)){
+        if (initialUsername.equals(updatedUsername) && !initialPassword.equals(updatedPassword)){
+
+                if (DataPB.updateUser(userId, updatedUsername, updatedPassword)){
+                    showSuccessAlert("Successfully Updated", "The account has been successfully updated.");
+                }
+                else {
+                    showErrorAlert("Update Error!", "There was a problem in updating of the account");
+                }
+
+
+        } else if (!initialUsername.equals(updatedUsername) && initialPassword.equals(updatedPassword))
+
+            if (DataPB.checkDuplicate(updatedUsername)){
             showErrorAlert("Username already in use", "Please choose another username.");
-        }
-        else {
-            if (DataPB.updateUser(userId, updatedUsername, updatedPassword)){
+          }
+            else {
+              if (DataPB.updateUser(userId, updatedUsername, updatedPassword)){
                 showSuccessAlert("Successfully Updated", "The account has been successfully updated.");
             }
             else {
                 showErrorAlert("Update Error!", "There was a problem in updating of the account");
             }
-        }
+        } else {
+            showErrorAlert("No Update", "Please update a field!");
+            }
     }
 
     private void showErrorAlert(String title, String content) {

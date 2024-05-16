@@ -118,7 +118,7 @@ public class DataPB {
     }
 
     public static boolean updateUser(int userId, String newUsername, String newPassword) {
-        String query = "UPDATE user SET username = ?, password = ? WHERE user_id = ?";
+        String query = "UPDATE user SET username = ?, password = ? WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, newUsername);

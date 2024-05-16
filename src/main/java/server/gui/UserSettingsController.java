@@ -126,6 +126,11 @@ public class UserSettingsController {
 
         @FXML
         void onUpdateClick(ActionEvent event) throws IOException {
+            User person = tableView.getSelectionModel().getSelectedItem();
+        UpdateUserStorage.userId = person.getUserId();
+        UpdateUserStorage.username = person.getUsername();
+        UpdateUserStorage.password = person.getPassword();
+
             root = FXMLLoader.load(getClass().getResource("/server/update-user.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

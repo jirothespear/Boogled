@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/server/controller/User.java&#10;#&#9;src/main/java/sqlconnector/DataPB.java">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="getChampion IDL update.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/UpdateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/UserSettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/server/user-settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/server/user-settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/server/update-user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/server/update-user.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715776472256</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="getChampion IDL update.">
+      <created>1715853424130</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1715853424130</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Callbacks to idl." />
     <MESSAGE value="Added CORBA ORB files, and configurations." />
     <MESSAGE value="Fixed CORBA ORB architecture." />
     <MESSAGE value="JavaFX configurations." />
@@ -479,7 +483,8 @@
     <MESSAGE value="Fixed point system" />
     <MESSAGE value="Fixed leaderboards, added data to database." />
     <MESSAGE value="Fixed logout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed logout." />
+    <MESSAGE value="getChampion IDL update." />
+    <option name="LAST_COMMIT_MESSAGE" value="getChampion IDL update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
