@@ -6,6 +6,7 @@ import Utility.ClientCallback;
  * User object
  */
 public class User implements Comparable<User> {
+    private int userId;
     private String username;
     private String password;
 
@@ -15,34 +16,48 @@ public class User implements Comparable<User> {
         username = "null";
     }
 
+    public User(int userId, String username, String password){
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+    }
+
     public User(String username, ClientCallback callback){// used in queueing system
 
         this.username= username;
         this.userCallback = callback;
     }
 
-    public String getUsername() {
-        return username;
+    public void setUserId(int userId){
+        this.userId = userId;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public ClientCallback getUserCallback() {
-        return userCallback;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setUserCallback(ClientCallback userCallback) {
         this.userCallback = userCallback;
     }
 
+    public int getUserId(){
+        return userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public ClientCallback getUserCallback() {
+        return userCallback;
     }
 
     @Override

@@ -101,6 +101,7 @@ public class DataPB {
             PreparedStatement ps = connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
+                user.setUserId(rs.getInt("Id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
             }
@@ -137,6 +138,25 @@ public class DataPB {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static ArrayList<User> getSearchedUsers(String search){
+        String query = "SELECT username, password FROM user WHERE username LIKE ?";
+        User user = new User();
+        ArrayList<User> listOfUsers = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, search + "%");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                user.setUserId(rs.getInt("Id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return listOfUsers;
     }
 
     public static void setScore(String username, int newScore){
