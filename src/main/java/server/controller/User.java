@@ -6,16 +6,20 @@ import Utility.ClientCallback;
  * User object
  */
 public class User implements Comparable<User> {
+    private int userId;
     private String username;
     private String password;
 
     private ClientCallback userCallback;
 
-    private int userID;
-
-
     public User() {
         username = "null";
+    }
+
+    public User(int userId, String username, String password){
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
     }
 
     public User(String username, ClientCallback callback){// used in queueing system
@@ -24,46 +28,40 @@ public class User implements Comparable<User> {
         this.userCallback = callback;
     }
 
-    public User(String username, String password, int userID) {
-        this.username = username;
-        this.password = password;
-        this.userID = userID;
-    }
-
-    public String getUsername() {
-        return username;
+    public void setUserId(int userId){
+        this.userId = userId;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public ClientCallback getUserCallback() {
-        return userCallback;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setUserCallback(ClientCallback userCallback) {
         this.userCallback = userCallback;
     }
 
+    public int getUserId(){
+        return userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public ClientCallback getUserCallback() {
+        return userCallback;
     }
 
     @Override
     public int compareTo(User o) {
         return 0;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
     }
 }
