@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Complete SERVER CRUD+S.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Rollback on setScore;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/EndGameResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/EndGameResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/GameRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/comproggui/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/gui/GameSettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/ClientCallbackImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/game-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +61,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.client.comproggui.Main.executor": "Run",
-    "Application.client.executor": "Run",
-    "Application.server.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/INSTRUCT-D522lab/.jdeploy/apps/scenebuilder/Scene Builder.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/INSTRUCT-D522lab/.jdeploy/apps/scenebuilder/Scene Builder.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2023-2_9341-finteam5\resources" />
@@ -106,7 +102,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -197,9 +193,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.client" />
         <item itemvalue="Application.server" />
-        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.client2" />
         <item itemvalue="Application.testers.ServerMain" />
       </list>
@@ -463,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715855179776</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Set Score changes.">
+      <created>1715858589173</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715858589173</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,8 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed CORBA ORB architecture." />
-    <MESSAGE value="JavaFX configurations." />
     <MESSAGE value="Added CORBA ORB files." />
     <MESSAGE value="Fixed Queue System, added Exceptions to start. Revamped IDL." />
     <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
@@ -506,7 +507,9 @@
     <MESSAGE value="Fixed logout." />
     <MESSAGE value="getChampion IDL update." />
     <MESSAGE value="Complete SERVER CRUD+S." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete SERVER CRUD+S." />
+    <MESSAGE value="Set Score changes." />
+    <MESSAGE value="Rollback on setScore;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback on setScore;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

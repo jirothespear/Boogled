@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class DataPB {
     private static Connection connection;
-    private static String url = "jdbc:mysql://localhost:3306/samtech?user=root&password";
+    private static String url = "jdbc:mysql://localhost:3308/samtech?user=root&password";
 
     private DataPB() {
     }
@@ -169,28 +169,11 @@ public class DataPB {
 
     public static void setScore(String username, int newScore){
         String query = "UPDATE user SET overallScore = ?  WHERE username = ?;";
-        String queryComparator = "SELECT overallScore FROM user WHERE username = ?";
-
-        int score = 0;
-
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            PreparedStatement comparator = connection.prepareStatement(queryComparator);
-
-            comparator.setString(1, username);
-            ResultSet comparison = comparator.executeQuery();
-
-
-            if (comparison.next()){
-                score = comparison.getInt(1);
-            }
-
-            if (score > newScore) {
-                ps.setInt(1, newScore);
-                ps.setString(2, username);
-            }
-
-
+            ps.setInt(1, newScore);
+            ps.setString(2, username);
+            ps.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

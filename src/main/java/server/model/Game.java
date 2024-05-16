@@ -25,7 +25,7 @@ public class Game extends Thread {
     private ArrayList<UserScore> pointsPrevious = new ArrayList<UserScore>();
 
 
-    public static int roundTime = 30;
+    public static int roundTime = DataPB.getRoundTime();
 
     /*
     Following variabls are used in rounds
@@ -44,6 +44,9 @@ public class Game extends Thread {
         this.round = round;
     }
 
+    public int getGameID() {
+        return gameID;
+    }
 
     public void setGameID(int gameID) {
         this.gameID = gameID;
@@ -54,6 +57,22 @@ public class Game extends Thread {
 
     public void setPlayers(ArrayList<User> players) {
         this.players = players;
+    }
+
+    public HashMap<User, Integer> getOverallPoints() {
+        return overallPoints;
+    }
+
+    public void setOverallPoints(HashMap<User, Integer> overallPoints) {
+        this.overallPoints = overallPoints;
+    }
+
+    public HashMap<User, Integer> getPlayerPlacing() {
+        return playerPlacing;
+    }
+
+    public void setPlayerPlacing(HashMap<User, Integer> playerPlacing) {
+        this.playerPlacing = playerPlacing;
     }
 
     public User getChampion() {
@@ -125,7 +144,6 @@ public class Game extends Thread {
         } else {
             System.out.println("active player size " + players.size());
             for (User temp: players){
-                temp.getUserCallback().getChampion(winnerOfRound, String.valueOf(scoreOfRoundWinner));
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(scoreOfRoundWinner));
             }
 
@@ -173,6 +191,7 @@ public class Game extends Thread {
         User winner = winnerOfRound;
         int highestScore = scoreOfWinner;
 
+        //Add score of winner to overallPoint for corresponding
         for (Map.Entry<User, Integer> entry : overallPoints.entrySet()){
             if(entry.getKey().getUsername().equalsIgnoreCase(winner.getUsername())){
                 entry.setValue(entry.getValue() + highestScore);

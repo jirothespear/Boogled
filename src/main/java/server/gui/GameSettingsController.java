@@ -12,6 +12,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import server.controller.ServerUtilityImpl;
 import server.model.Game;
+import sqlconnector.DataPB;
 
 import java.io.IOException;
 
@@ -32,8 +33,10 @@ public class GameSettingsController {
 
     @FXML
     public void initialize() {
-        roundTimeValue.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE, Integer.MAX_VALUE, 5));
-        waitingTimeValue.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE, Integer.MAX_VALUE, 3));
+        roundTimeValue.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE, Integer.MAX_VALUE
+                , DataPB.getRoundTime()));
+        waitingTimeValue.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE, Integer.MAX_VALUE,
+                DataPB.getQueueTime()));
 
         roundTimeValue.valueProperty().addListener(this::onRoundTimeChanged);
         waitingTimeValue.valueProperty().addListener(this::onWaitingTimeChanged);
@@ -57,6 +60,8 @@ public class GameSettingsController {
         Integer roundTime = roundTimeValue.getValue();
 
         ServerUtilityImpl.queueTime = queueTime;
+        DataPB.setQueueTime(waitingTimeValue.getValue());
+        DataPB.setRoundTime(roundTimeValue.getValue());
         Game.roundTime = roundTime;
 
         root = FXMLLoader.load(getClass().getResource("/server/server-view.fxml"));

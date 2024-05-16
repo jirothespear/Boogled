@@ -24,7 +24,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     private static int gameCount = 0;
 
 
-    public static int queueTime = 20;
+    public static int queueTime = DataPB.getQueueTime();
     private ORB orb;
 
     static private HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
