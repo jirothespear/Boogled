@@ -71,8 +71,6 @@ public class LobbyController {
 
     private String currentUsername;
 
-    private String gameID;
-
 
 
     @FXML

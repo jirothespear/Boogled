@@ -306,7 +306,11 @@ public class GameRoomController {
                 roundScore = serverUtility.showScore(currentGameUser,gameID);
 
                 if(isWinner){
-                    playerWinCount = playerWinCount+1;
+                    if (playerWinCount == 0){
+                        playerWinCount = 1;
+                        controller.setNumberOfWins(1);
+                    }
+                    else {playerWinCount = playerWinCount+1;}
                 }
                 controller.setPoints(roundScore);
                 controller.setResult(isWinner,roundScore);
