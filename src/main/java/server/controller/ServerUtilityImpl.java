@@ -35,9 +35,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     public void login(String username, String password) throws LoginException {
         String userNPasswd = username + "/" + password;
         if (DataPB.checkUser(userNPasswd)) {
-            //ClientCallback clientCallback = null;
-            //this.setUserName(username);
-            //userCallbacks.put(userNPasswd, clientCallback);
+
         } else throw new LoginException();
     }
 
