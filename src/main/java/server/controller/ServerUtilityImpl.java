@@ -101,6 +101,7 @@ public class ServerUtilityImpl extends Utility.PlayerUtilityPOA {
     public static void addGame(ArrayList<User> players){
         gameCount++;
         Game game = new Game();
+        Game.roundTime = DataPB.getRoundTime();
         game.start();
         game.setPlayers(players);
         game.startGame();

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Final Implementation of Game Settings.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed connection error.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/ServerUtilityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sqlconnector/DataPB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testers/orb.db/NC0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -473,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715859203545</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Fixed connection error.">
+      <created>1715862391628</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715862391628</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Queue System, added Exceptions to start. Revamped IDL." />
     <MESSAGE value="Queue system and callbacks now working. Added Tester classes." />
     <MESSAGE value="Added ORB daemon bat script." />
     <MESSAGE value="added waiting room" />
@@ -516,7 +521,8 @@
     <MESSAGE value="Set Score changes." />
     <MESSAGE value="Rollback on setScore;" />
     <MESSAGE value="Final Implementation of Game Settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Implementation of Game Settings." />
+    <MESSAGE value="Fixed connection error." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed connection error." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -234,4 +234,12 @@ public class Game extends Thread {
     public void setPointsPrevious(ArrayList<UserScore> pointsPrevious) {
         this.pointsPrevious = pointsPrevious;
     }
+
+    public static int getRoundTime() {
+        return roundTime;
+    }
+
+    public static void setRoundTime(int roundTime) {
+        Game.roundTime = roundTime;
+    }
 }
