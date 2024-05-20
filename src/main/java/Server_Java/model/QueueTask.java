@@ -5,6 +5,7 @@ import CORBA_IDL.Utility.ClientCallback;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class QueueTask extends TimerTask {
 
@@ -12,7 +13,7 @@ public class QueueTask extends TimerTask {
 
      int tempTimer = time;
 
-    private static HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
+    private static ConcurrentHashMap<String, ClientCallback> userCallbacks = new ConcurrentHashMap<>();
 
     public ArrayList<User> players = new ArrayList<>();
 
@@ -56,11 +57,11 @@ public class QueueTask extends TimerTask {
 
     public void addToCallbackMaps(ClientCallback clientCallback, String userName){ userCallbacks.put(userName, clientCallback); }
 
-    public HashMap<String, ClientCallback> getUserCallbacks() {
+    public ConcurrentHashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
     }
 
-    public void setUserCallbacks(HashMap<String, ClientCallback> userCallbacks) {
+    public void setUserCallbacks(ConcurrentHashMap<String, ClientCallback> userCallbacks) {
         this.userCallbacks = userCallbacks;
     }
 

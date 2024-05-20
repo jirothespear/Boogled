@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Game extends Thread {
     /*
     following variable does not changer every round
      */
     private  ArrayList<User>  players = new ArrayList<>();// list of players
-    private  HashMap<User, Integer> overallPoints = new HashMap<>();// stores points
-    private  HashMap<User, Integer> playerPlacing = new HashMap<>(); // stores the number of wins per player
+    private ConcurrentHashMap<User, Integer> overallPoints = new ConcurrentHashMap<>();// stores points
+    private  ConcurrentHashMap<User, Integer> playerPlacing = new ConcurrentHashMap<>(); // stores the number of wins per player
     private  User champion = new User();
     private int gameID=0;// use to identify each game from another
 
@@ -57,19 +58,19 @@ public class Game extends Thread {
         this.players = players;
     }
 
-    public HashMap<User, Integer> getOverallPoints() {
+    public ConcurrentHashMap<User, Integer> getOverallPoints() {
         return overallPoints;
     }
 
-    public void setOverallPoints(HashMap<User, Integer> overallPoints) {
+    public void setOverallPoints(ConcurrentHashMap<User, Integer> overallPoints) {
         this.overallPoints = overallPoints;
     }
 
-    public HashMap<User, Integer> getPlayerPlacing() {
+    public ConcurrentHashMap<User, Integer> getPlayerPlacing() {
         return playerPlacing;
     }
 
-    public void setPlayerPlacing(HashMap<User, Integer> playerPlacing) {
+    public void setPlayerPlacing(ConcurrentHashMap<User, Integer> playerPlacing) {
         this.playerPlacing = playerPlacing;
     }
 

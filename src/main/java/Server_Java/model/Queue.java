@@ -3,6 +3,7 @@ package Server_Java.model;
 import CORBA_IDL.Utility.ClientCallback;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Semaphore;
 
 public class Queue {
@@ -10,7 +11,7 @@ public class Queue {
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
     public static boolean queueActive = false;
 
-    private HashMap<ClientCallback, String> userCallbacks = new HashMap<>();
+    private ConcurrentHashMap<ClientCallback, String> userCallbacks = new ConcurrentHashMap<>();
     private Timer timer;
 
     private static QueueTask queue;
@@ -56,7 +57,7 @@ public class Queue {
         activePlayers.put(id, clientCallback);
     }
 
-    public HashMap<ClientCallback, String> getUserCallbacks() {
+    public ConcurrentHashMap<ClientCallback, String> getUserCallbacks() {
         return userCallbacks;
     }
 
@@ -64,7 +65,7 @@ public class Queue {
         Queue.queueActive = queueActive;
     }
 
-    public void setUserCallbacks(HashMap<ClientCallback, String> userCallbacks) {
+    public void setUserCallbacks(ConcurrentHashMap<ClientCallback, String> userCallbacks) {
         this.userCallbacks = userCallbacks;
     }
 

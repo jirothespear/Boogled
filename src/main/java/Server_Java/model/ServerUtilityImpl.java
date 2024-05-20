@@ -1,19 +1,20 @@
 
 package Server_Java.model;
 
-import CORBA_IDL.Utility.*;
+import CORBA_IDL.Utility.;
 import org.omg.CORBA.ORB;
 import Server_Java.sqlconnector.DataPB;
 
 import java.util.*;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
 
 
     private Game currentGame = new Game();
-    private static HashMap<Integer, Game> activeGames = new HashMap<>();
+    private static ConcurrentHashMap<Integer, Game> activeGames = new ConcurrentHashMap<>();
     private Queue queueSystem = new Queue();
 
     private static int gameCount = 0;
@@ -22,7 +23,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
 
     private ORB orb;
 
-    static private HashMap<String, ClientCallback> userCallbacks = new HashMap<>();
+    static private ConcurrentHashMap<String, ClientCallback> userCallbacks = new ConcurrentHashMap<>();
 
     private ArrayList<User> playerCallbacks = new ArrayList<>();
 
@@ -69,7 +70,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
 
     @Override
     public String startGame(String user) {
-        HashMap<ClientCallback, String> users;
+        ConcurrentHashMap<ClientCallback, String> users;
         ArrayList<User> players = new ArrayList<>();
         users = queueSystem.getUserCallbacks();
 
@@ -206,11 +207,11 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
         this.currentGame = currentGame;
     }
 
-    public static HashMap<Integer, Game> getActiveGames() {
+    public static ConcurrentHashMap<Integer, Game> getActiveGames() {
         return activeGames;
     }
 
-    public static void setActiveGames(HashMap<Integer, Game> activeGames) {
+    public static void setActiveGames(ConcurrentHashMap<Integer, Game> activeGames) {
         ServerUtilityImpl.activeGames = activeGames;
     }
 
