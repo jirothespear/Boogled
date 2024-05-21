@@ -1,9 +1,8 @@
 package Server_Java.model;
 
-import CORBA_IDL.Utility.ClientCallback;
-
 import java.util.ArrayList;
 import java.util.TimerTask;
+import CORBA_IDL.Utility.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class QueueTask extends TimerTask {
@@ -41,8 +40,6 @@ public class QueueTask extends TimerTask {
             //   }
             cancel();
         } else {
-
-
             System.out.println("active player size " + players.size());
             for (User temp: players){
                 System.out.println("counting -> " + time);

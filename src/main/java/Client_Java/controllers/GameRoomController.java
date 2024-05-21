@@ -140,7 +140,12 @@ public class GameRoomController {
         Platform.runLater(() -> {
 
             wordValidityPromptLabel.setText("");
-            gameLetterChoice = serverUtility.getLetterChoice(gameID);
+            try {
+                gameLetterChoice = serverUtility.getLetterChoice(gameID);
+
+            } catch (Exception e){
+                System.out.println("Choice Error ->");
+            }
             System.out.println("Game letter choice: " + gameLetterChoice);
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);

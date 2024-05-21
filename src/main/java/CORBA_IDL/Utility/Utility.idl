@@ -39,7 +39,7 @@ module Utility {
     void getQueueTime(in wstring username);
     void getRoundTime(in wstring username, in wstring gameID);
     wstring getLetterChoice(in wstring gameID);
-    wstring getGameID(in wstring username);
+    wstring getGameID(in wstring username) raises (GameStartException);
     wstring getRoundCount(in wstring gameID);
     playerLeaderboard getLeaderboardUsernames ();
     playerLeaderboardPoints getLeaderboardPoints ();

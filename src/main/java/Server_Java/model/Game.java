@@ -1,6 +1,6 @@
 package Server_Java.model;
 
-import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.*;
 import Server_Java.sqlconnector.DataPB;
 
 import java.util.ArrayList;
@@ -146,9 +146,14 @@ public class Game extends Thread {
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             ServerUtilityImpl.getActiveGames().remove(gameID);
 
-            Thread.currentThread().interrupt();
+            this.interrupt();
         }
 
     }

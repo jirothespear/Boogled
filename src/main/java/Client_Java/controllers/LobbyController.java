@@ -1,6 +1,7 @@
 package Client_Java.controllers;
 
 import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.LogoutException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -151,5 +152,16 @@ public class LobbyController {
 
     public void setCurrentUsername(String currentUsername) {
         this.currentUsername = currentUsername;
+    }
+
+    public void shutdown () {
+
+        stage.setOnHiding(event -> {
+            try {
+                serverUtility.logout(clientCallback, currentUsername);
+            } catch (LogoutException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

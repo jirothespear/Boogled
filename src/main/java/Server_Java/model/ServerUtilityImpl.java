@@ -1,12 +1,9 @@
 
 package Server_Java.model;
 
-import CORBA_IDL.Utility.ClientCallback;
-import CORBA_IDL.Utility.InvalidWordException;
-import CORBA_IDL.Utility.LoginException;
 import org.omg.CORBA.ORB;
 import Server_Java.sqlconnector.DataPB;
-
+import CORBA_IDL.Utility.*;
 import java.util.*;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -53,6 +50,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
     @Override
     public void logout(ClientCallback clientCallback, String username)  {
         userCallbacks.remove(username);
+        System.out.println(username +" logout!");
     }
 
 
@@ -94,14 +92,18 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
     }
 
     public static void addGame(ArrayList<User> players){
-        gameCount++;
-        Game game = new Game();
-        Game.roundTime = DataPB.getRoundTime();
-        game.start();
-        game.setPlayers(players);
-        game.startGame();
-        game.setGameID(gameCount);
-        activeGames.put(gameCount, game);
+
+        if (players.size() != 90) {
+            gameCount++;
+            Game game = new Game();
+            Game.roundTime = DataPB.getRoundTime();
+            game.start();
+            game.setPlayers(players);
+            game.startGame();
+            game.setGameID(gameCount);
+            activeGames.put(gameCount, game);
+
+        }
     }
 
     public User getUser(String username){
@@ -150,7 +152,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
     }
 
     @Override
-    public String getGameID(String username) {
+    public String getGameID(String username) throws GameStartException{
         System.out.println("Active Games: "+ activeGames.size());
         for (Map.Entry<Integer, Game> temp : activeGames.entrySet()){
             ArrayList<User> userArrayList = temp.getValue().getPlayers();
@@ -159,7 +161,8 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
                     return String.valueOf(temp.getKey());
             }
         }
-        return "null";
+
+        throw new GameStartException();
     }
 //
     @Override

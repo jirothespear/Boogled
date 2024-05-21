@@ -1,20 +1,19 @@
 package Server_Java.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.*;
+import java.util.*;
 import CORBA_IDL.Utility.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Semaphore;
 
-public class Queue {
+public class QueueAUTH {
     private final Semaphore semaphore = new Semaphore(0); // Initially no permits
     private final List<String> joinedUsers = new ArrayList<>(); // List to store joined users
     public static boolean queueActive = false;
 
     private ConcurrentHashMap<ClientCallback, String> userCallbacks = new ConcurrentHashMap<>();
-    private ScheduledExecutorService timer;
+    private Timer timer;
 
-    private static QueueTaskRunnable queue;
+    private static QueueTask queue;
 
     public HashMap<String, ClientCallback> activePlayers = new HashMap<>();
 
@@ -26,17 +25,18 @@ public class Queue {
     public void joinQueue(int queueTime, String userName, ClientCallback usernameCallback) {
 
         if (!queueActive) {
-            queue = new QueueTaskRunnable();
+            queue = new QueueTask();
             queue.setTime(queueTime);
             queue.addToActiveUser(new User(userName, usernameCallback));
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");
-            timer = Executors.newScheduledThreadPool(5);
-            timer.scheduleAtFixedRate(queue, 0, 1, TimeUnit.SECONDS);
+            timer = new Timer();
+            timer.scheduleAtFixedRate(queue, 0, 1000);
+
         } else {
+
             queue.addToActiveUser(new User(userName, usernameCallback));
             System.out.println(userName + " joined the queue.");
-
         }
 
     }

@@ -1,6 +1,6 @@
 package Server_Java.model;
 
-import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.*;
 
 /**
  * User object

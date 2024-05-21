@@ -27,7 +27,7 @@ public class client extends Application {
 
     public static ClientCallbackImpl ciaoCallbackImpl;
 
-    public  static  ClientCallback cref;
+    public  static ClientCallback cref;
 
     public  static PlayerUtility serverUtility;
 

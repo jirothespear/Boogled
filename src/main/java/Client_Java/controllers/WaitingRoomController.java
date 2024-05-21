@@ -2,6 +2,7 @@
 package Client_Java.controllers;
 
 import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.GameStartException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -96,6 +97,8 @@ public class WaitingRoomController {
 
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (GameStartException e) {
+                throw new RuntimeException(e);
             }
         });
     }

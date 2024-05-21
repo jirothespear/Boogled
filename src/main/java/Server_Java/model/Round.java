@@ -1,6 +1,7 @@
 package Server_Java.model;
 
 import java.util.*;
+import CORBA_IDL.Utility.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Round extends TimerTask{
@@ -89,8 +90,9 @@ public class Round extends TimerTask{
             roundCount = 0;
             roundPoint = new ArrayList<>();
             players = new ArrayList<>();
-            game.startGame();
             cancel();
+            game.startGame();
+
 
         } else if (timerCount == -1 || timerCount == -2) {
 
