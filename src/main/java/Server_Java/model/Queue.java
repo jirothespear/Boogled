@@ -2,9 +2,10 @@ package Server_Java.model;
 
 import CORBA_IDL.Utility.ClientCallback;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Semaphore;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.*;
 
 public class Queue {
     private final Semaphore semaphore = new Semaphore(0); // Initially no permits
@@ -12,9 +13,9 @@ public class Queue {
     public static boolean queueActive = false;
 
     private ConcurrentHashMap<ClientCallback, String> userCallbacks = new ConcurrentHashMap<>();
-    private Timer timer;
+    private ScheduledExecutorService timer;
 
-    private static QueueTask queue;
+    private static QueueTaskRunnable queue;
 
     public HashMap<String, ClientCallback> activePlayers = new HashMap<>();
 
@@ -26,18 +27,17 @@ public class Queue {
     public void joinQueue(int queueTime, String userName, ClientCallback usernameCallback) {
 
         if (!queueActive) {
-            queue = new QueueTask();
+            queue = new QueueTaskRunnable();
             queue.setTime(queueTime);
             queue.addToActiveUser(new User(userName, usernameCallback));
             queueActive = true;
             System.out.println("Queue is active for " + queueTime + " seconds.");
-            timer = new Timer();
-            timer.scheduleAtFixedRate(queue, 0, 1000);
-
+            timer = Executors.newScheduledThreadPool(5);
+            timer.scheduleAtFixedRate(queue, 0, 1, TimeUnit.SECONDS);
         } else {
-
             queue.addToActiveUser(new User(userName, usernameCallback));
             System.out.println(userName + " joined the queue.");
+
         }
 
     }

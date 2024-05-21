@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 /**
 * Utility/PlayerUtilityHolder.java .
@@ -9,30 +9,30 @@ package Utility;
 
 public final class PlayerUtilityHolder implements org.omg.CORBA.portable.Streamable
 {
-  public Utility.PlayerUtility value = null;
+  public PlayerUtility value = null;
 
   public PlayerUtilityHolder ()
   {
   }
 
-  public PlayerUtilityHolder (Utility.PlayerUtility initialValue)
+  public PlayerUtilityHolder (PlayerUtility initialValue)
   {
     value = initialValue;
   }
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.PlayerUtilityHelper.read (i);
+    value = PlayerUtilityHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.PlayerUtilityHelper.write (o, value);
+    PlayerUtilityHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.PlayerUtilityHelper.type ();
+    return PlayerUtilityHelper.type ();
   }
 
 }

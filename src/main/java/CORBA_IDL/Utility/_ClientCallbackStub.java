@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -8,7 +8,7 @@ package Utility;
 * Monday, May 20, 2024 10:38:18 PM CST
 */
 
-public class _ClientCallbackStub extends org.omg.CORBA.portable.ObjectImpl implements Utility.ClientCallback
+public class _ClientCallbackStub extends org.omg.CORBA.portable.ObjectImpl implements ClientCallback
 {
 
   public String startRound ()

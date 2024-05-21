@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 /**
 * Utility/InvalidWordExceptionHolder.java .
@@ -9,30 +9,30 @@ package Utility;
 
 public final class InvalidWordExceptionHolder implements org.omg.CORBA.portable.Streamable
 {
-  public Utility.InvalidWordException value = null;
+  public InvalidWordException value = null;
 
   public InvalidWordExceptionHolder ()
   {
   }
 
-  public InvalidWordExceptionHolder (Utility.InvalidWordException initialValue)
+  public InvalidWordExceptionHolder (InvalidWordException initialValue)
   {
     value = initialValue;
   }
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.InvalidWordExceptionHelper.read (i);
+    value = InvalidWordExceptionHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.InvalidWordExceptionHelper.write (o, value);
+    InvalidWordExceptionHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.InvalidWordExceptionHelper.type ();
+    return InvalidWordExceptionHelper.type ();
   }
 
 }

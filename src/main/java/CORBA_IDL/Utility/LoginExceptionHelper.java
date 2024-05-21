@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -12,7 +12,7 @@ abstract public class LoginExceptionHelper
 {
   private static String  _id = "IDL:Utility/LoginException:1.0";
 
-  public static void insert (org.omg.CORBA.Any a, Utility.LoginException that)
+  public static void insert (org.omg.CORBA.Any a, LoginException that)
   {
     org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
     a.type (type ());
@@ -20,7 +20,7 @@ abstract public class LoginExceptionHelper
     a.read_value (out.create_input_stream (), type ());
   }
 
-  public static Utility.LoginException extract (org.omg.CORBA.Any a)
+  public static LoginException extract (org.omg.CORBA.Any a)
   {
     return read (a.create_input_stream ());
   }
@@ -47,7 +47,7 @@ abstract public class LoginExceptionHelper
             "reason",
             _tcOf_members0,
             null);
-          __typeCode = org.omg.CORBA.ORB.init ().create_exception_tc (Utility.LoginExceptionHelper.id (), "LoginException", _members0);
+          __typeCode = org.omg.CORBA.ORB.init ().create_exception_tc (LoginExceptionHelper.id (), "LoginException", _members0);
           __active = false;
         }
       }
@@ -60,16 +60,16 @@ abstract public class LoginExceptionHelper
     return _id;
   }
 
-  public static Utility.LoginException read (org.omg.CORBA.portable.InputStream istream)
+  public static LoginException read (org.omg.CORBA.portable.InputStream istream)
   {
-    Utility.LoginException value = new Utility.LoginException ();
+    LoginException value = new LoginException();
     // read and discard the repository ID
     istream.read_string ();
     value.reason = istream.read_string ();
     return value;
   }
 
-  public static void write (org.omg.CORBA.portable.OutputStream ostream, Utility.LoginException value)
+  public static void write (org.omg.CORBA.portable.OutputStream ostream, LoginException value)
   {
     // write the repository ID
     ostream.write_string (id ());

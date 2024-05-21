@@ -4,44 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="COnruyren.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Added game winners.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/counter" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/counter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/servers.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/servers.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/counter" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/counter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/orb.db/servers.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/orb.db/servers.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueAUTH.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,6 +138,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Server_Java.model" />
       <recent name="testers" />
     </key>
   </component>
@@ -550,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715871122539</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Added game winners.">
+      <created>1716216178371</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1716216178371</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed exception stack of letterChoice in CORBA null parameter." />
     <MESSAGE value="Added time counting on client." />
     <MESSAGE value="Added indefinite game continuation." />
     <MESSAGE value="Changed callback IDL return values." />
@@ -593,13 +601,14 @@
     <MESSAGE value="Number Of Wins Fixed" />
     <MESSAGE value="Fixed verbose." />
     <MESSAGE value="COnruyren." />
-    <option name="LAST_COMMIT_MESSAGE" value="COnruyren." />
+    <MESSAGE value="Added game winners." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added game winners." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Server_Java/model/QueueAUTH.java</url>
           <line>49</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

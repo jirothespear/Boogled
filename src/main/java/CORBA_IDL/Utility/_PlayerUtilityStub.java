@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -8,10 +8,10 @@ package Utility;
 * Monday, May 20, 2024 10:38:18 PM CST
 */
 
-public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implements Utility.PlayerUtility
+public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implements PlayerUtility
 {
 
-  public void login (String username, String passwd) throws Utility.LoginException
+  public void login (String username, String passwd) throws LoginException
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -24,7 +24,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:Utility/LoginException:1.0"))
-                    throw Utility.LoginExceptionHelper.read ($in);
+                    throw LoginExceptionHelper.read ($in);
                 else
                     throw new org.omg.CORBA.MARSHAL (_id);
             } catch (org.omg.CORBA.portable.RemarshalException $rm) {
@@ -34,12 +34,12 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             }
   } // login
 
-  public void userCallback (Utility.ClientCallback clientCallback, String username)
+  public void userCallback (ClientCallback clientCallback, String username)
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
                 org.omg.CORBA.portable.OutputStream $out = _request ("userCallback", true);
-                Utility.ClientCallbackHelper.write ($out, clientCallback);
+                ClientCallbackHelper.write ($out, clientCallback);
                 $out.write_wstring (username);
                 $in = _invoke ($out);
                 return;
@@ -54,12 +54,12 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             }
   } // userCallback
 
-  public void logout (Utility.ClientCallback clientCallback, String username) throws Utility.LogoutException
+  public void logout (ClientCallback clientCallback, String username) throws LogoutException
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
                 org.omg.CORBA.portable.OutputStream $out = _request ("logout", true);
-                Utility.ClientCallbackHelper.write ($out, clientCallback);
+                ClientCallbackHelper.write ($out, clientCallback);
                 $out.write_wstring (username);
                 $in = _invoke ($out);
                 return;
@@ -67,7 +67,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:Utility/LogoutException:1.0"))
-                    throw Utility.LogoutExceptionHelper.read ($in);
+                    throw LogoutExceptionHelper.read ($in);
                 else
                     throw new org.omg.CORBA.MARSHAL (_id);
             } catch (org.omg.CORBA.portable.RemarshalException $rm) {
@@ -77,7 +77,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             }
   } // logout
 
-  public String startGame (String user) throws Utility.GameStartException
+  public String startGame (String user) throws GameStartException
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -90,7 +90,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:Utility/GameStartException:1.0"))
-                    throw Utility.GameStartExceptionHelper.read ($in);
+                    throw GameStartExceptionHelper.read ($in);
                 else
                     throw new org.omg.CORBA.MARSHAL (_id);
             } catch (org.omg.CORBA.portable.RemarshalException $rm) {
@@ -100,7 +100,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             }
   } // startGame
 
-  public void checkWord (String answer, String playerID, String gameID) throws Utility.InvalidWordException
+  public void checkWord (String answer, String playerID, String gameID) throws InvalidWordException
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -114,7 +114,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:Utility/InvalidWordException:1.0"))
-                    throw Utility.InvalidWordExceptionHelper.read ($in);
+                    throw InvalidWordExceptionHelper.read ($in);
                 else
                     throw new org.omg.CORBA.MARSHAL (_id);
             } catch (org.omg.CORBA.portable.RemarshalException $rm) {
@@ -250,7 +250,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             try {
                 org.omg.CORBA.portable.OutputStream $out = _request ("getLeaderboardUsernames", true);
                 $in = _invoke ($out);
-                String $result[] = Utility.playerLeaderboardHelper.read ($in);
+                String $result[] = playerLeaderboardHelper.read ($in);
                 return $result;
             } catch (org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
@@ -269,7 +269,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             try {
                 org.omg.CORBA.portable.OutputStream $out = _request ("getLeaderboardPoints", true);
                 $in = _invoke ($out);
-                int $result[] = Utility.playerLeaderboardPointsHelper.read ($in);
+                int $result[] = playerLeaderboardPointsHelper.read ($in);
                 return $result;
             } catch (org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();

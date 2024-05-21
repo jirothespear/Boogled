@@ -81,7 +81,14 @@ public class Round extends TimerTask{
                     temp.getUserCallback().roundEnd(winnerOfCurrentRound[0], Integer.parseInt(winnerOfCurrentRound[1]));
                 }
             }
+
             game.setPointsPrevious(roundPoint);
+            allAnswers = new ConcurrentHashMap<>();
+            pointsPerRound = new ConcurrentHashMap<>();
+            answersOfPlayers = new ConcurrentHashMap<>();
+            roundCount = 0;
+            roundPoint = new ArrayList<>();
+            players = new ArrayList<>();
             game.startGame();
             cancel();
 

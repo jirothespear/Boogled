@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -9,7 +9,7 @@ package Utility;
 */
 
 public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
- implements Utility.PlayerUtilityOperations, org.omg.CORBA.portable.InvokeHandler
+ implements PlayerUtilityOperations, org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -51,16 +51,16 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
            String passwd = in.read_wstring ();
            this.login (username, passwd);
            out = $rh.createReply();
-         } catch (Utility.LoginException $ex) {
+         } catch (LoginException $ex) {
            out = $rh.createExceptionReply ();
-           Utility.LoginExceptionHelper.write (out, $ex);
+           LoginExceptionHelper.write (out, $ex);
          }
          break;
        }
 
        case 1:  // Utility/PlayerUtility/userCallback
        {
-         Utility.ClientCallback clientCallback = Utility.ClientCallbackHelper.read (in);
+         ClientCallback clientCallback = ClientCallbackHelper.read (in);
          String username = in.read_wstring ();
          this.userCallback (clientCallback, username);
          out = $rh.createReply();
@@ -70,13 +70,13 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
        case 2:  // Utility/PlayerUtility/logout
        {
          try {
-           Utility.ClientCallback clientCallback = Utility.ClientCallbackHelper.read (in);
+           ClientCallback clientCallback = ClientCallbackHelper.read (in);
            String username = in.read_wstring ();
            this.logout (clientCallback, username);
            out = $rh.createReply();
-         } catch (Utility.LogoutException $ex) {
+         } catch (LogoutException $ex) {
            out = $rh.createExceptionReply ();
-           Utility.LogoutExceptionHelper.write (out, $ex);
+           LogoutExceptionHelper.write (out, $ex);
          }
          break;
        }
@@ -89,9 +89,9 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
            $result = this.startGame (user);
            out = $rh.createReply();
            out.write_wstring ($result);
-         } catch (Utility.GameStartException $ex) {
+         } catch (GameStartException $ex) {
            out = $rh.createExceptionReply ();
-           Utility.GameStartExceptionHelper.write (out, $ex);
+           GameStartExceptionHelper.write (out, $ex);
          }
          break;
        }
@@ -104,9 +104,9 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
            String gameID = in.read_wstring ();
            this.checkWord (answer, playerID, gameID);
            out = $rh.createReply();
-         } catch (Utility.InvalidWordException $ex) {
+         } catch (InvalidWordException $ex) {
            out = $rh.createExceptionReply ();
-           Utility.InvalidWordExceptionHelper.write (out, $ex);
+           InvalidWordExceptionHelper.write (out, $ex);
          }
          break;
        }
@@ -174,7 +174,7 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
          String $result[] = null;
          $result = this.getLeaderboardUsernames ();
          out = $rh.createReply();
-         Utility.playerLeaderboardHelper.write (out, $result);
+         playerLeaderboardHelper.write (out, $result);
          break;
        }
 
@@ -183,7 +183,7 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
          int $result[] = null;
          $result = this.getLeaderboardPoints ();
          out = $rh.createReply();
-         Utility.playerLeaderboardPointsHelper.write (out, $result);
+         playerLeaderboardPointsHelper.write (out, $result);
          break;
        }
 

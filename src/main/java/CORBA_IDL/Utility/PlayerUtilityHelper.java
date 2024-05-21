@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -12,7 +12,7 @@ abstract public class PlayerUtilityHelper
 {
   private static String  _id = "IDL:Utility/PlayerUtility:1.0";
 
-  public static void insert (org.omg.CORBA.Any a, Utility.PlayerUtility that)
+  public static void insert (org.omg.CORBA.Any a, PlayerUtility that)
   {
     org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
     a.type (type ());
@@ -20,7 +20,7 @@ abstract public class PlayerUtilityHelper
     a.read_value (out.create_input_stream (), type ());
   }
 
-  public static Utility.PlayerUtility extract (org.omg.CORBA.Any a)
+  public static PlayerUtility extract (org.omg.CORBA.Any a)
   {
     return read (a.create_input_stream ());
   }
@@ -30,7 +30,7 @@ abstract public class PlayerUtilityHelper
   {
     if (__typeCode == null)
     {
-      __typeCode = org.omg.CORBA.ORB.init ().create_interface_tc (Utility.PlayerUtilityHelper.id (), "PlayerUtility");
+      __typeCode = org.omg.CORBA.ORB.init ().create_interface_tc (PlayerUtilityHelper.id (), "PlayerUtility");
     }
     return __typeCode;
   }
@@ -40,43 +40,43 @@ abstract public class PlayerUtilityHelper
     return _id;
   }
 
-  public static Utility.PlayerUtility read (org.omg.CORBA.portable.InputStream istream)
+  public static PlayerUtility read (org.omg.CORBA.portable.InputStream istream)
   {
     return narrow (istream.read_Object (_PlayerUtilityStub.class));
   }
 
-  public static void write (org.omg.CORBA.portable.OutputStream ostream, Utility.PlayerUtility value)
+  public static void write (org.omg.CORBA.portable.OutputStream ostream, PlayerUtility value)
   {
     ostream.write_Object ((org.omg.CORBA.Object) value);
   }
 
-  public static Utility.PlayerUtility narrow (org.omg.CORBA.Object obj)
+  public static PlayerUtility narrow (org.omg.CORBA.Object obj)
   {
     if (obj == null)
       return null;
-    else if (obj instanceof Utility.PlayerUtility)
-      return (Utility.PlayerUtility)obj;
+    else if (obj instanceof PlayerUtility)
+      return (PlayerUtility)obj;
     else if (!obj._is_a (id ()))
       throw new org.omg.CORBA.BAD_PARAM ();
     else
     {
       org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
-      Utility._PlayerUtilityStub stub = new Utility._PlayerUtilityStub ();
+      _PlayerUtilityStub stub = new _PlayerUtilityStub();
       stub._set_delegate(delegate);
       return stub;
     }
   }
 
-  public static Utility.PlayerUtility unchecked_narrow (org.omg.CORBA.Object obj)
+  public static PlayerUtility unchecked_narrow (org.omg.CORBA.Object obj)
   {
     if (obj == null)
       return null;
-    else if (obj instanceof Utility.PlayerUtility)
-      return (Utility.PlayerUtility)obj;
+    else if (obj instanceof PlayerUtility)
+      return (PlayerUtility)obj;
     else
     {
       org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
-      Utility._PlayerUtilityStub stub = new Utility._PlayerUtilityStub ();
+      _PlayerUtilityStub stub = new _PlayerUtilityStub();
       stub._set_delegate(delegate);
       return stub;
     }

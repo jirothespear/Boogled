@@ -139,7 +139,6 @@ public class Game extends Thread {
             round.setRoundCount(roundCount);
             Timer timer = new Timer();
             timer.scheduleAtFixedRate(round, 0, 1000);
-
         } else {
             System.out.println("active player size " + players.size());
             for (User temp: players){
@@ -147,6 +146,9 @@ public class Game extends Thread {
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
+            ServerUtilityImpl.getActiveGames().remove(gameID);
+
+            Thread.currentThread().interrupt();
         }
 
     }

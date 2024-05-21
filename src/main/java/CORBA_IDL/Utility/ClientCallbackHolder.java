@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 /**
 * Utility/ClientCallbackHolder.java .
@@ -9,30 +9,30 @@ package Utility;
 
 public final class ClientCallbackHolder implements org.omg.CORBA.portable.Streamable
 {
-  public Utility.ClientCallback value = null;
+  public ClientCallback value = null;
 
   public ClientCallbackHolder ()
   {
   }
 
-  public ClientCallbackHolder (Utility.ClientCallback initialValue)
+  public ClientCallbackHolder (ClientCallback initialValue)
   {
     value = initialValue;
   }
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.ClientCallbackHelper.read (i);
+    value = ClientCallbackHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.ClientCallbackHelper.write (o, value);
+    ClientCallbackHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.ClientCallbackHelper.type ();
+    return ClientCallbackHelper.type ();
   }
 
 }

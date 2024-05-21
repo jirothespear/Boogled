@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 /**
 * Utility/GameStartExceptionHolder.java .
@@ -9,30 +9,30 @@ package Utility;
 
 public final class GameStartExceptionHolder implements org.omg.CORBA.portable.Streamable
 {
-  public Utility.GameStartException value = null;
+  public GameStartException value = null;
 
   public GameStartExceptionHolder ()
   {
   }
 
-  public GameStartExceptionHolder (Utility.GameStartException initialValue)
+  public GameStartExceptionHolder (GameStartException initialValue)
   {
     value = initialValue;
   }
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.GameStartExceptionHelper.read (i);
+    value = GameStartExceptionHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.GameStartExceptionHelper.write (o, value);
+    GameStartExceptionHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.GameStartExceptionHelper.type ();
+    return GameStartExceptionHelper.type ();
   }
 
 }

@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 /**
 * Utility/LoginExceptionHolder.java .
@@ -9,30 +9,30 @@ package Utility;
 
 public final class LoginExceptionHolder implements org.omg.CORBA.portable.Streamable
 {
-  public Utility.LoginException value = null;
+  public LoginException value = null;
 
   public LoginExceptionHolder ()
   {
   }
 
-  public LoginExceptionHolder (Utility.LoginException initialValue)
+  public LoginExceptionHolder (LoginException initialValue)
   {
     value = initialValue;
   }
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.LoginExceptionHelper.read (i);
+    value = LoginExceptionHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.LoginExceptionHelper.write (o, value);
+    LoginExceptionHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.LoginExceptionHelper.type ();
+    return LoginExceptionHelper.type ();
   }
 
 }

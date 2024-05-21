@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -23,17 +23,17 @@ public final class playerLeaderboardHolder implements org.omg.CORBA.portable.Str
 
   public void _read (org.omg.CORBA.portable.InputStream i)
   {
-    value = Utility.playerLeaderboardHelper.read (i);
+    value = playerLeaderboardHelper.read (i);
   }
 
   public void _write (org.omg.CORBA.portable.OutputStream o)
   {
-    Utility.playerLeaderboardHelper.write (o, value);
+    playerLeaderboardHelper.write (o, value);
   }
 
   public org.omg.CORBA.TypeCode _type ()
   {
-    return Utility.playerLeaderboardHelper.type ();
+    return playerLeaderboardHelper.type ();
   }
 
 }

@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -9,7 +9,7 @@ package Utility;
 */
 
 public abstract class ClientCallbackPOA extends org.omg.PortableServer.Servant
- implements Utility.ClientCallbackOperations, org.omg.CORBA.portable.InvokeHandler
+ implements ClientCallbackOperations, org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors

@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -12,7 +12,7 @@ abstract public class InvalidWordExceptionHelper
 {
   private static String  _id = "IDL:Utility/InvalidWordException:1.0";
 
-  public static void insert (org.omg.CORBA.Any a, Utility.InvalidWordException that)
+  public static void insert (org.omg.CORBA.Any a, InvalidWordException that)
   {
     org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
     a.type (type ());
@@ -20,7 +20,7 @@ abstract public class InvalidWordExceptionHelper
     a.read_value (out.create_input_stream (), type ());
   }
 
-  public static Utility.InvalidWordException extract (org.omg.CORBA.Any a)
+  public static InvalidWordException extract (org.omg.CORBA.Any a)
   {
     return read (a.create_input_stream ());
   }
@@ -47,7 +47,7 @@ abstract public class InvalidWordExceptionHelper
             "reason",
             _tcOf_members0,
             null);
-          __typeCode = org.omg.CORBA.ORB.init ().create_exception_tc (Utility.InvalidWordExceptionHelper.id (), "InvalidWordException", _members0);
+          __typeCode = org.omg.CORBA.ORB.init ().create_exception_tc (InvalidWordExceptionHelper.id (), "InvalidWordException", _members0);
           __active = false;
         }
       }
@@ -60,16 +60,16 @@ abstract public class InvalidWordExceptionHelper
     return _id;
   }
 
-  public static Utility.InvalidWordException read (org.omg.CORBA.portable.InputStream istream)
+  public static InvalidWordException read (org.omg.CORBA.portable.InputStream istream)
   {
-    Utility.InvalidWordException value = new Utility.InvalidWordException ();
+    InvalidWordException value = new InvalidWordException();
     // read and discard the repository ID
     istream.read_string ();
     value.reason = istream.read_string ();
     return value;
   }
 
-  public static void write (org.omg.CORBA.portable.OutputStream ostream, Utility.InvalidWordException value)
+  public static void write (org.omg.CORBA.portable.OutputStream ostream, InvalidWordException value)
   {
     // write the repository ID
     ostream.write_string (id ());

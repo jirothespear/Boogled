@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -10,11 +10,11 @@ package Utility;
 
 public interface PlayerUtilityOperations 
 {
-  void login (String username, String passwd) throws Utility.LoginException;
-  void userCallback (Utility.ClientCallback clientCallback, String username);
-  void logout (Utility.ClientCallback clientCallback, String username) throws Utility.LogoutException;
-  String startGame (String user) throws Utility.GameStartException;
-  void checkWord (String answer, String playerID, String gameID) throws Utility.InvalidWordException;
+  void login (String username, String passwd) throws LoginException;
+  void userCallback (ClientCallback clientCallback, String username);
+  void logout (ClientCallback clientCallback, String username) throws LogoutException;
+  String startGame (String user) throws GameStartException;
+  void checkWord (String answer, String playerID, String gameID) throws InvalidWordException;
   int showScore (String user, String gameID);
   void getQueueTime (String username);
   void getRoundTime (String username, String gameID);

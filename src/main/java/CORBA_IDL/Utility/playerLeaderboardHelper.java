@@ -1,4 +1,4 @@
-package Utility;
+package CORBA_IDL.Utility;
 
 
 /**
@@ -32,7 +32,7 @@ abstract public class playerLeaderboardHelper
     {
       __typeCode = org.omg.CORBA.ORB.init ().create_wstring_tc (0);
       __typeCode = org.omg.CORBA.ORB.init ().create_sequence_tc (0, __typeCode);
-      __typeCode = org.omg.CORBA.ORB.init ().create_alias_tc (Utility.playerLeaderboardHelper.id (), "playerLeaderboard", __typeCode);
+      __typeCode = org.omg.CORBA.ORB.init ().create_alias_tc (playerLeaderboardHelper.id (), "playerLeaderboard", __typeCode);
     }
     return __typeCode;
   }

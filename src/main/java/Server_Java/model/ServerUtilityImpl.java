@@ -1,13 +1,14 @@
 
 package Server_Java.model;
 
-import CORBA_IDL.Utility.;
+import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.InvalidWordException;
+import CORBA_IDL.Utility.LoginException;
 import org.omg.CORBA.ORB;
 import Server_Java.sqlconnector.DataPB;
 
 import java.util.*;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
@@ -176,6 +177,18 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
         return DataPB.getLeaderboardPoints();
     }
 
+    @Override
+    public int getWinsCount(String username, String gameId) {
+
+        ConcurrentHashMap<User, Integer> placings = activeGames.get(Integer.valueOf(gameId)).getPlayerPlacing();
+        for(Map.Entry<User, Integer> temp: placings.entrySet()){
+            if(temp.getKey().getUsername().equals(username)){
+                return temp.getValue();
+            }
+        }
+        return 0;
+    }
+
 
     public ORB getOrb() {
         return orb;
@@ -241,7 +254,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
 
     public static int queueTime = 0;
 
-    public static HashMap<String, ClientCallback> getUserCallbacks() {
+    public static ConcurrentHashMap<String, ClientCallback> getUserCallbacks() {
         return userCallbacks;
     }
 

@@ -3,7 +3,6 @@ package Server_Java.model;
 import CORBA_IDL.Utility.ClientCallback;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 
