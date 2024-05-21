@@ -29,13 +29,14 @@ public class ClientCallbackImpl extends CORBA_IDL.Utility.ClientCallbackPOA {
 
     @Override
     public void roundEnd(String winner, int points) {
+        boolean isWinner = winner.equals(gameRoomController.getCurrentGameUser());
+        gameRoomController.setWinner(isWinner);
+
         System.out.println("ROUND END SETTING");
 
         System.out.println("CLIENT CB CURRENT: " +gameRoomController.getCurrentGameUser()  + "USER WIN: "+ winner + "Points: " + points);
         if (endRoundResultController != null) {
             System.out.println("End Round Result Not Null");
-            boolean isWinner = winner.equals(gameRoomController.getCurrentGameUser());
-            gameRoomController.setWinner(isWinner);
 
             System.out.println(isWinner);
             endRoundResultController.setPoints(points);

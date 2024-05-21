@@ -280,9 +280,6 @@ public class GameRoomController {
 
                     System.out.println("Round finished");
 
-
-
-
                     System.out.println("Game Champ: " + gameChampion);
                 } else {
                     this.roundTime = roundTime;
@@ -291,12 +288,6 @@ public class GameRoomController {
                 }
             }
         });
-
-//        System.out.println("Game Champ: " + gameChampion);
-//        if (!(gameChampion.equals("null"))){
-//            System.out.println("Someone won: " + gameChampion);
-//
-//        }
     }
 
 
@@ -306,21 +297,18 @@ public class GameRoomController {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/end-round-result-view.fxml"));
                 Parent root = loader.load();
-
                 EndRoundResultController controller = loader.getController();
+                clientCallbackImpl.setEndRoundResultController(controller);
                 roundScore = serverUtility.showScore(currentGameUser,gameID);
+                System.out.println("you are the winner "+ isWinner);
 
                 if(isWinner){
-                    if (playerWinCount == 0){
-                        playerWinCount = 1;
-                        controller.setNumberOfWins(1);
-                    }
-                    else {playerWinCount = playerWinCount+1;}
+                    playerWinCount = playerWinCount + 1;
                 }
                 controller.setPoints(roundScore);
                 controller.setResult(isWinner,roundScore);
                 controller.setNumberOfWins(playerWinCount);
-                clientCallbackImpl.setEndRoundResultController(controller);
+
                 System.out.println("Triggered on display EndRoundResult method" + isWinner);
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);

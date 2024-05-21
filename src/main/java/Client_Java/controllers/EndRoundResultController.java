@@ -23,7 +23,7 @@ public class EndRoundResultController {
             if (isWinner) {
                 winnerOrLoserLabel.setText("WINNER!");
             } else {
-                winnerOrLoserLabel.setText("TRY AGAIN!");
+                winnerOrLoserLabel.setText("LOSER!");
             }
             pointsRoundLabel.setText(String.valueOf(points));
         });
@@ -39,4 +39,8 @@ public class EndRoundResultController {
         pointsRoundLabel.setText(String.valueOf(points));
     }
 
+
+    public int getNumberOfWinsLabel() {
+        return Integer.valueOf(winnerOrLoserLabel.getText());
+    }
 }
