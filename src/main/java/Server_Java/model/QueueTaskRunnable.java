@@ -2,9 +2,11 @@ package Server_Java.model;
 
 import java.util.ArrayList;
 import CORBA_IDL.Utility.*;
+
+import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class QueueTaskRunnable implements Runnable {
+public class QueueTaskRunnable extends TimerTask {
 
      int time = 11;
 
@@ -22,7 +24,7 @@ public class QueueTaskRunnable implements Runnable {
     public void run()  {
 
 
-        try {
+
             time--;
             if (time == 0) {
                 for (User temp : players) {
@@ -38,20 +40,17 @@ public class QueueTaskRunnable implements Runnable {
                 players = new ArrayList<>();
                 time = tempTimer;
 
-                Thread.currentThread().interrupt();
+                cancel();
                 //   }
             } else {
-                System.out.println("active player size " + players.size());
+
                 for (User temp : players) {
                     System.out.println("counting -> " + time);
                     temp.getUserCallback().getQueueTime(time);
                 }
             }
 
-        } catch (Exception e){
 
-            e.printStackTrace();
-        }
     }
 
 

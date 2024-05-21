@@ -17,7 +17,7 @@ public class Round extends TimerTask{
 
     private int roundCount = 0;
 
-    private ArrayList<User> players = new ArrayList<>();
+    private ArrayList<User> players;
 
     private Game game;
 
@@ -69,6 +69,7 @@ public class Round extends TimerTask{
     public void run() {
 
 
+        System.out.println("size - >" + players.size());
         if (timerCount == -3){
             filterAnswers();
             countScoresPlayers();

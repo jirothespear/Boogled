@@ -4,50 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Changed Timer to ScheduleExecutor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueAUTH.java" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed Bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/WaitingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/WaitingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/runnable/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/runnable/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -570,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716251549690</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Fixed Bugs">
+      <created>1716262471290</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1716262471290</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added indefinite game continuation." />
     <MESSAGE value="Changed callback IDL return values." />
     <MESSAGE value="gameFinish IDL parameter." />
     <MESSAGE value="Changes in IDL, refactor of interfaces." />
@@ -613,14 +583,15 @@
     <MESSAGE value="COnruyren." />
     <MESSAGE value="Added game winners." />
     <MESSAGE value="Changed Timer to ScheduleExecutor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Timer to ScheduleExecutor" />
+    <MESSAGE value="Fixed Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Server_Java/model/QueueAUTH.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

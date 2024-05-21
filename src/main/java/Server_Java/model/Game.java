@@ -146,11 +146,7 @@ public class Game extends Thread {
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
             ServerUtilityImpl.getActiveGames().remove(gameID);
 
             this.interrupt();
