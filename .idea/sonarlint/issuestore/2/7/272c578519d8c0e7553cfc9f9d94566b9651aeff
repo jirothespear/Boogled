@@ -1,0 +1,38 @@
+
+¡
+java:S1104k"YMake serverUtility a static final constant or non-public and provide accessors if needed.(±´şèùÿÿÿÿ8ÒÖ¦óù1J$0fe5cdf1-c053-47fe-9a0e-f2790d5398e4
+
+java:S1104m"ZMake clientCallback a static final constant or non-public and provide accessors if needed.(Ã°ò¹8ÓÖ¦óù1J$2ccb0f0c-9b0b-4dc4-9ef8-84e512db398c
+¡
+java:S1104o"^Make clientCallbackImpl a static final constant or non-public and provide accessors if needed.(ëïÓ·8ÓÖ¦óù1J$faf5dfe4-848d-4c35-9033-2fb23eb0af9d
+£
+java:S1104s"[Make currentGameUser a static final constant or non-public and provide accessors if needed.(ş’ì»üÿÿÿÿ8ÓÖ¦óù1J$8a5c2950-b0c7-4223-8fdd-7ae53f7dc484
+ 
+java:S1104t"XMake gameChampion a static final constant or non-public and provide accessors if needed.(ÅÑ„„şÿÿÿÿ8ÓÖ¦óù1J$b15a072d-c2d1-4750-bdc7-8f27158880c2
+¥
+java:S1104v"]Make gameChampionScore a static final constant or non-public and provide accessors if needed.(Ğà‰šıÿÿÿÿ8ÓÖ¦óù1J$ee3804e3-54db-4c99-b20b-9f64bd477a31
+•
+java:S1104z"RMake gameID a static final constant or non-public and provide accessors if needed.(°†®İ8ÓÖ¦óù1J$ba62b460-6bde-431e-b8cd-16c097374acf
+¤
+java:S1104{"\Make gameLetterChoice a static final constant or non-public and provide accessors if needed.(Í·›÷úÿÿÿÿ8ÓÖ¦óù1J$65d45aac-bf15-41b1-9496-5c568d5bcee3
+˜
+java:S1104}"UMake roundTime a static final constant or non-public and provide accessors if needed.(í¨†8ÓÖ¦óù1J$01cd3f36-79f9-46c4-b873-de3d02bd8e65
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨Øã÷úÿÿÿÿ8ÖÖ¦óù1J$72fa6b95-7419-4e6d-bea6-d7bc35ec7e68
+s	java:S106‘"+Replace this use of System.out by a logger.(¦€êûıÿÿÿÿ8îÖ¦óù1J$99c4aed2-d39c-4345-ba0f-0137bde60c32
+s	java:S106“"+Replace this use of System.out by a logger.(ƒôŞ©ÿÿÿÿÿ8îÖ¦óù1J$c6d4596f-c52d-4dd0-9572-8395e6bb597a
+n	java:S106¿"+Replace this use of System.out by a logger.(’±–—8òÖ¦óù1J$f38cc734-6ea4-40fc-b54f-57a530dc9e2a
+n	java:S106Ê"+Replace this use of System.out by a logger.(ıˆ¥‹8óÖ¦óù1J$7aa6ecbb-c53c-48ec-8a84-ec811a32f018
+s	java:S106Ô"+Replace this use of System.out by a logger.(Öå÷ßúÿÿÿÿ8ôÖ¦óù1J$5bee69f7-db6b-403c-a370-8ed52e142870
+n	java:S106Õ"+Replace this use of System.out by a logger.(­…­8õÖ¦óù1J$dbde6131-4ea7-4a30-a256-d8aeca080ddb
+p
+java:S1602ê",Remove useless curly braces around statement(ÃÉş©8÷Ö¦óù1J$1f18bc0e-89d8-4a70-b39c-bd77b8e67538
+s	java:S106ğ"+Replace this use of System.out by a logger.(êÃÒ’üÿÿÿÿ8÷Ö¦óù1J$2356082d-2167-4c89-8cc4-1db2cadf55e8
+›
+java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ƒ¿åşÿÿÿÿ8øÖ¦óù1J$478da60f-cd28-4aef-8be7-c34f21795104
+n	java:S106ı"+Replace this use of System.out by a logger.(¥ãğ8ùÖ¦óù1J$a8e2647b-6e6b-4c7b-9d9f-dbd9e34c64dc
+n	java:S106‚"+Replace this use of System.out by a logger.(È÷Á»8ùÖ¦óù1J$248133ff-5cd4-4434-93ad-85ccb2ae56d0
+s	java:S106˜"+Replace this use of System.out by a logger.(ÅØ«ãşÿÿÿÿ8şÖ¦óù1J$15757009-ab0e-4ad2-aa8c-6e11030e7066
+s	java:S106›"+Replace this use of System.out by a logger.(‘¢ íùÿÿÿÿ8şÖ¦óù1J$c54d4623-959a-49fb-b585-6e2828235c3a
+s	java:S106¬"+Replace this use of System.out by a logger.(á¦Ãúüÿÿÿÿ8„×¦óù1J$090dc74e-a38c-4496-bfb3-f48cef087683
+s	java:S106¹"+Replace this use of System.out by a logger.(óë´·şÿÿÿÿ8…×¦óù1J$e153d906-2979-4a7d-b715-74d0e56161d6
+s	java:S106ä"+Replace this use of System.out by a logger.(­„ß€úÿÿÿÿ8‹×¦óù1J$3e4cf80d-9395-4b9e-b1db-53481f3c7691

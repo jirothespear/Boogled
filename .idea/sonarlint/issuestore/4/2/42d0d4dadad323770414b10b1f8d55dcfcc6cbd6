@@ -1,0 +1,40 @@
+
+œ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(£à¡ã8©¦òù1J$62785239-611d-40f1-b878-912cd9621afe
+x
+java:S1066Ü"/Merge this if statement with the enclosing one.(º­¤Äşÿÿÿÿ8ƒĞ£òù1J$8bed2a1d-f0ec-4ac5-923c-57a998e9188c
+¸
+java:S13195"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘ƒçıÿÿÿÿ8„Ğ£òù1J$e0f6a3c5-a03d-498f-a790-0829f226893e
+ª
+java:S13199"gThe type of "players" should be an interface such as "List" rather than the implementation "ArrayList".(Ã®Ê•8„Ğ£òù1J$42b8d565-191e-448a-af17-6fabf57e438e
+Å
+java:S1319="The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(ÑÈÈ©8„Ğ£òù1J$1884ef09-9b96-499c-b6dd-d778a3df925d
+Á
+java:S1319A"~The type of "overallPoints" should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(«É·ì8„Ğ£òù1J$1901ab81-26a5-4ad3-b8bd-1fe262189124
+Å
+java:S1319E"The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(ÊÉû‰8„Ğ£òù1J$df711391-9265-4777-b850-ba19b1b7b75e
+Á
+java:S1319I"~The type of "playerPlacing" should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(Ó¡ü­8…Ğ£òù1J$62a53960-65f1-4ed7-bbe9-9750682c5f73
+¯
+java:S1319e"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Çı¸h8«¦òù1J$75525a4c-e196-45d1-b3f9-1f7b19492f9d
+­
+java:S1319i"jThe type of "userCallbacks" should be an interface such as "Map" rather than the implementation "HashMap".(ôùÉ÷8«¦òù1J$29197639-98e8-44ae-8f46-d6238e75c4f7
+¹
+java:S1319é"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ö¥…üÿÿÿÿ8«¦òù1J$d39d6581-1114-4fdc-ab0c-687e40c5cd16
+·
+java:S1319í"nThe type of "pointsPrevious" should be an interface such as "List" rather than the implementation "ArrayList".(ìÃÍ‚üÿÿÿÿ8«¦òù1J$1046347f-ad67-4191-a534-cdedf74ceb74
+
+java:S1104"UMake roundTime a static final constant or non-public and provide accessors if needed.(·˜¦ÿÿÿÿÿ8…Ğ£òù1J$778ab995-530a-45cd-bba8-0b972223e6a5
+w
+java:S1444"/Make this "public static roundTime" field final(·˜¦ÿÿÿÿÿ8…Ğ£òù1J$69142ec9-49ef-4579-9b5a-e4760f3f6e4b
+q
+java:S5411ƒ"(Use a primitive boolean expression here.(ÑÚ†ıÿÿÿÿ8†Ğ£òù1J$787fd551-de4e-4600-ad3a-46702a16dab4
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õÁ±Â8‡Ğ£òù1J$e40cc207-d0ab-47b6-86f0-f8ab0114a2fa
+ˆ
+java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(ÛÓÆ…ùÿÿÿÿ8İĞ£òù1J$54cd3795-6874-48b0-b65b-e38a7b299387
+r	java:S106r"+Replace this use of System.out by a logger.(¤ö‘¬ûÿÿÿÿ8çĞ£òù1J$d2528262-4e47-40a9-9ceb-5093a0c22e5d
+~	java:S125u"<This block of commented-out lines of code should be removed.(õ½ßç8èĞ£òù1J$8f4b02fa-797e-42a2-82dd-8a8d65948f04
+s	java:S106"+Replace this use of System.out by a logger.(¹ûä€úÿÿÿÿ8êĞ£òù1J$c23064a8-8467-4a82-ac4b-a0c41e155c28
+s	java:S106½"+Replace this use of System.out by a logger.(–ëÉäøÿÿÿÿ8íĞ£òù1J$70295551-a181-4887-984a-02a039e16f0a
+s	java:S106Ï"+Replace this use of System.out by a logger.(¸Ñúÿÿÿÿ8ïĞ£òù1J$b112a04c-cf05-44c0-b5ee-10b239dbd0e7
+s	java:S106ü"+Replace this use of System.out by a logger.(­¾¹ıÿÿÿÿ8ª¾¦òù1J$1562f827-345a-44b0-b865-7d1950db5ae6

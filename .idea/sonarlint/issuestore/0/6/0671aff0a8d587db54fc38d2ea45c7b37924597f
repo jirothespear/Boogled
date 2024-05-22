@@ -1,0 +1,15 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†¸Ç°J$9b9da9e8-f67b-44de-ba35-7cdbabcfadf2
+Š
+java:S3008"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ãÌ³J$0a513f75-2e00-44d7-9596-270aa1cd9f41
+–
+java:S3008"URename this field "__typeCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ô”ÇıÿÿÿÿJ$dd14d190-0f1e-4d77-ba01-f650afe7e326
+v
+java:S1118":Add a private constructor to hide the implicit public one.(ıÊÆíJ$3e9f535a-4e93-49fb-a91f-616d18ab1dbd
+
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ıÊÆíJ$4e6df4af-1346-4b8d-a977-240331156419
+€
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÇÚÅJ$cb078bf5-6ef8-4517-9f02-22cfb6ffbafc
+j
+java:S19052")Remove this unnecessary cast to "Object".(òŞùüÿÿÿÿJ$16e8a463-8511-4a6d-9190-61cd55c919d6
+‰	java:S100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıïôÁJ$2a286c98-968b-4f3d-b1f9-c01d9475b301

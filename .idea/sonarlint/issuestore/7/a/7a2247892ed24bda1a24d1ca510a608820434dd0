@@ -1,0 +1,21 @@
+
+¨
+java:S1319"gThe type of "players" should be an interface such as "List" rather than the implementation "ArrayList".(¬ÖÏ¤şÿÿÿÿJ$9e0a13c9-2eb8-4d4f-804b-157ec8b0a7fb
+¾
+java:S1319="The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(ç´„ßJ$66700fc5-91ff-44c9-b1c2-cb807692c065
+º
+java:S1319A"~The type of "userCallbacks" should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(Ğ¾‚êJ$9508a934-13c5-497e-9008-5881581abc87
+”
+java:S1104"SMake players a static final constant or non-public and provide accessors if needed.(¬ÖÏ¤şÿÿÿÿJ$364c33e0-f705-4428-9802-2ddd61763ed4
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õÁ±ÂJ$78243208-3423-4a70-bca3-c9e098a98ccd
+k	java:S106"+Replace this use of System.out by a logger.(Ó–¢ÚıÿÿÿÿJ$1d18310f-8e47-4c93-bf60-6e47273e30e1
+w
+java:S2696""6Make the enclosing method "static" or remove this set.(ËËÔäûÿÿÿÿJ$ad398488-9b3f-4e5e-a6e3-4752dd482af3
+k	java:S106&"+Replace this use of System.out by a logger.(Øº¡çøÿÿÿÿJ$fbe5ef70-3cfe-4f3a-8855-f7b8fc128545
+w	java:S125#"<This block of commented-out lines of code should be removed.(ÅÜ³¡J$85678cfa-8c3a-4ce8-97cf-78f4d7bac69f
+|	java:S125,"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿJ$78755f49-713e-4662-bdce-56829ba818b5
+k	java:S1060"+Replace this use of System.out by a logger.(Ó–¢ÚıÿÿÿÿJ$b091e527-959d-448d-a109-6a072093106b
+w
+java:S2696B"6Make the enclosing method "static" or remove this set.(óÀ™øÿÿÿÿJ$1188ff75-c338-4ead-9c50-956635223c4b
+v
+java:S2209B"5Change this instance-reference to a static reference.(óÀ™øÿÿÿÿJ$9292142a-78a0-4fac-b4d6-fe047a4f0682

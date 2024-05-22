@@ -1,0 +1,70 @@
+
+†	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$8888ce73-8a7f-43dd-8327-5ef55dd5b16e
+†	java:S112("FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$3673a280-6242-4a71-a60f-7e98b1e1e8ec
+†	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$f0b9d9e3-74c0-4c10-9a8e-5f4012ff0d2e
+†	java:S112W"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$03c01f86-c5df-4dc7-ad7c-2611873a6dfc
+†	java:S112n"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$c7db7e54-ad42-446a-ad55-0dbb7e9ffdc9
+‡	java:S112°"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$f6308903-b3e4-449a-aeb2-c6e2cc372dfa
+‡	java:S112Å"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$1ef4716b-8d43-444c-8e27-2794952af2f7
+‡	java:S112Ò"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$8d9d1f62-b2e2-483c-8a32-58890bfeeb39
+‡	java:S112ç"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$f9f86901-96a8-4e2b-86ed-2dcc6b316755
+‡	java:S112ý"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$045f0313-8e76-4713-93ad-253fc4bd57da
+‡	java:S112‹"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$ad3aac6d-d623-4d8a-947d-b7c00505c841
+‡	java:S112™"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$27c64910-f018-4933-ad4e-0e9dcd135383
+‡	java:S112¤"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$cfe3fc53-a539-426a-9e6e-d73f4d503e0b
+‡	java:S112²"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$92fd9def-28bc-4781-9ebe-9bb09d87f886
+±
+java:S1319`"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Êïá‚üÿÿÿÿJ$c271afdf-8aaa-4af5-a56a-0e7f1a41011c
+­
+java:S1319’"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ù¥µ•J$3000fc5d-192b-4e3a-813f-5f06760a6023
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²¬¾¶J$fba99917-d6d9-43b5-b92f-99e9e402a8a6
+‹
+java:S20951"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$05ebf515-c7c6-4b12-b889-de39c0f5d568
+Œ
+java:S2095ô"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$ffbc7cc8-5442-44e6-b45a-1bf3bd23b7c4
+Œ
+java:S2095—"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$23b50cc1-4292-42d9-a1f1-56bf0663a221
+Œ
+java:S2095Ë"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$6cbbab2a-ceef-41da-80d9-1eeb72ffb6cc
+‹
+java:S2095e"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$98a2f2bd-30c0-43d8-a9c4-030c07009854
+‹
+java:S2095A"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$b7dbf8f8-fa41-4ef4-aa6b-8c8913f59a0c
+Œ
+java:S2095“"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$e0f08ce7-db12-4ce9-a197-78acb72eb90c
+Œ
+java:S2095«"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$9e43aa1a-f840-4868-94b6-5f78ca1d5af5
+Œ
+java:S2095¬"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$a7774e0b-bb72-479c-aaf8-20b471ba350d
+Œ
+java:S2095‡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$a229ceff-52f9-40c7-a120-e014555aeed0
+‹
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$26757dd0-300a-4aae-9494-a798be886e38
+‹
+java:S2095y"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$49691b18-e691-4916-a408-f5e22d9b0f46
+Œ
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$7cf06704-652e-49a8-9baf-d980c079b986
+Œ
+java:S2095ˆ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$d2f6bffd-7827-4c3c-88e4-10ac96cb507d
+‹
+java:S2095P"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$1a46be12-0f29-419d-b032-ae50d99ab76e
+Œ
+java:S2095Ü"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôöšªJ$adaea8ea-154c-44ee-93ea-54d913b4060e
+k	java:S106"+Replace this use of System.out by a logger.(åù¿õùÿÿÿÿJ$fa562e5d-c3b5-4563-8f03-01f87452c180
+k	java:S106"+Replace this use of System.out by a logger.(©þêÜúÿÿÿÿJ$7851eec1-8dd0-4222-9b17-d07778bdfc21
+f
+java:S1197"*Move the array designators [] to the type.(À˜ìÌJ$3f6d9980-77b9-4a98-9535-4a0c35d8de5c
+[
+java:S6905"Don't use the query "SELECT *".(Ð¸ÉÑJ$4162be1c-b68f-4170-a6e3-e5c7e985f16c
+w	java:S125c"<This block of commented-out lines of code should be removed.(ÖÇ¨ÑJ$c006b1db-7cad-4969-a21b-3834cf574432
+f	java:S106q"+Replace this use of System.out by a logger.(¯Àæ×J$c19ac559-7d47-4131-bec8-63b1c66efc71
+|	java:S125r"<This block of commented-out lines of code should be removed.(áÌÝÓüÿÿÿÿJ$076ed7a8-0068-4890-988f-86a36cce5b08
+u
+java:S1854”"8Remove this useless assignment to local variable "user".(Ç­‚ûJ$19482697-b35b-4f80-ba88-8dfa4b819271
+f
+java:S1481”")Remove this unused "user" local variable.(Ç­‚ûJ$bc668797-005c-4eff-bc6d-9fbfb7a64dc5
+g	java:S106¤"+Replace this use of System.out by a logger.(¯Àæ×J$1ff583bb-fc4d-48e5-a8ca-96ddd3b9df2a
+a
+java:S6905É"Don't use the query "SELECT *".(ˆðÂ…ùÿÿÿÿJ$3983708f-d7d0-46d7-9256-8fec4bd43243
+l	java:S106â"+Replace this use of System.out by a logger.(å‰ü½ûÿÿÿÿJ$1ef82854-3494-4421-ad5f-e9d85cd30bc2
+l	java:S106ê"+Replace this use of System.out by a logger.(¨ìÉàûÿÿÿÿJ$1b9f826f-a9e8-4e43-8ea8-2965aea455ba

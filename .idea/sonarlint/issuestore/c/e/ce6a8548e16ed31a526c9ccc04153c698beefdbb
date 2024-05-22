@@ -1,0 +1,17 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢¸ß™ıÿÿÿÿJ$f0e1997d-6b94-4378-97a7-9cb042041c2e
+f	java:S106#"+Replace this use of System.out by a logger.(³ŞˆËJ$dfb2320b-9092-4d1c-ab06-db8a995d8ab8
+k	java:S106%"+Replace this use of System.out by a logger.(çÖÂñÿÿÿÿÿJ$2c24ca80-1c0b-453a-a7fc-152b4f416621
+f	java:S106'"+Replace this use of System.out by a logger.(İæÊÿJ$8e938c85-2f71-4ca0-91d6-a0812c005c44
+k	java:S106)"+Replace this use of System.out by a logger.(íÊ™ÙøÿÿÿÿJ$a920b196-3947-48a7-b70e-a5903294caa3
+e	java:S1062"+Replace this use of System.out by a logger.(–Øˆ"J$b187c217-c22a-451f-9ebf-df98a5da5bc8
+f	java:S106O"+Replace this use of System.out by a logger.(ª€Ú³J$2f4404ae-35ab-4fd4-b594-9a3a5b9c5d95
+e	java:S106Z"+Replace this use of System.out by a logger.(øİJ$32130cd4-579a-4928-adef-863d30ab94bf
+…
+java:S1858Z"J"letters" is already a string, there's no need to call "toString()" on it.(øİJ$3f1407b3-fe57-471e-a9f8-a11e09375f14
+k	java:S106c"+Replace this use of System.out by a logger.(ŒÑùÿÿÿÿJ$3fcdacc5-812b-4964-baa2-20b6fe74efb7
+f	java:S106d"+Replace this use of System.out by a logger.(¬şõìJ$b9afed7a-5c8e-44fc-a0db-9cc22c60dbde
+v
+java:S1068":Remove this unused "gameFinishedController" private field.(ŸÒÎÙJ$d42275ab-14c6-4688-bd19-5a7780111bac
+}
+java:S1068"<Remove this unused "roundStackPaneController" private field.(½æƒøÿÿÿÿJ$11106c8d-b76e-4031-8423-5cdddb10cebc

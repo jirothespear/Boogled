@@ -1,0 +1,74 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(µÉñ¯øÿÿÿÿ
+J
+java:S3740"/Provide the parametrized type for this generic.(µÉñ¯øÿÿÿÿ
+f	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ã½¨
+f	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒ¼
+f	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¿í‰
+f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÛ·Í
+f	java:S117N"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ§©œ
+f	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖ‰©
+k	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò…Öşÿÿÿÿ
+f	java:S117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ÅŞ×
+f	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÖí³
+g	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖ‰©
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖ‰©
+l	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò…Öşÿÿÿÿ
+g	java:S117«"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖ‰©
+l	java:S117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë›ò”ûÿÿÿÿ
+l	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Øóîÿÿÿÿÿ
+g	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÖí³
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†¸Ç°
+n
+java:S3008"SRename this field "_methods" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÉñ¯øÿÿÿÿ
+g
+java:S3008à"PRename this field "__ids" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎŸˆ™
+q
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(µÉñ¯øÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(ï”åêøÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(Â½ıÿÿÿÿ
+7
+java:S2129"!Remove this "Integer" constructor(ñ€­£
+<
+java:S2129"!Remove this "Integer" constructor(–›âÿøÿÿÿÿ
+7
+java:S2129"!Remove this "Integer" constructor(¶ñ§ë
+7
+java:S2129"!Remove this "Integer" constructor(îñìÂ
+<
+java:S2129"!Remove this "Integer" constructor(µÑ‰»ÿÿÿÿÿ
+7
+java:S2129"!Remove this "Integer" constructor(»Ååå
+7
+java:S2129"!Remove this "Integer" constructor(¡–üû
+7
+java:S2129"!Remove this "Integer" constructor(ßòçÇ
+<
+java:S2129"!Remove this "Integer" constructor(ºœ„øÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(ñşšëúÿÿÿÿ
+<
+java:S2129 "!Remove this "Integer" constructor(µÂÎÿÿÿÿÿ
+<
+java:S2129!"!Remove this "Integer" constructor(ˆ¦ûùüÿÿÿÿ
+6
+java:S2129""!Remove this "Integer" constructor(¶˜¢
+Q
+java:S1854w";Remove this useless assignment to local variable "$result".(ÀÖí³
+R
+java:S1854È";Remove this useless assignment to local variable "$result".(ÀÖí³
+<
+java:S1905w"&Remove this unnecessary cast to "int".(ÀÖí³
+F
+java:S1197´"*Move the array designators [] to the type.(Ë›ò”ûÿÿÿÿ
+F
+java:S1197½"*Move the array designators [] to the type.(‘Øóîÿÿÿÿÿ
+=
+java:S1905È"&Remove this unnecessary cast to "int".(ÀÖí³
+G
+java:S1905å"+Remove this unnecessary cast to "String[]".(È«çéúÿÿÿÿ
+i	java:S100è"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãš‘˜ûÿÿÿÿ
+i	java:S100î"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İâ°Åÿÿÿÿÿ

@@ -1,0 +1,6 @@
+
+΅	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨Ψγχϊÿÿÿÿ8ÒΓ®πω1J$75abf5da-433c-4d57-be9f-1d5e3b6c2051
+£
+java:S1450"aRemove the "clientCallbackImpl" field and declare it as a local variable in the relevant methods.(Υ€‚V8ίΪσω1J$a5db3860-0028-4e2c-a973-f5e756d52105
+x
+java:S1068"6Remove this unused "clientCallbackImpl" private field.(Υ€‚V8εΪσω1J$cf98287e-60ab-4e40-8459-3466e214c143

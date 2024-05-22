@@ -1,0 +1,33 @@
+
+	java:S127Ά"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ΔK8ΰ ‘σω1J$efb27775-b11c-44bc-876a-34cd58513ee5
+x
+java:S1066"/Merge this if statement with the enclosing one.(υΖ¥¦ωÿÿÿÿ8α ‘σω1J$ac4e97cf-03e8-4fa7-8149-6f67f121877e
+²
+java:S1319"jThe type of "roundPoint" should be an interface such as "List" rather than the implementation "ArrayList".(Ο”Τϋÿÿÿÿ8α ‘σω1J$4834fde8-2d6f-4452-80b1-9794f685db86
+―
+java:S1319"gThe type of "players" should be an interface such as "List" rather than the implementation "ArrayList".(Ωε•―ÿÿÿÿÿ8α ‘σω1J$164c9103-99cf-45ba-9481-9104bbdd2238
+Ή
+java:S1319΄"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Τσφώÿÿÿÿ8β ‘σω1J$abc01824-4fb1-4ced-bc8f-c14ec53b0775
+
+java:S1104"VMake timerCount a static final constant or non-public and provide accessors if needed.(¶χΆÿÿÿÿÿ8β ‘σω1J$cc68fde3-e446-4786-9c68-a339b7d09394
+
+java:S1104"VMake roundPoint a static final constant or non-public and provide accessors if needed.(Ο”Τϋÿÿÿÿ8β ‘σω1J$8a2e70f8-7218-4b0d-901f-713b6cd82901
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(υΑ±Β8δ ‘σω1J$b2b45210-9c96-46a3-b1df-e7eeef72d55a
+l	java:S1067"+Replace this use of System.out by a logger.(³έτE8Ν΅‘σω1J$8a16e5b6-967a-4d5a-8af0-47a3f8da708b
+r	java:S106:"+Replace this use of System.out by a logger.(Υΰ’Ώψÿÿÿÿ8Ν΅‘σω1J$c205d0b7-1e0e-4b96-9d3a-2f348d8e3d94
+r	java:S106A"+Replace this use of System.out by a logger.(Α†»Αύÿÿÿÿ8Ξ΅‘σω1J$23d3faf8-34d1-4f75-ba79-cfcaceedd327
+r	java:S106H"+Replace this use of System.out by a logger.(’υΉÿÿÿÿÿ8Ο΅‘σω1J$7ca88e47-565a-4acb-a172-24fb5e225ed4
+m	java:S106N"+Replace this use of System.out by a logger.(Γ·³ÿ8Π΅‘σω1J$f1c2dba4-6f59-439d-bd5c-4d97f867de2b
+r	java:S106Q"+Replace this use of System.out by a logger.(¶§Β ϋÿÿÿÿ8Ρ΅‘σω1J$ed0c5852-0063-43cd-80a5-e7d9d28ac20b
+m	java:S106d"+Replace this use of System.out by a logger.(ι³ΆΗ8Ò΅‘σω1J$37d2060e-7a26-4434-b68a-4239ca7cce17
+†
+java:S1155g">Use isEmpty() to check whether the collection is empty or not.(–³εψψÿÿÿÿ8υ›’σω1J$d4fa8ab2-662f-4517-9fcc-0c04b02ac14a
+m	java:S106j"+Replace this use of System.out by a logger.(κο¦ϋ8Ò΅‘σω1J$cafbfc4c-459e-4f48-ab53-43d7257793be
+„	java:S125Ώ"<This block of commented-out lines of code should be removed.(ΓΑΖϊÿÿÿÿ8Χ΅‘σω1J$bd40a693-eec7-4b3e-9e3c-da8f987ad49d
+n	java:S106Ι"+Replace this use of System.out by a logger.(ΌΤ½8Ψ΅‘σω1J$198f45c4-8dce-4614-b992-286ffcbcc685
+	java:S125Μ"<This block of commented-out lines of code should be removed.(€αΛΡ8Ω΅‘σω1J$ed819cfe-58f2-4fa8-b180-317c46e6951f
+a
+java:S2119ϋ"Save and re-use this "Random".(ΌέΕf8ά΅‘σω1J$0a61dca9-7029-4086-bd49-ea76dfa42a7f
+„	java:S125"<This block of commented-out lines of code should be removed.(ν§Δ„ώÿÿÿÿ8ή΅‘σω1J$ece6c343-91af-4d3b-b645-53c177e0fd31
+v
+java:S1128".Remove this unused import 'CORBA_IDL.Utility'.(¦Òςΐύÿÿÿÿ8ƒ’σω1J$3e98300d-bde1-49e3-8446-1e28671c9145

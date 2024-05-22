@@ -1,0 +1,44 @@
+
+¯
+java:S1319^"gThe type of "players" should be an interface such as "List" rather than the implementation "ArrayList".(“¢ä¯øÿÿÿÿ8”Õ™òù1J$6a9a982e-3def-4114-807c-52fa25ddd325
+Æ
+java:S1319ê"The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(“™½Ø8•Õ™òù1J$024857c8-dc62-46a2-a8af-65d36d683b50
+Å
+java:S1319î"|The type of "activeGames" should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(’ò„üÿÿÿÿ8•Õ™òù1J$60f6c52a-a69d-4cf9-af4e-0db7dda12228
+Ë
+java:S1319Œ"The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(÷é¶Ìøÿÿÿÿ8•Õ™òù1J$cb3a3c5d-ddfe-4464-8bbb-5938cdfc6c67
+™
+java:S1104Š"UMake queueTime a static final constant or non-public and provide accessors if needed.(İüøÖ8–Õ™òù1J$4ca0ca26-f813-47e7-95bc-9fab21a02647
+s
+java:S1444Š"/Make this "public static queueTime" field final(İüøÖ8–Õ™òù1J$07554569-3217-4119-96f7-a54d21ea9ffc
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õÁ±Â8—Õ™òù1J$65603347-a509-4c40-80f3-2de7dd72aec0
+‹
+java:S3824("HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".( °Ûè8«Õ™òù1J$7571800d-2647-4f7e-b074-64fd603c4c33
+ˆ
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÓÀ…í8µÕ™òù1J$3032a35b-781d-43ad-92b6-e9d25c23bb3d
+p	java:S108")Either remove or fill this block of code.(õ¦×±şÿÿÿÿ8·Õ™òù1J$9ccab7f4-81f4-4aef-96d8-7c3c6317de6f
+r	java:S106."+Replace this use of System.out by a logger.(Á–İ›üÿÿÿÿ8¹Õ™òù1J$040bd0cc-6c21-4a50-9003-0c65844c8c9a
+r	java:S106/"+Replace this use of System.out by a logger.(öÇõßıÿÿÿÿ8¹Õ™òù1J$e3ef203f-ef8d-46a8-93f1-c0d6bb806c67
+r	java:S1065"+Replace this use of System.out by a logger.(ÊÁÛÊüÿÿÿÿ8ºÕ™òù1J$b96b9cc4-ebee-44cd-8c36-32599d0ea936
+l	java:S106;"+Replace this use of System.out by a logger.(–ù y8ºÕ™òù1J$4ef9ee0e-6b2c-4369-a7e0-1d964a420ec3
+‡
+java:S1117="?Rename "currentGame" which hides the field declared at line 14.(ÏëŒ½ıÿÿÿÿ8»Õ™òù1J$bccd5d11-e9f1-4051-94c3-674fe1c7fd30
+r	java:S106Q"+Replace this use of System.out by a logger.(Øº¡çøÿÿÿÿ8½Õ™òù1J$ed38bda0-7ef3-4c28-944d-0ada53043829
+~
+java:S2696U"6Make the enclosing method "static" or remove this set.(È´àªøÿÿÿÿ8½Õ™òù1J$11201603-7b47-453d-bcb6-e46888ea3a00
+r	java:S106x"+Replace this use of System.out by a logger.(—±§œùÿÿÿÿ8ÀÕ™òù1J$d972f312-ea25-4f5f-8906-e78e4ba5b24c
+r	java:S106|"+Replace this use of System.out by a logger.(ÜÁåÔıÿÿÿÿ8ÀÕ™òù1J$d10f2720-33be-4bff-9e88-88c0527e6cca
+z
+java:S2696‡"6Make the enclosing method "static" or remove this set.(ÎÅƒÿ8ÁÕ™òù1J$c9e189f7-1814-4ba6-8e94-943a19cfcd0a
+s	java:S106ˆ"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ÁÕ™òù1J$6f6b7319-9932-45c2-accd-c5c653a6bf1f
+s	java:S106Š"+Replace this use of System.out by a logger.(ñ‡Ã‰ûÿÿÿÿ8ÂÕ™òù1J$a43d9775-26e2-4d3a-b1b1-dfd2fcfb5a86
+s	java:S106"+Replace this use of System.out by a logger.(ôû¬¦úÿÿÿÿ8ÂÕ™òù1J$6ad772e3-4b75-4f58-abb5-354e44c0e65e
+s	java:S106›"+Replace this use of System.out by a logger.(ø£šçûÿÿÿÿ8ÃÕ™òù1J$619557df-dbea-4966-b41f-5dcc43741dfe
+‚
+java:S1155Å">Use isEmpty() to check whether the collection is empty or not.(€éÂì8ª¡Èòù1J$ee7cb901-00ad-42e9-9c53-a059e737cd2b
+z
+java:S2696‡"6Make the enclosing method "static" or remove this set.(¸ãåñ8ÊÕ™òù1J$7016b6e0-aa75-43e8-9edc-523d8e2d805e
+y
+java:S2209‡"5Change this instance-reference to a static reference.(¸ãåñ8ËÕ™òù1J$c12d4d6f-5dcb-418a-a1e2-c457bb1a559e
+v
+java:S1068"3Remove this unused "playerCallbacks" private field.(ä‘Åá8ËÕ™òù1J$7c82e4ca-8c1e-4e09-9449-c989a7ca34e0

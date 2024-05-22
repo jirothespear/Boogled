@@ -1,0 +1,19 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨Øã÷úÿÿÿÿJ$466de139-a0f0-4235-9e28-298acc790851
+w	java:S125>"<This block of commented-out lines of code should be removed.(ó£–ÛJ$4d486744-612c-4c5a-a3f3-74186565ed55
+u
+java:S1854U"9Remove this useless assignment to local variable "props".(”¾³ªJ$90aeac48-1fc2-4262-8366-88879e567e5d
+f
+java:S1481U"*Remove this unused "props" local variable.(”¾³ªJ$64354053-5dd6-44ea-8e5d-ee86fcf66794
+f	java:S106\"+Replace this use of System.out by a logger.(¶ÊÄõJ$c9197476-52ac-4c07-bfac-80ae701de683
+f	java:S106]"+Replace this use of System.out by a logger.(ÇÅ€J$3cfd57dc-cc09-42e9-85f2-78a374d061a0
+
+java:S2147j"ECombine this catch with the one at line 104, which has the same body.(”ý¾J$dc20748b-c4e6-4c76-8f6d-a6c426a5c3a2
+i	java:S108h")Either remove or fill this block of code.(Àù¾ŒùÿÿÿÿJ$efad264f-fbce-4460-bd98-d7d567b9287e
+d	java:S108j")Either remove or fill this block of code.(”ý¾J$8e392ee1-2c7d-4eae-b032-0b6a2b3d1d18
+y
+java:S1117r"8Rename "root" which hides the field declared at line 58.(Ê€ÛìüÿÿÿÿJ$953083a1-4b9e-4a23-afd5-780478153901
+u
+java:S1117{"9Rename "stage" which hides the field declared at line 54.(Ò§ÂÞJ$844c619f-6b23-4c44-abeb-5115944f6413
+u
+java:S1117|"9Rename "scene" which hides the field declared at line 56.(ˆ„ÓÈJ$87034fbd-2c22-452a-9cfa-ab185b034504

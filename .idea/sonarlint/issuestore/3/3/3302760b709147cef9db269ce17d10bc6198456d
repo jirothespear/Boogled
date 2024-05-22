@@ -1,0 +1,18 @@
+
+‡	java:S112·"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$6ba35072-d84d-42b4-a777-c0dadf7e2261
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨Øã÷úÿÿÿÿJ$4695f0d5-f5aa-42a4-bfdf-17b0997b3f3d
+¥
+java:S1450E"dRemove the "waitingRoomController" field and declare it as a local variable in the relevant methods.(¼ÓƒèüÿÿÿÿJ$cdb76c94-1bcc-4492-bfce-0dcb51bab588
+y
+java:S1117Q"8Rename "root" which hides the field declared at line 60.(©ü’úÿÿÿÿJ$41e2d77c-2830-4c1f-9ed2-a3d0fb92fd57
+z
+java:S1117R"9Rename "scene" which hides the field declared at line 58.(©÷…·øÿÿÿÿJ$1c76aa73-bb37-4576-8909-c5a4a59b556d
+h
+java:S1602b",Remove useless curly braces around statement(¯¤¤»J$4239e340-e593-48cc-acac-fb5425f1512e
+y
+java:S1117k"8Rename "root" which hides the field declared at line 60.(©ü’úÿÿÿÿJ$5d58d6d9-1499-4d9a-b867-25ca7fea7a17
+e	java:S106p"+Replace this use of System.out by a logger.(œ£ÀJJ$81bf52be-cadb-4ed6-b462-1bdad61d6a95
+f	java:S106q"+Replace this use of System.out by a logger.(ÆÄŒ J$f23f28ba-cf55-4402-b764-351f6b45f532
+}
+java:S1117‹"9Rename "stage" which hides the field declared at line 56.(ÕÈáÿ8âÀñù1J$1614b2c2-060e-4555-897b-c6cdbee794d3
+n	java:S106“"+Replace this use of System.out by a logger.(ıˆ¥‹8çˆ¼ñù1J$344298d3-c292-474d-a967-fe204cc75f13

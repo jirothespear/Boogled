@@ -1,0 +1,40 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹ÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(»¨‡î
+M
+java:S1854J"7Remove this useless assignment to local variable "oid".(¿­ÖÕ
+W
+java:S18548"<Remove this useless assignment to local variable "policies".(ë»ë„øÿÿÿÿ
+Y
+java:S18545">Remove this useless assignment to local variable "poaManager".(ÛÚİÿÿÿÿÿ
+O
+java:S1854,"9Remove this useless assignment to local variable "props".(”¾³ª
+£
+java:S1130)"ŒRemove the declaration of thrown exception 'org.omg.CosNaming.NamingContextPackage.AlreadyBound', as it cannot be thrown from method's body.(×ÇÂí
+
+java:S1130)"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(×ÇÂí
+Ÿ
+java:S1130)"ˆRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.InvalidPolicy', as it cannot be thrown from method's body.(×ÇÂí
+¦
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.AdapterAlreadyExists', as it cannot be thrown from method's body.(×ÇÂí
+¥
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectAlreadyActive', as it cannot be thrown from method's body.(×ÇÂí
+¦
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ServantAlreadyActive', as it cannot be thrown from method's body.(×ÇÂí
+¡
+java:S1130)"ŠRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectNotActive', as it cannot be thrown from method's body.(×ÇÂí
+@
+java:S1481,"*Remove this unused "props" local variable.(”¾³ª
+Q	java:S125-"<This block of commented-out lines of code should be removed.(Âçßü
+J
+java:S14815"/Remove this unused "poaManager" local variable.(ÛÚİÿÿÿÿÿ
+H
+java:S14818"-Remove this unused "policies" local variable.(ë»ë„øÿÿÿÿ
+V	java:S125E"<This block of commented-out lines of code should be removed.(©–É›ûÿÿÿÿ
+Q	java:S125G"<This block of commented-out lines of code should be removed.(µŠ‘–
+>
+java:S1481J"(Remove this unused "oid" local variable.(¿­ÖÕ
+V	java:S125L"<This block of commented-out lines of code should be removed.(®øÇ‚ûÿÿÿÿ
+E
+java:S1197V"*Move the array designators [] to the type.(‘Óºüÿÿÿÿ
+V	java:S125\"<This block of commented-out lines of code should be removed.(ŒëÏúÿÿÿÿ
