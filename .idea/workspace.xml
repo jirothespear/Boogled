@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed IDL.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added logic for logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/lobby-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/waiting-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/waiting-room-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +241,6 @@
       <workItem from="1715856243538" duration="1134000" />
       <workItem from="1716288075962" duration="3775000" />
       <workItem from="1716340383417" duration="10518000" />
-    </task>
-    <task id="LOCAL-00001" summary="project set up, added a few classes to be populated soon">
-      <option name="closed" value="true" />
-      <created>1713612103085</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1713612103085</updated>
     </task>
     <task id="LOCAL-00002" summary="Fixed directories.">
       <created>1713763644875</created>
@@ -590,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716397355496</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="added logic for logout">
+      <option name="closed" value="true" />
+      <created>1716399168542</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716399168542</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +610,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed fxml directories." />
     <MESSAGE value="Added roundCount, and leaderboard IDL." />
     <MESSAGE value="Fixed round winner." />
     <MESSAGE value="Fixed directories." />
@@ -633,7 +634,8 @@
     <MESSAGE value="Fixed time" />
     <MESSAGE value="Fixed time." />
     <MESSAGE value="Fixed IDL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed IDL." />
+    <MESSAGE value="added logic for logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logic for logout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

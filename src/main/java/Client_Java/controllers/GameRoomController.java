@@ -15,9 +15,7 @@ import javafx.stage.Stage;
 import Client_Java.model.ClientCallbackImpl;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class GameRoomController {
 
@@ -101,7 +99,9 @@ public class GameRoomController {
     @FXML
     private TextField gameRoomTextField;
 
+    Map<Character, Integer> allowedLetters = new HashMap<>();
 
+    Map<Character, Integer> currentLetterOccurrences = new HashMap<>();
     private ArrayList<Button> buttons = new ArrayList<>();
 
     public PlayerUtility serverUtility;
@@ -145,6 +145,7 @@ public class GameRoomController {
                 System.out.println("Choice Error ->");
             }
             System.out.println("Game letter choice: " + gameLetterChoice);
+            allowedLetters = stringToMap(gameLetterChoice);
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
@@ -182,11 +183,22 @@ public class GameRoomController {
 
             for (Button button : buttons) {
                 button.setOnAction(event -> {
+                    char letter = button.getText().charAt(0);
                     answerTextField.appendText(button.getText());
-                    button.setDisable(true);
-
+                    updateButton(letter, true);
                 });
             }
+
+            answerTextField.setOnKeyTyped(event -> {
+                String currentAnswer = answerTextField.getText();
+                char letterKey = event.getCharacter().charAt(0);
+                if (event.getCharacter().equals("\b")){
+                    handleBackspace(currentAnswer);
+                } else if (allowedLetters.containsKey(letterKey)) {
+                    updateButton(letterKey, false);
+                }
+            });
+
             submitButton.setOnAction(event -> {
                 System.out.println("Submit button clicked");
                 onSubmitButtonClicked();
@@ -194,6 +206,53 @@ public class GameRoomController {
             Stage stage = (Stage) roundLabel.getScene().getWindow();
             stage.setOnCloseRequest(event -> onWindowCloseRequest());
         });
+    }
+
+    private Map<Character, Integer> stringToMap(String lettersString){
+        Map<Character, Integer> letters = new HashMap<>();
+
+        for (char letter :  lettersString.toCharArray()){
+            letters.put(letter, letters.getOrDefault(letter, 0) + 1);
+        }
+        return letters;
+    }
+
+    private void updateButton(char letter, boolean buttonClicked){
+        int maxOccurrences = allowedLetters.get(letter);
+        int currentOccurrences = currentLetterOccurrences.getOrDefault(letter, 0);
+
+        if (currentOccurrences < maxOccurrences) {
+            currentOccurrences++;
+            currentLetterOccurrences.put(letter, currentOccurrences);
+
+            for (Button button : buttons) {
+                if (button.getText().charAt(0) == letter && !button.isDisabled()) {
+                    button.setDisable(true);
+                    break;
+                }
+            }
+        }
+
+        if (buttonClicked) {
+            allowedLetters.put(letter, allowedLetters.get(letter) - 1);
+        }
+    }
+
+    private void handleBackspace(String currentAnswer) {
+        Map<Character, Integer> currentOccurrences = new HashMap<>();
+        for (char c : currentAnswer.toCharArray()) {
+            currentOccurrences.put(c, currentOccurrences.getOrDefault(c, 0) + 1);
+        }
+
+        for (Button button : buttons) {
+            char letter = button.getText().charAt(0);
+            if (currentOccurrences.getOrDefault(letter, 0) < allowedLetters.get(letter)) {
+                button.setDisable(false);
+            } else {
+                button.setDisable(true);
+            }
+        }
+        currentLetterOccurrences = currentOccurrences;
     }
 
     @FXML
