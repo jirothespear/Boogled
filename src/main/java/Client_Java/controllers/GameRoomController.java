@@ -261,7 +261,6 @@ public class GameRoomController {
             System.out.println("Window is closing");
             System.exit(0);
         });
-
     }
     @FXML
     public void onSubmitButtonClicked() {
