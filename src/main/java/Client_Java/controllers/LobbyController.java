@@ -44,6 +44,9 @@ public class LobbyController {
     private Button startGameButton;
 
     @FXML
+    private Button logoutButton;
+
+    @FXML
     private AnchorPane switchingPane;
 
     @FXML
@@ -131,6 +134,26 @@ public class LobbyController {
         Duration waitingRoomDuration = Duration.seconds(1);
         PauseTransition waitingTransition = new PauseTransition(waitingRoomDuration);
         waitingTransition.play();
+    }
+    @FXML
+    public void onLogoutButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/login-view.fxml"));
+            Parent root = loader.load();
+            LoginController loginController = loader.getController();
+            loginController.setServerUtility(serverUtility);
+            loginController.setClientCallbackImpl(clientCallbackImpl);
+            loginController.setClientCallback(clientCallback);
+
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+            stage.setResizable(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     // This method is called when the window is closed
 
