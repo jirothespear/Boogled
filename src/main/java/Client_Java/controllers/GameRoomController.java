@@ -200,8 +200,9 @@ public class GameRoomController {
     public void onWindowCloseRequest() {
         Platform.runLater(() -> {
             System.out.println("Window is closing");
-            serverUtility.leaveGame(gameID,currentGameUser);
-            onGameFinished();
+//            serverUtility.leaveGame(gameID,currentGameUser);
+//            onGameFinished();
+            System.exit(0);
         });
 
     }
@@ -371,7 +372,7 @@ public class GameRoomController {
                         navigateToLobbyController();
                     }
                 }, 8000);
-
+                serverUtility.leaveGame(gameID,currentGameUser);
                 Stage gameRoomStage = (Stage) roundLabel.getScene().getWindow();
                 gameRoomStage.close();
             } catch (IOException e) {
