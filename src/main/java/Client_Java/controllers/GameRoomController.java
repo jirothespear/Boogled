@@ -99,9 +99,8 @@ public class GameRoomController {
     @FXML
     private TextField gameRoomTextField;
 
-    Map<Character, Integer> allowedLetters = new HashMap<>();
-
-    Map<Character, Integer> currentLetterOccurrences = new HashMap<>();
+    private int[] allowedLetters = new int[26];
+    private int[] currentLetterOccurrences = new int[26];
     private ArrayList<Button> buttons = new ArrayList<>();
 
     public PlayerUtility serverUtility;
@@ -145,10 +144,13 @@ public class GameRoomController {
                 System.out.println("Choice Error ->");
             }
             System.out.println("Game letter choice: " + gameLetterChoice);
-            allowedLetters = stringToMap(gameLetterChoice);
-            answerTextField.setEditable(false);
+            allowedLetters = stringToArray(gameLetterChoice);
+            currentLetterOccurrences = new int[26];
+
+            answerTextField.setEditable(true);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
 
+            buttons.clear();
             buttons.add(firstButton);
             buttons.add(secondButton);
             buttons.add(thirdButton);
@@ -194,7 +196,7 @@ public class GameRoomController {
                 char letterKey = event.getCharacter().charAt(0);
                 if (event.getCharacter().equals("\b")){
                     handleBackspace(currentAnswer);
-                } else if (allowedLetters.containsKey(letterKey)) {
+                } else if (allowedLetters[letterKey - 'a'] > 0) {
                     updateButton(letterKey, false);
                 }
             });
@@ -208,22 +210,22 @@ public class GameRoomController {
         });
     }
 
-    private Map<Character, Integer> stringToMap(String lettersString){
-        Map<Character, Integer> letters = new HashMap<>();
+    private int[] stringToArray(String lettersString){
+        int[] letters = new int[26];
 
         for (char letter :  lettersString.toCharArray()){
-            letters.put(letter, letters.getOrDefault(letter, 0) + 1);
+            letters[letter - 'a']++;
         }
         return letters;
     }
 
     private void updateButton(char letter, boolean buttonClicked){
-        int maxOccurrences = allowedLetters.get(letter);
-        int currentOccurrences = currentLetterOccurrences.getOrDefault(letter, 0);
+        int maxOccurrences = allowedLetters[letter - 'a'];
+        int currentOccurrences = currentLetterOccurrences[letter - 'a'];
 
         if (currentOccurrences < maxOccurrences) {
             currentOccurrences++;
-            currentLetterOccurrences.put(letter, currentOccurrences);
+            currentLetterOccurrences[letter - 'a'] = currentOccurrences;
 
             for (Button button : buttons) {
                 if (button.getText().charAt(0) == letter && !button.isDisabled()) {
@@ -234,19 +236,19 @@ public class GameRoomController {
         }
 
         if (buttonClicked) {
-            allowedLetters.put(letter, allowedLetters.get(letter) - 1);
+            allowedLetters[letter - 'a']--;
         }
     }
 
     private void handleBackspace(String currentAnswer) {
-        Map<Character, Integer> currentOccurrences = new HashMap<>();
+        int[] currentOccurrences = new int[26];
         for (char c : currentAnswer.toCharArray()) {
-            currentOccurrences.put(c, currentOccurrences.getOrDefault(c, 0) + 1);
+            currentOccurrences[c - 'a']++;
         }
 
         for (Button button : buttons) {
             char letter = button.getText().charAt(0);
-            if (currentOccurrences.getOrDefault(letter, 0) < allowedLetters.get(letter)) {
+            if (currentOccurrences[letter - 'a'] < allowedLetters[letter - 'a']) {
                 button.setDisable(false);
             } else {
                 button.setDisable(true);
