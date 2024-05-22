@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="added logic for logout">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Rollback revision">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/272c578519d8c0e7553cfc9f9d94566b9651aeff" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/272c578519d8c0e7553cfc9f9d94566b9651aeff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3302760b709147cef9db269ce17d10bc6198456d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3302760b709147cef9db269ce17d10bc6198456d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42d0d4dadad323770414b10b1f8d55dcfcc6cbd6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42d0d4dadad323770414b10b1f8d55dcfcc6cbd6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4f101feb86ea8ca618b9814cbbfe4714824aa425" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4f101feb86ea8ca618b9814cbbfe4714824aa425" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57c1b89f4d1b2fe0616671c004b9032adb3576c3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57c1b89f4d1b2fe0616671c004b9032adb3576c3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b3d21f5d52d0b36af141d48fec22c6cd4702e71" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b3d21f5d52d0b36af141d48fec22c6cd4702e71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a800a3c10044e22375add63d51387f314b1e5c64" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a800a3c10044e22375add63d51387f314b1e5c64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1dade6b80aa34c205456a695e50d630712ad53e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1dade6b80aa34c205456a695e50d630712ad53e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c29a4d092da90b895623b71d7d7467ef98eebf08" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c29a4d092da90b895623b71d7d7467ef98eebf08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/game-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/game-room-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/lobby-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/lobby-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/waiting-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/waiting-room-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/runnable/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/runnable/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/ORBdaemon.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/ORBdaemon.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/runnable/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/runnable/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/sqlconnector/DataPB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,31 +89,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.client.comproggui.Main.executor": "Run",
-    "Application.client.executor": "Run",
-    "Application.server.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "N:/ghad/src/main/java/Server_Java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;N:/ghad/src/main/java/Server_Java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="N:\ghad\src\main\java\Server_Java" />
@@ -119,7 +137,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Server_Java.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -133,7 +151,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Server_Java.runnable.ServerMain" />
       <module name="finalProjectCORBA" />
-      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.1.18 -ORBInitialPort 2055" />
+      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.1.19 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Server_Java.runnable.*" />
@@ -145,11 +163,11 @@
       </method>
     </configuration>
     <configuration name="client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (3)" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Client_Java.runnable.client" />
       <module name="finalProjectCORBA" />
-      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.1.18 -ORBInitialPort 2055" />
+      <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.1.19 -ORBInitialPort 2055" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Client_Java.runnable.*" />
@@ -241,6 +259,7 @@
       <workItem from="1715856243538" duration="1134000" />
       <workItem from="1716288075962" duration="3775000" />
       <workItem from="1716340383417" duration="10518000" />
+      <workItem from="1716401582723" duration="8424000" />
     </task>
     <task id="LOCAL-00002" summary="Fixed directories.">
       <created>1713763644875</created>
@@ -584,13 +603,13 @@
       <option name="project" value="LOCAL" />
       <updated>1716397355496</updated>
     </task>
-    <task id="LOCAL-00050" summary="added logic for logout">
+    <task id="LOCAL-00050" summary="Rollback revision">
       <option name="closed" value="true" />
-      <created>1716399168542</created>
+      <created>1716405048819</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1716399168542</updated>
+      <updated>1716405048820</updated>
     </task>
     <option name="localTasksCounter" value="51" />
     <servers />
@@ -634,8 +653,8 @@
     <MESSAGE value="Fixed time" />
     <MESSAGE value="Fixed time." />
     <MESSAGE value="Fixed IDL." />
-    <MESSAGE value="added logic for logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logic for logout" />
+    <MESSAGE value="Rollback revision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback revision" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

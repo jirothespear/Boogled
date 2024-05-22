@@ -1,40 +1,35 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹ÿÿ
-Q	java:S125"<This block of commented-out lines of code should be removed.(»¨‡î
-M
-java:S1854J"7Remove this useless assignment to local variable "oid".(¿­ÖÕ
-W
-java:S18548"<Remove this useless assignment to local variable "policies".(ë»ë„øÿÿÿÿ
-Y
-java:S18545">Remove this useless assignment to local variable "poaManager".(ÛÚİÿÿÿÿÿ
-O
-java:S1854,"9Remove this useless assignment to local variable "props".(”¾³ª
-£
-java:S1130)"ŒRemove the declaration of thrown exception 'org.omg.CosNaming.NamingContextPackage.AlreadyBound', as it cannot be thrown from method's body.(×ÇÂí
-
-java:S1130)"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(×ÇÂí
-Ÿ
-java:S1130)"ˆRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.InvalidPolicy', as it cannot be thrown from method's body.(×ÇÂí
-¦
-java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.AdapterAlreadyExists', as it cannot be thrown from method's body.(×ÇÂí
-¥
-java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectAlreadyActive', as it cannot be thrown from method's body.(×ÇÂí
-¦
-java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ServantAlreadyActive', as it cannot be thrown from method's body.(×ÇÂí
-¡
-java:S1130)"ŠRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectNotActive', as it cannot be thrown from method's body.(×ÇÂí
-@
-java:S1481,"*Remove this unused "props" local variable.(”¾³ª
-Q	java:S125-"<This block of commented-out lines of code should be removed.(Âçßü
-J
-java:S14815"/Remove this unused "poaManager" local variable.(ÛÚİÿÿÿÿÿ
-H
-java:S14818"-Remove this unused "policies" local variable.(ë»ë„øÿÿÿÿ
-V	java:S125E"<This block of commented-out lines of code should be removed.(©–É›ûÿÿÿÿ
-Q	java:S125G"<This block of commented-out lines of code should be removed.(µŠ‘–
->
-java:S1481J"(Remove this unused "oid" local variable.(¿­ÖÕ
-V	java:S125L"<This block of commented-out lines of code should be removed.(®øÇ‚ûÿÿÿÿ
-E
-java:S1197V"*Move the array designators [] to the type.(‘Óºüÿÿÿÿ
-V	java:S125\"<This block of commented-out lines of code should be removed.(ŒëÏúÿÿÿÿ
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹ÿÿJ$c9ba783b-e8e7-46f9-a623-9b2d62e6aab3
+w	java:S125"<This block of commented-out lines of code should be removed.(»¨‡îJ$0a0e9cb0-c4a1-4c20-bb59-a38d0ecde23e
+s
+java:S1854J"7Remove this useless assignment to local variable "oid".(¿­ÖÕJ$167ef31a-bf4f-43e1-aebe-4677cc5ba6a7
+}
+java:S18548"<Remove this useless assignment to local variable "policies".(ë»ë„øÿÿÿÿJ$549e598d-fcea-4a04-b598-bac78dc46047
+
+java:S18545">Remove this useless assignment to local variable "poaManager".(ÛÚİÿÿÿÿÿJ$03a9c44a-41f7-4859-ae4c-7e1e152ddd81
+É
+java:S1130)"ŒRemove the declaration of thrown exception 'org.omg.CosNaming.NamingContextPackage.AlreadyBound', as it cannot be thrown from method's body.(×ÇÂíJ$d68a72c5-0a57-4959-a5ec-e3987cb61e5d
+³
+java:S1130)"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(×ÇÂíJ$a3f9d4ce-fbe6-4f65-9f7d-1820d3f56b4d
+Å
+java:S1130)"ˆRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.InvalidPolicy', as it cannot be thrown from method's body.(×ÇÂíJ$6accc543-bcfc-43cb-8e1c-367078faee89
+Ì
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.AdapterAlreadyExists', as it cannot be thrown from method's body.(×ÇÂíJ$97a7d0c9-eb94-4296-9590-b8ad9912aae6
+Ë
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectAlreadyActive', as it cannot be thrown from method's body.(×ÇÂíJ$07db1473-7411-4ec0-86e1-8b1f553da7b4
+Ì
+java:S1130)"Remove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ServantAlreadyActive', as it cannot be thrown from method's body.(×ÇÂíJ$b265f3dc-8d49-4abe-a3ca-b2696b61925a
+Ç
+java:S1130)"ŠRemove the declaration of thrown exception 'org.omg.PortableServer.POAPackage.ObjectNotActive', as it cannot be thrown from method's body.(×ÇÂíJ$dce4c987-e18c-406f-b8be-41de36556b7d
+p
+java:S14815"/Remove this unused "poaManager" local variable.(ÛÚİÿÿÿÿÿJ$c9f97074-78f7-47c4-9cb7-b993bb0db9df
+n
+java:S14818"-Remove this unused "policies" local variable.(ë»ë„øÿÿÿÿJ$c9ab2717-560b-4cc5-bc9c-d555ec13fb2a
+|	java:S125E"<This block of commented-out lines of code should be removed.(©–É›ûÿÿÿÿJ$6caaf639-b2c0-4b0b-909f-d36a045207cd
+w	java:S125G"<This block of commented-out lines of code should be removed.(µŠ‘–J$4c5a6347-dce1-4983-9df8-28490e68fca7
+d
+java:S1481J"(Remove this unused "oid" local variable.(¿­ÖÕJ$dc8e2015-d629-49d1-a361-874d2dff4084
+|	java:S125L"<This block of commented-out lines of code should be removed.(®øÇ‚ûÿÿÿÿJ$f480e624-3060-49da-ba85-e0ca4d98909a
+k
+java:S1197V"*Move the array designators [] to the type.(‘ÓºüÿÿÿÿJ$d237e9e3-05f6-4a55-aa94-59329e4fbce0
+|	java:S125\"<This block of commented-out lines of code should be removed.(ŒëÏúÿÿÿÿJ$40995246-bb9c-4085-8f5c-03244cf1bb55

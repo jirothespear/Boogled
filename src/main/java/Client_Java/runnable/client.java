@@ -36,7 +36,7 @@ public class client extends Application {
             Properties props = new Properties();
 
 
-            props.put("org.omg.CORBA.ORBInitialHost", "192.168.1.18");
+            props.put("org.omg.CORBA.ORBInitialHost", "192.168.1.19");
             props.put("org.omg.CORBA.ORBInitialPort", "2055");
 
             ORB orb = ORB.init(args, props);

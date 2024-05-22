@@ -164,21 +164,48 @@ public class Round extends TimerTask{
      * removes all the repeated answers from all list of players
      */
     public void filterAnswers(){
-        for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
-            ArrayList<String> userAnswers = entry.getValue();
-            for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
-                for (Map.Entry<String, Integer> ety : allAnswers.entrySet()){// loop for all answers
-                    if(ety.getKey().equalsIgnoreCase(userAnswers.get(i))){
-                        if(ety.getValue()>1){
-                            // remove
-                            userAnswers.remove(i);
-                            i--;
+        if (answersOfPlayers.size() < 2) {
+            for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
+                ArrayList<String> userAnswers = entry.getValue();
+                for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
+                    for (Map.Entry<String, Integer> ety : allAnswers.entrySet()) {// loop for all answers
+                        if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
+                            if (ety.getValue() > 1) {
+                                // remove
+
+                                if (i == 0) {
+                                    userAnswers.remove(i + 1);
+                                    i--;
+                                } else {
+                                    userAnswers.remove(i);
+                                    i--;
+                                }
+                            }
+                        }
+                    }
+                    answersOfPlayers.put(entry.getKey(), userAnswers);
+                }
+
+            }
+
+        } else if(answersOfPlayers.size() > 2) {
+            for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
+                ArrayList<String> userAnswers = entry.getValue();
+                for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
+                    for (Map.Entry<String, Integer> ety : allAnswers.entrySet()) {// loop for all answers
+                        if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
+                            if (ety.getValue() > 1) {
+                                // remove
+                                userAnswers.remove(i);
+                                i--;
+                            }
                         }
                     }
                 }
+                answersOfPlayers.put(entry.getKey(), userAnswers);
             }
-            answersOfPlayers.put(entry.getKey(), userAnswers);
         }
+
     }
 
     /**

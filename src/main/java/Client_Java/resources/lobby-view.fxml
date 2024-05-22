@@ -106,7 +106,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button fx:id="logoutButton" layoutX="673.0" layoutY="523.0" mnemonicParsing="false"  onAction="#onLogoutButtonClick" prefHeight="58.0" prefWidth="242.0" text="LOGOUT" textFill="#032245">
+            <Button fx:id="logoutButton" layoutX="644.0" layoutY="523.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="58.0" prefWidth="242.0" text="LOGOUT" textFill="#032245">
                <font>
                   <Font name="Segoe UI Black" size="12.0" />
                </font>

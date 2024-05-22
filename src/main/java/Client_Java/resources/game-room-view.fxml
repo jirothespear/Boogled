@@ -39,7 +39,7 @@
             <Font size="50.0" />
          </font>
       </Label>
-      <Label fx:id="timerLabel" layoutX="1112.0" layoutY="627.0" stylesheets="@Font.css" text="">
+      <Label fx:id="timerLabel" layoutX="1112.0" layoutY="627.0" prefHeight="50.0" prefWidth="150.0" style="-fx-alignment: center;" stylesheets="@Font.css" text="">
          <font>
             <Font size="46.0" />
          </font>
@@ -69,7 +69,7 @@
          </effect>
       </Button>
       <Line endX="371.60003662109375" layoutX="462.0" layoutY="641.0" startX="-98.0" strokeWidth="4.0" />
-      <Label fx:id="wordValidityPromptLabel" layoutX="545.0" layoutY="652.0" stylesheets="@Font.css" text="VALID!">
+      <Label fx:id="wordValidityPromptLabel" layoutX="363.0" layoutY="652.0" prefHeight="30.0" prefWidth="472.0" style="-fx-alignment: center;" stylesheets="@Font.css" text="VALID!">
          <font>
             <Font size="27.0" />
          </font>

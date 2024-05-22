@@ -143,3 +143,9 @@ m
 =src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java,2\3\231c8ef244a515743c298bffaa655126d6604333
 m
 =src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java,a\5\a59b1fab7314afde357d60c91219691180efca52
+q
+Asrc/main/java/Client_Java/controllers/GameFinishedController.java,d\9\d91122daaf99f6b5c7c95ece95b6cb6b1308cc3a
+^
+.src/main/java/Server_Java/model/QueueAUTH.java,b\0\b01eb062ebf315edb5679f49691a08026480cba5
+Z
+*src/main/java/Server_Java/model/Queue.java,b\2\b2e56eecc84340e893d874218237225a023a7c97

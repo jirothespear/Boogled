@@ -14,5 +14,6 @@ java:S1104%"WMake currentUser a static final constant or non-public and provide
 f	java:S106+"+Replace this use of System.out by a logger.(¥ãğJ$dff9c038-f881-4f14-a52b-043390d04e94
 k	java:S106/"+Replace this use of System.out by a logger.(íÊÏùÿÿÿÿJ$7f2856a7-b19b-4ee2-9a54-fdfb2c844dec
 k	java:S1062"+Replace this use of System.out by a logger.(‡•ùÿÿÿÿJ$85dbb06f-d6cb-481f-b388-02fbccdfa3ce
+G	java:S106l"+Replace this use of System.out by a logger.(ıˆ¥‹8ıÌÕú1
 h
 java:S1068",Remove this unused "timeline" private field.(›ŸòÃJ$b46c07f6-c394-4052-8892-acf859db2a65

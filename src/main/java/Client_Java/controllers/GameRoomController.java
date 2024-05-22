@@ -185,7 +185,6 @@ public class GameRoomController {
             }
 
 
-
             submitButton.setOnAction(event -> {
                 System.out.println("Submit button clicked");
                 onSubmitButtonClicked();
@@ -344,7 +343,6 @@ public class GameRoomController {
 
                 }else{
 
-                    controller.setTotalPoints(serverUtility.showScore(currentGameUser,gameID));
                     controller.setCongratsOrNextTimeLabel("That was close");
                     controller.setWinnerOrLoserLabel("Game Over");
                 }
