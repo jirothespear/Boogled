@@ -46,7 +46,13 @@ public class QueueTaskRunnable extends TimerTask {
 
                 for (User temp : players) {
                     System.out.println("counting -> " + time);
-                    temp.getUserCallback().getQueueTime(time);
+
+                    try {
+                        temp.getUserCallback().getQueueTime(time);
+
+                    } catch (Exception e){
+                        System.out.println("client " + temp.getUsername() + " cannot be reached");
+                    }
                 }
             }
 

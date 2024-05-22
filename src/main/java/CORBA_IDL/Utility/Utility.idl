@@ -45,6 +45,7 @@ module Utility {
     playerLeaderboardPoints getLeaderboardPoints ();
     long getWinsCount (in wstring username, in wstring gameId);
     void leaveGame(in wstring gameID, in wstring username);
+    long getActiveGames ();
 
   //
 

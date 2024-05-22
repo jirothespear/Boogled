@@ -69,25 +69,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
 
     @Override
     public String startGame(String user) {
-        ConcurrentHashMap<ClientCallback, String> users;
-        ArrayList<User> players = new ArrayList<>();
-        users = queueSystem.getUserCallbacks();
 
-        for (Map.Entry<ClientCallback, String> entry : users.entrySet()) {
-            players.add(new User(entry.getValue(), entry.getKey()));
-        }
-
-        if (!queueSystem.isQueueActive()) {
-            System.out.println("skibidi");
-            Game game = new Game();
-            game.start();
-            game.startGame();
-            gameCount++;
-            game.setGameID(gameCount);
-            activeGames.put(gameCount, game);
-
-            return String.valueOf(gameCount);
-        }
         return "null";
     }
 
@@ -161,6 +143,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
             }
         }
 
+
         throw new GameStartException();
     }
 //
@@ -231,10 +214,13 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
         this.currentGame = currentGame;
     }
 
-    public static ConcurrentHashMap<Integer, Game> getActiveGames() {
-        return activeGames;
+    public int getActiveGames() {
+        return activeGames.size();
     }
 
+    public static ConcurrentHashMap<Integer, Game> getGames (){
+        return activeGames;
+    }
     public static void setActiveGames(ConcurrentHashMap<Integer, Game> activeGames) {
         ServerUtilityImpl.activeGames = activeGames;
     }
