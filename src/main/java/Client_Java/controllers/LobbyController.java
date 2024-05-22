@@ -4,6 +4,7 @@ import CORBA_IDL.Utility.ClientCallback;
 import CORBA_IDL.Utility.LogoutException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -126,13 +127,32 @@ public class LobbyController {
         stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
 
-//
 
-        // Set waiting duration
         Duration waitingRoomDuration = Duration.seconds(1);
         PauseTransition waitingTransition = new PauseTransition(waitingRoomDuration);
         waitingTransition.play();
     }
+
+    @FXML
+    public void initialize() {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) lobbyPane1.getScene().getWindow();
+            stage.setOnCloseRequest(event -> onWindowCloseRequest());
+        });
+    }
+    @FXML
+    public void onWindowCloseRequest() {
+        Platform.runLater(() -> {
+            try {
+                System.out.println("Window is closing");
+
+                serverUtility.logout(clientCallback, currentUsername);
+            } catch (LogoutException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;
     }

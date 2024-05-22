@@ -1,6 +1,7 @@
 package Client_Java.controllers;
 
 import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.LogoutException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -138,18 +139,15 @@ public class GameRoomController {
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
-
             wordValidityPromptLabel.setText("");
             try {
                 gameLetterChoice = serverUtility.getLetterChoice(gameID);
-
             } catch (Exception e){
                 System.out.println("Choice Error ->");
             }
             System.out.println("Game letter choice: " + gameLetterChoice);
             answerTextField.setEditable(false);
             answerTextField.setCursor(javafx.scene.Cursor.DEFAULT);
-
 
             buttons.add(firstButton);
             buttons.add(secondButton);
@@ -171,8 +169,6 @@ public class GameRoomController {
             buttons.add(eighteenthButton);
             buttons.add(nineteenthButton);
             buttons.add(twentiethButton);
-
-
 
             String letters = gameLetterChoice.toLowerCase().replaceAll("[^a-z]", "");
 
@@ -196,11 +192,21 @@ public class GameRoomController {
                 System.out.println("Submit button clicked");
                 onSubmitButtonClicked();
             });
-
+            Stage stage = (Stage) roundLabel.getScene().getWindow();
+            stage.setOnCloseRequest(event -> onWindowCloseRequest());
         });
     }
 
+    @FXML
+    public void onWindowCloseRequest() {
+        Platform.runLater(() -> {
+            System.out.println("Window is closing");
+            onGameFinished();
+//            userCallback(clientCallback, currentGameUser);
 
+        });
+
+    }
     @FXML
     public void onSubmitButtonClicked() {
         Platform.runLater(() -> {
@@ -256,14 +262,10 @@ public class GameRoomController {
                         answerTextField.clear();
                         reactivateButtons();
                     }
-
                     if (timer != null) {
                         timer.cancel();
                     }
-
                     timer = new Timer();
-
-
                     timer.schedule(new TimerTask() {
                         @Override
                         public void run() {
@@ -277,10 +279,7 @@ public class GameRoomController {
                             });
                         }
                     }, 3000);
-
                     System.out.println("Round finished");
-
-                    System.out.println("Game Champ: " + gameChampion);
                 } else {
                     this.roundTime = roundTime;
                     System.out.println("Round time: " + roundTime);
