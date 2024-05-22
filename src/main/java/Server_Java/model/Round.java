@@ -169,19 +169,22 @@ public class Round extends TimerTask{
                 ArrayList<String> userAnswers = entry.getValue();
                 for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
                     for (Map.Entry<String, Integer> ety : allAnswers.entrySet()) {// loop for all answers
-                        if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
-                            if (ety.getValue() > 1) {
-                                // remove
+                        if(userAnswers.size() > 0){
+                            if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
+                                if (ety.getValue() > 1) {
+                                    // remove
 
-                                if (i == 0) {
-                                    userAnswers.remove(i);
-                                    i--;
-                                } else {
-                                    userAnswers.remove(i);
-                                    i--;
+                                    if (i == 0) {
+                                        userAnswers.remove(i);
+                                        i = 0;
+                                    } else {
+                                        userAnswers.remove(i);
+                                        i--;
+                                    }
                                 }
                             }
                         }
+
                     }
                     answersOfPlayers.put(entry.getKey(), userAnswers);
                 }
@@ -193,11 +196,13 @@ public class Round extends TimerTask{
                 ArrayList<String> userAnswers = entry.getValue();
                 for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
                     for (Map.Entry<String, Integer> ety : allAnswers.entrySet()) {// loop for all answers
-                        if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
-                            if (ety.getValue() > 1) {
-                                // remove
-                                userAnswers.remove(i);
-                                i--;
+                        if (userAnswers.size() > 0 ){
+                            if (ety.getKey().equalsIgnoreCase(userAnswers.get(i))) {
+                                if (ety.getValue() > 1) {
+                                    // remove
+                                    userAnswers.remove(i);
+                                    i--;
+                                }
                             }
                         }
                     }
