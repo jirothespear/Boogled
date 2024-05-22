@@ -200,8 +200,6 @@ public class GameRoomController {
     public void onWindowCloseRequest() {
         Platform.runLater(() -> {
             System.out.println("Window is closing");
-//            serverUtility.leaveGame(gameID,currentGameUser);
-//            onGameFinished();
             System.exit(0);
         });
 
