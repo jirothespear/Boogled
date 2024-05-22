@@ -119,7 +119,6 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
     public int showScore(String user, String gameID) {
         System.out.println("GameID: " + gameID + " User: " + user);
         int gameIDInt = Integer.parseInt(gameID);
-       // System.out.println("Score: " + activeGames.get(gameIDInt).getRound().getRoundPoint());
         ArrayList<UserScore> roundPoint = activeGames.get(gameIDInt).getPointsPrevious();
 
         System.out.println("points skibidi -> " + roundPoint.size());
@@ -190,6 +189,15 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
             }
         }
         return 0;
+    }
+
+    @Override
+    public void leaveGame(String gameID, String currentGameUser) {
+        activeGames.get(Integer.valueOf(gameID)).removePlayer(currentGameUser);
+        if (activeGames.get(Integer.valueOf(gameID)).getPlayers().size() == 0){
+            activeGames.remove(Integer.valueOf(gameID));
+        }
+
     }
 
 

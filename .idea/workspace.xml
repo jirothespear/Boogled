@@ -4,14 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed Bugs">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Implemented in Lobby and Game">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/GameStartExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/InvalidWordExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LoginExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/LogoutExceptionHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/PlayerUtilityPOA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/Utility.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_ClientCallbackStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/_PlayerUtilityStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndGameResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndGameResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndRoundResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/EndRoundResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-game-result-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client_Java/resources/end-round-result-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/runnable/ServerMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/sqlconnector/DataPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/sqlconnector/DataPB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +63,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
@@ -52,6 +92,10 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8 (2)" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="sortByName" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -63,30 +107,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.client.comproggui.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.client.executor&quot;: &quot;Run&quot;,
-    &quot;Application.server.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;N:/ghad/src/main/java/Server_Java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.client.comproggui.Main.executor": "Run",
+    "Application.client.executor": "Run",
+    "Application.server.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "N:/ghad/src/main/java/Server_Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="N:\ghad\src\main\java\Server_Java" />
@@ -96,11 +141,11 @@
       <recent name="D:\2023-2_9341-finteam5\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\FinComprog3AragonaBalogoBautistaCaytonMoralesPalacio\src\main\java\CORBA_IDL\Utility" />
+      <recent name="N:\FinComprog3AragonaBalogoBautistaCaytonMoralesPalacio\src\main\java\CORBA_IDL\Utility\Utility" />
+      <recent name="N:\FinComprog3AragonaBalogoBautistaCaytonMoralesPalacio\src\main\java\Server_Java\runnable" />
       <recent name="N:\ghad\src\main\java\Server_Java\resources" />
       <recent name="N:\ghad\src\main\java\Client_Java\resources" />
-      <recent name="N:\ghad\bin" />
-      <recent name="N:\ghad\src\main\java\Server_Java\ORB" />
-      <recent name="N:\ghad\src\main\java\Server_Java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -110,7 +155,7 @@
       <recent name="testers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Server_Java.controller.ServerMainController" />
       <module name="2023-2_9341-finteam5" />
@@ -120,6 +165,8 @@
       </method>
     </configuration>
     <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Server_Java.runnable.ServerMain" />
       <module name="finalProjectCORBA" />
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialHost 192.168.56.1 -ORBInitialPort 2055" />
@@ -227,6 +274,8 @@
       <option name="presentableId" value="Default" />
       <updated>1713609774770</updated>
       <workItem from="1715856243538" duration="1134000" />
+      <workItem from="1716288075962" duration="3775000" />
+      <workItem from="1716340383417" duration="10518000" />
     </task>
     <task id="LOCAL-00001" summary="project set up, added a few classes to be populated soon">
       <option name="closed" value="true" />
@@ -541,7 +590,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716262471290</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Fixed Bug:  Winner count delay">
+      <option name="closed" value="true" />
+      <created>1716290372671</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290372671</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Implemented in Lobby and Game">
+      <option name="closed" value="true" />
+      <created>1716345995324</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716345995324</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,8 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed callback IDL return values." />
-    <MESSAGE value="gameFinish IDL parameter." />
     <MESSAGE value="Changes in IDL, refactor of interfaces." />
     <MESSAGE value="Changes in QUEUE." />
     <MESSAGE value="Integrated some of the server gui's" />
@@ -584,7 +647,9 @@
     <MESSAGE value="Added game winners." />
     <MESSAGE value="Changed Timer to ScheduleExecutor" />
     <MESSAGE value="Fixed Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bugs" />
+    <MESSAGE value="Fixed Bug:  Winner count delay" />
+    <MESSAGE value="Implemented in Lobby and Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented in Lobby and Game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

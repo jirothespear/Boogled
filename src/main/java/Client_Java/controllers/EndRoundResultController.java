@@ -17,6 +17,11 @@ public class EndRoundResultController {
 
 
 
+    @FXML
+    private Label winLabel;
+
+
+
     public void setResult(boolean isWinner, int points) {
         System.out.println("EndRound Result Set Triggered");
         Platform.runLater(() -> {
@@ -39,7 +44,9 @@ public class EndRoundResultController {
         pointsRoundLabel.setText(String.valueOf(points));
     }
 
-
+    public void setWinLabel(Label winLabel) {
+        this.winLabel = winLabel;
+    }
     public int getNumberOfWinsLabel() {
         return Integer.valueOf(winnerOrLoserLabel.getText());
     }

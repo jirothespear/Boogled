@@ -245,4 +245,13 @@ public class Game extends Thread {
     public static void setRoundTime(int roundTime) {
         Game.roundTime = roundTime;
     }
+
+    public void removePlayer(String currentGameUser) {
+        for (int i = 0; i < players.size(); i++){
+            if(players.get(i).getUsername().equalsIgnoreCase(currentGameUser)){
+                System.out.println("Player removed from game: " + players.get(i).getUsername());
+                players.remove(i);
+            }
+        }
+    }
 }

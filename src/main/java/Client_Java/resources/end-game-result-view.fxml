@@ -16,7 +16,7 @@
             <Image url="/gameroomGeneralResultsBg.png" />
          </image>
       </ImageView>
-      <Label fx:id="totalPointsLabel" layoutX="275.0" layoutY="489.0" stylesheets="@Font2.css" text="1" textFill="#9fffc7">
+      <Label fx:id="totalPointsLabel" layoutX="275.0" layoutY="489.0" stylesheets="@Font2.css" text="0" textFill="#9fffc7">
          <font>
             <Font size="60.0" />
          </font>

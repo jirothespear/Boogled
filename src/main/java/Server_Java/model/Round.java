@@ -100,6 +100,9 @@ public class Round extends TimerTask{
             System.out.println("buffer time");
         }else {
 
+            if (players.size() == 0){
+                cancel();
+            }
             System.out.println("Round Counting -> " + timerCount);
             for (User temp: players){
                 temp.getUserCallback().getRoundTime(timerCount);

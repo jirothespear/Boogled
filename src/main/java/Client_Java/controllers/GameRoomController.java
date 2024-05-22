@@ -1,7 +1,6 @@
 package Client_Java.controllers;
 
 import CORBA_IDL.Utility.ClientCallback;
-import CORBA_IDL.Utility.LogoutException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -201,9 +200,8 @@ public class GameRoomController {
     public void onWindowCloseRequest() {
         Platform.runLater(() -> {
             System.out.println("Window is closing");
+            serverUtility.leaveGame(gameID,currentGameUser);
             onGameFinished();
-//            userCallback(clientCallback, currentGameUser);
-
         });
 
     }
@@ -258,7 +256,7 @@ public class GameRoomController {
                 if (roundTime == 0) {
                     isWinner = false;
                     System.out.println("Round Count: "+ roundLabel.getText());
-                    if (answerTextField.getText().isEmpty() == false || buttons.stream().anyMatch(Button::isDisabled)) {
+                    if (!answerTextField.getText().isEmpty() || buttons.stream().anyMatch(Button::isDisabled)) {
                         answerTextField.clear();
                         reactivateButtons();
                     }
@@ -302,6 +300,10 @@ public class GameRoomController {
                 System.out.println("you are the winner "+ isWinner);
 
                 if(isWinner){
+                    if (playerWinCount == 0){
+                        Label winLabel = new Label("win");
+                        controller.setWinLabel(winLabel);
+                    }
                     playerWinCount = playerWinCount + 1;
                 }
                 controller.setPoints(roundScore);
@@ -342,6 +344,8 @@ public class GameRoomController {
                     controller.setTotalPoints(Integer.parseInt(gameChampionScore));
 
                 }else{
+
+                    controller.setTotalPoints(serverUtility.showScore(currentGameUser,gameID));
                     controller.setCongratsOrNextTimeLabel("That was close");
                     controller.setWinnerOrLoserLabel("Game Over");
                 }

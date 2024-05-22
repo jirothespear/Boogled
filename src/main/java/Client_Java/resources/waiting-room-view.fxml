@@ -26,7 +26,7 @@
             </DropShadow>
          </effect>
       </Label>
-      <Label fx:id="timerLabel" layoutX="356.0" layoutY="272.0" stylesheets="@Font.css" text="30" textFill="WHITE">
+      <Label fx:id="timerLabel" layoutX="356.0" layoutY="272.0" stylesheets="@Font.css" text="" textFill="WHITE">
          <font>
             <Font size="95.0" />
          </font>

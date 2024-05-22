@@ -33,17 +33,10 @@ public class EndGameResultController {
         this.congratsOrNextTimeLabel.setText(congratsOrNextTimeLabel);
     }
 
-    public Label getWinnerOrLoserLabel() {
-        return winnerOrLoserLabel;
-    }
-
     public void setWinnerOrLoserLabel(String winnerOrLoserLabel) {
         this.winnerOrLoserLabel.setText( winnerOrLoserLabel);
     }
 
-    public ClientCallbackImpl getClientCallbackImpl() {
-        return clientCallbackImpl;
-    }
 
     public void setClientCallbackImpl(ClientCallbackImpl clientCallbackImpl) {
         this.clientCallbackImpl = clientCallbackImpl;
