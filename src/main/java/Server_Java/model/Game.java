@@ -138,7 +138,7 @@ public class Game extends Thread {
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
-            ServerUtilityImpl.getGames().remove(gameID);
+
             this.interrupt();
         }
 

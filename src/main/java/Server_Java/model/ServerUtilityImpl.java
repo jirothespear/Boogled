@@ -229,8 +229,9 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
             }
         }
 
-        activeGames.get(Integer.parseInt(gameId)).setPlayers(players);
+        userCallbacks.replace(username, callback);
 
+        activeGames.get(Integer.parseInt(gameId)).setPlayers(players);
         activeGames.get(Integer.parseInt(gameId)).setPlayers(players);
 
 
