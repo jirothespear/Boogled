@@ -113,14 +113,6 @@ public class Game extends Thread {
     public  void startGame(){// sets up variables for game
         System.out.println("Game is starting");
 
-
-//        if (overallPoints == null || playerPlacing == null) {
-//            for (int i = 0; i < players.size(); i++) {
-//                overallPoints.put(players.get(i), 0);
-//                playerPlacing.put(players.get(i), 0);
-//            }
-//        }
-
         for (int i = 0; i < players.size(); i++) {
             if (!(overallPoints.containsKey(players.get(i)) || playerPlacing.containsKey(players.get(i)))) {
                 overallPoints.put(players.get(i), 0);
@@ -146,9 +138,7 @@ public class Game extends Thread {
                 temp.getUserCallback().gameFinish(winnerOfRound, String.valueOf(overallPoints.get(champion)));
             }
 
-
             ServerUtilityImpl.getActiveGames().remove(gameID);
-
             this.interrupt();
         }
 

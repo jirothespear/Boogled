@@ -405,7 +405,6 @@ public class GameRoomController {
         });
     }
 
-
     public String getCurrentGameUser() {
         return currentGameUser;
     }

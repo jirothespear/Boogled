@@ -103,7 +103,14 @@ public class WaitingRoomController {
         });
     }   // onCountdownFinished
 
+    public void onWindowCloseRequest() {
+        Platform.runLater(() -> {
+            System.out.println("Window is closing");
+            serverUtility.leaveGame(gameID, currentUser);
+            System.exit(0);
+        });
 
+    }
     public PlayerUtility getServerUtility() {
         return serverUtility;
     }

@@ -146,8 +146,8 @@ public class LobbyController {
         Platform.runLater(() -> {
             try {
                 System.out.println("Window is closing");
-
                 serverUtility.logout(clientCallback, currentUsername);
+                System.exit(0);
             } catch (LogoutException e) {
                 e.printStackTrace();
             }
