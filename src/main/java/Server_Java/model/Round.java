@@ -164,7 +164,7 @@ public class Round extends TimerTask{
      * removes all the repeated answers from all list of players
      */
     public void filterAnswers(){
-        if (answersOfPlayers.size() < 2) {
+        if (answersOfPlayers.size() <= 2) {
             for (Map.Entry<User, ArrayList<String>> entry : answersOfPlayers.entrySet()) {// loop per user
                 ArrayList<String> userAnswers = entry.getValue();
                 for (int i = 0; i < userAnswers.size(); i++) {// loop for answers of user
@@ -174,7 +174,7 @@ public class Round extends TimerTask{
                                 // remove
 
                                 if (i == 0) {
-                                    userAnswers.remove(i + 1);
+                                    userAnswers.remove(i);
                                     i--;
                                 } else {
                                     userAnswers.remove(i);
@@ -205,7 +205,6 @@ public class Round extends TimerTask{
                 answersOfPlayers.put(entry.getKey(), userAnswers);
             }
         }
-
     }
 
     /**
