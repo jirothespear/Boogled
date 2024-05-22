@@ -24,7 +24,7 @@ public class Game extends Thread {
     private ArrayList<UserScore> pointsPrevious = new ArrayList<UserScore>();
 
 
-    public static int roundTime = 10;
+    public int roundTime = 10;
 
     /*
     Following variabls are used in rounds
@@ -228,12 +228,12 @@ public class Game extends Thread {
         this.pointsPrevious = pointsPrevious;
     }
 
-    public static int getRoundTime() {
+    public  int getRoundTime() {
         return roundTime;
     }
 
-    public static void setRoundTime(int roundTime) {
-        Game.roundTime = roundTime;
+    public void setRoundTime(int roundTime) {
+        roundTime = roundTime;
     }
 
     public void removePlayer(String currentGameUser) {

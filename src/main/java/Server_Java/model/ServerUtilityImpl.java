@@ -96,7 +96,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
         if (players.size() != 90) {
             gameCount++;
             Game game = new Game();
-            Game.roundTime = DataPB.getRoundTime();
+            game.setRoundTime(DataPB.getRoundTime());
             game.start();
             game.setPlayers(players);
             game.startGame();

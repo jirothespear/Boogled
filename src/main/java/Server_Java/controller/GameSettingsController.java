@@ -62,7 +62,6 @@ public class GameSettingsController {
         ServerUtilityImpl.queueTime = queueTime;
         DataPB.setQueueTime(waitingTimeValue.getValue());
         DataPB.setRoundTime(roundTimeValue.getValue());
-        Game.roundTime = roundTime;
 
         root = FXMLLoader.load(getClass().getResource("/server-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
