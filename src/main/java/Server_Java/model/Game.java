@@ -233,7 +233,7 @@ public class Game extends Thread {
     }
 
     public void setRoundTime(int roundTime) {
-        roundTime = roundTime;
+        this.roundTime = roundTime;
     }
 
     public void removePlayer(String currentGameUser) {

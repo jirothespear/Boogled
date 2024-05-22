@@ -1,1 +1,1 @@
-start orbd  -ORBInitialPort 2055 -ORBInitialHost 172.25.13.81
+start orbd -ORBInitialHost 192.168.1.18 -ORBInitialPort 2055

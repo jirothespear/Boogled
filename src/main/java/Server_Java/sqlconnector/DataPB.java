@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class DataPB {
     private static Connection connection;
-    private static String url = "jdbc:mysql://localhost:3306/samtech?user=root&password";
+    private static String url = "jdbc:mysql://localhost:3308/samtech?user=root&password";
 
     private DataPB() {
     }
