@@ -132,6 +132,7 @@ public class LobbyController {
         PauseTransition waitingTransition = new PauseTransition(waitingRoomDuration);
         waitingTransition.play();
     }
+    // This method is called when the window is closed
 
     @FXML
     public void initialize() {

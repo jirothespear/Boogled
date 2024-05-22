@@ -6,7 +6,7 @@ import org.omg.CORBA.ORB;
 
 public class ClientCallbackImpl extends CORBA_IDL.Utility.ClientCallbackPOA {
 
-
+    // Controllers
     private WaitingRoomController waitingRoomController;
 
     private GameRoomController gameRoomController;

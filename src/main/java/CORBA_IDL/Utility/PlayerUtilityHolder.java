@@ -14,7 +14,7 @@ public final class PlayerUtilityHolder implements org.omg.CORBA.portable.Streama
   public PlayerUtilityHolder ()
   {
   }
-
+  //
   public PlayerUtilityHolder (PlayerUtility initialValue)
   {
     value = initialValue;

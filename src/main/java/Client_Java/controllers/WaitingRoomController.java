@@ -101,7 +101,7 @@ public class WaitingRoomController {
                 throw new RuntimeException(e);
             }
         });
-    }
+    }   // onCountdownFinished
 
 
     public PlayerUtility getServerUtility() {

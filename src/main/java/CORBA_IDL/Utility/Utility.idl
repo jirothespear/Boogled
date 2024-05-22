@@ -46,7 +46,7 @@ module Utility {
     long getWinsCount (in wstring username, in wstring gameId);
     void leaveGame(in wstring gameID, in wstring username);
 
-
+  //
 
   };
 

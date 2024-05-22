@@ -82,4 +82,4 @@ abstract public class ClientCallbackHelper
     }
   }
 
-} // class ClientCallbackHelper
+} // class ClientCallbackHelper and its methods

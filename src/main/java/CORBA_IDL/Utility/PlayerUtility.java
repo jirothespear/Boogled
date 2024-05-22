@@ -10,4 +10,4 @@ package CORBA_IDL.Utility;
 
 public interface PlayerUtility extends PlayerUtilityOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
 {
-} // interface PlayerUtility
+} // interface PlayerUtility asd

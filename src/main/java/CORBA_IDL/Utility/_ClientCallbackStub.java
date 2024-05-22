@@ -107,7 +107,7 @@ public class _ClientCallbackStub extends org.omg.CORBA.portable.ObjectImpl imple
             } finally {
                 _releaseReply ($in);
             }
-  } // getRoundTime for the getRoundTime method
+  } // getRoundTime for the
 
   public void getQueueTime (int time)
   {

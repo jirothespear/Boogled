@@ -80,6 +80,6 @@ abstract public class PlayerUtilityHelper
       stub._set_delegate(delegate);
       return stub;
     }
-  }
+  }   // PlayerUtilityHelper
 
 }

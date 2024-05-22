@@ -326,7 +326,7 @@ public class _PlayerUtilityStub extends org.omg.CORBA.portable.ObjectImpl implem
             }
   } // leaveGame
 
-  // Type-specific CORBA::Object operations and constructor
+  // Type-specific CORBA::Object operations
   private static String[] __ids = {
     "IDL:Utility/PlayerUtility:1.0"};
 

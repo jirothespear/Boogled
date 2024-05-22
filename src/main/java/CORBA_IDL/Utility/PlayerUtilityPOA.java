@@ -97,7 +97,7 @@ public abstract class PlayerUtilityPOA extends org.omg.PortableServer.Servant
          break;
        }
 
-       case 4:  // Utility/PlayerUtility/checkWord
+       case 4:  // Utility/PlayerUtility/checkWord asd
        {
          try {
            String answer = in.read_wstring ();

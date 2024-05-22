@@ -292,6 +292,8 @@ public class GameRoomController {
     public void displayEndRoundResult() {
         Platform.runLater(() -> {
             try {
+
+                //
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/end-round-result-view.fxml"));
                 Parent root = loader.load();
                 EndRoundResultController controller = loader.getController();

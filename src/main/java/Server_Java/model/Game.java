@@ -252,6 +252,6 @@ public class Game extends Thread {
                 System.out.println("Player removed from game: " + players.get(i).getUsername());
                 players.remove(i);
             }
-        }
+        }   // remove player from game
     }
 }

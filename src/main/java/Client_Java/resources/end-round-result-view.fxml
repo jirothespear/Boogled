@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-
+<!--// This is the end-game result view-->
 <AnchorPane prefHeight="754.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_Java.controllers.EndRoundResultController">
    <children>
       <ImageView fitHeight="755.0" fitWidth="1355.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true">

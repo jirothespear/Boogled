@@ -198,7 +198,7 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
             activeGames.remove(Integer.valueOf(gameID));
         }
 
-    }
+    }   // Format "username/gameID"
 
 
     public ORB getOrb() {

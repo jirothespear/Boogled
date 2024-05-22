@@ -105,7 +105,7 @@ public class LoginController {
 
         } catch (Exception e) {
         }
-    }
+    }  // onLoginButtonClick
 
     private void navigateToLobbyView(ActionEvent event) {
         try {

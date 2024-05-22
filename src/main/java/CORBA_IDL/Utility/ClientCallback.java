@@ -10,4 +10,4 @@ package CORBA_IDL.Utility;
 
 public interface ClientCallback extends ClientCallbackOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
 {
-} // interface ClientCallback as seen in the IDL file
+} // interface ClientCallback
