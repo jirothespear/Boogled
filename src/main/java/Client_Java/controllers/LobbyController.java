@@ -145,6 +145,7 @@ public class LobbyController {
             loginController.setClientCallbackImpl(clientCallbackImpl);
             loginController.setClientCallback(clientCallback);
 
+            serverUtility.logout(clientCallback, currentUsername);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("/Textfield.css").toExternalForm());
