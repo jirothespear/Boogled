@@ -1,8 +1,10 @@
 package Client_Java.controllers;
 
 import CORBA_IDL.Utility.ClientCallback;
+import CORBA_IDL.Utility.GameStartException;
 import CORBA_IDL.Utility.LoginException;
 import CORBA_IDL.Utility.PlayerUtility;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,6 +60,8 @@ public class LoginController {
     @FXML
     private Parent root;
 
+    private String gameID;
+
 //    @FXML
 //    public void onLoginButtonClick(ActionEvent event) throws IOException {
 //        root = FXMLLoader.load(getClass().getResource("/lobby-view.fxml"));
@@ -97,16 +101,57 @@ public class LoginController {
             serverUtility.login(username, password);
 
             serverUtility.userCallback(clientCallback, username);
+            if (serverUtility.getActiveGames() > 0 ){
+                if (serverUtility.getGameID(username) != null) {
+                    System.out.println("User is in game");
+                    serverUtility.reconnect(username, serverUtility.getGameID(username), clientCallback);
+                    navigateInGame(username);
+                } else {
+                    navigateToLobbyView(event);
+                }
+            } else {
+                navigateToLobbyView(event);
+            }
 
 
-            navigateToLobbyView(event);
 
         } catch (LoginException e) {
 
         } catch (Exception e) {
         }
     }  // onLoginButtonClick
+    @FXML
+    public void navigateInGame(String currentUser) {
+        Platform.runLater(() -> {
+            try {
 
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-room-view.fxml"));
+                Parent root = loader.load();
+                GameRoomController gameRoomController = loader.getController();
+
+                gameID = serverUtility.getGameID(currentUser);
+                gameRoomController.setGameID(gameID);
+                gameRoomController.setCurrentGameUser(currentUser);
+                gameRoomController.setServerUtility(serverUtility);
+                gameRoomController.setClientCallback(clientCallback);
+                clientCallbackImpl.setGameRoomController(gameRoomController);
+                gameRoomController.setClientCallbackImpl(clientCallbackImpl);
+
+                Scene gameScene = new Scene(root);
+                Stage stage = (Stage) loginButton.getScene().getWindow();
+                stage.setScene(gameScene);
+                stage.show();
+                stage.centerOnScreen();
+                stage.setResizable(false);
+                gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (GameStartException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
     private void navigateToLobbyView(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lobby-view.fxml"));
