@@ -51,9 +51,16 @@ public class Round extends TimerTask{
     public void newRound (int roundCount){
         this.roundCount = roundCount;
         setChoiceLetters();
-        for (User temp: players){
-            System.out.println(letters);
-            temp.getUserCallback().getLetterChoice(letters);
+
+        try {
+            for (User temp : players) {
+                System.out.println(letters);
+                temp.getUserCallback().getLetterChoice(letters);
+            }
+
+        } catch (Exception e){
+
+            System.out.println("cannot connect to user..");
         }
         System.out.println("Round "+roundCount +"!");
         //Reset list containing all answers
@@ -105,7 +112,13 @@ public class Round extends TimerTask{
             }
             System.out.println("Round Counting -> " + timerCount);
             for (User temp: players){
-                temp.getUserCallback().getRoundTime(timerCount);
+
+                try {
+                    temp.getUserCallback().getRoundTime(timerCount);
+
+                } catch (Exception e){
+                    System.out.println("cannot connect to client.");
+                }
             }
         }
         timerCount--;

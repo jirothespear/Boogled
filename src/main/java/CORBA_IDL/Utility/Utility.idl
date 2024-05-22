@@ -46,6 +46,7 @@ module Utility {
     long getWinsCount (in wstring username, in wstring gameId);
     void leaveGame(in wstring gameID, in wstring username);
     long getActiveGames ();
+    void reconnect (in wstring username, in wstring gameId, in ClientCallback callback);
 
   //
 

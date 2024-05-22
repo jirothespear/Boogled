@@ -218,6 +218,24 @@ public class ServerUtilityImpl extends CORBA_IDL.Utility.PlayerUtilityPOA {
         return activeGames.size();
     }
 
+    @Override
+    public void reconnect(String username, String gameId, ClientCallback callback) {
+
+        ArrayList<User> players = activeGames.get(Integer.parseInt(gameId)).getPlayers();
+
+        for (User temp: players){
+            if (temp.getUsername().equals(username)){
+                temp.setUserCallback(callback);
+            }
+        }
+
+        activeGames.get(Integer.parseInt(gameId)).setPlayers(players);
+
+        activeGames.get(Integer.parseInt(gameId)).setPlayers(players);
+
+
+    }
+
     public static ConcurrentHashMap<Integer, Game> getGames (){
         return activeGames;
     }

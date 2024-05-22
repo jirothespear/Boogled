@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed time.">
+    <list default="true" id="747eabee-8044-4aa9-b166-87fb8ea519e7" name="Changes" comment="Fixed IDL.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallback.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/ClientCallbackHelper.java" beforeDir="false" />
@@ -36,8 +36,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CORBA_IDL/Utility/playerLeaderboardPointsHolder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/ORB/orb.db/NC0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/QueueTaskRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/Round.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server_Java/model/ServerUtilityImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -613,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716391634513</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Fixed IDL.">
+      <created>1716397355496</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397355496</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +637,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Integrated some of the server gui's" />
     <MESSAGE value="Fixed fxml directories." />
     <MESSAGE value="Added roundCount, and leaderboard IDL." />
     <MESSAGE value="Fixed round winner." />
@@ -656,7 +661,8 @@
     <MESSAGE value="Implemented in Lobby and Game" />
     <MESSAGE value="Fixed time" />
     <MESSAGE value="Fixed time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed time." />
+    <MESSAGE value="Fixed IDL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed IDL." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
