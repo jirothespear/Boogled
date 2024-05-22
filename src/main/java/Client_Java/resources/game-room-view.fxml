@@ -39,7 +39,7 @@
             <Font size="50.0" />
          </font>
       </Label>
-      <Label fx:id="timerLabel" layoutX="1112.0" layoutY="627.0" stylesheets="@Font.css" text="00:30">
+      <Label fx:id="timerLabel" layoutX="1112.0" layoutY="627.0" stylesheets="@Font.css" text="">
          <font>
             <Font size="46.0" />
          </font>

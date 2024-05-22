@@ -18,7 +18,7 @@
    <children>
       <ImageView fx:id="lobbyBgImage1" fitHeight="657.0" fitWidth="1028.0" pickOnBounds="true">
          <image>
-            <Image url="file:/D:/2023-2_9341-finteam5/resources/generalBgImage.png" />
+            <Image url="/generalBgImage.png" />
          </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -31,7 +31,7 @@
          <children>
             <ImageView fx:id="lobbyBgImage2" fitHeight="602.0" fitWidth="966.0" pickOnBounds="true">
                <image>
-                  <Image url="file:/D:/2023-2_9341-finteam5/resources/whiteBg.jpg" />
+                  <Image url="/whiteBg.jpg" />
                </image>
                <effect>
                   <Glow level="1.0">
@@ -59,7 +59,7 @@
                                     <InnerShadow />
                                  </effect>
                                  <image>
-                                    <Image url="file:/D:/2023-2_9341-finteam5/resources/welcomeBgImage.gif" />
+                                    <Image url="/welcomeBgImage.gif" />
                                  </image>
                               </ImageView>
                            </children>
