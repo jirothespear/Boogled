@@ -6,8 +6,10 @@ import CORBA_IDL.Utility.GameStartException;
 import CORBA_IDL.Utility.PlayerUtility;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -73,8 +75,8 @@ public class WaitingRoomController {
     @FXML
     public void onCountdownFinished() {
         Platform.runLater(() -> {
-            try {
 
+            try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/game-room-view.fxml"));
                 Parent root = loader.load();
                 GameRoomController gameRoomController = loader.getController();
@@ -94,11 +96,8 @@ public class WaitingRoomController {
                 stage.centerOnScreen();
                 stage.setResizable(false);
                 gameScene.getStylesheets().add(getClass().getResource("/Font.css").toExternalForm());
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (GameStartException e) {
-                throw new RuntimeException(e);
+            } catch (Exception e){
+                navigateToLobbyController();
             }
         });
     }   // onCountdownFinished
@@ -110,6 +109,34 @@ public class WaitingRoomController {
             System.exit(0);
         });
 
+    }
+
+    private  void navigateToLobbyController(){
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lobby-view.fxml"));
+
+                Parent root = fxmlLoader.load();
+
+                LobbyController lobbyController = fxmlLoader.getController();
+                lobbyController.setCurrentUsername(currentUser);
+                lobbyController.setClientCallbackImpl(clientCallbackImpl);
+                lobbyController.setClientCallback(clientCallback);
+                lobbyController.setServerUtility(serverUtility);
+
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                stage.centerOnScreen();
+                stage.setResizable(false);
+
+                Stage waitingRoom = (Stage) timerLabel.getScene().getWindow();
+                waitingRoom.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
     public PlayerUtility getServerUtility() {
         return serverUtility;
